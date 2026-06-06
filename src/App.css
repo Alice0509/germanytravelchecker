@@ -869,3 +869,39 @@ h3 {
     padding: 20px;
   }
 }
+
+@media (max-width: 560px) {
+  .trip-dates-card {
+    overflow: hidden;
+  }
+
+  .trip-controls {
+    min-width: 0;
+  }
+
+  .trip-controls label {
+    min-width: 0;
+  }
+
+  .trip-controls select,
+  .trip-controls input {
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    appearance: none;
+    -webkit-appearance: none;
+  }
+
+  .trip-controls input[type="date"] {
+    display: block;
+    text-align: center;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .trip-result {
+    min-width: 0;
+    overflow-wrap: anywhere;
+  }
+}
