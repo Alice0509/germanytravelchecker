@@ -1126,3 +1126,218 @@ h3 {
   height: 100%;
   object-fit: contain;
 }
+
+/* Bright travel theme refinement */
+:root {
+  --gtc-bg: #fbf8f2;
+  --gtc-surface: #fffdf8;
+  --gtc-surface-soft: #f5fbf8;
+  --gtc-primary: #178a84;
+  --gtc-primary-dark: #116b67;
+  --gtc-navy: #14213d;
+  --gtc-muted: #5d6673;
+  --gtc-border: rgba(20, 33, 61, 0.08);
+  --gtc-mint: #e6f7f2;
+  --gtc-gold: #f2b233;
+  --gtc-red: #d64541;
+}
+
+.hero-copy {
+  background:
+    radial-gradient(circle at 12% 18%, rgba(242, 178, 51, 0.16), transparent 22rem),
+    radial-gradient(circle at 82% 8%, rgba(23, 138, 132, 0.12), transparent 24rem),
+    linear-gradient(135deg, rgba(255, 253, 248, 0.98), rgba(245, 251, 248, 0.92));
+}
+
+.eyebrow {
+  color: var(--gtc-primary-dark);
+}
+
+h1,
+h2,
+h3 {
+  color: var(--gtc-navy);
+}
+
+.hero-text,
+.section-heading p,
+.split-section p,
+.safety-section p,
+.feature-card p,
+.trust-note,
+.trip-summary,
+.trip-disclaimer,
+.trip-loading,
+.trip-clear-note {
+  color: var(--gtc-muted);
+}
+
+.button.primary {
+  background: var(--gtc-primary);
+  box-shadow: 0 14px 28px rgba(23, 138, 132, 0.2);
+}
+
+.button.primary:hover {
+  background: var(--gtc-primary-dark);
+}
+
+.button.secondary {
+  color: var(--gtc-primary-dark);
+  background: var(--gtc-mint);
+  border-color: rgba(23, 138, 132, 0.18);
+}
+
+.button.tertiary {
+  color: var(--gtc-navy);
+  background: rgba(255, 255, 255, 0.82);
+  border-color: rgba(20, 33, 61, 0.1);
+}
+
+.topbar-link {
+  color: var(--gtc-primary-dark);
+  background: var(--gtc-mint);
+  border-color: rgba(23, 138, 132, 0.18);
+}
+
+.section {
+  background:
+    radial-gradient(circle at 92% 0%, rgba(23, 138, 132, 0.06), transparent 18rem),
+    rgba(255, 253, 248, 0.96);
+}
+
+.mode-section {
+  background:
+    radial-gradient(circle at 15% 0%, rgba(242, 178, 51, 0.12), transparent 20rem),
+    radial-gradient(circle at 88% 16%, rgba(23, 138, 132, 0.08), transparent 18rem),
+    rgba(255, 253, 248, 0.96);
+}
+
+.feature-card,
+.mode-card,
+.trip-dates-card,
+.multi-city-card,
+.segment-editor,
+.trip-result,
+.multi-city-result,
+.trip-meta-grid div,
+.trip-warning-list article,
+.transfer-list article,
+.multi-segment-result {
+  border-color: var(--gtc-border);
+}
+
+.feature-card,
+.mode-card,
+.trip-dates-card,
+.multi-city-card,
+.trip-meta-grid div,
+.trip-warning-list article,
+.transfer-list article,
+.multi-segment-result {
+  background: #fffaf0;
+}
+
+.trip-result,
+.multi-city-result,
+.segment-editor {
+  background: var(--gtc-surface);
+}
+
+.check-today {
+  background:
+    radial-gradient(circle at 92% 0%, rgba(242, 178, 51, 0.16), transparent 18rem),
+    linear-gradient(145deg, #16324a, #10283d);
+}
+
+.card-label {
+  color: #a7f0dc;
+}
+
+.risk-low {
+  color: #116b67;
+  background: rgba(23, 138, 132, 0.12);
+  border-color: rgba(23, 138, 132, 0.24);
+}
+
+.risk-medium {
+  color: #8a5a00;
+  background: rgba(242, 178, 51, 0.18);
+  border-color: rgba(242, 178, 51, 0.32);
+}
+
+.risk-high {
+  color: #9e2d27;
+  background: rgba(214, 69, 65, 0.13);
+  border-color: rgba(214, 69, 65, 0.26);
+}
+
+.check-today .risk-low {
+  color: #9ff0d8;
+}
+
+.check-today .risk-medium {
+  color: #ffe1a0;
+}
+
+.check-today .risk-high {
+  color: #ffb7ae;
+}
+
+.mode-kicker {
+  color: var(--gtc-primary-dark);
+  background: rgba(23, 138, 132, 0.1);
+}
+
+.mode-card a,
+.footer a {
+  color: var(--gtc-primary);
+}
+
+.city-grid span {
+  color: var(--gtc-navy);
+  background: var(--gtc-mint);
+  border-color: rgba(23, 138, 132, 0.16);
+}
+
+.safety-section {
+  background:
+    linear-gradient(135deg, rgba(255, 250, 240, 0.98), rgba(230, 247, 242, 0.9)),
+    #fffdf8;
+}
+
+.brand span:last-child {
+  color: var(--gtc-navy);
+}
+
+.brand-mark {
+  border-radius: 16px;
+}
+
+.hero-copy::before {
+  content: "";
+  display: block;
+  width: 76px;
+  height: 6px;
+  margin-bottom: 24px;
+  border-radius: 999px;
+  background: linear-gradient(
+    90deg,
+    #1a1a1a 0 30%,
+    var(--gtc-red) 30% 66%,
+    var(--gtc-gold) 66% 100%
+  );
+}
+
+@media (max-width: 560px) {
+  .hero-copy::before {
+    width: 62px;
+    height: 5px;
+    margin-bottom: 18px;
+  }
+
+  .check-today {
+    background:
+      radial-gradient(circle at 90% 0%, rgba(242, 178, 51, 0.16), transparent 14rem),
+      linear-gradient(145deg, #16324a, #10283d);
+  }
+}
