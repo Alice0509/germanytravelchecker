@@ -14,9 +14,12 @@ import {
 const DEFAULT_NEEDS = ['water', 'groceries']
 
 function getTodayDateKey() {
-  const today = new Date()
-  today.setHours(0, 0, 0, 0)
-  return formatDateKey(today)
+  return new Intl.DateTimeFormat('en-CA', {
+    timeZone: 'Europe/Berlin',
+    year: 'numeric',
+    month: '2-digit',
+    day: '2-digit',
+  }).format(new Date())
 }
 
 function getPublicHolidayName(publicHoliday) {
@@ -163,6 +166,7 @@ export default function CheckToday() {
         <label>
           <span>Date</span>
           <input type="date" value={dateKey} onChange={(event) => setDateKey(event.target.value)} />
+          <small>Uses Germany local date by default. You can change it anytime.</small>
         </label>
       </div>
 
