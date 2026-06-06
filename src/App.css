@@ -1492,3 +1492,125 @@ h3 {
     line-height: 1.45;
   }
 }
+
+/* Brighter brand theme refresh */
+.hero-copy {
+  background:
+    radial-gradient(circle at 14% 16%, rgba(246, 196, 49, 0.2), transparent 20rem),
+    radial-gradient(circle at 82% 8%, rgba(23, 138, 132, 0.12), transparent 20rem),
+    linear-gradient(135deg, rgba(255, 255, 255, 0.98), rgba(255, 250, 241, 0.94));
+}
+
+.brand-mark {
+  background: #178a84;
+  box-shadow: 0 16px 32px rgba(23, 138, 132, 0.22);
+}
+
+.topbar-link,
+.button.secondary {
+  color: #116b67;
+  background: rgba(230, 247, 242, 0.92);
+  border-color: rgba(23, 138, 132, 0.2);
+}
+
+.button.primary {
+  background: #178a84;
+  box-shadow: 0 14px 30px rgba(23, 138, 132, 0.22);
+}
+
+.button.tertiary {
+  color: #14213d;
+  background: rgba(255, 255, 255, 0.82);
+  border-color: rgba(20, 33, 61, 0.1);
+}
+
+.eyebrow {
+  color: #178a84;
+}
+
+.check-today {
+  background:
+    radial-gradient(circle at 100% 0%, rgba(246, 196, 49, 0.12), transparent 16rem),
+    #14213d;
+}
+
+.card-label {
+  color: #9ce6d8;
+}
+
+.risk-low {
+  color: #9ce6d8;
+  background: rgba(156, 230, 216, 0.12);
+  border-color: rgba(156, 230, 216, 0.3);
+}
+
+.risk-medium {
+  color: #f6c431;
+  background: rgba(246, 196, 49, 0.12);
+  border-color: rgba(246, 196, 49, 0.3);
+}
+
+.risk-high {
+  color: #ffb3aa;
+  background: rgba(214, 69, 65, 0.16);
+  border-color: rgba(214, 69, 65, 0.3);
+}
+
+.section,
+.trip-result,
+.multi-city-result {
+  background: rgba(255, 255, 255, 0.96);
+}
+
+.feature-card,
+.mode-card,
+.trip-dates-card,
+.multi-city-card,
+.compact-city-card,
+.trip-meta-grid div,
+.trip-warning-list article,
+.transfer-list article,
+.multi-segment-result {
+  background: #fffaf2;
+}
+
+.mode-kicker,
+.compact-city-card span {
+  color: #116b67;
+  background: rgba(23, 138, 132, 0.1);
+}
+
+.mode-card a,
+.footer a {
+  color: #178a84;
+}
+
+.trip-dates-section {
+  background:
+    radial-gradient(circle at 80% 0%, rgba(23, 138, 132, 0.12), transparent 22rem),
+    rgba(255, 255, 255, 0.96);
+}
+
+.multi-city-section {
+  background:
+    radial-gradient(circle at 12% 0%, rgba(214, 69, 65, 0.08), transparent 18rem),
+    radial-gradient(circle at 88% 12%, rgba(23, 138, 132, 0.12), transparent 20rem),
+    rgba(255, 255, 255, 0.96);
+}
+
+.add-segment-button,
+.segment-editor-header button {
+  color: #116b67;
+  background: rgba(23, 138, 132, 0.1);
+  border-color: rgba(23, 138, 132, 0.22);
+}
+
+.safety-section {
+  background:
+    linear-gradient(135deg, rgba(255, 250, 242, 0.98), rgba(230, 247, 242, 0.82)),
+    #fff;
+}
+
+.footer {
+  color: #6b7280;
+}
