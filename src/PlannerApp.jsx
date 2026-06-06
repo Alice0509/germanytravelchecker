@@ -54,6 +54,22 @@ function PlannerApp() {
         <MultiCityTrip />
       </div>
 
+
+      <section className="planner-city-guides">
+        <div>
+          <p className="eyebrow">City checks</p>
+          <h2>Planning Berlin or Munich?</h2>
+          <p>
+            Open a practical city guide for local closure notes, fallback ideas
+            and Germany-specific travel friction before you finalize your plans.
+          </p>
+        </div>
+        <div className="planner-city-links">
+          <a href="/berlin.html">Open Berlin guide</a>
+          <a href="/munich.html">Open Munich guide</a>
+        </div>
+      </section>
+
       <section className="planner-trust">
         <div className="eyebrow">Trust and safety</div>
         <h2>Helpful, but careful.</h2>
