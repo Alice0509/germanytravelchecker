@@ -1,5 +1,6 @@
 import CheckToday from './components/CheckToday.jsx'
 import TripDates from './components/TripDates.jsx'
+import MultiCityTrip from './components/MultiCityTrip.jsx'
 import './App.css'
 
 const CHECK_ITEMS = [
@@ -133,6 +134,8 @@ function App() {
       </section>
 
       <TripDates />
+
+      <MultiCityTrip />
 
       <section className="section split-section">
         <div>
