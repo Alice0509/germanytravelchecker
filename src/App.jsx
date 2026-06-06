@@ -1,4 +1,5 @@
 import CheckToday from './components/CheckToday.jsx'
+import TripDates from './components/TripDates.jsx'
 import './App.css'
 
 const CHECK_ITEMS = [
@@ -57,7 +58,10 @@ function App() {
               <a className="button primary" href="#check-today">
                 Check today
               </a>
-              <a className="button secondary" href="https://www.schulferienklar.de/">
+              <a className="button secondary" href="#trip-dates">
+                Check trip dates
+              </a>
+              <a className="button tertiary" href="https://www.schulferienklar.de/">
                 Data by Schulferienklar
               </a>
             </div>
@@ -93,6 +97,8 @@ function App() {
           ))}
         </div>
       </section>
+
+      <TripDates />
 
       <section className="section split-section">
         <div>
