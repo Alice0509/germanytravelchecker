@@ -2004,3 +2004,52 @@ h1 {
     grid-template-columns: 1fr;
   }
 }
+
+.live-check-links {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: 16px;
+  margin-top: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 18px;
+  padding: 16px;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.live-check-links strong {
+  display: block;
+  margin-bottom: 6px;
+  color: #fff;
+}
+
+.live-check-links p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.74);
+  line-height: 1.55;
+}
+
+.live-check-link-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.live-check-link-list a {
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 999px;
+  padding: 10px 12px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 700;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.live-check-link-list a:hover {
+  background: rgba(255, 255, 255, 0.14);
+}
+
+@media (max-width: 780px) {
+  .live-check-links {
+    grid-template-columns: 1fr;
+  }
+}

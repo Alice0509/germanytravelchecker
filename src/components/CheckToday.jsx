@@ -137,6 +137,22 @@ export default function CheckToday() {
     return null
   }
 
+  const mapCityName = encodeURIComponent(result.city.name)
+  const liveCheckLinks = [
+    {
+      label: `Check supermarkets in ${result.city.name} on Google Maps`,
+      href: `https://www.google.com/maps/search/supermarket+${mapCityName}`,
+    },
+    {
+      label: `Check cafés & bakeries in ${result.city.name} on Google Maps`,
+      href: `https://www.google.com/maps/search/cafe+bakery+${mapCityName}`,
+    },
+    {
+      label: `Check pharmacies in ${result.city.name} on Google Maps`,
+      href: `https://www.google.com/maps/search/pharmacy+${mapCityName}`,
+    },
+  ]
+
   return (
     <section className="check-today" id="check-today">
       <div className="check-today-header">
@@ -233,6 +249,23 @@ export default function CheckToday() {
                   ))}
                 </div>
               )}
+
+              <div className="live-check-links">
+                <div>
+                  <strong>Live opening-hour checks</strong>
+                  <p>
+                    Opening hours can change quickly. Use Google Maps and official
+                    business websites before relying on a place being open.
+                  </p>
+                </div>
+                <div className="live-check-link-list">
+                  {liveCheckLinks.map((link) => (
+                    <a key={link.href} href={link.href} target="_blank" rel="noreferrer">
+                      {link.label}
+                    </a>
+                  ))}
+                </div>
+              </div>
 
               <p className="disclaimer">{result.disclaimer}</p>
             </div>
