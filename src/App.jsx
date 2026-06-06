@@ -60,7 +60,10 @@ function App() {
                 I am in Germany today
               </a>
               <a className="button secondary" href="#trip-dates">
-                I am planning a trip
+                I am planning one city
+              </a>
+              <a className="button secondary" href="#multi-city-trip">
+                I am visiting multiple cities
               </a>
               <a className="button tertiary" href="https://www.schulferienklar.de/">
                 Data by Schulferienklar
@@ -80,11 +83,11 @@ function App() {
 
       <section className="section mode-section">
         <div className="section-heading">
-          <p className="eyebrow">Two ways to use it</p>
-          <h2>Check today or check your trip dates.</h2>
+          <p className="eyebrow">Three ways to use it</p>
+          <h2>Choose the check that matches your trip.</h2>
           <p>
-            Germany Travel Checker is split into two simple modes, depending on
-            whether you are already in Germany or still planning your trip.
+            Use a quick same-day check, plan one city, or check a multi-city
+            Germany itinerary with separate city segments.
           </p>
         </div>
 
@@ -101,13 +104,23 @@ function App() {
           </article>
 
           <article className="mode-card">
-            <span className="mode-kicker">Before booking</span>
+            <span className="mode-kicker">One city</span>
             <h3>Check Trip Dates</h3>
             <p>
-              For planning questions: date ranges, public holiday overlaps,
+              For one-city planning: date ranges, public holiday overlaps,
               school holiday travel periods, Sundays and possible crowd warnings.
             </p>
             <a href="#trip-dates">Use Trip Dates</a>
+          </article>
+
+          <article className="mode-card">
+            <span className="mode-kicker">Multiple cities</span>
+            <h3>Multi-city Trip</h3>
+            <p>
+              For itineraries like Munich to Berlin: check each city segment,
+              transfer days and the overall trip risk.
+            </p>
+            <a href="#multi-city-trip">Use Multi-city Trip</a>
           </article>
         </div>
       </section>
