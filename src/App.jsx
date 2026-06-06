@@ -38,8 +38,8 @@ function App() {
             <span className="brand-mark">GTC</span>
             <span>Germany Travel Checker</span>
           </a>
-          <a className="topbar-link" href="https://www.schulferienklar.de/germany-travel-checker.html">
-            Preview
+          <a className="topbar-link" href="#check-today">
+            Check today
           </a>
         </nav>
 
@@ -54,8 +54,8 @@ function App() {
             </p>
 
             <div className="hero-actions">
-              <a className="button primary" href="#check-preview">
-                See what it will check
+              <a className="button primary" href="#check-today">
+                Check today
               </a>
               <a className="button secondary" href="https://www.schulferienklar.de/">
                 Data by Schulferienklar
@@ -63,8 +63,9 @@ function App() {
             </div>
 
             <p className="trust-note">
-              Built as a practical English travel layer using the Schulferienklar
-              holiday data project. No AI guesses, no fixed shop opening-hour database.
+              Built as a practical English travel layer using Schulferienklar
+              holiday data. Rule-based guidance, no AI guesses and no fixed
+              shop opening-hour database.
             </p>
           </div>
 
