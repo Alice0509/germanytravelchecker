@@ -111,6 +111,58 @@ function PlannerApp() {
         </div>
       </section>
 
+
+      <section className="planner-faq">
+        <div className="section-heading">
+          <p className="eyebrow">Germany travel FAQ</p>
+          <h2>Common planning questions before a Germany trip.</h2>
+          <p>
+            These answers are practical planning guidance for visitors. They do
+            not replace live opening-hour checks, official transport updates or
+            emergency services.
+          </p>
+        </div>
+
+        <div className="planner-faq-grid">
+          <article>
+            <h3>Are shops closed on Sundays in Germany?</h3>
+            <p>
+              Many regular shops and supermarkets are closed on Sundays. Some
+              places such as train stations, airports, bakeries, cafés or kiosks
+              may have different rules, but you should verify exact hours before
+              relying on them.
+            </p>
+          </article>
+
+          <article>
+            <h3>Do German public holidays apply everywhere?</h3>
+            <p>
+              Not always. Some public holidays apply nationwide, while others
+              depend on the federal state. A date can be normal in one city and
+              a public holiday in another.
+            </p>
+          </article>
+
+          <article>
+            <h3>Why do school holidays matter for travelers?</h3>
+            <p>
+              School holiday periods can increase pressure on trains, roads,
+              hotels and popular attractions. They do not always mean closures,
+              but they can make travel days feel busier.
+            </p>
+          </article>
+
+          <article>
+            <h3>Can this planner tell me exact shop opening hours?</h3>
+            <p>
+              No. Germany Travel Checker gives rule-based guidance. Always check
+              Google Maps and the official business website before relying on a
+              specific shop, pharmacy, café or bakery being open.
+            </p>
+          </article>
+        </div>
+      </section>
+
       <section className="planner-trust">
         <div className="eyebrow">Trust and safety</div>
         <h2>Helpful, but careful.</h2>
