@@ -28,7 +28,7 @@ export default function CityGuidePreview() {
     <section className="section city-guide-section" id="city-guides">
       <div className="section-heading">
         <p className="eyebrow">City guides</p>
-        <h2>Practical city checks are coming next.</h2>
+        <h2>Practical city checks for Germany travelers.</h2>
         <p>
           City guides will stay focused on Germany-specific travel risks:
           federal states, public holidays, Sunday closures, essentials,
