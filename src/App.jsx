@@ -152,9 +152,22 @@ function App() {
       </section>
 
       <footer className="footer">
-        <span>© 2026 Joan</span>
-        <a href="https://www.schulferienklar.de/">Schulferienklar</a>
-        <a href="https://github.com/Alice0509/germanytravelchecker">GitHub</a>
+        <div>
+          <strong>Germany Travel Checker</strong>
+          <p>
+            Rule-based Germany travel guidance for public holidays, Sunday
+            closures, trip dates and multi-city itineraries. Data by
+            Schulferienklar.
+          </p>
+        </div>
+
+        <nav aria-label="Footer links">
+          <a href="/impressum.html">Impressum</a>
+          <a href="/datenschutz.html">Datenschutz</a>
+          <a href="https://www.schulferienklar.de/">Schulferienklar</a>
+        </nav>
+
+        <span className="footer-copy">© 2026 Joan</span>
       </footer>
     </main>
   )

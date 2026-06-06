@@ -1700,3 +1700,58 @@ h1 {
 .check-details {
   margin-top: 14px;
 }
+
+/* Legal footer polish */
+.footer {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto auto;
+  align-items: center;
+  gap: 24px;
+  width: min(1180px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 28px 0 42px;
+  color: #6b7280;
+}
+
+.footer strong {
+  display: block;
+  margin-bottom: 6px;
+  color: #14213d;
+  font-size: 1rem;
+}
+
+.footer p {
+  max-width: 620px;
+  margin: 0;
+  font-size: 0.92rem;
+  line-height: 1.45;
+}
+
+.footer nav {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.footer a {
+  color: #178a84;
+  font-weight: 900;
+  text-decoration: none;
+}
+
+.footer-copy {
+  white-space: nowrap;
+}
+
+@media (max-width: 760px) {
+  .footer {
+    grid-template-columns: 1fr;
+    gap: 14px;
+    padding: 24px 0 36px;
+    text-align: left;
+  }
+
+  .footer nav {
+    flex-wrap: wrap;
+  }
+}
