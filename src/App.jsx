@@ -1,121 +1,151 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import heroImg from './assets/hero.png'
 import './App.css'
 
-function App() {
-  const [count, setCount] = useState(0)
+const CHECK_ITEMS = [
+  {
+    title: 'Public holidays',
+    text: 'Know when a German public holiday may affect shops, pharmacies, trains, museums or city plans.',
+  },
+  {
+    title: 'Sunday closures',
+    text: 'Understand why regular supermarkets and many shops may be closed on Sundays in Germany.',
+  },
+  {
+    title: 'Essentials on the go',
+    text: 'Get practical fallback ideas for water, groceries, cigarettes, cafés, bakeries and pharmacies.',
+  },
+  {
+    title: 'Trip timing',
+    text: 'Plan around school holiday crowds, long weekends and busy travel periods before you book.',
+  },
+]
 
+const CITY_CARDS = [
+  'Berlin',
+  'Munich',
+  'Hamburg',
+  'Cologne',
+  'Frankfurt',
+  'Stuttgart',
+]
+
+function App() {
   return (
-    <>
-      <section id="center">
-        <div className="hero">
-          <img src={heroImg} className="base" width="170" height="179" alt="" />
-          <img src={reactLogo} className="framework" alt="React logo" />
-          <img src={viteLogo} className="vite" alt="Vite logo" />
+    <main className="page-shell">
+      <section className="hero-section">
+        <nav className="topbar" aria-label="Main navigation">
+          <a className="brand" href="/">
+            <span className="brand-mark">GTC</span>
+            <span>Germany Travel Checker</span>
+          </a>
+          <a className="topbar-link" href="https://www.schulferienklar.de/germany-travel-checker.html">
+            Preview
+          </a>
+        </nav>
+
+        <div className="hero-grid">
+          <div className="hero-copy">
+            <p className="eyebrow">Germany travel help for English-speaking visitors</p>
+            <h1>Check what may be closed before your Germany trip gets complicated.</h1>
+            <p className="hero-text">
+              Germany Travel Checker helps visitors understand public holidays,
+              Sunday closures, pharmacy rules, grocery options and busy travel
+              periods before or during a trip.
+            </p>
+
+            <div className="hero-actions">
+              <a className="button primary" href="#check-preview">
+                See what it will check
+              </a>
+              <a className="button secondary" href="https://www.schulferienklar.de/">
+                Data by Schulferienklar
+              </a>
+            </div>
+
+            <p className="trust-note">
+              Built as a practical English travel layer using the Schulferienklar
+              holiday data project. No AI guesses, no fixed shop opening-hour database.
+            </p>
+          </div>
+
+          <aside className="checker-card" id="check-preview">
+            <p className="card-label">Future checker preview</p>
+            <h2>Today in Munich</h2>
+            <div className="status-row">
+              <span>Sunday</span>
+              <strong>Closure warning</strong>
+            </div>
+            <div className="status-row">
+              <span>Need water?</span>
+              <strong>Check stations, cafés, kiosks or hotels</strong>
+            </div>
+            <div className="status-row">
+              <span>Need a pharmacy?</span>
+              <strong>Use official emergency pharmacy services</strong>
+            </div>
+            <p className="mini-note">
+              Exact opening hours change often. Always verify on Google Maps or
+              official business pages before relying on a specific place.
+            </p>
+          </aside>
         </div>
-        <div>
-          <h1>Get started</h1>
+      </section>
+
+      <section className="section">
+        <div className="section-heading">
+          <p className="eyebrow">Built for practical travel questions</p>
+          <h2>Not a travel blog. A Germany trip checker.</h2>
           <p>
-            Edit <code>src/App.jsx</code> and save to test <code>HMR</code>
+            The goal is simple: help visitors from the US, Canada, Australia,
+            the UK and other English-speaking countries avoid common Germany
+            travel surprises.
           </p>
         </div>
-        <button
-          type="button"
-          className="counter"
-          onClick={() => setCount((count) => count + 1)}
-        >
-          Count is {count}
-        </button>
-      </section>
 
-      <div className="ticks"></div>
-
-      <section id="next-steps">
-        <div id="docs">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#documentation-icon"></use>
-          </svg>
-          <h2>Documentation</h2>
-          <p>Your questions, answered</p>
-          <ul>
-            <li>
-              <a href="https://vite.dev/" target="_blank">
-                <img className="logo" src={viteLogo} alt="" />
-                Explore Vite
-              </a>
-            </li>
-            <li>
-              <a href="https://react.dev/" target="_blank">
-                <img className="button-icon" src={reactLogo} alt="" />
-                Learn more
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div id="social">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#social-icon"></use>
-          </svg>
-          <h2>Connect with us</h2>
-          <p>Join the Vite community</p>
-          <ul>
-            <li>
-              <a href="https://github.com/vitejs/vite" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#github-icon"></use>
-                </svg>
-                GitHub
-              </a>
-            </li>
-            <li>
-              <a href="https://chat.vite.dev/" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#discord-icon"></use>
-                </svg>
-                Discord
-              </a>
-            </li>
-            <li>
-              <a href="https://x.com/vite_js" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#x-icon"></use>
-                </svg>
-                X.com
-              </a>
-            </li>
-            <li>
-              <a href="https://bsky.app/profile/vite.dev" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#bluesky-icon"></use>
-                </svg>
-                Bluesky
-              </a>
-            </li>
-          </ul>
+        <div className="feature-grid">
+          {CHECK_ITEMS.map((item) => (
+            <article className="feature-card" key={item.title}>
+              <h3>{item.title}</h3>
+              <p>{item.text}</p>
+            </article>
+          ))}
         </div>
       </section>
 
-      <div className="ticks"></div>
-      <section id="spacer"></section>
-    </>
+      <section className="section split-section">
+        <div>
+          <p className="eyebrow">City-first planning</p>
+          <h2>Start with where you are going.</h2>
+          <p>
+            Travelers usually know they are visiting Berlin or Munich, not which
+            German federal state controls the holiday calendar. Germany Travel
+            Checker will translate city plans into practical date warnings.
+          </p>
+        </div>
+
+        <div className="city-grid" aria-label="Initial city examples">
+          {CITY_CARDS.map((city) => (
+            <span key={city}>{city}</span>
+          ))}
+        </div>
+      </section>
+
+      <section className="section safety-section">
+        <p className="eyebrow">Safety-first guidance</p>
+        <h2>Helpful, but careful.</h2>
+        <p>
+          Germany Travel Checker will not diagnose medical issues, recommend
+          specific emergency rooms, maintain tobacco vending machine locations,
+          or promise that a shop is open. It will point travelers to stable
+          rules, official sources and practical fallback categories.
+        </p>
+      </section>
+
+      <footer className="footer">
+        <span>© 2026 Joan</span>
+        <a href="https://www.schulferienklar.de/">Schulferienklar</a>
+        <a href="https://github.com/Alice0509/germanytravelchecker">GitHub</a>
+      </footer>
+    </main>
   )
 }
 
