@@ -1921,3 +1921,48 @@ h1 {
     margin-top: 18px;
   }
 }
+
+.planner-next-steps {
+  margin-top: 28px;
+  border: 1px solid rgba(20, 33, 61, 0.1);
+  border-radius: 24px;
+  padding: 24px;
+  background: rgba(255, 255, 255, 0.64);
+}
+
+.planner-next-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin-top: 18px;
+}
+
+.planner-next-grid article {
+  border: 1px solid rgba(20, 33, 61, 0.08);
+  border-radius: 20px;
+  padding: 18px;
+  background: rgba(255, 255, 255, 0.72);
+}
+
+.planner-next-grid h3 {
+  margin: 0 0 8px;
+}
+
+.planner-next-grid p {
+  margin: 0 0 14px;
+  color: rgba(20, 33, 61, 0.74);
+  line-height: 1.6;
+}
+
+.planner-next-grid a {
+  display: inline-block;
+  margin-right: 10px;
+  color: inherit;
+  font-weight: 700;
+}
+
+@media (max-width: 780px) {
+  .planner-next-grid {
+    grid-template-columns: 1fr;
+  }
+}

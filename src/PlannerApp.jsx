@@ -70,6 +70,47 @@ function PlannerApp() {
         </div>
       </section>
 
+
+      <section className="planner-next-steps">
+        <div className="section-heading">
+          <p className="eyebrow">What to check next</p>
+          <h2>Turn the date check into a practical plan.</h2>
+          <p>
+            After checking your dates, use these next steps to reduce common
+            Germany travel friction before you book, transfer or rely on shops.
+          </p>
+        </div>
+
+        <div className="planner-next-grid">
+          <article>
+            <h3>Check your arrival day</h3>
+            <p>
+              If you arrive on a Sunday or public holiday, plan groceries,
+              water, cafés, bakeries and pharmacy fallback options before you land.
+            </p>
+            <a href="/">Use Check Today</a>
+          </article>
+
+          <article>
+            <h3>Open a city guide</h3>
+            <p>
+              Berlin and Munich guides give practical city-specific context for
+              closures, fallback planning and local travel friction.
+            </p>
+            <a href="/berlin.html">Berlin guide</a>
+            <a href="/munich.html">Munich guide</a>
+          </article>
+
+          <article>
+            <h3>Double-check live details</h3>
+            <p>
+              Verify exact opening hours, transport changes and emergency pharmacy
+              duty schedules through official or live sources before relying on them.
+            </p>
+          </article>
+        </div>
+      </section>
+
       <section className="planner-trust">
         <div className="eyebrow">Trust and safety</div>
         <h2>Helpful, but careful.</h2>
