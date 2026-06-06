@@ -1341,3 +1341,95 @@ h3 {
       linear-gradient(145deg, #16324a, #10283d);
   }
 }
+
+.city-guide-section {
+  background:
+    radial-gradient(circle at 12% 0%, rgba(23, 138, 132, 0.08), transparent 18rem),
+    radial-gradient(circle at 88% 10%, rgba(242, 178, 51, 0.1), transparent 18rem),
+    rgba(255, 253, 248, 0.96);
+}
+
+.city-guide-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 26px;
+}
+
+.city-guide-card {
+  border-radius: 26px;
+  padding: 24px;
+  background: #fffaf0;
+  border: 1px solid rgba(20, 33, 61, 0.08);
+}
+
+.city-guide-card h3 {
+  margin-bottom: 10px;
+}
+
+.city-guide-card p {
+  color: #5d6673;
+}
+
+.city-guide-notes {
+  display: grid;
+  gap: 10px;
+  margin: 18px 0;
+}
+
+.city-guide-notes div {
+  border-radius: 18px;
+  padding: 14px;
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(20, 33, 61, 0.07);
+}
+
+.city-guide-notes strong,
+.city-guide-notes span {
+  display: block;
+}
+
+.city-guide-notes strong {
+  margin-bottom: 5px;
+  color: #14213d;
+  font-size: 0.86rem;
+}
+
+.city-guide-notes span {
+  color: #5d6673;
+  font-size: 0.94rem;
+  line-height: 1.45;
+}
+
+.city-guide-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.city-guide-actions a {
+  border-radius: 999px;
+  padding: 9px 12px;
+  color: #116b67;
+  background: rgba(23, 138, 132, 0.1);
+  border: 1px solid rgba(23, 138, 132, 0.16);
+  font-weight: 900;
+  text-decoration: none;
+}
+
+@media (max-width: 780px) {
+  .city-guide-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 560px) {
+  .city-guide-card {
+    padding: 18px;
+    border-radius: 22px;
+  }
+
+  .city-guide-notes span {
+    font-size: 0.92rem;
+  }
+}

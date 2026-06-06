@@ -1,6 +1,7 @@
 import CheckToday from './components/CheckToday.jsx'
 import TripDates from './components/TripDates.jsx'
 import MultiCityTrip from './components/MultiCityTrip.jsx'
+import CityGuidePreview from './components/CityGuidePreview.jsx'
 import './App.css'
 
 const CHECK_ITEMS = [
@@ -137,6 +138,8 @@ function App() {
       <TripDates />
 
       <MultiCityTrip />
+
+      <CityGuidePreview />
 
       <section className="section safety-section">
         <p className="eyebrow">Safety-first guidance</p>
