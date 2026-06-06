@@ -1433,3 +1433,62 @@ h3 {
     font-size: 0.92rem;
   }
 }
+
+.compact-city-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.compact-city-card {
+  border-radius: 22px;
+  padding: 18px;
+  background: #fbf8f2;
+  border: 1px solid rgba(20, 33, 61, 0.08);
+}
+
+.compact-city-card span {
+  display: inline-flex;
+  width: fit-content;
+  margin-bottom: 10px;
+  border-radius: 999px;
+  padding: 6px 9px;
+  color: #116b67;
+  background: rgba(23, 138, 132, 0.1);
+  font-size: 0.74rem;
+  font-weight: 950;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.compact-city-card h3 {
+  margin: 0 0 8px;
+}
+
+.compact-city-card p {
+  color: #5d6673;
+  font-size: 0.98rem;
+  line-height: 1.45;
+}
+
+@media (max-width: 900px) {
+  .compact-city-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 560px) {
+  .compact-city-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .compact-city-card {
+    padding: 16px;
+  }
+
+  .safety-section p {
+    font-size: 1rem;
+    line-height: 1.45;
+  }
+}
