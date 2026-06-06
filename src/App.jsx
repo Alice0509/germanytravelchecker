@@ -1,6 +1,4 @@
 import CheckToday from './components/CheckToday.jsx'
-import TripDates from './components/TripDates.jsx'
-import MultiCityTrip from './components/MultiCityTrip.jsx'
 import CityGuidePreview from './components/CityGuidePreview.jsx'
 import './App.css'
 
@@ -21,63 +19,53 @@ const CHECK_ITEMS = [
 
 function App() {
   return (
-    <main className="page-shell">
-      <section className="hero-section">
-        <nav className="topbar" aria-label="Main navigation">
-          <a className="brand" href="/" aria-label="Germany Travel Checker home">
-            <span className="brand-mark" aria-hidden="true">
-              <img src="/icon-192.png" alt="" />
-            </span>
-            <span>Germany Travel Checker</span>
+    <main className="app-shell">
+      <section className="hero">
+        <nav className="top-nav" aria-label="Main navigation">
+          <a className="brand" href="/">
+            Germany Travel Checker
           </a>
-          <a className="topbar-link" href="#check-today">
-            Check today
-          </a>
+          <div className="nav-links">
+            <a href="#check-today">Check today</a>
+            <a href="/planner.html">Trip planner</a>
+            <a href="#city-guides">City guides</a>
+          </div>
         </nav>
 
         <div className="hero-grid">
           <div className="hero-copy">
             <p className="eyebrow">Germany travel help for English-speaking visitors</p>
             <h1>Know what may be closed, busy or harder before your Germany trip gets complicated.</h1>
-            <p className="hero-text">
+            <p className="hero-lede">
               Germany Travel Checker helps visitors understand public holidays,
               Sunday closures, pharmacy rules, grocery options and busy travel
               periods before or during a Germany trip.
             </p>
-
             <div className="hero-actions">
-              <a className="button primary" href="#check-today">
-                I am in Germany today
-              </a>
-              <a className="button secondary" href="#trip-dates">
-                I am planning one city
-              </a>
-              <a className="button secondary" href="#multi-city-trip">
-                I am visiting multiple cities
-              </a>
-              <a className="button tertiary" href="https://www.schulferienklar.de/">
-                Data by Schulferienklar
-              </a>
+              <a href="#check-today">I am in Germany today</a>
+              <a href="/planner.html">I am planning trip dates</a>
+              <a href="#city-guides">I want city checks</a>
             </div>
-
-            <p className="trust-note">
-              Built as a practical English travel layer using Schulferienklar
-              holiday data. Rule-based guidance, no AI guesses and no fixed
-              shop opening-hour database.
-            </p>
           </div>
 
-          <CheckToday />
+          <div className="hero-card">
+            <p className="eyebrow">Data by Schulferienklar</p>
+            <p>
+              Built as a practical English travel layer using Schulferienklar
+              holiday data. Rule-based guidance, no AI guesses and no fixed shop
+              opening-hour database.
+            </p>
+          </div>
         </div>
       </section>
 
-      <section className="section mode-section">
+      <section className="mode-section" aria-labelledby="mode-heading">
         <div className="section-heading">
           <p className="eyebrow">Three ways to use it</p>
-          <h2>Choose the check that matches your trip.</h2>
+          <h2 id="mode-heading">Choose the check that matches your situation.</h2>
           <p>
-            Use a quick same-day check, plan one city, or check a multi-city
-            Germany itinerary with separate city segments.
+            Start with a same-day check, plan several travel dates, or open a
+            city guide for practical local context.
           </p>
         </div>
 
@@ -93,30 +81,33 @@ function App() {
             <a href="#check-today">Use Check Today</a>
           </article>
 
-          <article className="mode-card">
-            <span className="mode-kicker">One city</span>
-            <h3>Check Trip Dates</h3>
+          <article className="mode-card featured-mode">
+            <span className="mode-kicker">Planning ahead</span>
+            <h3>Trip Planner</h3>
             <p>
-              For one-city planning: date ranges, public holiday overlaps,
-              school holiday travel periods, Sundays and possible crowd warnings.
+              For one-city date ranges or multi-city itineraries. Check Sundays,
+              public holidays, school holiday travel pressure and transfer days.
             </p>
-            <a href="#trip-dates">Use Trip Dates</a>
+            <a href="/planner.html">Open Trip Planner</a>
           </article>
 
           <article className="mode-card">
-            <span className="mode-kicker">Multiple cities</span>
-            <h3>Multi-city Trip</h3>
+            <span className="mode-kicker">City context</span>
+            <h3>City Guides</h3>
             <p>
-              For itineraries like Munich to Berlin: check each city segment,
-              transfer days and the overall trip risk.
+              Start with practical Berlin and Munich checks for local travel
+              friction, fallback planning and city-specific notes.
             </p>
-            <a href="#multi-city-trip">Use Multi-city Trip</a>
-            <a href="/planner.html">Open trip planner</a>
+            <a href="#city-guides">Open City Guides</a>
           </article>
         </div>
       </section>
 
-      <section className="section">
+      <section id="check-today">
+        <CheckToday />
+      </section>
+
+      <section className="info-section">
         <div className="section-heading">
           <p className="eyebrow">Built for practical travel questions</p>
           <h2>Not a travel blog. A Germany trip checker.</h2>
@@ -126,9 +117,9 @@ function App() {
           </p>
         </div>
 
-        <div className="feature-grid">
+        <div className="info-grid">
           {CHECK_ITEMS.map((item) => (
-            <article className="feature-card" key={item.title}>
+            <article key={item.title}>
               <h3>{item.title}</h3>
               <p>{item.text}</p>
             </article>
@@ -136,13 +127,11 @@ function App() {
         </div>
       </section>
 
-      <TripDates />
+      <section id="city-guides">
+        <CityGuidePreview />
+      </section>
 
-      <MultiCityTrip />
-
-      <CityGuidePreview />
-
-      <section className="section safety-section">
+      <section className="safety-section">
         <p className="eyebrow">Safety-first guidance</p>
         <h2>Helpful, but careful.</h2>
         <p>
@@ -152,7 +141,7 @@ function App() {
         </p>
       </section>
 
-      <footer className="footer">
+      <footer>
         <div>
           <strong>Germany Travel Checker</strong>
           <p>
@@ -161,14 +150,12 @@ function App() {
             Schulferienklar.
           </p>
         </div>
-
-        <nav aria-label="Footer links">
+        <div className="footer-links">
           <a href="/impressum.html">Impressum</a>
           <a href="/datenschutz.html">Datenschutz</a>
           <a href="https://www.schulferienklar.de/">Schulferienklar</a>
-        </nav>
-
-        <span className="footer-copy">© 2026 Joan</span>
+        </div>
+        <span>© 2026 Joan</span>
       </footer>
     </main>
   )
