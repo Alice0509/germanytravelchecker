@@ -1,11 +1,13 @@
 const CITY_GUIDES = [
   {
     city: 'Berlin',
+    href: '/berlin.html',
     state: 'Berlin',
     note: 'Public holidays, Sunday closures and practical fallback ideas for Germany’s capital.',
   },
   {
     city: 'Munich',
+    href: '/munich.html',
     state: 'Bavaria',
     note: 'Bavarian public holidays, regional notes, Sunday closures and pharmacy guidance.',
   },
@@ -40,6 +42,7 @@ export default function CityGuidePreview() {
             <span>{guide.state}</span>
             <h3>{guide.city}</h3>
             <p>{guide.note}</p>
+            {guide.href && <a href={guide.href}>Open guide</a>}
           </article>
         ))}
       </div>
