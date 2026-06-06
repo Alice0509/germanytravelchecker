@@ -180,10 +180,9 @@ export default function CheckToday() {
         </label>
 
         <label>
-          <span>Date</span>
+          <span>Germany date</span>
           <input type="date" value={dateKey} onChange={(event) => setDateKey(event.target.value)} />
-          <small>Uses Germany local date by default. You can change it anytime.</small>
-        </label>
+                  </label>
       </div>
 
       <div className="need-picker" aria-label="What do you need?">
