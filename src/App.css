@@ -1107,3 +1107,9 @@ h3 {
     padding: 18px;
   }
 }
+
+@media (min-width: 900px) {
+  .feature-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}

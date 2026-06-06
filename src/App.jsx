@@ -5,20 +5,16 @@ import './App.css'
 
 const CHECK_ITEMS = [
   {
-    title: 'Public holidays',
-    text: 'Know when a German public holiday may affect shops, pharmacies, trains, museums or city plans.',
+    title: 'Closures',
+    text: 'Public holidays and Sundays can affect shops, groceries, pharmacies and plans.',
   },
   {
-    title: 'Sunday closures',
-    text: 'Understand why regular supermarkets and many shops may be closed on Sundays in Germany.',
-  },
-  {
-    title: 'Essentials on the go',
-    text: 'Get practical fallback ideas for water, groceries, cigarettes, cafés, bakeries and pharmacies.',
+    title: 'Essentials',
+    text: 'Find practical fallback ideas for water, cafés, bakeries, groceries and pharmacy needs.',
   },
   {
     title: 'Trip timing',
-    text: 'Plan around school holiday crowds, long weekends and busy travel periods before you book.',
+    text: 'Spot school holiday periods, transfer days and dates that may need extra planning.',
   },
 ]
 
@@ -130,9 +126,8 @@ function App() {
           <p className="eyebrow">Built for practical travel questions</p>
           <h2>Not a travel blog. A Germany trip checker.</h2>
           <p>
-            The goal is simple: help visitors from the US, Canada, Australia,
-            the UK and other English-speaking countries avoid common Germany
-            travel surprises.
+            A quick way for English-speaking visitors to check Germany-specific
+            closure, holiday and trip-timing surprises.
           </p>
         </div>
 
@@ -153,11 +148,10 @@ function App() {
       <section className="section split-section">
         <div>
           <p className="eyebrow">City-first planning</p>
-          <h2>Start with where you are going.</h2>
+          <h2>Start with the city, not the federal state.</h2>
           <p>
-            Travelers usually know they are visiting Berlin or Munich, not which
-            German federal state controls the holiday calendar. Germany Travel
-            Checker will translate city plans into practical date warnings.
+            Choose Berlin, Munich or another city. The checker maps it to the
+            right German federal state for holiday and school-break warnings.
           </p>
         </div>
 
@@ -172,10 +166,9 @@ function App() {
         <p className="eyebrow">Safety-first guidance</p>
         <h2>Helpful, but careful.</h2>
         <p>
-          Germany Travel Checker will not diagnose medical issues, recommend
-          specific emergency rooms, maintain tobacco vending machine locations,
-          or promise that a shop is open. It will point travelers to stable
-          rules, official sources and practical fallback categories.
+          Germany Travel Checker does not diagnose medical issues, promise shop
+          opening hours or maintain live emergency listings. It points travelers
+          to stable rules, official sources and practical fallback categories.
         </p>
       </section>
 
