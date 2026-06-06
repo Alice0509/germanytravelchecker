@@ -1,3 +1,4 @@
+import CheckToday from './components/CheckToday.jsx'
 import './App.css'
 
 const CHECK_ITEMS = [
@@ -67,26 +68,7 @@ function App() {
             </p>
           </div>
 
-          <aside className="checker-card" id="check-preview">
-            <p className="card-label">Future checker preview</p>
-            <h2>Today in Munich</h2>
-            <div className="status-row">
-              <span>Sunday</span>
-              <strong>Closure warning</strong>
-            </div>
-            <div className="status-row">
-              <span>Need water?</span>
-              <strong>Check stations, cafés, kiosks or hotels</strong>
-            </div>
-            <div className="status-row">
-              <span>Need a pharmacy?</span>
-              <strong>Use official emergency pharmacy services</strong>
-            </div>
-            <p className="mini-note">
-              Exact opening hours change often. Always verify on Google Maps or
-              official business pages before relying on a specific place.
-            </p>
-          </aside>
+          <CheckToday />
         </div>
       </section>
 
