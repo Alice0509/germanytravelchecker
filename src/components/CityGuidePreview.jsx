@@ -42,7 +42,7 @@ export default function CityGuidePreview() {
             <span>{guide.state}</span>
             <h3>{guide.city}</h3>
             <p>{guide.note}</p>
-            {guide.href && <a href={guide.href}>Open guide</a>}
+            {guide.href && <a href={guide.href}>Open {guide.city} guide</a>}
           </article>
         ))}
       </div>
