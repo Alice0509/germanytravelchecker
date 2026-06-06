@@ -111,6 +111,7 @@ function App() {
               transfer days and the overall trip risk.
             </p>
             <a href="#multi-city-trip">Use Multi-city Trip</a>
+            <a href="/planner.html">Open trip planner</a>
           </article>
         </div>
       </section>
