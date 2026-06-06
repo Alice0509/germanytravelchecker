@@ -18,15 +18,6 @@ const CHECK_ITEMS = [
   },
 ]
 
-const CITY_CARDS = [
-  'Berlin',
-  'Munich',
-  'Hamburg',
-  'Cologne',
-  'Frankfurt',
-  'Stuttgart',
-]
-
 function App() {
   return (
     <main className="page-shell">
@@ -146,23 +137,6 @@ function App() {
       <TripDates />
 
       <MultiCityTrip />
-
-      <section className="section split-section">
-        <div>
-          <p className="eyebrow">City-first planning</p>
-          <h2>Start with the city, not the federal state.</h2>
-          <p>
-            Choose Berlin, Munich or another city. The checker maps it to the
-            right German federal state for holiday and school-break warnings.
-          </p>
-        </div>
-
-        <div className="city-grid" aria-label="Initial city examples">
-          {CITY_CARDS.map((city) => (
-            <span key={city}>{city}</span>
-          ))}
-        </div>
-      </section>
 
       <section className="section safety-section">
         <p className="eyebrow">Safety-first guidance</p>
