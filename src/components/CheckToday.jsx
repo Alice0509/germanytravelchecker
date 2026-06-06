@@ -166,9 +166,12 @@ export default function CheckToday() {
         <label>
           <span>Date</span>
           <input type="date" value={dateKey} onChange={(event) => setDateKey(event.target.value)} />
-          <small>Uses Germany local date by default. You can change it anytime.</small>
         </label>
       </div>
+
+      <p className="date-note">
+        Uses Germany local date by default. You can change it anytime.
+      </p>
 
       <div className="need-picker" aria-label="What do you need?">
         {result.availableNeeds.map((need) => (
