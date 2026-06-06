@@ -1966,3 +1966,41 @@ h1 {
     grid-template-columns: 1fr;
   }
 }
+
+.planner-faq {
+  margin-top: 28px;
+  border: 1px solid rgba(20, 33, 61, 0.1);
+  border-radius: 24px;
+  padding: 24px;
+  background: rgba(255, 255, 255, 0.64);
+}
+
+.planner-faq-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+  margin-top: 18px;
+}
+
+.planner-faq-grid article {
+  border: 1px solid rgba(20, 33, 61, 0.08);
+  border-radius: 20px;
+  padding: 18px;
+  background: rgba(255, 255, 255, 0.72);
+}
+
+.planner-faq-grid h3 {
+  margin: 0 0 8px;
+}
+
+.planner-faq-grid p {
+  margin: 0;
+  color: rgba(20, 33, 61, 0.74);
+  line-height: 1.6;
+}
+
+@media (max-width: 780px) {
+  .planner-faq-grid {
+    grid-template-columns: 1fr;
+  }
+}
