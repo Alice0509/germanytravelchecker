@@ -136,15 +136,15 @@ export default function CheckToday() {
   return (
     <section className="check-today" id="check-today">
       <div className="check-today-header">
-        <p className="card-label">Live trip check</p>
+        <p className="card-label">For today or right now</p>
         <h2>{result.title}</h2>
         <span className={`risk-pill risk-${result.riskLevel}`}>{result.riskLevel} risk</span>
       </div>
 
       <p className="check-intro">
-        Choose a city, date and what you need. The result checks public
-        holidays, school holiday periods, Sunday closures and practical
-        fallback options for travelers.
+        Use this when you are already in Germany or need a quick same-day
+        check. Choose a city, date and what you need to see closure patterns
+        and practical fallback options.
       </p>
 
       <div className="checker-controls">

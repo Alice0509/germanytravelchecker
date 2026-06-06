@@ -123,11 +123,12 @@ export default function TripDates() {
   return (
     <section className="section trip-dates-section" id="trip-dates">
       <div className="section-heading">
-        <p className="eyebrow">Plan before you book</p>
-        <h2>Check your Germany trip dates.</h2>
+        <p className="eyebrow">For planning before you book</p>
+        <h2>Check whether your travel dates need extra planning.</h2>
         <p>
-          Choose one city and a date range to see whether your trip overlaps
-          Sundays, public holidays or school holiday periods.
+          Use this before booking hotels, trains or activities. Choose one city
+          and a date range to see whether your trip overlaps Sundays, public
+          holidays or school holiday periods.
         </p>
       </div>
 

@@ -47,19 +47,19 @@ function App() {
         <div className="hero-grid">
           <div className="hero-copy">
             <p className="eyebrow">Germany travel help for English-speaking visitors</p>
-            <h1>Check what may be closed before your Germany trip gets complicated.</h1>
+            <h1>Know what may be closed, busy or harder before your Germany trip gets complicated.</h1>
             <p className="hero-text">
               Germany Travel Checker helps visitors understand public holidays,
               Sunday closures, pharmacy rules, grocery options and busy travel
-              periods before or during a trip.
+              periods before or during a Germany trip.
             </p>
 
             <div className="hero-actions">
               <a className="button primary" href="#check-today">
-                Check today
+                I am in Germany today
               </a>
               <a className="button secondary" href="#trip-dates">
-                Check trip dates
+                I am planning a trip
               </a>
               <a className="button tertiary" href="https://www.schulferienklar.de/">
                 Data by Schulferienklar
@@ -74,6 +74,40 @@ function App() {
           </div>
 
           <CheckToday />
+        </div>
+      </section>
+
+      <section className="section mode-section">
+        <div className="section-heading">
+          <p className="eyebrow">Two ways to use it</p>
+          <h2>Check today or check your trip dates.</h2>
+          <p>
+            Germany Travel Checker is split into two simple modes, depending on
+            whether you are already in Germany or still planning your trip.
+          </p>
+        </div>
+
+        <div className="mode-grid">
+          <article className="mode-card">
+            <span className="mode-kicker">Right now</span>
+            <h3>Check Today</h3>
+            <p>
+              For same-day questions: Sunday closures, public holidays,
+              pharmacies, groceries, water, cafés, bakeries and quick fallback
+              ideas.
+            </p>
+            <a href="#check-today">Use Check Today</a>
+          </article>
+
+          <article className="mode-card">
+            <span className="mode-kicker">Before booking</span>
+            <h3>Check Trip Dates</h3>
+            <p>
+              For planning questions: date ranges, public holiday overlaps,
+              school holiday travel periods, Sundays and possible crowd warnings.
+            </p>
+            <a href="#trip-dates">Use Trip Dates</a>
+          </article>
         </div>
       </section>
 
