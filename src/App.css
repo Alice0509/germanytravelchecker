@@ -1614,3 +1614,64 @@ h3 {
 .footer {
   color: #6b7280;
 }
+
+/* Hero density polish */
+.hero-copy {
+  padding: clamp(34px, 4.6vw, 64px);
+}
+
+h1 {
+  max-width: 8.7em;
+  font-size: clamp(4.6rem, 6.2vw, 6.9rem);
+  line-height: 0.9;
+  letter-spacing: -0.072em;
+}
+
+.hero-text {
+  max-width: 720px;
+  font-size: clamp(1.06rem, 1.45vw, 1.28rem);
+  line-height: 1.36;
+}
+
+.hero-actions {
+  margin-top: 30px;
+  gap: 12px;
+}
+
+.hero-actions .button {
+  padding: 13px 22px;
+}
+
+@media (min-width: 980px) {
+  .hero-grid {
+    align-items: start;
+  }
+}
+
+@media (max-width: 760px) {
+  .hero-copy {
+    padding: 26px;
+  }
+
+  h1 {
+    max-width: 100%;
+    font-size: clamp(3.4rem, 13.4vw, 4.8rem);
+    line-height: 0.9;
+    letter-spacing: -0.07em;
+  }
+
+  .hero-text {
+    font-size: 1.02rem;
+    line-height: 1.42;
+  }
+
+  .hero-actions {
+    margin-top: 24px;
+  }
+
+  .hero-actions .button {
+    width: 100%;
+    justify-content: center;
+    padding: 13px 18px;
+  }
+}
