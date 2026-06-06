@@ -619,3 +619,38 @@ h3 {
     font-size: 0.98rem;
   }
 }
+
+.checker-controls select,
+.checker-controls input {
+  box-sizing: border-box;
+  min-width: 0;
+  max-width: 100%;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+.checker-controls input[type="date"] {
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+
+@media (max-width: 560px) {
+  .check-today {
+    overflow: hidden;
+  }
+
+  .checker-controls {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .checker-controls label {
+    min-width: 0;
+  }
+
+  .checker-controls input[type="date"] {
+    min-width: 0;
+    max-width: 100%;
+  }
+}
