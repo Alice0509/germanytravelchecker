@@ -1755,3 +1755,11 @@ h1 {
     flex-wrap: wrap;
   }
 }
+
+.compact-city-card a {
+  display: inline-flex;
+  margin-top: 10px;
+  color: #178a84;
+  font-weight: 950;
+  text-decoration: none;
+}
