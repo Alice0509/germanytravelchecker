@@ -1090,3 +1090,20 @@ h3 {
     display: grid;
   }
 }
+
+@media (min-width: 900px) {
+  .mode-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 560px) {
+  .mode-card p {
+    font-size: 1rem;
+    line-height: 1.42;
+  }
+
+  .mode-card {
+    padding: 18px;
+  }
+}
