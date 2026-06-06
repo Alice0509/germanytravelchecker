@@ -1,0 +1,17 @@
+{
+  "name": "Germany Travel Checker",
+  "short_name": "Germany Checker",
+  "description": "Check German public holidays, Sunday closures, pharmacies, groceries and practical trip timing.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#f6f3ec",
+  "theme_color": "#1f6f64",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}
