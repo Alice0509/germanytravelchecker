@@ -32,8 +32,10 @@ function App() {
     <main className="page-shell">
       <section className="hero-section">
         <nav className="topbar" aria-label="Main navigation">
-          <a className="brand" href="/">
-            <span className="brand-mark">GTC</span>
+          <a className="brand" href="/" aria-label="Germany Travel Checker home">
+            <span className="brand-mark" aria-hidden="true">
+              <img src="/icon-192.png" alt="" />
+            </span>
             <span>Germany Travel Checker</span>
           </a>
           <a className="topbar-link" href="#check-today">
