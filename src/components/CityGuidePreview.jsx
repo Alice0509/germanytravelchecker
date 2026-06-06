@@ -1,54 +1,47 @@
-import { CITY_GUIDES } from '../data/cityGuides.js'
-import { findTravelCityById } from '../data/travelCities.js'
+const CITY_GUIDES = [
+  {
+    city: 'Berlin',
+    state: 'Berlin',
+    note: 'Public holidays, Sunday closures and practical fallback ideas for Germany’s capital.',
+  },
+  {
+    city: 'Munich',
+    state: 'Bavaria',
+    note: 'Bavarian public holidays, regional notes, Sunday closures and pharmacy guidance.',
+  },
+  {
+    city: 'Hamburg',
+    state: 'Hamburg',
+    note: 'City-state holiday checks, Sunday patterns and travel timing notes.',
+  },
+  {
+    city: 'Cologne',
+    state: 'North Rhine-Westphalia',
+    note: 'Statewide holiday checks, essentials and trip timing for western Germany.',
+  },
+]
 
 export default function CityGuidePreview() {
   return (
     <section className="section city-guide-section" id="city-guides">
       <div className="section-heading">
         <p className="eyebrow">City guides</p>
-        <h2>Start with practical city checks.</h2>
+        <h2>Practical city checks are coming next.</h2>
         <p>
-          Berlin and Munich are the first city guide previews. Each guide focuses
-          on federal state rules, Sunday closures, public holidays, school
-          holiday travel effects, essentials and pharmacy guidance.
+          City guides will stay focused on Germany-specific travel risks:
+          federal states, public holidays, Sunday closures, essentials,
+          pharmacies and trip timing.
         </p>
       </div>
 
-      <div className="city-guide-grid">
-        {CITY_GUIDES.map((guide) => {
-          const city = findTravelCityById(guide.cityId)
-
-          return (
-            <article className="city-guide-card" key={guide.cityId}>
-              <span className="mode-kicker">
-                {city?.englishStateName || city?.bundeslandName || 'Germany'}
-              </span>
-              <h3>{guide.title}</h3>
-              <p>{guide.overview}</p>
-
-              <div className="city-guide-notes">
-                <div>
-                  <strong>Public holidays</strong>
-                  <span>{guide.publicHolidayNote}</span>
-                </div>
-                <div>
-                  <strong>Sundays</strong>
-                  <span>{guide.sundayClosureNote}</span>
-                </div>
-                <div>
-                  <strong>Pharmacies</strong>
-                  <span>{guide.pharmacyNote}</span>
-                </div>
-              </div>
-
-              <div className="city-guide-actions">
-                <a href="#check-today">Check today</a>
-                <a href="#trip-dates">Check dates</a>
-                <a href="#multi-city-trip">Multi-city</a>
-              </div>
-            </article>
-          )
-        })}
+      <div className="compact-city-grid">
+        {CITY_GUIDES.map((guide) => (
+          <article className="compact-city-card" key={guide.city}>
+            <span>{guide.state}</span>
+            <h3>{guide.city}</h3>
+            <p>{guide.note}</p>
+          </article>
+        ))}
       </div>
     </section>
   )
