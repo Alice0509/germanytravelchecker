@@ -1675,3 +1675,28 @@ h1 {
     padding: 13px 18px;
   }
 }
+
+/* Compact Check Today details */
+.compact-status-grid {
+  margin-bottom: 14px;
+}
+
+.details-toggle {
+  width: 100%;
+  margin: 4px 0 0;
+  border: 1px solid rgba(156, 230, 216, 0.28);
+  border-radius: 999px;
+  padding: 11px 14px;
+  color: #9ce6d8;
+  background: rgba(156, 230, 216, 0.08);
+  font-weight: 900;
+  text-align: center;
+}
+
+.details-toggle:hover {
+  background: rgba(156, 230, 216, 0.12);
+}
+
+.check-details {
+  margin-top: 14px;
+}

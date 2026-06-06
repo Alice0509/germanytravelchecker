@@ -39,6 +39,7 @@ export default function CheckToday() {
   const [cityId, setCityId] = useState('berlin')
   const [dateKey, setDateKey] = useState(getTodayDateKey)
   const [selectedNeedIds, setSelectedNeedIds] = useState(DEFAULT_NEEDS)
+  const [showDetails, setShowDetails] = useState(false)
   const [schoolHolidays, setSchoolHolidays] = useState([])
   const [publicHolidays, setPublicHolidays] = useState([])
   const [isLoading, setIsLoading] = useState(false)
@@ -184,7 +185,7 @@ export default function CheckToday() {
         <>
           <p className="result-summary">{result.summary}</p>
 
-          <div className="status-grid">
+          <div className="status-grid compact-status-grid">
             <div>
               <strong>Federal state</strong>
               <span>
@@ -195,28 +196,43 @@ export default function CheckToday() {
               <strong>Sunday</strong>
               <span>{result.status.isSunday ? 'Yes' : 'No'}</span>
             </div>
-            <div>
-              <strong>Public holiday</strong>
-              <span>{getPublicHolidayName(result.status.publicHoliday)}</span>
-            </div>
-            <div>
-              <strong>School holiday</strong>
-              <span>{getSchoolHolidayName(result.status.schoolHoliday)}</span>
-            </div>
           </div>
 
-          {result.guidance.length > 0 && (
-            <div className="guidance-list">
-              {result.guidance.map((item) => (
-                <article key={item.title}>
-                  <strong>{item.title}</strong>
-                  <p>{item.note}</p>
-                </article>
-              ))}
+          <button
+            className="details-toggle"
+            type="button"
+            onClick={() => setShowDetails((current) => !current)}
+          >
+            {showDetails ? 'Hide practical details' : 'Show practical details'}
+          </button>
+
+          {showDetails && (
+            <div className="check-details">
+              <div className="status-grid">
+                <div>
+                  <strong>Public holiday</strong>
+                  <span>{getPublicHolidayName(result.status.publicHoliday)}</span>
+                </div>
+                <div>
+                  <strong>School holiday</strong>
+                  <span>{getSchoolHolidayName(result.status.schoolHoliday)}</span>
+                </div>
+              </div>
+
+              {result.guidance.length > 0 && (
+                <div className="guidance-list">
+                  {result.guidance.map((item) => (
+                    <article key={item.title}>
+                      <strong>{item.title}</strong>
+                      <p>{item.note}</p>
+                    </article>
+                  ))}
+                </div>
+              )}
+
+              <p className="disclaimer">{result.disclaimer}</p>
             </div>
           )}
-
-          <p className="disclaimer">{result.disclaimer}</p>
         </>
       )}
 
