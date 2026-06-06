@@ -2004,3 +2004,10 @@ h1 {
     grid-template-columns: 1fr;
   }
 }
+
+.date-note {
+  margin: -6px 0 18px;
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 0.88rem;
+  line-height: 1.45;
+}
