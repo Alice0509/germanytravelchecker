@@ -88,7 +88,7 @@ function App() {
               For one-city date ranges or multi-city itineraries. Check Sundays,
               public holidays, school holiday travel pressure and transfer days.
             </p>
-            <a href="/planner.html">Open Trip Planner</a>
+            <a href="/planner.html">Plan several days or cities</a>
           </article>
 
           <article className="mode-card">
