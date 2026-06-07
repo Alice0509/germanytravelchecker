@@ -190,3 +190,36 @@ The implementation is successful if:
 - homepage remains functional
 - no duplicate rule logic is introduced
 - no fake coming-soon UI is added
+
+## Current implementation note
+
+The current `/planner.html` page is implemented as a Vite HTML entry at the repository root:
+
+- `planner.html`
+- `src/planner.jsx`
+- `src/PlannerApp.jsx`
+
+Do not copy `planner.html` into `public/`.
+
+Vite should process the root `planner.html` entry and generate `dist/planner.html` during `npm run build`.
+
+The `public/` folder should contain static assets and static HTML pages such as:
+
+- `berlin.html`
+- `munich.html`
+- `impressum.html`
+- `datenschutz.html`
+- `sitemap.xml`
+- `robots.txt`
+
+Before merging planner-related changes, verify:
+
+    npm run build
+    ls dist | grep planner
+
+Expected:
+
+- `dist/planner.html` exists
+- `/planner.html` renders the React planner app locally and in production
+- there is no duplicate `public/planner.html`
+
