@@ -120,6 +120,9 @@ export default function TripDates() {
     })
   }, [cityId, endDate, publicHolidays, schoolHolidays, startDate])
 
+  const showEssentialsWarning =
+    result?.warnings.some((warning) => warning.type === 'sunday' || warning.type === 'public-holiday') || false
+
   return (
     <section className="section trip-dates-section" id="trip-dates">
       <div className="section-heading">
@@ -223,6 +226,21 @@ export default function TripDates() {
               <p className="trip-clear-note">
                 No public holiday, Sunday or school holiday overlap was found in this date range.
               </p>
+            )}
+
+            {showEssentialsWarning && (
+              <div className="trip-essentials-card">
+                <strong>Before shops close</strong>
+                <p>
+                  Your date range includes a Sunday or public holiday. Buy water,
+                  simple breakfast items, snacks, toiletries and regular medication
+                  you already use before regular supermarkets or pharmacies close.
+                </p>
+                <p>
+                  If you arrive late or travel by train, carry water, small food
+                  and some cash or coins for toilets, kiosks or small places.
+                </p>
+              </div>
             )}
 
             <p className="trip-disclaimer">{result.disclaimer}</p>
