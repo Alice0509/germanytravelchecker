@@ -2315,3 +2315,35 @@ h1 {
     grid-template-columns: 1fr;
   }
 }
+
+.segment-live-links {
+  margin-top: 14px;
+  border-top: 1px solid rgba(20, 33, 61, 0.08);
+  padding-top: 12px;
+}
+
+.segment-live-links strong {
+  display: block;
+  margin-bottom: 8px;
+  color: #14213d;
+}
+
+.segment-live-links div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.segment-live-links a {
+  border: 1px solid rgba(20, 33, 61, 0.12);
+  border-radius: 999px;
+  padding: 8px 12px;
+  background: #fff;
+  color: #147c75;
+  text-decoration: none;
+  font-weight: 800;
+}
+
+.segment-live-links a:hover {
+  color: #0f5f5a;
+}
