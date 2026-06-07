@@ -5,19 +5,19 @@ export const NEED_OPTIONS = [
   },
   {
     id: "groceries",
-    label: "Groceries",
+    label: "Groceries & basics",
   },
   {
     id: "cigarettes",
-    label: "Cigarettes",
+    label: "Tobacco",
   },
   {
     id: "cafes-bakeries",
-    label: "Cafés & bakeries",
+    label: "Cafés / bakeries",
   },
   {
     id: "pharmacy",
-    label: "Pharmacy",
+    label: "Pharmacy help",
   },
 ];
 
@@ -39,7 +39,7 @@ export const NEED_GUIDANCE = {
       "If regular supermarkets are closed, plan water earlier if you can. Larger stations, airports, gas stations, kiosks, cafés, bakeries, hotel reception or vending machines may help as fallback options, but availability varies.",
   },
   groceries: {
-    title: "Buying groceries",
+    title: "Groceries and basics",
     fallbackPlaces: [
       "major train stations",
       "airports",
@@ -51,7 +51,7 @@ export const NEED_GUIDANCE = {
       "Regular supermarkets are usually closed on Sundays and public holidays. Train stations, airports, gas stations or kiosks may be better fallback options.",
   },
   cigarettes: {
-    title: "Buying cigarettes",
+    title: "Tobacco availability",
     fallbackPlaces: [
       "kiosks",
       "gas stations",
