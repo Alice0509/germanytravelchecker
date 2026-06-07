@@ -50,6 +50,14 @@
       .closure-note { margin-top: 16px; color: #5d6673; }
       .verify-list { margin-bottom: 0; padding-left: 20px; color: #5d6673; }
       .verify-list li + li { margin-top: 8px; }
+      .common-need-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; margin-top: 16px; }
+      .need-card { border: 1px solid rgba(20, 33, 61, 0.08); border-radius: 20px; padding: 16px; background: #fffaf2; }
+      .need-card h3 { margin: 0 0 8px; }
+      .need-card p { margin: 0; color: #5d6673; }
+      .maps-warning { margin-top: 18px; border: 1px solid rgba(20, 33, 61, 0.08); border-radius: 24px; padding: 20px; background: rgba(255, 250, 242, 0.7); }
+      .maps-warning h2 { margin-top: 0; }
+      .maps-warning p { color: #5d6673; }
+      @media (max-width: 720px) { .common-need-grid { grid-template-columns: 1fr; } }
 
   </style>
   </head>
@@ -68,7 +76,7 @@
       <p class="closure-note">
         Germany Travel Checker does not promise live opening hours. Use this page
         to understand the situation, then verify with official sources before you
-        change plans.
+        walk across town, book transport or change plans.
       </p>
     </section>
 
@@ -86,6 +94,64 @@
         <li><strong>For baby items or urgent supplies,</strong> search inside major train stations or airports first.</li>
         <li><strong>Before walking across the city,</strong> verify the opening hours on Google Maps and the official business website.</li>
       </ul>
+    </section>
+
+    <section class="card" aria-labelledby="common-needs-title">
+      <p class="eyebrow">Common needs</p>
+      <h2 id="common-needs-title">If you need something now, search by need first.</h2>
+      <p>
+        When you are tired, carrying luggage or traveling with children, do not
+        start by walking to another normal supermarket. Choose the urgent need,
+        then check the closest realistic fallback.
+      </p>
+
+      <div class="common-need-grid">
+        <article class="need-card">
+          <h3>Water or snacks</h3>
+          <p>
+            Check train stations, airports, gas stations, kiosks, bakeries,
+            cafés, restaurants or your hotel reception before crossing town.
+          </p>
+        </article>
+
+        <article class="need-card">
+          <h3>Medicine</h3>
+          <p>
+            Search for the official Notdienst-Apotheke for your city or postcode.
+            A normal pharmacy listing may not show the current duty pharmacy.
+          </p>
+        </article>
+
+        <article class="need-card">
+          <h3>Baby supplies</h3>
+          <p>
+            Try larger stations, airports, gas stations or open drugstore-style
+            locations first. Verify exact opening hours before you move.
+          </p>
+        </article>
+
+        <article class="need-card">
+          <h3>A proper meal</h3>
+          <p>
+            Restaurants, cafés, hotel restaurants, station food courts and airport
+            food areas may still be realistic options when retail shops are closed.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="maps-warning" aria-labelledby="maps-warning-title">
+      <p class="eyebrow">Verify before walking</p>
+      <h2 id="maps-warning-title">If Google Maps says open but the door is closed</h2>
+      <p>
+        Treat Google Maps as a useful clue, not a guarantee. Holiday hours,
+        Sunday exceptions and small-business updates can be wrong or missing.
+      </p>
+      <p>
+        Before you walk across the city with bags or kids, check the official
+        business website, recent reviews, station or airport directories, or call
+        the location if it matters.
+      </p>
     </section>
 
     <section class="grid">
