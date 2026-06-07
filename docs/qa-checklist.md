@@ -130,6 +130,8 @@ Check:
 - index.html has a meta description
 - planner.html has a title
 - planner.html has a meta description
+- train-trouble.html has a title
+- train-trouble.html has a meta description
 - Berlin and Munich guide pages have city-specific titles
 - Berlin and Munich guide pages have city-specific meta descriptions
 - canonical URL points to https://germanytravelchecker.com/
@@ -141,8 +143,10 @@ Check:
 - Twitter card metadata exists
 - homepage and planner metadata match the travel trouble checker positioning
 - city guide metadata mentions practical trouble topics such as Sunday closures, water, pharmacies, Pfand or cash
+- train trouble metadata mentions German train disruption words such as SEV, Gleisänderung, fällt aus or Bauarbeiten
 - robots.txt points to sitemap.xml
 - sitemap.xml includes https://germanytravelchecker.com/
+- sitemap.xml includes https://germanytravelchecker.com/train-trouble.html
 
 
 ## Trouble Finder functional checks
@@ -260,6 +264,31 @@ Suggested manual cases:
 - segment with school holiday overlap
 
 
+
+
+## Train Trouble Guide checks
+
+Check `/train-trouble.html`.
+
+Check:
+
+- page returns 200 locally and in production
+- homepage links to the Train Trouble Guide
+- guide explains `Gleisänderung` as a platform change
+- guide explains `fällt aus` as a cancelled train
+- guide explains `SEV` or `Schienenersatzverkehr` as replacement bus
+- guide explains `Bauarbeiten` as construction works
+- guide tells users to verify with DB Navigator, local transport apps, station displays or staff
+- guide does not claim live train disruption data
+- guide is readable on mobile when the traveler may have luggage or children
+
+Suggested manual cases:
+
+- open `/train-trouble.html`
+- click homepage Train Trouble Guide link
+- search page text for `Gleisänderung`
+- search page text for `SEV`
+- search page text for `Bauarbeiten`
 
 ## Planner link and anchor checks
 
