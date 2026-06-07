@@ -128,11 +128,19 @@ Check:
 
 - index.html has a title
 - index.html has a meta description
+- planner.html has a title
+- planner.html has a meta description
+- Berlin and Munich guide pages have city-specific titles
+- Berlin and Munich guide pages have city-specific meta descriptions
 - canonical URL points to https://germanytravelchecker.com/
+- planner canonical URL points to https://germanytravelchecker.com/planner.html
+- city guide canonical URLs point to their public URLs
 - Open Graph title exists
 - Open Graph description exists
 - Open Graph image exists
 - Twitter card metadata exists
+- homepage and planner metadata match the travel trouble checker positioning
+- city guide metadata mentions practical trouble topics such as Sunday closures, water, pharmacies, Pfand or cash
 - robots.txt points to sitemap.xml
 - sitemap.xml includes https://germanytravelchecker.com/
 
