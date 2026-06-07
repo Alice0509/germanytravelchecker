@@ -62,6 +62,7 @@ Check:
 - hero text does not feel too cramped
 - CTA buttons fit inside the screen
 - Check Today card fits inside the viewport width
+- Trouble Finder input and chips fit inside the viewport width
 - date inputs do not overflow
 - Trip Dates controls do not overflow
 - Multi-city segment controls do not overflow
@@ -94,6 +95,7 @@ Check:
 - Trip Dates section has clear controls
 - Multi-city Trip section is readable
 - City Guides preview is compact
+- Trouble Finder card is readable and not visually overwhelming
 - planner footer matches the rest of the visual system
 - no section feels visually broken at wider widths
 
@@ -132,6 +134,34 @@ Check:
 - Twitter card metadata exists
 - robots.txt points to sitemap.xml
 - sitemap.xml includes https://germanytravelchecker.com/
+
+
+## Trouble Finder functional checks
+
+Use the homepage Trouble Finder.
+
+Check:
+
+- search input accepts typing
+- example chips update the result
+- water returns still/sparkling water and Pfand guidance
+- Sunday returns supermarket closure guidance
+- pharmacy returns safe emergency wording
+- cash or toilet returns coins/payment backup guidance
+- airport returns late or early arrival guidance
+- unknown input falls back to a useful general trouble tip
+- the component does not claim exact opening hours or live availability
+
+Suggested manual cases:
+
+- water
+- Sunday
+- pharmacy
+- cash
+- toilet
+- Pfand
+- airport
+- random unknown text
 
 ## Check Today functional checks
 
