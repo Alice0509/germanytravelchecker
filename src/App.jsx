@@ -49,7 +49,7 @@ function App() {
               <a className="button primary" href="#check-today">
                 I am in Germany today
               </a>
-              <a className="button secondary" href="#trip-dates">
+              <a className="button secondary" href="/planner.html">
                 I am planning one city
               </a>
               <a className="button secondary" href="/planner.html">
@@ -100,7 +100,7 @@ function App() {
               For one-city planning: date ranges, public holiday overlaps,
               school holiday travel periods, Sundays and possible crowd warnings.
             </p>
-            <a href="#trip-dates">Use Trip Dates</a>
+            <a href="/planner.html">Open Trip Planner</a>
           </article>
 
           <article className="mode-card">
@@ -110,7 +110,7 @@ function App() {
               For itineraries like Munich to Berlin: check each city segment,
               transfer days and the overall trip risk.
             </p>
-            <a href="#multi-city-trip">Use Multi-city Trip</a>
+            <a href="/planner.html">Open Trip Planner</a>
           </article>
         </div>
       </section>
