@@ -4,16 +4,16 @@ import './App.css'
 
 const CHECK_ITEMS = [
   {
-    title: 'Closures',
-    text: 'Public holidays and Sundays can affect shops, groceries, pharmacies and plans.',
+    title: 'Sunday surprises',
+    text: 'In many places, Sunday shopping feels normal. In Germany, regular supermarkets are often closed.',
   },
   {
-    title: 'Essentials',
-    text: 'Find practical fallback ideas for water, cafés, bakeries, groceries and pharmacy needs.',
+    title: 'Small essentials',
+    text: 'Water, snacks, cash, toilets, pharmacies and Pfand can matter more when you are tired or arriving late.',
   },
   {
     title: 'Trip timing',
-    text: 'Spot school holiday periods, transfer days and dates that may need extra planning.',
+    text: 'School holidays, public holidays and transfer days can make a normal plan feel harder.',
   },
 ]
 
@@ -115,11 +115,11 @@ function App() {
 
       <section className="section">
         <div className="section-heading">
-          <p className="eyebrow">Built for practical travel questions</p>
-          <h2>Not a travel blog. A Germany trip checker.</h2>
+          <p className="eyebrow">Built for real travel surprises</p>
+          <h2>Not a travel blog. A small-trouble checker for Germany.</h2>
           <p>
-            A quick way for English-speaking visitors to check Germany-specific
-            closure, holiday and trip-timing surprises.
+            A quick way for English-speaking visitors to spot the small Germany
+            travel problems that are easy to miss before the trip.
           </p>
         </div>
 
