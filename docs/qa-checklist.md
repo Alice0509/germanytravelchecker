@@ -97,6 +97,7 @@ Check:
 - City Guides preview is compact
 - Trouble Finder card is readable and not visually overwhelming
 - planner footer matches the rest of the visual system
+- planner action buttons keep the homepage-style visual treatment
 - no section feels visually broken at wider widths
 
 ## Brand asset checks
@@ -251,6 +252,20 @@ Suggested manual cases:
 - segment with school holiday overlap
 
 
+
+## Planner link and anchor checks
+
+Check:
+
+- homepage one-city CTA opens `/planner.html#trip-dates`
+- homepage multi-city CTA opens `/planner.html#multi-city-trip`
+- planner hash links scroll to the intended section after React renders
+- `/planner.html#trip-dates` lands near Check Trip Dates
+- `/planner.html#multi-city-trip` lands near Multi-city Trip
+- city guide trip-date buttons point to `/planner.html#trip-dates`
+- city guide multi-city buttons point to `/planner.html#multi-city-trip`
+- planner action buttons do not look like weak underlined text links
+
 ## City guide trouble checks
 
 Check Berlin and Munich guide pages.
@@ -271,6 +286,8 @@ Suggested manual cases:
 - Munich guide
 - click each live check link once
 - verify planner CTA opens /planner.html
+- verify city guide trip-date CTAs open /planner.html#trip-dates
+- verify city guide multi-city CTAs open /planner.html#multi-city-trip
 
 ## Trouble checker positioning checks
 
