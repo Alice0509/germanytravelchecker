@@ -2649,6 +2649,11 @@ h1 {
   font-size: 0.95rem;
 }
 
+
+.no-match-result {
+  border-style: dashed;
+}
+
 .trouble-guide-link {
   justify-self: start;
 }
