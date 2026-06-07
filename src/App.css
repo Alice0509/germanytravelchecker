@@ -2165,3 +2165,27 @@ h1 {
     grid-template-columns: 1fr;
   }
 }
+
+.trip-essentials-card {
+  margin-top: 18px;
+  border: 1px solid rgba(20, 33, 61, 0.1);
+  border-radius: 18px;
+  padding: 16px;
+  background: rgba(255, 255, 255, 0.72);
+}
+
+.trip-essentials-card strong {
+  display: block;
+  margin-bottom: 8px;
+  color: #14213d;
+}
+
+.trip-essentials-card p {
+  margin: 0;
+  color: rgba(20, 33, 61, 0.74);
+  line-height: 1.6;
+}
+
+.trip-essentials-card p + p {
+  margin-top: 10px;
+}
