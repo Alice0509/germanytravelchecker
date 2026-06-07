@@ -38,6 +38,14 @@
       .card p, li { color: #5d6673; }
       .word { display: inline-flex; margin-bottom: 10px; border-radius: 999px; padding: 6px 10px; background: #e6faf5; color: #0f6f69; font-weight: 900; }
       .quick-list { margin: 0; padding-left: 20px; }
+      .train-case-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; margin-top: 16px; }
+      .train-case-card { border: 1px solid rgba(20, 33, 61, 0.08); border-radius: 20px; padding: 16px; background: #fffaf2; }
+      .train-case-card h3 { margin: 0 0 8px; }
+      .train-case-card p { margin: 0; color: #5d6673; }
+      .train-verify-note { margin-top: 18px; border: 1px solid rgba(20, 33, 61, 0.08); border-radius: 24px; padding: 20px; background: rgba(255, 250, 242, 0.7); }
+      .train-verify-note h2 { margin-top: 0; }
+      .train-verify-note p { color: #5d6673; }
+      @media (max-width: 720px) { .train-case-grid { grid-template-columns: 1fr; } }
       .quick-action-box { margin: 18px 0; border: 1px solid rgba(20, 33, 61, 0.08); border-radius: 24px; padding: 22px; background: #fffaf2; }
       .quick-action-box h2 { margin-top: 0; }
       .quick-action-box p { color: #5d6673; }
@@ -77,6 +85,65 @@
           <li><strong>If you see SEV,</strong> look for replacement bus signs before leaving the station area.</li>
           <li><strong>If your connection looks impossible,</strong> check DB Navigator, station displays or staff before changing plans.</li>
         </ul>
+      </section>
+
+      <section class="card" aria-labelledby="train-now-title">
+        <p class="eyebrow">Train problem happening now</p>
+        <h2 id="train-now-title">If your train problem is happening now, identify the situation first.</h2>
+        <p>
+          A translation can tell you what a German word says. The important part
+          is what it means for your next move: stay on the platform, change
+          platforms, look for a bus, or verify your ticket options.
+        </p>
+
+        <div class="train-case-grid">
+          <article class="train-case-card">
+            <h3>Platform changed</h3>
+            <p>
+              Check the train number first, then the latest station board. Do not
+              move based only on the destination name.
+            </p>
+          </article>
+
+          <article class="train-case-card">
+            <h3>Train cancelled</h3>
+            <p>
+              Check DB Navigator and station displays before boarding another
+              train. Your ticket options may depend on the disruption and ticket type.
+            </p>
+          </article>
+
+          <article class="train-case-card">
+            <h3>SEV / replacement bus</h3>
+            <p>
+              Do not wait only on the platform. Look for yellow SEV or
+              Ersatzverkehr signs and check whether the bus leaves outside the station.
+            </p>
+          </article>
+
+          <article class="train-case-card">
+            <h3>Connection looks impossible</h3>
+            <p>
+              Verify the delay, missed connection and next route before changing
+              plans. Keep screenshots if your onward trip is affected.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="train-verify-note" aria-labelledby="train-verify-title">
+        <p class="eyebrow">Verify before you move</p>
+        <h2 id="train-verify-title">Do not rely on one screen only.</h2>
+        <p>
+          DB Navigator is useful, but station displays, platform signs and staff
+          can matter when a platform changes or a replacement bus starts outside
+          the station.
+        </p>
+        <p>
+          Germany Travel Checker does not provide live train status. Use this
+          page to understand the situation, then verify with official sources
+          before you leave the platform area, board another train or walk to a bus stop.
+        </p>
       </section>
 
       <section class="grid">
