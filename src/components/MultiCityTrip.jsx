@@ -335,6 +335,28 @@ export default function MultiCityTrip() {
                       ))}
                     </div>
                   )}
+
+                  {segment.riskLevel !== 'low' && (
+                    <div className="segment-live-links">
+                      <strong>Live checks in {segment.city.name}</strong>
+                      <div>
+                        <a
+                          href={`https://www.google.com/maps/search/supermarket+${encodeURIComponent(segment.city.name)}`}
+                          target="_blank"
+                          rel="noreferrer"
+                        >
+                          Supermarkets
+                        </a>
+                        <a
+                          href={`https://www.google.com/maps/search/pharmacy+${encodeURIComponent(segment.city.name)}`}
+                          target="_blank"
+                          rel="noreferrer"
+                        >
+                          Pharmacies
+                        </a>
+                      </div>
+                    </div>
+                  )}
                 </article>
               ))}
             </div>
