@@ -2,13 +2,13 @@ import { useMemo, useState } from 'react'
 import { troubleTopics } from '../data/troubleTopics.js'
 
 const EXAMPLE_WORRIES = [
-  'water',
-  'Sunday',
-  'pharmacy',
-  'Pfand',
-  'toilet',
-  'SEV',
-  'platform',
+  'shops closed',
+  'need medicine',
+  'still water',
+  'Pfand deposit',
+  'paid toilet',
+  'SEV replacement bus',
+  'platform changed',
   'cancelled train',
 ]
 
@@ -81,8 +81,8 @@ export default function TroubleFinder() {
         <p className="eyebrow">Find a quick trouble tip</p>
         <h2>What are you worried about?</h2>
         <p>
-          Type a small Germany travel worry, such as water, Sunday, pharmacy,
-          Pfand, toilet, SEV, platform change or a cancelled train.
+          Type a small Germany travel worry, such as shops closed, medicine,
+          still water, Pfand, paid toilets, SEV, platform changes or a cancelled train.
         </p>
       </div>
 
@@ -93,7 +93,7 @@ export default function TroubleFinder() {
             type="search"
             value={query}
             onChange={(event) => setQuery(event.target.value)}
-            placeholder="Try: Sunday, pharmacy, SEV, Pfand, toilet"
+            placeholder="Try: shops closed, medicine, SEV, platform changed"
           />
         </label>
 
