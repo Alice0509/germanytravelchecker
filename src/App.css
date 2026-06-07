@@ -2112,3 +2112,56 @@ h1 {
     grid-template-columns: 1fr;
   }
 }
+
+.essentials-checklist {
+  margin-top: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 18px;
+  padding: 16px;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.essentials-checklist > div:first-child strong {
+  display: block;
+  margin-bottom: 6px;
+  color: #fff;
+}
+
+.essentials-checklist > div:first-child p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.74);
+  line-height: 1.55;
+}
+
+.essentials-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 14px;
+}
+
+.essentials-grid article {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 14px;
+  padding: 12px;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.essentials-grid span {
+  display: block;
+  margin-bottom: 6px;
+  color: #fff;
+  font-weight: 800;
+}
+
+.essentials-grid p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.74);
+  line-height: 1.5;
+}
+
+@media (max-width: 780px) {
+  .essentials-grid {
+    grid-template-columns: 1fr;
+  }
+}
