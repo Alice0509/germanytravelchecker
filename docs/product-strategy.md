@@ -2,20 +2,20 @@
 
 ## Product definition
 
-Germany Travel Checker is an English-language travel risk checker for visitors to Germany.
+Germany Travel Checker is an English-language travel trouble checker for visitors to Germany.
 
 It is not a general travel blog and not a duplicate of Schulferienklar.
 
-It helps travelers understand practical Germany-specific risks around:
+It helps travelers understand and avoid practical Germany-specific travel trouble around:
 
 - public holidays
 - Sunday closures
 - school holiday travel crowds
-- groceries and water
+- groceries, water and Sunday/public-holiday essentials
 - cigarettes and kiosks
 - cafés and bakeries
 - pharmacies and emergency pharmacy guidance
-- basic trip timing
+- basic trip timing and transfer-day trouble
 
 The product should answer practical questions before or during a trip:
 
@@ -93,7 +93,7 @@ For travelers planning before they book.
 
 Primary question:
 
-Are my travel dates risky, busy or inconvenient?
+Are my travel dates likely to create avoidable trouble?
 
 Check Trip Dates should focus on:
 
@@ -103,7 +103,7 @@ Check Trip Dates should focus on:
 - public holidays
 - school holiday periods
 - weekends and bridge-day patterns
-- possible crowd and closure warnings
+- possible crowd, closure and essentials-planning warnings
 
 Check Trip Dates is the stronger SEO and monetization feature.
 
@@ -143,7 +143,7 @@ City guides should explain:
 
 City guides should not become generic travel guides.
 
-They should stay focused on Germany-specific practical risks.
+They should stay focused on Germany-specific practical trouble: closures, water, Pfand, cash, toilets, pharmacies, essentials and transfer-day friction.
 
 ## Data principles
 

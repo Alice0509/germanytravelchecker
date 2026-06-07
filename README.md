@@ -1,8 +1,8 @@
 # Germany Travel Checker
 
-Germany Travel Checker is an English-language travel checking tool for visitors to Germany.
+Germany Travel Checker is an English-language travel trouble checker for visitors to Germany.
 
-It helps travelers understand practical Germany-specific travel risks around:
+It helps travelers avoid practical Germany-specific travel trouble around:
 
 - public holidays
 - Sunday closures
@@ -21,7 +21,7 @@ https://germanytravelchecker.com
 
 Germany Travel Checker is not a generic travel blog.
 
-It is a practical checker for travelers who want to know whether their Germany trip may be affected by closures, public holidays, school holidays or regional rules.
+It is a practical checker for travelers who want to avoid small Germany travel troubles before they become expensive or stressful.
 
 The product is designed for English-speaking visitors, especially travelers from:
 
@@ -31,7 +31,7 @@ The product is designed for English-speaking visitors, especially travelers from
 - the United Kingdom
 - other English-speaking countries
 
-Many international travelers know they are visiting Berlin, Munich or Hamburg, but do not know which German federal state controls the holiday calendar. Germany Travel Checker turns city plans into practical date warnings.
+Many international travelers know they are visiting Berlin, Munich or Hamburg, but do not know which German federal state controls the holiday calendar, why supermarkets close on Sundays, what Pfand means, or why water, toilets, pharmacies and transfer days may need extra planning.
 
 ## Relationship to Schulferienklar
 
@@ -65,7 +65,7 @@ Check Today helps users check:
 - Sunday status
 - public holiday status
 - school holiday period status
-- practical fallback guidance for essentials
+- practical fallback guidance for essentials, water, cash and everyday trouble
 
 Example question:
 
@@ -116,14 +116,14 @@ I will be in Munich, then Berlin, then Hamburg. Which part of my trip needs plan
 
 The site includes a compact City Guides preview.
 
-City guide content should stay focused on practical Germany-specific travel checks, not generic sightseeing advice.
+City guide content should stay focused on practical Germany-specific trouble checks, not generic sightseeing advice.
 
 Potential city guide topics:
 
 - federal state mapping
 - public holiday rules
 - Sunday closure patterns
-- essentials and fallback categories
+- essentials, water, Pfand, cash and fallback categories
 - pharmacy guidance
 - school holiday travel timing
 
