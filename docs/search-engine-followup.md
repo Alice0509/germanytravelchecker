@@ -13,6 +13,9 @@ Sitemap URL:
 Important public URLs:
 
     https://germanytravelchecker.com/
+    https://germanytravelchecker.com/planner.html
+    https://germanytravelchecker.com/berlin.html
+    https://germanytravelchecker.com/munich.html
     https://germanytravelchecker.com/impressum.html
     https://germanytravelchecker.com/datenschutz.html
 
@@ -99,9 +102,9 @@ Suggested review schedule:
 
 ## Current SEO limitations
 
-The current site is mostly a single-page app with a few static legal pages.
+The current site now has a homepage, a dedicated planner page, static legal pages and initial city guide pages for Berlin and Munich.
 
-This is fine for the MVP, but organic search growth will likely need more indexable pages later.
+Organic search growth should focus on practical trouble-checking intent rather than generic travel blog content.
 
 Possible future SEO pages:
 
@@ -121,10 +124,16 @@ The next strong SEO layer should probably be City Guides.
 
 City guide pages should be practical, not generic travel blog pages.
 
-Recommended first pages:
+Current first pages:
 
 - /berlin.html
 - /munich.html
+
+Recommended next city candidates after the pattern is stable:
+
+- /hamburg.html
+- /cologne.html
+- /frankfurt.html
 
 Each city guide should include:
 
@@ -133,8 +142,40 @@ Each city guide should include:
 - Sunday closure notes
 - pharmacy guidance
 - essentials fallback ideas
+- water, Pfand, cash, paid toilet and pharmacy trouble notes
+- city-specific live check links
 - school holiday travel timing
-- links back to Check Today, Trip Dates and Multi-city Trip
+- links back to Check Today, Trip Dates, Multi-city Trip and /planner.html
+
+
+## Trouble-checking keyword themes to monitor
+
+Track whether impressions begin to appear around practical Germany travel trouble intent, such as:
+
+- Germany Sunday supermarket closed
+- Germany public holiday shops closed
+- buy water Sunday Germany
+- Germany still water sparkling water
+- Pfand Germany bottle deposit
+- Germany paid toilets cash
+- Germany pharmacy Sunday
+- Germany trip dates public holiday
+- Germany multi city trip planner
+- Berlin Sunday shops
+- Munich public holiday shops
+
+The site should not chase these themes with generic articles. Prefer checker pages, city guide sections and practical result guidance.
+
+## Pages to inspect after major changes
+
+Use Google Search Console URL Inspection and Bing URL Inspection for:
+
+    https://germanytravelchecker.com/
+    https://germanytravelchecker.com/planner.html
+    https://germanytravelchecker.com/berlin.html
+    https://germanytravelchecker.com/munich.html
+
+Check that titles, descriptions, canonical URLs and rendered content match the current trouble-checker positioning.
 
 ## What not to do yet
 
@@ -152,4 +193,5 @@ Priority remains:
 - trust
 - clarity
 - practical travel usefulness
+- trouble prevention
 - careful data boundaries
