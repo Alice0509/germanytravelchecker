@@ -22,6 +22,7 @@ export const troubleTopics = [
     ],
     risk: "Google Maps may show outdated or generic hours. Verify before walking across town with luggage or kids.",
     relatedGuideUrl: "/sunday-holiday-closures.html",
+    actionLabel: "See what may still be open",
     keywords: ["sunday", "shops closed", "supermarket closed", "holiday", "public holiday", "grocery", "rewe", "edeka", "dm"]
   },
   {
@@ -46,6 +47,7 @@ export const troubleTopics = [
     ],
     risk: "Travelers often search only for Germany-wide holidays and miss state-specific closures.",
     relatedGuideUrl: "/planner.html",
+    actionLabel: "Check your trip dates",
     keywords: ["public holiday", "federal state", "bavaria", "berlin", "holiday today", "shops closed", "feiertag"]
   },
   {
@@ -69,6 +71,7 @@ export const troubleTopics = [
     ],
     risk: "A direct translation may not help if the bottle branding is confusing or uses regional wording.",
     relatedGuideUrl: "",
+    actionLabel: "",
     keywords: ["water", "still water", "sparkling", "kohlensäure", "stilles wasser", "naturell", "classic"]
   },
   {
@@ -92,6 +95,7 @@ export const troubleTopics = [
     ],
     risk: "Travelers may throw away deposit bottles or misunderstand the extra charge as a pricing error.",
     relatedGuideUrl: "",
+    actionLabel: "",
     keywords: ["pfand", "deposit", "bottle", "can", "receipt", "pfandautomat", "rückgabe"]
   },
   {
@@ -116,6 +120,7 @@ export const troubleTopics = [
     ],
     risk: "The problem is not translation; it is timing. You may need coins or a nearby alternative quickly.",
     relatedGuideUrl: "",
+    actionLabel: "",
     keywords: ["toilet", "wc", "coins", "paid toilet", "station toilet", "sanifair", "bathroom"]
   },
   {
@@ -140,6 +145,7 @@ export const troubleTopics = [
     ],
     risk: "Google Maps may show a pharmacy listing but not the current duty pharmacy. Verify with an official Notdienst source.",
     relatedGuideUrl: "/sunday-holiday-closures.html",
+    actionLabel: "Find closure and pharmacy guidance",
     keywords: ["pharmacy", "apotheke", "notdienst", "medicine", "closed pharmacy", "emergency pharmacy", "holiday"]
   },
   {
@@ -164,6 +170,7 @@ export const troubleTopics = [
     ],
     risk: "Following only the destination name can put you on the wrong train or wrong platform.",
     relatedGuideUrl: "/train-trouble.html",
+    actionLabel: "Understand train disruption words",
     keywords: ["platform", "gleis", "platform change", "train number", "db navigator", "departure board"]
   },
   {
@@ -188,6 +195,7 @@ export const troubleTopics = [
     ],
     risk: "The key question is not just translation. It is whether your ticket flexibility changed.",
     relatedGuideUrl: "/train-trouble.html",
+    actionLabel: "Understand cancellation next steps",
     keywords: ["cancelled", "canceled", "zug fällt aus", "train cancellation", "db", "ticket", "zugbindung"]
   },
   {
@@ -212,6 +220,7 @@ export const troubleTopics = [
     ],
     risk: "Travelers often miss the replacement bus because they stay near the normal platform too long.",
     relatedGuideUrl: "/train-trouble.html",
+    actionLabel: "Find the replacement bus guide",
     keywords: ["sev", "ersatzverkehr", "schienenersatzverkehr", "replacement bus", "bus stop", "train disruption"]
   },
   {
@@ -236,6 +245,7 @@ export const troubleTopics = [
     ],
     risk: "A construction notice can look like general information, but it may change your actual route.",
     relatedGuideUrl: "/train-trouble.html",
+    actionLabel: "Understand construction disruption words",
     keywords: ["bauarbeiten", "construction", "works", "delay", "route change", "replacement bus", "db"]
   }
 ];
