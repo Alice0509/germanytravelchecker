@@ -249,6 +249,8 @@ Check:
 - homepage hero mentions small Germany travel trouble
 - planner hero mentions closure risks, transfer planning and essentials problems
 - planner FAQ uses trouble-focused wording without sounding alarmist
+- copy includes human, real-traveler moments such as arriving tired, landing late, carrying luggage or needing water on a Sunday
+- copy sounds calm, practical and specific rather than generic or AI-like
 - city guides focus on practical trouble, not generic sightseeing
 - copy does not promise exact opening hours or live availability
 - copy does not imply every station, kiosk, toilet or vending machine is available
