@@ -37,12 +37,12 @@ function App() {
 
         <div className="hero-grid">
           <div className="hero-copy">
-            <p className="eyebrow">Germany travel help for English-speaking visitors</p>
-            <h1>Know what may be closed, busy or harder before your Germany trip gets complicated.</h1>
+            <p className="eyebrow">Germany travel trouble checker for English-speaking visitors</p>
+            <h1>Avoid small Germany travel troubles before they become expensive.</h1>
             <p className="hero-text">
-              Germany Travel Checker helps visitors understand public holidays,
-              Sunday closures, pharmacy rules, grocery options and busy travel
-              periods before or during a Germany trip.
+              Germany Travel Checker helps visitors plan around Sundays,
+              public holidays, pharmacy closures, grocery surprises, water
+              problems, transfer days and busy travel periods.
             </p>
 
             <div className="hero-actions">
