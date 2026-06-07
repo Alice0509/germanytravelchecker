@@ -2498,3 +2498,63 @@ h1 {
 .trouble-chip-row button:hover {
   transform: translateY(-1px);
 }
+
+.trouble-guide-section {
+  margin-top: 24px;
+}
+
+.trouble-guide-card {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  align-items: center;
+  border: 1px solid rgba(20, 33, 61, 0.08);
+  border-radius: 28px;
+  padding: 24px;
+  background: rgba(255, 255, 255, 0.88);
+  box-shadow: 0 22px 70px rgba(40, 55, 85, 0.08);
+}
+
+.trouble-guide-card span {
+  display: inline-flex;
+  margin-bottom: 8px;
+  color: #178a84;
+  font-weight: 950;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.78rem;
+}
+
+.trouble-guide-card h3 {
+  margin: 0 0 8px;
+  color: #14213d;
+  font-size: 1.35rem;
+}
+
+.trouble-guide-card p {
+  max-width: 680px;
+  margin: 0;
+  color: rgba(20, 33, 61, 0.74);
+  line-height: 1.65;
+}
+
+.trouble-guide-card a {
+  flex: 0 0 auto;
+  border-radius: 999px;
+  padding: 12px 16px;
+  background: #178a84;
+  color: #fff;
+  font-weight: 900;
+  text-decoration: none;
+}
+
+@media (max-width: 780px) {
+  .trouble-guide-card {
+    display: block;
+  }
+
+  .trouble-guide-card a {
+    display: inline-flex;
+    margin-top: 18px;
+  }
+}
