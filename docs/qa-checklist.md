@@ -79,6 +79,7 @@ Important mobile sections:
 - City Guides preview
 - Safety section
 - footer
+- planner footer
 
 ## Desktop layout checks
 
@@ -93,6 +94,7 @@ Check:
 - Trip Dates section has clear controls
 - Multi-city Trip section is readable
 - City Guides preview is compact
+- planner footer matches the rest of the visual system
 - no section feels visually broken at wider widths
 
 ## Brand asset checks
@@ -146,6 +148,10 @@ Check:
 - public holiday status is shown when data matches
 - school holiday status is shown when data matches
 - pharmacy guidance includes safe emergency wording
+- Water quick help appears when Water is selected
+- Before shops close checklist appears on Sundays or public holidays
+- Google Maps live check links open in a new tab
+- live check links are city-specific
 - disclaimer is visible
 
 Suggested manual cases:
@@ -171,6 +177,9 @@ Check:
 - risk level is low, medium or high
 - result summary is readable on mobile
 - date inputs stay inside the card
+- Before shops close warning appears when range includes Sunday or public holiday
+- city-specific live check links appear in the Trip Dates result
+- live check links open in a new tab
 
 Suggested manual cases:
 
@@ -195,7 +204,11 @@ Check:
 - segment risk appears
 - transfer day is detected when one segment end date equals the next segment start date
 - transfer day note is shown
+- transfer essentials warning appears only for non-low-risk itineraries
+- low-risk transfer itineraries do not show unnecessary essentials warnings
 - per-city warnings are visible
+- risky city segments show compact live check links
+- low-risk city segments do not show extra live check links
 - mobile date inputs stay inside the card
 
 Suggested manual cases:
@@ -206,6 +219,39 @@ Suggested manual cases:
 - segment with Sunday
 - segment with public holiday
 - segment with school holiday overlap
+
+
+## City guide trouble checks
+
+Check Berlin and Munich guide pages.
+
+Check:
+
+- hero copy matches the travel trouble checker positioning
+- Small Germany troubles card is visible
+- Pfand, cash or coins, paid toilets and water label notes are visible
+- live check links for supermarkets, cafés or bakeries and pharmacies are city-specific
+- live check links open in a new tab
+- planner CTA appears before the note and footer
+- footer links remain readable and visually consistent
+
+Suggested manual cases:
+
+- Berlin guide
+- Munich guide
+- click each live check link once
+- verify planner CTA opens /planner.html
+
+## Trouble checker positioning checks
+
+Check:
+
+- homepage hero mentions small Germany travel trouble
+- planner hero mentions closure risks, transfer planning and essentials problems
+- planner FAQ uses trouble-focused wording without sounding alarmist
+- city guides focus on practical trouble, not generic sightseeing
+- copy does not promise exact opening hours or live availability
+- copy does not imply every station, kiosk, toilet or vending machine is available
 
 ## Safety and trust checks
 
