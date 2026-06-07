@@ -2373,3 +2373,53 @@ h1 {
     font-size: clamp(2.2rem, 11vw, 3.5rem);
   }
 }
+
+.planner-actions a {
+  text-decoration: none;
+  font-weight: 900;
+  box-shadow: 0 14px 34px rgba(20, 33, 61, 0.08);
+}
+
+.planner-actions a:first-child {
+  border-color: #178a84;
+  background: linear-gradient(135deg, #178a84, #0f7a74);
+  color: #fff;
+}
+
+.planner-actions a:nth-child(2) {
+  border-color: rgba(23, 138, 132, 0.22);
+  background: #e6faf5;
+  color: #0f6f69;
+}
+
+.planner-actions a:nth-child(3) {
+  border-color: rgba(20, 33, 61, 0.12);
+  background: #fff;
+  color: #14213d;
+}
+
+.planner-actions a:hover {
+  transform: translateY(-1px);
+}
+
+.planner-next-grid a,
+.planner-city-links a {
+  color: #147c75;
+  font-weight: 900;
+  text-decoration: none;
+}
+
+.planner-next-grid a:hover,
+.planner-city-links a:hover {
+  color: #0f5f5a;
+}
+
+.planner-next-grid article a {
+  display: inline-flex;
+  margin-top: 10px;
+  margin-right: 12px;
+  border: 1px solid rgba(23, 138, 132, 0.18);
+  border-radius: 999px;
+  padding: 8px 12px;
+  background: #e6faf5;
+}

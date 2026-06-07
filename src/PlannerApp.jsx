@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import TripDates from './components/TripDates.jsx'
 import MultiCityTrip from './components/MultiCityTrip.jsx'
 import './App.css'
@@ -18,6 +19,25 @@ const PLANNER_NOTES = [
 ]
 
 function PlannerApp() {
+  useEffect(() => {
+    function scrollToHash() {
+      if (!window.location.hash) {
+        return
+      }
+
+      const target = document.querySelector(window.location.hash)
+
+      if (!target) {
+        return
+      }
+
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    }
+
+    window.setTimeout(scrollToHash, 100)
+    window.setTimeout(scrollToHash, 350)
+  }, [])
+
   return (
     <main className="planner-page">
       <section className="planner-hero">
