@@ -21,13 +21,13 @@ function PlannerApp() {
   return (
     <main className="planner-page">
       <section className="planner-hero">
-        <div className="eyebrow">Germany trip planner</div>
-        <h1>Check your Germany travel dates before they get complicated.</h1>
+        <div className="eyebrow">Germany trip trouble planner</div>
+        <h1>Plan around the small Germany troubles that can make a trip harder.</h1>
         <p>
-          Plan around German Sundays, public holidays, school holiday travel
-          periods and multi-city transfer days. This planner uses rule-based
-          guidance for practical travel friction, not AI guesses or live shop
-          opening-hour claims.
+          Check whether your dates or transfers overlap with Sundays,
+          public holidays, school holiday travel pressure, closure risks and
+          everyday essentials problems. This planner uses rule-based guidance,
+          not AI guesses or live shop opening-hour claims.
         </p>
 
         <div className="planner-actions">
