@@ -114,10 +114,10 @@ function PlannerApp() {
 
       <section className="planner-faq">
         <div className="section-heading">
-          <p className="eyebrow">Germany travel FAQ</p>
-          <h2>Common planning questions before a Germany trip.</h2>
+          <p className="eyebrow">Germany trouble FAQ</p>
+          <h2>Common small troubles before a Germany trip.</h2>
           <p>
-            These answers are practical planning guidance for visitors. They do
+            These answers help visitors avoid common Germany travel trouble. They do
             not replace live opening-hour checks, official transport updates or
             emergency services.
           </p>
@@ -125,39 +125,40 @@ function PlannerApp() {
 
         <div className="planner-faq-grid">
           <article>
-            <h3>Are shops closed on Sundays in Germany?</h3>
+            <h3>Will I get stuck without groceries or water on Sunday?</h3>
             <p>
-              Many regular shops and supermarkets are closed on Sundays. Some
-              places such as train stations, airports, bakeries, cafés or kiosks
-              may have different rules, but you should verify exact hours before
-              relying on them.
+              Many regular shops and supermarkets are closed on Sundays. Buy water,
+              simple food and daily basics earlier if you can. Larger stations,
+              airports, cafés, bakeries, kiosks or hotel reception may help, but
+              exact availability should be checked before relying on it.
             </p>
           </article>
 
           <article>
-            <h3>Do German public holidays apply everywhere?</h3>
+            <h3>Can a public holiday surprise me in one city but not another?</h3>
             <p>
-              Not always. Some public holidays apply nationwide, while others
-              depend on the federal state. A date can be normal in one city and
-              a public holiday in another.
+              Yes. Some public holidays apply nationwide, while others depend on the
+              federal state. A date can be normal in Berlin and a public holiday
+              in Bavaria, which can affect shops, pharmacies and trip plans.
             </p>
           </article>
 
           <article>
-            <h3>Why do school holidays matter for travelers?</h3>
+            <h3>Why do school holidays create travel trouble?</h3>
             <p>
-              School holiday periods can increase pressure on trains, roads,
-              hotels and popular attractions. They do not always mean closures,
-              but they can make travel days feel busier.
+              School holidays do not usually close shops, but they can increase pressure
+              on trains, roads, hotels and attractions. Transfer days can feel
+              harder, so plan water, snacks, luggage and timing earlier.
             </p>
           </article>
 
           <article>
-            <h3>Can this planner tell me exact shop opening hours?</h3>
+            <h3>Can this planner tell me whether a specific place is open?</h3>
             <p>
-              No. Germany Travel Checker gives rule-based guidance. Always check
-              Google Maps and the official business website before relying on a
-              specific shop, pharmacy, café or bakery being open.
+              No. Germany Travel Checker gives rule-based trouble guidance, not live
+              business availability. Always check Google Maps and the official
+              business website before relying on a specific shop, pharmacy, café
+              or bakery being open.
             </p>
           </article>
         </div>
