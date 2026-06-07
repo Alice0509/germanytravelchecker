@@ -1,171 +1,233 @@
-export const TROUBLE_TOPICS = [
+export const troubleTopics = [
   {
-    id: 'sunday-supermarket-closures',
-    category: 'Closures',
-    title: 'Sunday supermarket closures',
-    situation: 'You need groceries, water or basics on a Sunday.',
-    meaning:
-      'Many regular supermarkets and shops are closed on Sundays in Germany.',
+    id: "sunday-supermarket-closures",
+    title: "Sunday supermarket closures",
+    category: "Shops and closures",
+    urgency: "medium",
+    problem: "You are standing outside a closed supermarket, drugstore or shopping street in Germany, even though it is daytime.",
+    meaning: "It may be Sunday or a public holiday. In many parts of Germany, normal retail shopping is restricted on Sundays and public holidays, but stations, airports, gas stations, kiosks and restaurants may still have options.",
     whatToDo: [
-      'Buy water, snacks and daily basics earlier if you can.',
-      'Check major train stations, airports, gas stations, kiosks, cafés, bakeries, restaurants or hotel reception.',
-      'Verify opening hours before walking far, especially with luggage or children.',
+      "Do not walk to another normal supermarket first without checking.",
+      "Look for larger train stations, airports, gas stations, kiosks or restaurants.",
+      "If you need water, snacks or baby supplies, search station and airport shops first.",
+      "If today may be a public holiday, use Check Today or Planner for holiday context."
     ],
-    wordsToRecognize: ['Sonntag', 'geschlossen', 'Öffnungszeiten'],
-    verifyWith: ['Google Maps', 'official business website', 'hotel reception'],
-    safetyNote: '',
+    verify: [
+      "Google Maps opening hours",
+      "Official business website",
+      "Station or airport shop directory",
+      "Germany Travel Checker Check Today",
+      "Germany Travel Checker Planner"
+    ],
+    risk: "Google Maps may show outdated or generic hours. Verify before walking across town with luggage or kids.",
+    relatedGuideUrl: "/sunday-holiday-closures.html",
+    keywords: ["sunday", "shops closed", "supermarket closed", "holiday", "public holiday", "grocery", "rewe", "edeka", "dm"]
   },
   {
-    id: 'public-holiday-state-differences',
-    category: 'Closures',
-    title: 'Public holidays by federal state',
-    situation: 'A date seems normal in one German city but closed in another.',
-    meaning:
-      'Some German public holidays depend on the federal state. A normal day in Berlin can be a public holiday in Bavaria.',
+    id: "public-holidays-by-federal-state",
+    title: "Public holidays by federal state",
+    category: "Holidays and timing",
+    urgency: "medium",
+    problem: "A shop, office, museum or service is closed and you are not sure whether today is a public holiday in this part of Germany.",
+    meaning: "Some German public holidays apply nationwide, but others depend on the federal state. A holiday in Bavaria may not be a holiday in Berlin.",
     whatToDo: [
-      'Check the exact city and federal state for your date.',
-      'Do not assume shop or pharmacy hours are the same across Germany.',
-      'Plan water, groceries and regular medication before public holidays when possible.',
+      "Check the city or state you are in, not only the country.",
+      "Use Check Today for the current location/date context.",
+      "For multi-city trips, use Planner to check whether different cities are affected differently.",
+      "Do not assume opening hours from another German city apply where you are."
     ],
-    wordsToRecognize: ['Feiertag', 'Bundesland'],
-    verifyWith: ['Germany Travel Checker', 'official state holiday sources'],
-    safetyNote: '',
+    verify: [
+      "Germany Travel Checker Check Today",
+      "Germany Travel Checker Planner",
+      "Official business website",
+      "Google Maps opening hours"
+    ],
+    risk: "Travelers often search only for Germany-wide holidays and miss state-specific closures.",
+    relatedGuideUrl: "/planner.html",
+    keywords: ["public holiday", "federal state", "bavaria", "berlin", "holiday today", "shops closed", "feiertag"]
   },
   {
-    id: 'still-vs-sparkling-water',
-    category: 'Essentials',
-    title: 'Still vs sparkling water',
-    situation: 'You want still water but the bottle labels are confusing.',
-    meaning:
-      'German water labels often distinguish still, lightly sparkling and sparkling water.',
+    id: "still-vs-sparkling-water",
+    title: "Still vs sparkling water",
+    category: "Food and daily life",
+    urgency: "low",
+    problem: "You bought water in Germany and it tastes fizzy, or you are not sure which bottle is still water.",
+    meaning: "Many German bottled waters are sparkling. Look for words like still, ohne Kohlensäure or naturell if you want non-sparkling water.",
     whatToDo: [
-      'Choose stilles Wasser, ohne Kohlensäure or naturell for still water.',
-      'Classic, Sprudel or mit Kohlensäure usually means sparkling.',
-      'Medium usually means lightly sparkling.',
+      "For still water, look for still, ohne Kohlensäure or naturell.",
+      "For sparkling water, words like classic, spritzig or mit Kohlensäure often mean carbonated.",
+      "If buying for a child or for medicine, check the label before paying.",
+      "In restaurants, ask for stilles Wasser if you want still water."
     ],
-    wordsToRecognize: ['stilles Wasser', 'ohne Kohlensäure', 'naturell', 'Medium', 'Classic', 'Sprudel'],
-    verifyWith: ['bottle label'],
-    safetyNote: '',
+    verify: [
+      "Bottle label",
+      "Shelf label",
+      "Ask staff: stilles Wasser?"
+    ],
+    risk: "A direct translation may not help if the bottle branding is confusing or uses regional wording.",
+    relatedGuideUrl: "",
+    keywords: ["water", "still water", "sparkling", "kohlensäure", "stilles wasser", "naturell", "classic"]
   },
   {
-    id: 'pfand-bottle-deposit',
-    category: 'Essentials',
-    title: 'Pfand bottle deposit',
-    situation: 'A bottle price looks higher than expected or you see Pfand on a label.',
-    meaning:
-      'Pfand is a bottle deposit. You may pay extra and usually get the deposit back when returning the bottle.',
+    id: "pfand-bottle-deposit",
+    title: "Pfand bottle deposit",
+    category: "Food and daily life",
+    urgency: "low",
+    problem: "You paid more than expected for a drink bottle or see Pfand on a receipt.",
+    meaning: "Pfand is a bottle or can deposit. You pay it when buying certain drinks and may get it back by returning the container to a deposit machine or participating shop.",
     whatToDo: [
-      'Keep the bottle if you want the deposit back.',
-      'Return bottles at supermarket deposit machines where accepted.',
-      'Look for Pfand, Mehrweg or Einweg markings.',
+      "Keep bottles and cans with a Pfand symbol if you want the deposit back.",
+      "Look for a Rückgabe or Pfandautomat machine in supermarkets.",
+      "Put bottles in one by one and take the printed receipt.",
+      "Use the receipt at the checkout."
     ],
-    wordsToRecognize: ['Pfand', 'Mehrweg', 'Einweg', 'Pfandflasche'],
-    verifyWith: ['bottle label', 'supermarket deposit machine'],
-    safetyNote: '',
+    verify: [
+      "Bottle or can Pfand symbol",
+      "Receipt line showing Pfand",
+      "Supermarket Pfandautomat signs"
+    ],
+    risk: "Travelers may throw away deposit bottles or misunderstand the extra charge as a pricing error.",
+    relatedGuideUrl: "",
+    keywords: ["pfand", "deposit", "bottle", "can", "receipt", "pfandautomat", "rückgabe"]
   },
   {
-    id: 'paid-toilets-and-coins',
-    category: 'Essentials',
-    title: 'Paid toilets and coins',
-    situation: 'You need a toilet at a station, mall or busy area.',
-    meaning:
-      'Some public toilets in Germany may cost money. Card payment is not always guaranteed.',
+    id: "paid-toilets-and-coins",
+    title: "Paid toilets and coins",
+    category: "Daily logistics",
+    urgency: "medium",
+    problem: "You need a toilet at a station, mall or rest stop and see a gate, payment machine or coin sign.",
+    meaning: "Many public toilets in Germany, especially in stations and travel hubs, may require payment. Card may work in some places, but small coins can still be useful.",
     whatToDo: [
-      'Keep a few coins or small cash as backup.',
-      'Check whether card payment is accepted before entering.',
-      'If traveling with children or luggage, do not wait until it is urgent.',
+      "Check whether the machine accepts card, coins or both.",
+      "Keep small coins available during travel days.",
+      "In train stations, follow WC or Toilette signs rather than leaving the station first.",
+      "If traveling with kids, check toilets before boarding or before leaving a station area."
     ],
-    wordsToRecognize: ['WC', 'Toilette', 'Sanifair', 'nur Münzen'],
-    verifyWith: ['toilet entrance signs'],
-    safetyNote: '',
+    verify: [
+      "WC signs",
+      "Payment machine instructions",
+      "Station map",
+      "Staff or information desk"
+    ],
+    risk: "The problem is not translation; it is timing. You may need coins or a nearby alternative quickly.",
+    relatedGuideUrl: "",
+    keywords: ["toilet", "wc", "coins", "paid toilet", "station toilet", "sanifair", "bathroom"]
   },
   {
-    id: 'pharmacy-closed-notdienst',
-    category: 'Health',
-    title: 'Pharmacy closed / Notdienst',
-    situation: 'You need a pharmacy on a Sunday, public holiday or outside regular hours.',
-    meaning:
-      'Regular pharmacies may be closed, but emergency pharmacy duty services rotate by date and location.',
+    id: "pharmacy-closed-notdienst",
+    title: "Pharmacy closed / Notdienst",
+    category: "Health and urgent supplies",
+    urgency: "high",
+    problem: "You need medicine but the pharmacy is closed, or it is Sunday, late evening or a public holiday.",
+    meaning: "Regular pharmacies may be closed outside business hours, but emergency pharmacy duty services exist. In German, this is often called Notdienst or Notdienst-Apotheke.",
     whatToDo: [
-      'For life-threatening emergencies, call 112 immediately.',
-      'For non-emergency medical help outside regular office hours, travelers in Germany can check 116117.',
-      'For emergency pharmacies, verify current Notdienst information before going.',
+      "Search for Notdienst-Apotheke plus your city or postcode.",
+      "Check the official emergency pharmacy listing before traveling there.",
+      "For urgent medical danger, use emergency services instead of searching for a normal pharmacy.",
+      "If you only need basic supplies, also check station or airport shops, but do not expect full pharmacy service."
     ],
-    wordsToRecognize: ['Apotheke', 'Notdienst', 'Notapotheke'],
-    verifyWith: ['official Notdienst-Apotheke service', 'Google Maps', 'official pharmacy website'],
-    safetyNote:
-      'This is not medical advice. Do not delay emergency care if the situation may be serious.',
+    verify: [
+      "Official Notdienst-Apotheke search",
+      "Pharmacy window notice",
+      "Google Maps plus official pharmacy website",
+      "Emergency number if medically urgent"
+    ],
+    risk: "Google Maps may show a pharmacy listing but not the current duty pharmacy. Verify with an official Notdienst source.",
+    relatedGuideUrl: "/sunday-holiday-closures.html",
+    keywords: ["pharmacy", "apotheke", "notdienst", "medicine", "closed pharmacy", "emergency pharmacy", "holiday"]
   },
   {
-    id: 'train-platform-change',
-    category: 'Transit',
-    title: 'Train platform change',
-    situation: 'Your train platform changes shortly before departure.',
-    meaning:
-      'Gleisänderung means your train may leave from a different platform than originally shown.',
+    id: "train-platform-change",
+    title: "Train platform change",
+    category: "Transit trouble",
+    urgency: "high",
+    problem: "Your train platform changed, or the app and station board do not seem to match.",
+    meaning: "German trains can change platforms shortly before departure. The train number matters more than the destination name because multiple trains may go toward similar cities.",
     whatToDo: [
-      'Check the train number, not only the destination.',
-      'Look at the latest station display before boarding.',
-      'Leave extra time if you have luggage, children or a tight connection.',
+      "Check the train number first, not only the destination.",
+      "Look at the latest station departure board.",
+      "Follow platform change signs quickly but calmly.",
+      "If traveling with luggage or kids, move only after confirming the train number and platform."
     ],
-    wordsToRecognize: ['Gleisänderung', 'geändertes Gleis', 'heute von Gleis'],
-    verifyWith: ['station display', 'DB Navigator', 'local transport app'],
-    safetyNote: '',
+    verify: [
+      "Station departure board",
+      "DB Navigator",
+      "Platform display",
+      "Station staff"
+    ],
+    risk: "Following only the destination name can put you on the wrong train or wrong platform.",
+    relatedGuideUrl: "/train-trouble.html",
+    keywords: ["platform", "gleis", "platform change", "train number", "db navigator", "departure board"]
   },
   {
-    id: 'train-cancellation',
-    category: 'Transit',
-    title: 'Train cancellation',
-    situation: 'Your train is cancelled or no longer shown as expected.',
-    meaning:
-      'Fällt aus means the train is cancelled. You may need another train, route or connection.',
+    id: "train-cancellation",
+    title: "Train cancellation",
+    category: "Transit trouble",
+    urgency: "high",
+    problem: "Your train is cancelled or marked as cancelled in German, and you are not sure whether you can take another train.",
+    meaning: "A cancelled train may change your routing options, but ticket rules depend on the ticket type and disruption context. Do not assume every train is automatically allowed.",
     whatToDo: [
-      'Look for the next train with the same direction or destination.',
-      'Check whether your ticket is valid on an alternative connection.',
-      'Ask station staff if you are unsure and have a tight connection.',
+      "Check DB Navigator for replacement options.",
+      "Look for official messages about cancellation or aufgehoben Zugbindung if applicable.",
+      "Ask staff before boarding a much more expensive or different category train if unsure.",
+      "Keep screenshots of cancellation messages if your onward trip is affected."
     ],
-    wordsToRecognize: ['fällt aus', 'Zug fällt aus', 'Ausfall'],
-    verifyWith: ['DB Navigator', 'station display', 'station staff'],
-    safetyNote: '',
+    verify: [
+      "DB Navigator",
+      "Station displays",
+      "DB Reisezentrum or staff",
+      "Ticket conditions"
+    ],
+    risk: "The key question is not just translation. It is whether your ticket flexibility changed.",
+    relatedGuideUrl: "/train-trouble.html",
+    keywords: ["cancelled", "canceled", "zug fällt aus", "train cancellation", "db", "ticket", "zugbindung"]
   },
   {
-    id: 'replacement-bus-sev',
-    category: 'Transit',
-    title: 'Replacement bus / SEV',
-    situation: 'You see SEV or Schienenersatzverkehr during a train or local transit trip.',
-    meaning:
-      'Part of the rail route may be replaced by a bus, often because of construction or disruption.',
+    id: "replacement-bus-sev",
+    title: "Replacement bus / SEV",
+    category: "Transit trouble",
+    urgency: "high",
+    problem: "You see SEV, Ersatzverkehr or Schienenersatzverkehr and your train route is disrupted.",
+    meaning: "Part of the train route may be replaced by a bus. The bus often leaves from outside the station, not from the normal train platform.",
     whatToDo: [
-      'Look for signs saying SEV, Ersatzverkehr or Bus.',
-      'Allow extra time because replacement buses can be slower and harder with luggage.',
-      'Check the final destination before boarding the bus.',
+      "Do not wait only on the platform if SEV is shown.",
+      "Look for yellow SEV, Ersatzverkehr or bus replacement signs.",
+      "Check whether the replacement bus stop is outside the station building.",
+      "Leave extra time because replacement buses can be slower and harder to find."
     ],
-    wordsToRecognize: ['SEV', 'Schienenersatzverkehr', 'Ersatzverkehr'],
-    verifyWith: ['DB Navigator', 'local transport app', 'station signs'],
-    safetyNote: '',
+    verify: [
+      "DB Navigator",
+      "Station SEV signs",
+      "Station staff",
+      "Posted construction or replacement bus notices"
+    ],
+    risk: "Travelers often miss the replacement bus because they stay near the normal platform too long.",
+    relatedGuideUrl: "/train-trouble.html",
+    keywords: ["sev", "ersatzverkehr", "schienenersatzverkehr", "replacement bus", "bus stop", "train disruption"]
   },
   {
-    id: 'construction-works-bauarbeiten',
-    category: 'Transit',
-    title: 'Construction works / Bauarbeiten',
-    situation: 'Your route changes because of construction works.',
-    meaning:
-      'Bauarbeiten means construction works. Routes, platforms, travel times or replacement transport may change.',
+    id: "construction-works-bauarbeiten",
+    title: "Construction works / Bauarbeiten",
+    category: "Transit trouble",
+    urgency: "medium",
+    problem: "Your route shows Bauarbeiten, construction works or changed service, and travel time suddenly looks longer.",
+    meaning: "Rail construction can cause changed platforms, replacement buses, skipped stops, delays or different routes. The important part is how it affects your next connection.",
     whatToDo: [
-      'Check your route again on the day of travel.',
-      'Leave extra time for transfers.',
-      'Watch for platform changes, replacement buses or changed stopping patterns.',
+      "Check whether your exact train number is affected.",
+      "Look for changed departure times, replacement buses or skipped stops.",
+      "If you have a tight connection, check alternatives before boarding.",
+      "For airport travel, allow extra buffer and verify again on the travel day."
     ],
-    wordsToRecognize: ['Bauarbeiten', 'Baustelle', 'Umleitung'],
-    verifyWith: ['DB Navigator', 'local transport app', 'station signs'],
-    safetyNote: '',
-  },
-]
+    verify: [
+      "DB Navigator",
+      "Station displays",
+      "Official construction notice",
+      "Staff at the station"
+    ],
+    risk: "A construction notice can look like general information, but it may change your actual route.",
+    relatedGuideUrl: "/train-trouble.html",
+    keywords: ["bauarbeiten", "construction", "works", "delay", "route change", "replacement bus", "db"]
+  }
+];
 
-export function getTroubleTopicById(topicId) {
-  return TROUBLE_TOPICS.find((topic) => topic.id === topicId) || null
-}
-
-export function getTroubleTopicsByCategory(category) {
-  return TROUBLE_TOPICS.filter((topic) => topic.category === category)
-}
+export default troubleTopics;
