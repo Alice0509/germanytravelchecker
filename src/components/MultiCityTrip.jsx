@@ -145,6 +145,9 @@ export default function MultiCityTrip() {
     return buildMultiCityTripResult({ segments: enrichedSegments })
   }, [holidayDataBySegment, segments])
 
+  const showTransferEssentials =
+    result?.transferDays.length > 0 && result.riskLevel !== 'low'
+
   function updateSegment(segmentId, updates) {
     setSegments((current) =>
       current.map((segment) => (segment.id === segmentId ? { ...segment, ...updates } : segment)),
@@ -335,6 +338,21 @@ export default function MultiCityTrip() {
                 </article>
               ))}
             </div>
+
+            {showTransferEssentials && (
+              <div className="transfer-essentials-card">
+                <strong>Transfer day essentials</strong>
+                <p>
+                  Transfer days can feel harder when shops are closed, trains are
+                  busy or you arrive late. Carry water, simple food, charger power
+                  and any regular medication you already use.
+                </p>
+                <p>
+                  Do not rely on shopping after arrival. Some toilets, kiosks or
+                  small places may also need cash or coins.
+                </p>
+              </div>
+            )}
 
             <p className="trip-disclaimer">{result.disclaimer}</p>
           </div>
