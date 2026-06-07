@@ -176,10 +176,22 @@ function PlannerApp() {
       </section>
 
       <footer className="planner-footer">
-        <a href="/">Germany Travel Checker</a>
-        <a href="/impressum.html">Impressum</a>
-        <a href="/datenschutz.html">Datenschutz</a>
-        <a href="https://www.schulferienklar.de/">Schulferienklar</a>
+        <div>
+          <strong>Germany Travel Checker</strong>
+          <p>
+            Practical Germany trip checks for Sundays, public holidays,
+            school holidays, transfers and everyday travel trouble.
+          </p>
+        </div>
+
+        <nav aria-label="Planner footer links">
+          <a href="/">Home</a>
+          <a href="/berlin.html">Berlin guide</a>
+          <a href="/munich.html">Munich guide</a>
+          <a href="/impressum.html">Impressum</a>
+          <a href="/datenschutz.html">Datenschutz</a>
+          <a href="https://www.schulferienklar.de/">Data by Schulferienklar</a>
+        </nav>
       </footer>
     </main>
   )
