@@ -105,8 +105,9 @@ function PlannerApp() {
           <article>
             <h3>Prevent arrival-day trouble</h3>
             <p>
-              If you arrive on a Sunday or public holiday, plan water,
-              groceries, snacks, cafés, bakeries and pharmacy fallback options before you land.
+              If you land late, arrive early or reach Germany on a Sunday or
+              public holiday, plan water, snacks, basic groceries and pharmacy
+              fallback options before you are tired and searching with luggage.
             </p>
             <a href="/">Use Check Today</a>
           </article>
