@@ -23,7 +23,7 @@ export const NEED_OPTIONS = [
 
 export const NEED_GUIDANCE = {
   water: {
-    title: "Buying water",
+    title: "Water planning",
     fallbackPlaces: [
       "major train stations",
       "airports",
@@ -39,7 +39,7 @@ export const NEED_GUIDANCE = {
       "If regular supermarkets are closed, plan water earlier if you can. Larger stations, airports, gas stations, kiosks, cafés, bakeries, hotel reception or vending machines may help as fallback options, but availability varies.",
   },
   groceries: {
-    title: "Groceries and basics",
+    title: "Groceries and daily basics",
     fallbackPlaces: [
       "major train stations",
       "airports",
@@ -63,7 +63,7 @@ export const NEED_GUIDANCE = {
       "Tobacco availability may depend on age verification, local rules and exact opening hours. The app should not provide exact vending machine locations.",
   },
   "cafes-bakeries": {
-    title: "Cafés and bakeries",
+    title: "Cafés and bakeries fallback",
     fallbackPlaces: [
       "city centers",
       "tourist areas",
