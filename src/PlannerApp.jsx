@@ -42,12 +42,12 @@ function PlannerApp() {
     <main className="planner-page">
       <section className="planner-hero">
         <div className="eyebrow">Germany trip trouble planner</div>
-        <h1>Plan around the small Germany troubles that can make a trip harder.</h1>
+        <h1>Check the small Germany surprises that can make a trip harder.</h1>
         <p>
-          Check whether your dates or transfers overlap with Sundays,
-          public holidays, school holiday travel pressure, closure risks and
-          everyday essentials problems. This planner uses rule-based guidance,
-          not AI guesses or live shop opening-hour claims.
+          Check whether your dates or transfers run into Sundays,
+          public holidays, school holiday pressure, closure risks or everyday
+          essentials problems. Rule-based guidance, no AI guesses and no live
+          shop opening-hour claims.
         </p>
 
         <div className="planner-actions">
@@ -78,10 +78,11 @@ function PlannerApp() {
       <section className="planner-city-guides">
         <div>
           <p className="eyebrow">City checks</p>
-          <h2>Planning Berlin or Munich?</h2>
+          <h2>Planning Berlin or Munich first?</h2>
           <p>
-            Open a practical city guide for local closure notes, fallback ideas
-            and Germany-specific travel friction before you finalize your plans.
+            Open a city guide for the small local things visitors often miss:
+            closure patterns, water and grocery fallback, pharmacies, Pfand,
+            cash and live checks.
           </p>
         </div>
         <div className="planner-city-links">
@@ -93,11 +94,11 @@ function PlannerApp() {
 
       <section className="planner-next-steps">
         <div className="section-heading">
-          <p className="eyebrow">Trouble to prevent next</p>
-          <h2>Turn the date check into a practical trouble plan.</h2>
+          <p className="eyebrow">Before the trip gets annoying</p>
+          <h2>Turn the date check into a few simple next steps.</h2>
           <p>
-            After checking your dates, use these next steps to avoid common
-            Germany travel trouble before you book, transfer or rely on shops.
+            After checking your dates, plan the small things that usually become
+            annoying only when you are tired, hungry or carrying luggage.
           </p>
         </div>
 
@@ -136,11 +137,10 @@ function PlannerApp() {
       <section className="planner-faq">
         <div className="section-heading">
           <p className="eyebrow">Germany trouble FAQ</p>
-          <h2>Common small troubles before a Germany trip.</h2>
+          <h2>Small Germany surprises visitors often miss.</h2>
           <p>
-            These answers help visitors avoid common Germany travel trouble. They do
-            not replace live opening-hour checks, official transport updates or
-            emergency services.
+            These answers are for practical trip planning. They do not replace
+            live opening-hour checks, official transport updates or emergency services.
           </p>
         </div>
 
