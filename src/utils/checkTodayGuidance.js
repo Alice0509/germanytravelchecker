@@ -36,7 +36,7 @@ export const NEED_GUIDANCE = {
       "vending machines where available",
     ],
     note:
-      "If regular supermarkets are closed, plan water earlier if you can. Larger stations, airports, gas stations, kiosks, cafés, bakeries, hotel reception or vending machines may help as fallback options, but availability varies.",
+      "If you land late, wake up on a Sunday or arrive on a public holiday, do not assume you can quickly stop by a regular supermarket for water. Buy water earlier if you can. Larger stations, airports, gas stations, kiosks, cafés, bakeries, hotel reception or vending machines may help as fallback options, but availability varies.",
   },
   groceries: {
     title: "Groceries and daily basics",
@@ -48,7 +48,7 @@ export const NEED_GUIDANCE = {
       "small convenience-style shops where available",
     ],
     note:
-      "Regular supermarkets are usually closed on Sundays and public holidays. Train stations, airports, gas stations or kiosks may be better fallback options.",
+      "Regular supermarkets are usually closed on Sundays and public holidays. If you need breakfast items, snacks, toiletries or simple basics, it is better to plan before shops close. Train stations, airports, gas stations or kiosks may help, but exact availability varies.",
   },
   cigarettes: {
     title: "Tobacco availability",
@@ -73,7 +73,7 @@ export const NEED_GUIDANCE = {
       "hotel cafés",
     ],
     note:
-      "Cafés, bakeries and restaurants may still be open in tourist areas, city centers, train stations and airports, but exact hours vary.",
+      "Cafés, bakeries and restaurants can be useful when regular shops are closed, especially in tourist areas, city centers, train stations or airports. They may be more expensive than buying basics earlier, and exact hours vary.",
   },
   pharmacy: {
     title: "Pharmacies and emergency help",
@@ -87,7 +87,7 @@ export const NEED_GUIDANCE = {
       "hotel reception for local guidance",
     ],
     note:
-      "If this is a medical emergency or life-threatening situation, call 112 immediately. For non-emergency medical help outside regular office hours, travelers in Germany can check 116117. Regular pharmacies may be closed on Sundays and public holidays. Emergency pharmacies change by date and location, so always verify current information with an official Notdienst-Apotheke service, Google Maps or the official pharmacy website before going.",
+      "If this is a medical emergency or life-threatening situation, call 112 immediately. For non-emergency medical help outside regular office hours, travelers in Germany can check 116117. Regular pharmacies may be closed on Sundays and public holidays, so plan regular medication you already use before you run out. Emergency pharmacies change by date and location, so always verify current information with an official Notdienst-Apotheke service, Google Maps or the official pharmacy website before going.",
   },
 };
 
