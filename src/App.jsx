@@ -1,5 +1,6 @@
 import CheckToday from './components/CheckToday.jsx'
 import CityGuidePreview from './components/CityGuidePreview.jsx'
+import TroubleFinder from './components/TroubleFinder.jsx'
 import './App.css'
 
 const CHECK_ITEMS = [
@@ -133,6 +134,8 @@ function App() {
         </div>
       </section>
 
+
+      <TroubleFinder />
 
       <CityGuidePreview />
 
