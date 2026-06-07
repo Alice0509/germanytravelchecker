@@ -2423,3 +2423,78 @@ h1 {
   padding: 8px 12px;
   background: #e6faf5;
 }
+
+.trouble-finder-section {
+  margin-top: 24px;
+}
+
+.trouble-finder-card {
+  border: 1px solid rgba(20, 33, 61, 0.08);
+  border-radius: 28px;
+  padding: 24px;
+  background: rgba(255, 255, 255, 0.86);
+  box-shadow: 0 22px 70px rgba(40, 55, 85, 0.08);
+}
+
+.trouble-finder-card label {
+  display: grid;
+  gap: 8px;
+}
+
+.trouble-finder-card label span {
+  color: #14213d;
+  font-weight: 900;
+}
+
+.trouble-finder-card input {
+  width: 100%;
+  border: 1px solid rgba(20, 33, 61, 0.14);
+  border-radius: 18px;
+  padding: 14px 16px;
+  background: #fff;
+  color: #14213d;
+  font: inherit;
+}
+
+.trouble-finder-card article {
+  margin-top: 18px;
+  border-radius: 22px;
+  padding: 18px;
+  background: #fffaf2;
+  border: 1px solid rgba(20, 33, 61, 0.08);
+}
+
+.trouble-finder-card article strong {
+  display: block;
+  margin-bottom: 8px;
+  color: #14213d;
+  font-size: 1.1rem;
+}
+
+.trouble-finder-card article p {
+  margin: 0;
+  color: rgba(20, 33, 61, 0.74);
+  line-height: 1.65;
+}
+
+.trouble-chip-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.trouble-chip-row button {
+  border: 1px solid rgba(23, 138, 132, 0.2);
+  border-radius: 999px;
+  padding: 9px 12px;
+  background: #e6faf5;
+  color: #0f6f69;
+  font: inherit;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.trouble-chip-row button:hover {
+  transform: translateY(-1px);
+}
