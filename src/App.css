@@ -2598,6 +2598,18 @@ h1 {
   text-transform: capitalize;
 }
 
+
+.first-move-note {
+  margin: 0;
+  border: 1px solid rgba(20, 33, 61, 0.08);
+  border-radius: 18px;
+  padding: 14px 16px;
+  background: #fffaf2;
+  color: #14213d;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
 .trouble-result-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
