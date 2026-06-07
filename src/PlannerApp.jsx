@@ -73,39 +73,39 @@ function PlannerApp() {
 
       <section className="planner-next-steps">
         <div className="section-heading">
-          <p className="eyebrow">What to check next</p>
-          <h2>Turn the date check into a practical plan.</h2>
+          <p className="eyebrow">Trouble to prevent next</p>
+          <h2>Turn the date check into a trouble-prevention plan.</h2>
           <p>
-            After checking your dates, use these next steps to reduce common
-            Germany travel friction before you book, transfer or rely on shops.
+            After checking your dates, use these next steps to avoid common
+            Germany travel trouble before you book, transfer or rely on shops.
           </p>
         </div>
 
         <div className="planner-next-grid">
           <article>
-            <h3>Check your arrival day</h3>
+            <h3>Prevent arrival-day trouble</h3>
             <p>
-              If you arrive on a Sunday or public holiday, plan groceries,
-              water, cafés, bakeries and pharmacy fallback options before you land.
+              If you arrive on a Sunday or public holiday, plan water,
+              groceries, snacks, cafés, bakeries and pharmacy fallback options before you land.
             </p>
             <a href="/">Use Check Today</a>
           </article>
 
           <article>
-            <h3>Open a city guide</h3>
+            <h3>Check city-specific trouble</h3>
             <p>
-              Berlin and Munich guides give practical city-specific context for
-              closures, fallback planning and local travel friction.
+              Berlin and Munich guides cover city-specific closure patterns,
+              water and grocery fallback, pharmacies, Pfand, cash and live checks.
             </p>
             <a href="/berlin.html">Berlin guide</a>
             <a href="/munich.html">Munich guide</a>
           </article>
 
           <article>
-            <h3>Double-check live details</h3>
+            <h3>Verify live details before relying on them</h3>
             <p>
               Verify exact opening hours, transport changes and emergency pharmacy
-              duty schedules through official or live sources before relying on them.
+              duty schedules through official or live sources before relying on shops, transfers or pharmacies.
             </p>
           </article>
         </div>
