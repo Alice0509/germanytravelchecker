@@ -122,6 +122,23 @@ export default function TripDates() {
 
   const showEssentialsWarning =
     result?.warnings.some((warning) => warning.type === 'sunday' || warning.type === 'public-holiday') || false
+  const mapCityName = result ? encodeURIComponent(result.city.name) : ''
+  const tripLiveLinks = result
+    ? [
+        {
+          label: `Check supermarkets in ${result.city.name} on Google Maps`,
+          href: `https://www.google.com/maps/search/supermarket+${mapCityName}`,
+        },
+        {
+          label: `Check cafés & bakeries in ${result.city.name} on Google Maps`,
+          href: `https://www.google.com/maps/search/cafe+bakery+${mapCityName}`,
+        },
+        {
+          label: `Check pharmacies in ${result.city.name} on Google Maps`,
+          href: `https://www.google.com/maps/search/pharmacy+${mapCityName}`,
+        },
+      ]
+    : []
 
   return (
     <section className="section trip-dates-section" id="trip-dates">
@@ -242,6 +259,23 @@ export default function TripDates() {
                 </p>
               </div>
             )}
+
+            <div className="trip-live-links">
+              <div>
+                <strong>Live checks in {result.city.name}</strong>
+                <p>
+                  Use live sources before relying on exact opening hours during
+                  your trip dates.
+                </p>
+              </div>
+              <div className="trip-live-link-list">
+                {tripLiveLinks.map((link) => (
+                  <a key={link.href} href={link.href} target="_blank" rel="noreferrer">
+                    {link.label}
+                  </a>
+                ))}
+              </div>
+            </div>
 
             <p className="trip-disclaimer">{result.disclaimer}</p>
           </div>
