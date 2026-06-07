@@ -162,6 +162,17 @@ function App() {
           </div>
           <a href="/train-trouble.html">Open Train Trouble Guide</a>
         </article>
+        <article className="trouble-guide-card">
+          <div>
+            <span>Sunday / holiday closures</span>
+            <h3>Why are shops closed today?</h3>
+            <p>
+              Quickly understand Sunday and public holiday closures in Germany,
+              what to do next and where to verify before you walk across town.
+            </p>
+          </div>
+          <a href="/sunday-holiday-closures.html">Open Sunday Closure Guide</a>
+        </article>
       </section>
 
       <CityGuidePreview />
