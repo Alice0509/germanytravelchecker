@@ -47,10 +47,12 @@ function findTopic(query) {
   return scoredTopics[0]?.topic || troubleTopics[0]
 }
 
-function guideLabel(url) {
-  if (url === '/train-trouble.html') return 'Open Train Trouble Guide'
-  if (url === '/sunday-holiday-closures.html') return 'Open Sunday Closure Guide'
-  if (url === '/planner.html') return 'Open Trip Planner'
+function guideLabel(topic) {
+  if (topic.actionLabel) return topic.actionLabel
+
+  if (topic.relatedGuideUrl === '/train-trouble.html') return 'Open Train Trouble Guide'
+  if (topic.relatedGuideUrl === '/sunday-holiday-closures.html') return 'Open Sunday Closure Guide'
+  if (topic.relatedGuideUrl === '/planner.html') return 'Open Trip Planner'
   return 'Open related guide'
 }
 
@@ -148,7 +150,7 @@ export default function TroubleFinder() {
 
           {result.relatedGuideUrl ? (
             <a className="button secondary trouble-guide-link" href={result.relatedGuideUrl}>
-              {guideLabel(result.relatedGuideUrl)}
+              {guideLabel(result)}
             </a>
           ) : null}
         </article>
