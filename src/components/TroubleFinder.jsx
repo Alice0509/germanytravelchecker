@@ -44,7 +44,7 @@ function findTopic(query) {
     .filter((item) => item.score > 0)
     .sort((a, b) => b.score - a.score)
 
-  return scoredTopics[0]?.topic || troubleTopics[0]
+  return scoredTopics[0]?.topic || null
 }
 
 function guideLabel(topic) {
@@ -103,57 +103,78 @@ export default function TroubleFinder() {
           />
         </label>
 
-        <article className="trouble-result">
-          <div className="trouble-result-header">
-            <div>
-              <span className="trouble-category">{result.category}</span>
-              <strong>{result.title}</strong>
+        {result ? (
+          <article className="trouble-result">
+            <div className="trouble-result-header">
+              <div>
+                <span className="trouble-category">{result.category}</span>
+                <strong>{result.title}</strong>
+              </div>
+              <span className={`urgency-pill urgency-${result.urgency}`}>
+                {result.urgency} urgency
+              </span>
             </div>
-            <span className={`urgency-pill urgency-${result.urgency}`}>
-              {result.urgency} urgency
-            </span>
-          </div>
 
-          <p className="first-move-note">{firstMoveText(result)}</p>
+            <p className="first-move-note">{firstMoveText(result)}</p>
 
-          <div className="trouble-result-grid">
-            <section>
-              <h3>Problem</h3>
-              <p>{result.problem}</p>
-            </section>
+            <div className="trouble-result-grid">
+              <section>
+                <h3>Problem</h3>
+                <p>{result.problem}</p>
+              </section>
 
-            <section>
-              <h3>Meaning</h3>
-              <p>{result.meaning}</p>
-            </section>
+              <section>
+                <h3>Meaning</h3>
+                <p>{result.meaning}</p>
+              </section>
 
-            <section>
-              <h3>What to do</h3>
-              <ul>
-                {result.whatToDo.slice(0, 3).map((step) => (
-                  <li key={step}>{step}</li>
-                ))}
-              </ul>
-            </section>
+              <section>
+                <h3>What to do</h3>
+                <ul>
+                  {result.whatToDo.slice(0, 3).map((step) => (
+                    <li key={step}>{step}</li>
+                  ))}
+                </ul>
+              </section>
 
-            <section>
-              <h3>Verify</h3>
-              <ul>
-                {result.verify.slice(0, 3).map((source) => (
-                  <li key={source}>{source}</li>
-                ))}
-              </ul>
-            </section>
-          </div>
+              <section>
+                <h3>Verify</h3>
+                <ul>
+                  {result.verify.slice(0, 3).map((source) => (
+                    <li key={source}>{source}</li>
+                  ))}
+                </ul>
+              </section>
+            </div>
 
-          <p className="trouble-risk">{result.risk}</p>
+            <p className="trouble-risk">{result.risk}</p>
 
-          {result.relatedGuideUrl ? (
-            <a className="button secondary trouble-guide-link" href={result.relatedGuideUrl}>
-              {guideLabel(result)}
-            </a>
-          ) : null}
-        </article>
+            {result.relatedGuideUrl ? (
+              <a className="button secondary trouble-guide-link" href={result.relatedGuideUrl}>
+                {guideLabel(result)}
+              </a>
+            ) : null}
+          </article>
+        ) : (
+          <article className="trouble-result no-match-result">
+            <div className="trouble-result-header">
+              <div>
+                <span className="trouble-category">No exact match yet</span>
+                <strong>Try one of the common Germany travel problems below.</strong>
+              </div>
+            </div>
+
+            <p className="first-move-note">
+              This Trouble Finder is still rule-based. Try a shorter phrase like
+              shops closed, medicine, SEV, platform changed, paid toilet or still water.
+            </p>
+
+            <p className="trouble-risk">
+              If this is urgent, verify with an official source first: station staff,
+              DB Navigator, an official pharmacy emergency listing, your hotel or local emergency services.
+            </p>
+          </article>
+        )}
 
         <div className="trouble-chip-row" aria-label="Example worries">
           {EXAMPLE_WORRIES.map((item) => (
