@@ -1,6 +1,4 @@
 import CheckToday from './components/CheckToday.jsx'
-import TripDates from './components/TripDates.jsx'
-import MultiCityTrip from './components/MultiCityTrip.jsx'
 import CityGuidePreview from './components/CityGuidePreview.jsx'
 import './App.css'
 
@@ -135,9 +133,6 @@ function App() {
         </div>
       </section>
 
-      <TripDates />
-
-      <MultiCityTrip />
 
       <CityGuidePreview />
 
