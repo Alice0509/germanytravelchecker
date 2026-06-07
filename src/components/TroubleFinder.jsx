@@ -12,6 +12,19 @@ const EXAMPLE_WORRIES = [
   'cancelled train',
 ]
 
+function keywordMatches(normalized, keyword) {
+  const normalizedKeyword = keyword.toLowerCase()
+
+  if (normalizedKeyword.includes(' ')) {
+    return normalized.includes(normalizedKeyword)
+  }
+
+  const escapedKeyword = normalizedKeyword.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
+  const wordPattern = new RegExp(`(^|[^a-z0-9])${escapedKeyword}([^a-z0-9]|$)`, 'i')
+
+  return wordPattern.test(normalized)
+}
+
 function findTopic(query) {
   const normalized = query.trim().toLowerCase()
 
@@ -19,11 +32,19 @@ function findTopic(query) {
     return troubleTopics[0]
   }
 
-  return (
-    troubleTopics.find((topic) =>
-      topic.keywords.some((keyword) => normalized.includes(keyword.toLowerCase())),
-    ) || troubleTopics[0]
-  )
+  const scoredTopics = troubleTopics
+    .map((topic) => {
+      const score = topic.keywords.reduce((total, keyword) => {
+        if (!keywordMatches(normalized, keyword)) return total
+        return total + keyword.length
+      }, 0)
+
+      return { topic, score }
+    })
+    .filter((item) => item.score > 0)
+    .sort((a, b) => b.score - a.score)
+
+  return scoredTopics[0]?.topic || troubleTopics[0]
 }
 
 function guideLabel(url) {
@@ -104,7 +125,7 @@ export default function TroubleFinder() {
           <p className="trouble-risk">{result.risk}</p>
 
           {result.relatedGuideUrl ? (
-            <a className="trouble-guide-link" href={result.relatedGuideUrl}>
+            <a className="button secondary trouble-guide-link" href={result.relatedGuideUrl}>
               {guideLabel(result.relatedGuideUrl)}
             </a>
           ) : null}
