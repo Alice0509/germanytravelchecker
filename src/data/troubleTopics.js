@@ -6,6 +6,7 @@ export const troubleTopics = [
     urgency: "medium",
     problem: "You are standing outside a closed supermarket, drugstore or shopping street in Germany, even though it is daytime.",
     meaning: "It may be Sunday or a public holiday. In many parts of Germany, normal retail shopping is restricted on Sundays and public holidays, but stations, airports, gas stations, kiosks and restaurants may still have options.",
+    firstMove: "First, do not walk to another normal supermarket yet. Check stations, airports, gas stations or kiosks, then verify the exact place before you move.",
     whatToDo: [
       "Do not walk to another normal supermarket first without checking.",
       "Look for larger train stations, airports, gas stations, kiosks or restaurants.",
@@ -30,6 +31,7 @@ export const troubleTopics = [
     urgency: "medium",
     problem: "A shop, office, museum or service is closed and you are not sure whether today is a public holiday in this part of Germany.",
     meaning: "Some German public holidays apply nationwide, but others depend on the federal state. A holiday in Bavaria may not be a holiday in Berlin.",
+    firstMove: "First, check the city or federal state you are actually in today. A holiday can apply in one state but not another.",
     whatToDo: [
       "Check the city or state you are in, not only the country.",
       "Use Check Today for the current location/date context.",
@@ -53,6 +55,7 @@ export const troubleTopics = [
     urgency: "low",
     problem: "You bought water in Germany and it tastes fizzy, or you are not sure which bottle is still water.",
     meaning: "Many German bottled waters are sparkling. Look for words like still, ohne Kohlensäure or naturell if you want non-sparkling water.",
+    firstMove: "First, check the bottle label before you pay. If you need non-sparkling water, look for still, naturell or ohne Kohlensäure.",
     whatToDo: [
       "For still water, look for still, ohne Kohlensäure or naturell.",
       "For sparkling water, words like classic, spritzig or mit Kohlensäure often mean carbonated.",
@@ -75,6 +78,7 @@ export const troubleTopics = [
     urgency: "low",
     problem: "You paid more than expected for a drink bottle or see Pfand on a receipt.",
     meaning: "Pfand is a bottle or can deposit. You pay it when buying certain drinks and may get it back by returning the container to a deposit machine or participating shop.",
+    firstMove: "First, do not throw the bottle away if you want the deposit back. Keep it and look for a Pfand return machine later.",
     whatToDo: [
       "Keep bottles and cans with a Pfand symbol if you want the deposit back.",
       "Look for a Rückgabe or Pfandautomat machine in supermarkets.",
@@ -97,6 +101,7 @@ export const troubleTopics = [
     urgency: "medium",
     problem: "You need a toilet at a station, mall or rest stop and see a gate, payment machine or coin sign.",
     meaning: "Many public toilets in Germany, especially in stations and travel hubs, may require payment. Card may work in some places, but small coins can still be useful.",
+    firstMove: "First, check the payment machine before you leave the station or mall. Card may work, but a few coins can still save stress.",
     whatToDo: [
       "Check whether the machine accepts card, coins or both.",
       "Keep small coins available during travel days.",
@@ -120,6 +125,7 @@ export const troubleTopics = [
     urgency: "high",
     problem: "You need medicine but the pharmacy is closed, or it is Sunday, late evening or a public holiday.",
     meaning: "Regular pharmacies may be closed outside business hours, but emergency pharmacy duty services exist. In German, this is often called Notdienst or Notdienst-Apotheke.",
+    firstMove: "First, do not rely on a normal pharmacy listing. Search for the official Notdienst-Apotheke for your city or postcode.",
     whatToDo: [
       "Search for Notdienst-Apotheke plus your city or postcode.",
       "Check the official emergency pharmacy listing before traveling there.",
@@ -143,6 +149,7 @@ export const troubleTopics = [
     urgency: "high",
     problem: "Your train platform changed, or the app and station board do not seem to match.",
     meaning: "German trains can change platforms shortly before departure. The train number matters more than the destination name because multiple trains may go toward similar cities.",
+    firstMove: "First, check the train number and the latest platform board. Do not move based only on the destination name.",
     whatToDo: [
       "Check the train number first, not only the destination.",
       "Look at the latest station departure board.",
@@ -166,6 +173,7 @@ export const troubleTopics = [
     urgency: "high",
     problem: "Your train is cancelled or marked as cancelled in German, and you are not sure whether you can take another train.",
     meaning: "A cancelled train may change your routing options, but ticket rules depend on the ticket type and disruption context. Do not assume every train is automatically allowed.",
+    firstMove: "First, check DB Navigator and the station display before boarding another train. The key question is whether your ticket options changed.",
     whatToDo: [
       "Check DB Navigator for replacement options.",
       "Look for official messages about cancellation or aufgehoben Zugbindung if applicable.",
@@ -189,6 +197,7 @@ export const troubleTopics = [
     urgency: "high",
     problem: "You see SEV, Ersatzverkehr or Schienenersatzverkehr and your train route is disrupted.",
     meaning: "Part of the train route may be replaced by a bus. The bus often leaves from outside the station, not from the normal train platform.",
+    firstMove: "First, do not wait only on the platform. Look for yellow SEV or Ersatzverkehr signs and check whether the bus leaves outside the station.",
     whatToDo: [
       "Do not wait only on the platform if SEV is shown.",
       "Look for yellow SEV, Ersatzverkehr or bus replacement signs.",
@@ -212,6 +221,7 @@ export const troubleTopics = [
     urgency: "medium",
     problem: "Your route shows Bauarbeiten, construction works or changed service, and travel time suddenly looks longer.",
     meaning: "Rail construction can cause changed platforms, replacement buses, skipped stops, delays or different routes. The important part is how it affects your next connection.",
+    firstMove: "First, check whether your exact train number, stop or connection is affected. Construction notices can change the route, not just the timing.",
     whatToDo: [
       "Check whether your exact train number is affected.",
       "Look for changed departure times, replacement buses or skipped stops.",

@@ -55,6 +55,10 @@ function guideLabel(url) {
 }
 
 function firstMoveText(topic) {
+  if (topic.firstMove) {
+    return topic.firstMove
+  }
+
   if (topic.urgency === 'high') {
     return 'First, pause before you move too far. Check the official source or station display, then decide your next step.'
   }
