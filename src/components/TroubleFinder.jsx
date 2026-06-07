@@ -183,6 +183,12 @@ export default function TroubleFinder() {
             </button>
           ))}
         </div>
+
+        <p className="trouble-trust-note">
+          Rule-based guidance only. This is not live opening-hour, train-status or
+          emergency-service data. Before you walk across town, board another train
+          or change plans, verify with an official source.
+        </p>
       </div>
     </section>
   )

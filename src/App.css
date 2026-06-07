@@ -2477,6 +2477,14 @@ h1 {
   line-height: 1.65;
 }
 
+
+.trouble-trust-note {
+  margin: 0;
+  color: #5d6673;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
 .trouble-chip-row {
   display: flex;
   flex-wrap: wrap;
