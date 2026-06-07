@@ -54,6 +54,22 @@ function guideLabel(url) {
   return 'Open related guide'
 }
 
+function firstMoveText(topic) {
+  if (topic.urgency === 'high') {
+    return 'First, pause before you move too far. Check the official source or station display, then decide your next step.'
+  }
+
+  if (topic.category === 'Shops and closures' || topic.category === 'Health and urgent supplies') {
+    return 'First, do not walk across town yet. Check nearby fallback places and verify the exact location before you move.'
+  }
+
+  if (topic.category === 'Transit trouble') {
+    return 'First, check the train number and the latest official display. Do not rely only on the destination name.'
+  }
+
+  return 'First, use this to understand the situation. Then verify the exact place, label or rule before you spend time or money.'
+}
+
 export default function TroubleFinder() {
   const [query, setQuery] = useState('water')
 
@@ -91,6 +107,8 @@ export default function TroubleFinder() {
               {result.urgency} urgency
             </span>
           </div>
+
+          <p className="first-move-note">{firstMoveText(result)}</p>
 
           <div className="trouble-result-grid">
             <section>
