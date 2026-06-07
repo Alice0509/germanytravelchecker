@@ -1,62 +1,42 @@
 import { useMemo, useState } from 'react'
+import { troubleTopics } from '../data/troubleTopics.js'
 
-const TROUBLE_TIPS = [
-  {
-    id: 'sunday',
-    keywords: ['sunday', 'closed', 'supermarket', 'shop', 'shopping', 'grocery', 'groceries'],
-    title: 'Sunday shopping can surprise visitors',
-    text: 'Many regular supermarkets and shops are closed on Sundays in Germany. If you need water, snacks or basics, plan earlier or check stations, airports, gas stations, cafés, bakeries, kiosks or hotel reception.',
-  },
-  {
-    id: 'water',
-    keywords: ['water', 'still', 'sparkling', 'sprudel', 'classic', 'kohlensäure', 'pfand', 'bottle'],
-    title: 'Water is easy to mix up',
-    text: 'If you want still water, look for stilles Wasser, ohne Kohlensäure or naturell. Sprudel, Classic or mit Kohlensäure usually means sparkling. Pfand means bottle deposit.',
-  },
-  {
-    id: 'pharmacy',
-    keywords: ['pharmacy', 'medicine', 'medication', 'apoteke', 'apotheke', 'drugstore', 'sick'],
-    title: 'Pharmacies may be closed',
-    text: 'Regular pharmacies may close on Sundays and public holidays. For emergencies call 112. For non-emergency medical help outside office hours, travelers in Germany can check 116117. Verify emergency pharmacy information through official Notdienst sources.',
-  },
-  {
-    id: 'cash',
-    keywords: ['cash', 'coin', 'coins', 'card', 'toilet', 'bathroom', 'wc', 'restroom', 'locker'],
-    title: 'Cash or coins can still help',
-    text: 'Some toilets, lockers, kiosks or small places may need coins, cash or a payment backup. It is not everywhere, but having a few coins can save stress when you are tired or carrying luggage.',
-  },
-  {
-    id: 'arrival',
-    keywords: ['airport', 'arrival', 'arrive', 'late', 'early', 'morning', 'night', 'hotel', 'check-in', 'luggage'],
-    title: 'Late or early arrival needs extra planning',
-    text: 'If you land late or arrive very early, do not assume a normal supermarket will be open. Bring water and a snack, save your hotel route, and check airport or station options before you are tired.',
-  },
-  {
-    id: 'holiday',
-    keywords: ['holiday', 'public holiday', 'state', 'bavaria', 'berlin', 'federal'],
-    title: 'Public holidays can differ by state',
-    text: 'Some German public holidays depend on the federal state. A normal day in Berlin can be a public holiday in Bavaria, so check the city and date before relying on shops or pharmacies.',
-  },
+const EXAMPLE_WORRIES = [
+  'water',
+  'Sunday',
+  'pharmacy',
+  'Pfand',
+  'toilet',
+  'SEV',
+  'platform',
+  'cancelled train',
 ]
 
-function findTip(query) {
+function findTopic(query) {
   const normalized = query.trim().toLowerCase()
 
   if (!normalized) {
-    return TROUBLE_TIPS[0]
+    return troubleTopics[0]
   }
 
   return (
-    TROUBLE_TIPS.find((tip) =>
-      tip.keywords.some((keyword) => normalized.includes(keyword.toLowerCase())),
-    ) || TROUBLE_TIPS[0]
+    troubleTopics.find((topic) =>
+      topic.keywords.some((keyword) => normalized.includes(keyword.toLowerCase())),
+    ) || troubleTopics[0]
   )
+}
+
+function guideLabel(url) {
+  if (url === '/train-trouble.html') return 'Open Train Trouble Guide'
+  if (url === '/sunday-holiday-closures.html') return 'Open Sunday Closure Guide'
+  if (url === '/planner.html') return 'Open Trip Planner'
+  return 'Open related guide'
 }
 
 export default function TroubleFinder() {
   const [query, setQuery] = useState('water')
 
-  const result = useMemo(() => findTip(query), [query])
+  const result = useMemo(() => findTopic(query), [query])
 
   return (
     <section className="section trouble-finder-section">
@@ -65,7 +45,7 @@ export default function TroubleFinder() {
         <h2>What are you worried about?</h2>
         <p>
           Type a small Germany travel worry, such as water, Sunday, pharmacy,
-          cash, toilet, Pfand or airport arrival.
+          Pfand, toilet, SEV, platform change or a cancelled train.
         </p>
       </div>
 
@@ -76,17 +56,62 @@ export default function TroubleFinder() {
             type="search"
             value={query}
             onChange={(event) => setQuery(event.target.value)}
-            placeholder="Try: water, Sunday, pharmacy, cash, airport"
+            placeholder="Try: Sunday, pharmacy, SEV, Pfand, toilet"
           />
         </label>
 
-        <article>
-          <strong>{result.title}</strong>
-          <p>{result.text}</p>
+        <article className="trouble-result">
+          <div className="trouble-result-header">
+            <div>
+              <span className="trouble-category">{result.category}</span>
+              <strong>{result.title}</strong>
+            </div>
+            <span className={`urgency-pill urgency-${result.urgency}`}>
+              {result.urgency} urgency
+            </span>
+          </div>
+
+          <div className="trouble-result-grid">
+            <section>
+              <h3>Problem</h3>
+              <p>{result.problem}</p>
+            </section>
+
+            <section>
+              <h3>Meaning</h3>
+              <p>{result.meaning}</p>
+            </section>
+
+            <section>
+              <h3>What to do</h3>
+              <ul>
+                {result.whatToDo.slice(0, 3).map((step) => (
+                  <li key={step}>{step}</li>
+                ))}
+              </ul>
+            </section>
+
+            <section>
+              <h3>Verify</h3>
+              <ul>
+                {result.verify.slice(0, 3).map((source) => (
+                  <li key={source}>{source}</li>
+                ))}
+              </ul>
+            </section>
+          </div>
+
+          <p className="trouble-risk">{result.risk}</p>
+
+          {result.relatedGuideUrl ? (
+            <a className="trouble-guide-link" href={result.relatedGuideUrl}>
+              {guideLabel(result.relatedGuideUrl)}
+            </a>
+          ) : null}
         </article>
 
         <div className="trouble-chip-row" aria-label="Example worries">
-          {['water', 'Sunday', 'pharmacy', 'cash', 'toilet', 'Pfand', 'airport'].map((item) => (
+          {EXAMPLE_WORRIES.map((item) => (
             <button key={item} type="button" onClick={() => setQuery(item)}>
               {item}
             </button>
