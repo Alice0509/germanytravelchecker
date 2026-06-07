@@ -37,11 +37,11 @@ function App() {
         <div className="hero-grid">
           <div className="hero-copy">
             <p className="eyebrow">Germany travel trouble checker for English-speaking visitors</p>
-            <h1>Avoid small Germany travel troubles before they become expensive.</h1>
+            <h1>Stuck in Germany? Understand the problem before you move.</h1>
             <p className="hero-text">
-              Germany Travel Checker helps visitors plan around Sundays,
-              public holidays, pharmacy closures, grocery surprises, water
-              problems, transfer days and busy travel periods.
+              When you are tired, carrying luggage or holding a child’s hand, you do
+              not have time to read five blog posts. Germany Travel Checker helps
+              you understand what is probably happening and what to check next.
             </p>
 
             <div className="hero-actions">
@@ -60,9 +60,9 @@ function App() {
             </div>
 
             <p className="trust-note">
-              Built as a practical English travel layer using Schulferienklar
-              holiday data. Rule-based guidance, no AI guesses and no fixed
-              shop opening-hour database.
+              Google Translate can tell you what a sign says. Germany Travel Checker
+              helps you decide what to do next. Rule-based guidance, no AI guesses
+              and no fixed shop opening-hour database.
             </p>
           </div>
 
@@ -73,10 +73,11 @@ function App() {
       <section className="section mode-section">
         <div className="section-heading">
           <p className="eyebrow">Three ways to use it</p>
-          <h2>Choose the check that matches your trip.</h2>
+          <h2>Start with the situation you are in.</h2>
           <p>
-            Use a quick same-day check, plan one city, or check a multi-city
-            Germany itinerary with separate city segments.
+            Use Check Today when something is happening now, Planner when you are
+            preparing dates, and Trouble Finder when a small problem is blocking
+            your next move.
           </p>
         </div>
 
@@ -117,10 +118,11 @@ function App() {
       <section className="section">
         <div className="section-heading">
           <p className="eyebrow">Built for real travel surprises</p>
-          <h2>Not a travel blog. A small-trouble checker for Germany.</h2>
+          <h2>Not a travel blog. A next-move checker for Germany.</h2>
           <p>
-            A quick way for English-speaking visitors to spot the small Germany
-            travel problems that are easy to miss before the trip.
+            A practical layer for English-speaking visitors who need to understand
+            closures, train words, water labels, Pfand, pharmacies and other
+            small problems before they waste time or money.
           </p>
         </div>
 
@@ -140,12 +142,12 @@ function App() {
 
       <section className="section trouble-guide-section">
         <div className="section-heading">
-          <p className="eyebrow">When something suddenly changes</p>
-          <h2>Train trouble words, explained fast.</h2>
+          <p className="eyebrow">When the sign or situation changes</p>
+          <h2>Trouble guides for the moment you get stuck.</h2>
           <p>
-            German station signs and apps can change quickly. Learn the words
-            that matter when a platform changes, a train is cancelled or a
-            replacement bus appears.
+            Translation is only the first step. These guides explain what the
+            situation probably means, what to do next and where to verify before
+            you walk away, board another train or cross town.
           </p>
         </div>
 
