@@ -74,7 +74,7 @@ function PlannerApp() {
       <section className="planner-next-steps">
         <div className="section-heading">
           <p className="eyebrow">Trouble to prevent next</p>
-          <h2>Turn the date check into a trouble-prevention plan.</h2>
+          <h2>Turn the date check into a practical trouble plan.</h2>
           <p>
             After checking your dates, use these next steps to avoid common
             Germany travel trouble before you book, transfer or rely on shops.
