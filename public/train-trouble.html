@@ -38,6 +38,11 @@
       .card p, li { color: #5d6673; }
       .word { display: inline-flex; margin-bottom: 10px; border-radius: 999px; padding: 6px 10px; background: #e6faf5; color: #0f6f69; font-weight: 900; }
       .quick-list { margin: 0; padding-left: 20px; }
+      .quick-action-box { margin: 18px 0; border: 1px solid rgba(20, 33, 61, 0.08); border-radius: 24px; padding: 22px; background: #fffaf2; }
+      .quick-action-box h2 { margin-top: 0; }
+      .quick-action-box p { color: #5d6673; }
+      .quick-action-box ul { margin-bottom: 0; padding-left: 20px; color: #5d6673; }
+      .quick-action-box li + li { margin-top: 8px; }
       .note-card { margin-top: 18px; background: #fffaf2; }
       footer { margin-top: 28px; display: flex; flex-wrap: wrap; gap: 14px; color: #6b7280; font-size: 0.94rem; }
       @media (max-width: 760px) { .hero, .card, .note-card { padding: 22px; } .grid { grid-template-columns: 1fr; } }
@@ -56,6 +61,22 @@
           explains common train disruption words in plain English and tells you
           what to check next.
         </p>
+      </section>
+
+      <section class="quick-action-box" aria-labelledby="station-now-title">
+        <p class="eyebrow">At the station right now</p>
+        <h2 id="station-now-title">Check the sign before you move.</h2>
+        <p>
+          Use this page to quickly understand what the German sign, app message
+          or station announcement probably means before you leave the platform
+          area.
+        </p>
+        <ul>
+          <li><strong>Check the train number first.</strong> Do not rely only on the destination name.</li>
+          <li><strong>Look at the latest platform board.</strong> Platforms can change shortly before departure.</li>
+          <li><strong>If you see SEV,</strong> look for replacement bus signs before leaving the station area.</li>
+          <li><strong>If your connection looks impossible,</strong> check DB Navigator, station displays or staff before changing plans.</li>
+        </ul>
       </section>
 
       <section class="grid">
