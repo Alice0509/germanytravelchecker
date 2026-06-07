@@ -36,7 +36,7 @@ export const NEED_GUIDANCE = {
       "vending machines where available",
     ],
     note:
-      "For water, travelers often check transport hubs, gas stations, kiosks, cafés, bakeries, restaurants or hotel reception first.",
+      "If regular supermarkets are closed, plan water earlier if you can. Larger stations, airports, gas stations, kiosks, cafés, bakeries, hotel reception or vending machines may help as fallback options, but availability varies.",
   },
   groceries: {
     title: "Buying groceries",

@@ -152,6 +152,7 @@ export default function CheckToday() {
       href: `https://www.google.com/maps/search/pharmacy+${mapCityName}`,
     },
   ]
+  const showWaterHelp = selectedNeedIds.includes('water')
 
   return (
     <section className="check-today" id="check-today">
@@ -246,6 +247,53 @@ export default function CheckToday() {
                       <p>{item.note}</p>
                     </article>
                   ))}
+                </div>
+              )}
+
+              {showWaterHelp && (
+                <div className="water-help-card">
+                  <div>
+                    <strong>Water quick help</strong>
+                    <p>
+                      If your date is a Sunday or public holiday, buy water before
+                      regular supermarkets close if you can.
+                    </p>
+                  </div>
+
+                  <div className="water-help-grid">
+                    <article>
+                      <span>Fallback places</span>
+                      <p>
+                        Larger stations, airports, gas stations, kiosks, cafés,
+                        bakeries, hotel reception or vending machines may help.
+                        Availability varies.
+                      </p>
+                    </article>
+
+                    <article>
+                      <span>Still water</span>
+                      <p>
+                        Look for <em>stilles Wasser</em>, <em>ohne Kohlensäure</em>
+                        or <em>naturell</em>.
+                      </p>
+                    </article>
+
+                    <article>
+                      <span>Sparkling water</span>
+                      <p>
+                        <em>Sprudel</em>, <em>Classic</em> or <em>mit Kohlensäure</em>
+                        usually means sparkling.
+                      </p>
+                    </article>
+
+                    <article>
+                      <span>Small Germany note</span>
+                      <p>
+                        <em>Medium</em> usually means lightly sparkling. <em>Pfand</em>
+                        means a bottle deposit.
+                      </p>
+                    </article>
+                  </div>
                 </div>
               )}
 
