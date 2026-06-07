@@ -63,6 +63,34 @@ The product should assume that many users do not know:
 - pharmacy emergency service patterns
 - school holiday travel effects
 
+## Human tone principles
+
+Germany Travel Checker should feel like practical help from someone who understands the small problems visitors actually face in Germany.
+
+Good copy should:
+
+- describe real traveler moments, such as landing late, arriving tired, carrying luggage or needing water on a Sunday
+- explain German-specific surprises in plain English
+- sound calm, useful and specific
+- help users prepare before small problems become stressful or expensive
+- keep trust by saying when live sources, official services or business websites must be checked
+
+Avoid copy that sounds:
+
+- generic
+- alarmist
+- like a travel blog
+- like AI-generated filler
+- like the product knows exact opening hours without live data
+- like every station, kiosk, pharmacy or vending machine is available
+
+Useful tone examples:
+
+- If you land late, do not assume a regular supermarket will be open.
+- Bring water and a snack before you are tired, not after.
+- If you want still water, look for stilles Wasser, ohne Kohlensäure or naturell.
+- Keep a payment backup. Some small things may still need cash or coins.
+
 ## Product pillars
 
 ### 1. Check Today
