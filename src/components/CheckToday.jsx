@@ -153,6 +153,7 @@ export default function CheckToday() {
     },
   ]
   const showWaterHelp = selectedNeedIds.includes('water')
+  const showEssentialsChecklist = result.status.isSunday || result.status.publicHoliday
 
   return (
     <section className="check-today" id="check-today">
@@ -183,7 +184,7 @@ export default function CheckToday() {
         <label>
           <span>Germany date</span>
           <input type="date" value={dateKey} onChange={(event) => setDateKey(event.target.value)} />
-                  </label>
+        </label>
       </div>
 
       <div className="need-picker" aria-label="What do you need?">
@@ -247,6 +248,41 @@ export default function CheckToday() {
                       <p>{item.note}</p>
                     </article>
                   ))}
+                </div>
+              )}
+
+              {showEssentialsChecklist && (
+                <div className="essentials-checklist">
+                  <div>
+                    <strong>Before shops close</strong>
+                    <p>
+                      If your date is a Sunday or public holiday, prepare small
+                      essentials before regular supermarkets close.
+                    </p>
+                  </div>
+
+                  <div className="essentials-grid">
+                    <article>
+                      <span>Water</span>
+                      <p>Buy water earlier if you can, especially before a late arrival.</p>
+                    </article>
+                    <article>
+                      <span>Simple food</span>
+                      <p>Pack snacks, breakfast items or train food before relying on cafés.</p>
+                    </article>
+                    <article>
+                      <span>Daily basics</span>
+                      <p>Think about toiletries, baby supplies if needed and chargers.</p>
+                    </article>
+                    <article>
+                      <span>Medication you already use</span>
+                      <p>Plan regular medication before pharmacies close. Use official emergency options for urgent help.</p>
+                    </article>
+                    <article>
+                      <span>Cash or coins</span>
+                      <p>Some toilets, kiosks or small places may still need cash or coins.</p>
+                    </article>
+                  </div>
                 </div>
               )}
 
