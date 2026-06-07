@@ -137,6 +137,33 @@ function App() {
 
       <TroubleFinder />
 
+
+      <section className="section trouble-guide-section">
+        <div className="section-heading">
+          <p className="eyebrow">When something suddenly changes</p>
+          <h2>Train trouble words, explained fast.</h2>
+          <p>
+            German station signs and apps can change quickly. Learn the words
+            that matter when a platform changes, a train is cancelled or a
+            replacement bus appears.
+          </p>
+        </div>
+
+        <article className="trouble-guide-card">
+          <div>
+            <span>Transit trouble</span>
+            <h3>German train disruption words</h3>
+            <p>
+              Understand common words such as <strong>Gleisänderung</strong>,
+              <strong> fällt aus</strong>, <strong>SEV</strong>,
+              <strong> Schienenersatzverkehr</strong> and <strong>Bauarbeiten</strong>
+              before you miss a platform, bus or connection.
+            </p>
+          </div>
+          <a href="/train-trouble.html">Open Train Trouble Guide</a>
+        </article>
+      </section>
+
       <CityGuidePreview />
 
       <section className="section safety-section">
