@@ -2266,3 +2266,52 @@ h1 {
     margin-top: 18px;
   }
 }
+
+.trip-live-links {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: 16px;
+  margin-top: 18px;
+  border: 1px solid rgba(20, 33, 61, 0.1);
+  border-radius: 18px;
+  padding: 16px;
+  background: rgba(255, 255, 255, 0.72);
+}
+
+.trip-live-links strong {
+  display: block;
+  margin-bottom: 6px;
+  color: #14213d;
+}
+
+.trip-live-links p {
+  margin: 0;
+  color: rgba(20, 33, 61, 0.74);
+  line-height: 1.6;
+}
+
+.trip-live-link-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.trip-live-link-list a {
+  border: 1px solid rgba(20, 33, 61, 0.12);
+  border-radius: 999px;
+  padding: 10px 12px;
+  color: #147c75;
+  text-decoration: none;
+  font-weight: 800;
+  background: #fff;
+}
+
+.trip-live-link-list a:hover {
+  color: #0f5f5a;
+}
+
+@media (max-width: 780px) {
+  .trip-live-links {
+    grid-template-columns: 1fr;
+  }
+}
