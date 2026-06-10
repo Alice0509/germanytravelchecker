@@ -18,7 +18,7 @@ function getOverallTitle(riskLevel) {
   }
 
   if (riskLevel === "medium") {
-    return "Your Germany itinerary has some travel notes.";
+    return "Your itinerary includes dates to plan around.";
   }
 
   return "Your Germany itinerary looks fairly normal.";
@@ -29,7 +29,7 @@ function getOverallSummary({ riskLevel, segmentResults = [], transferDays = [] }
   const cityText = cityNames || "your cities";
   const transferText =
     transferDays.length > 0
-      ? ` It also includes ${transferDays.length} transfer day${transferDays.length === 1 ? "" : "s"} where both departure and arrival city conditions may matter.`
+      ? ` It also includes ${transferDays.length} transfer day${transferDays.length === 1 ? "" : "s"} where both cities may affect your timing, food or transport backup.`
       : "";
 
   if (riskLevel === "high") {
@@ -37,7 +37,7 @@ function getOverallSummary({ riskLevel, segmentResults = [], transferDays = [] }
   }
 
   if (riskLevel === "medium") {
-    return `Your itinerary across ${cityText} includes dates that may need planning, such as Sundays or school holiday overlaps. Shops may be closed on Sundays, and travel demand may be higher during school holidays.${transferText}`;
+    return `Your itinerary across ${cityText} includes dates to plan around, such as Sundays, school holiday overlaps or transfer days. Before you lock the plan, check closure patterns, food and water options, transport updates and buffer time.${transferText}`;
   }
 
   return `Your itinerary across ${cityText} looks fairly normal based on public holidays, Sundays and school holiday data. Exact opening hours and transport details should still be checked before relying on specific places.${transferText}`;
@@ -76,7 +76,7 @@ function findTransferDays(segmentResults = []) {
         fromCity: currentSegment.city.name,
         toCity: nextSegment.city.name,
         note:
-          "This transfer day may be affected by conditions in both the departure and arrival city. Check shops, station services, transport providers and accommodation timing before relying on a specific plan.",
+          "Before this transfer, check station services, food and water options, transport updates and accommodation timing in both cities.",
       });
     }
   }
