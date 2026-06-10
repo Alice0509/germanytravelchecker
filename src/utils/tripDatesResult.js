@@ -136,7 +136,7 @@ function getTripDatesWarnings({
   if (publicHolidays.length > 0) {
     warnings.push({
       type: "public-holiday",
-      title: "Public holiday in your date range",
+      title: "Closure risk: public holiday",
       note:
         "Regular shops and supermarkets are usually closed on public holidays. Attractions, restaurants, stations and airports may follow different opening patterns.",
       items: publicHolidays.map((holiday) => ({
@@ -149,7 +149,7 @@ function getTripDatesWarnings({
   if (sundays.length > 0) {
     warnings.push({
       type: "sunday",
-      title: "Sunday closure pattern",
+      title: "Daily logistics risk: Sunday",
       note:
         "Many regular shops and supermarkets are usually closed on Sundays in Germany. Train stations, airports, gas stations, cafés, bakeries, restaurants and hotels may be useful fallback options. Buy essentials before leaving reliable areas.",
       items: sundays.map((dateKey) => ({
@@ -162,7 +162,7 @@ function getTripDatesWarnings({
   if (schoolHolidayOverlaps.length > 0) {
     warnings.push({
       type: "school-holiday",
-      title: "School holiday overlap",
+      title: "Crowd risk: school break",
       note:
         "School holidays do not usually close shops, but trains, hotels, roads and attractions may be busier during these periods. Add buffer time and book important plans earlier.",
       items: schoolHolidayOverlaps.map((holiday) => ({
