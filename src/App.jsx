@@ -37,11 +37,12 @@ function App() {
         <div className="hero-grid">
           <div className="hero-copy">
             <p className="eyebrow">Germany travel trouble checker for English-speaking visitors</p>
-            <h1>Stuck in Germany? Understand the problem before you move.</h1>
+            <h1>Plan around German holidays, school breaks and travel trouble.</h1>
             <p className="hero-text">
-              When you are tired, carrying luggage or holding a child’s hand, you do
-              not have time to read five blog posts. Germany Travel Checker helps
-              you understand what is probably happening and what to check next.
+              Check whether today, your trip dates or a common Germany travel
+              problem could change your next move. Germany Travel Checker helps
+              you spot German calendar risks before travel and understand what
+              to do when Germany feels closed, delayed or confusing.
             </p>
 
             <div className="hero-actions">
