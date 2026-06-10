@@ -33,11 +33,11 @@ function getOverallSummary({ riskLevel, segmentResults = [], transferDays = [] }
       : "";
 
   if (riskLevel === "high") {
-    return `Your itinerary across ${cityText} includes at least one segment with a public holiday or strong closure-risk date. Regular shops and supermarkets are usually closed on public holidays, and travel demand may be higher around long weekends.${transferText}`;
+    return `Your itinerary across ${cityText} includes at least one segment with a public holiday or strong closure-risk date. Regular shops and supermarkets are usually closed on public holidays, and travel demand may be higher around long weekends. Plan essentials before the holiday date.${transferText}`;
   }
 
   if (riskLevel === "medium") {
-    return `Your itinerary across ${cityText} includes dates to plan around, such as Sundays, school holiday overlaps or transfer days. Before you lock the plan, check closure patterns, food and water options, transport updates and buffer time.${transferText}`;
+    return `Your itinerary across ${cityText} includes dates to plan around, such as Sundays, school holiday overlaps or transfer days. Before you lock the plan, check closure patterns, food and water options, transport updates and buffer time. Avoid making tight transfers or errands depend on one unverified place.${transferText}`;
   }
 
   return `Your itinerary across ${cityText} looks fairly normal based on public holidays, Sundays and school holiday data. Exact opening hours and transport details should still be checked before relying on specific places.${transferText}`;
@@ -76,7 +76,7 @@ function findTransferDays(segmentResults = []) {
         fromCity: currentSegment.city.name,
         toCity: nextSegment.city.name,
         note:
-          "Before this transfer, check station services, food and water options, transport updates and accommodation timing in both cities.",
+          "Before this transfer, check station services, food and water options, transport updates and accommodation timing in both cities. Add extra buffer if you are carrying luggage or traveling with children.",
       });
     }
   }
