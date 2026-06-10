@@ -1,11 +1,14 @@
 import { buildTripDatesResult, getTripDatesDisclaimer } from "./tripDatesResult.js";
 
-function getOverallRiskLevel(segmentResults = []) {
+function getOverallRiskLevel(segmentResults = [], transferDays = []) {
   if (segmentResults.some((segment) => segment.riskLevel === "high")) {
     return "high";
   }
 
-  if (segmentResults.some((segment) => segment.riskLevel === "medium")) {
+  if (
+    segmentResults.some((segment) => segment.riskLevel === "medium") ||
+    transferDays.length > 0
+  ) {
     return "medium";
   }
 
@@ -111,8 +114,8 @@ export function buildMultiCityTripResult({ segments = [] } = {}) {
     return null;
   }
 
-  const riskLevel = getOverallRiskLevel(segmentResults);
   const transferDays = findTransferDays(segmentResults);
+  const riskLevel = getOverallRiskLevel(segmentResults, transferDays);
   const dateSpan = getTotalDateSpan(segmentResults);
 
   return {
