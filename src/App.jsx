@@ -175,6 +175,18 @@ function App() {
           </div>
           <a href="/sunday-holiday-closures.html">Open Sunday Closure Guide</a>
         </article>
+        <article className="trouble-guide-card">
+          <div>
+            <span>Daily logistics</span>
+            <h3>Water, Pfand and paid toilets</h3>
+            <p>
+              Not every travel problem is dramatic. Sometimes you just need still
+              water, a bathroom, or to understand why your bottle cost more than
+              the shelf price.
+            </p>
+          </div>
+          <a href="/water-pfand-guide.html">Open Water / Pfand Guide</a>
+        </article>
       </section>
 
       <CityGuidePreview />
