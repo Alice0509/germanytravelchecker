@@ -71,7 +71,7 @@ export const troubleTopics = [
     ],
     risk: "A direct translation may not help if the bottle branding is confusing or uses regional wording.",
     relatedGuideUrl: "/water-pfand-guide.html",
-    actionLabel: "",
+    actionLabel: "Check water label words",
     keywords: ["water", "still water", "sparkling", "kohlensäure", "stilles wasser", "naturell", "classic"]
   },
   {
@@ -95,7 +95,7 @@ export const troubleTopics = [
     ],
     risk: "Travelers may throw away deposit bottles or misunderstand the extra charge as a pricing error.",
     relatedGuideUrl: "/water-pfand-guide.html",
-    actionLabel: "",
+    actionLabel: "Understand the Pfand machine",
     keywords: ["pfand", "deposit", "bottle", "can", "receipt", "pfandautomat", "rückgabe"]
   },
   {
@@ -120,7 +120,7 @@ export const troubleTopics = [
     ],
     risk: "The problem is not translation; it is timing. You may need coins or a nearby alternative quickly.",
     relatedGuideUrl: "/water-pfand-guide.html",
-    actionLabel: "",
+    actionLabel: "Check toilet payment options",
     keywords: ["toilet", "wc", "coins", "paid toilet", "station toilet", "sanifair", "bathroom"]
   },
   {
