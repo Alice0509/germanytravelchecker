@@ -211,15 +211,22 @@ function App() {
           </p>
         </div>
 
-        <nav aria-label="Footer links">
-          <a href="/planner.html">Planner</a>
-          <a href="/train-trouble.html">Train trouble</a>
-          <a href="/sunday-holiday-closures.html">Sunday closures</a>
-          <a href="/water-pfand-guide.html">Water / Pfand</a>
-          <a href="/impressum.html">Impressum</a>
-          <a href="/datenschutz.html">Datenschutz</a>
-          <a href="https://www.schulferienklar.de/">Schulferienklar</a>
-        </nav>
+        <div className="footer-link-groups">
+          <nav aria-label="Travel help links">
+            <span>Travel help</span>
+            <a href="/planner.html">Planner</a>
+            <a href="/train-trouble.html">Train trouble</a>
+            <a href="/sunday-holiday-closures.html">Sunday closures</a>
+            <a href="/water-pfand-guide.html">Water / Pfand</a>
+          </nav>
+
+          <nav aria-label="Site links">
+            <span>Site</span>
+            <a href="/impressum.html">Impressum</a>
+            <a href="/datenschutz.html">Datenschutz</a>
+            <a href="https://www.schulferienklar.de/">Schulferienklar</a>
+          </nav>
+        </div>
 
         <span className="footer-copy">© 2026 Joan</span>
       </footer>
