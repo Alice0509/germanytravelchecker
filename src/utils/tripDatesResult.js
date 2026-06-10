@@ -104,7 +104,7 @@ function getTripDatesSummary({
   if (publicHolidays.length > 0) {
     const holidayNames = publicHolidays.map(getHolidayName).join(", ");
 
-    return `Your trip includes ${holidayNames} in ${state}. Regular shops and supermarkets are usually closed on public holidays in Germany, and travel demand may be higher around these dates.`;
+    return `Your trip includes ${holidayNames} in ${state}. Regular shops and supermarkets are usually closed on public holidays in Germany, and travel demand may be higher around these dates. Plan essentials before the holiday date.`;
   }
 
   if (sundays.length > 0 && schoolHolidayOverlaps.length > 0) {
@@ -123,7 +123,7 @@ function getTripDatesSummary({
     return `Your dates look fairly normal for ${place}. Regular shops, supermarkets, cafés and services are generally more likely to follow normal opening patterns, but exact hours still vary by business.`;
   }
 
-  return `Your dates include notes to plan around for ${place}. Check local opening hours, transport plans and food or pharmacy options before relying on a specific place.`;
+  return `Your dates include notes to plan around for ${place}. Check local opening hours, transport plans and food or pharmacy options before relying on a specific place. Do not leave essentials, medicine or tight transfers to the last minute.`;
 }
 
 function getTripDatesWarnings({
@@ -151,7 +151,7 @@ function getTripDatesWarnings({
       type: "sunday",
       title: "Sunday closure pattern",
       note:
-        "Many regular shops and supermarkets are usually closed on Sundays in Germany. Train stations, airports, gas stations, cafés, bakeries, restaurants and hotels may be useful fallback options.",
+        "Many regular shops and supermarkets are usually closed on Sundays in Germany. Train stations, airports, gas stations, cafés, bakeries, restaurants and hotels may be useful fallback options. Buy essentials before leaving reliable areas.",
       items: sundays.map((dateKey) => ({
         date: dateKey,
         name: "Sunday",
@@ -164,7 +164,7 @@ function getTripDatesWarnings({
       type: "school-holiday",
       title: "School holiday overlap",
       note:
-        "School holidays do not usually close shops, but trains, hotels, roads and attractions may be busier during these periods.",
+        "School holidays do not usually close shops, but trains, hotels, roads and attractions may be busier during these periods. Add buffer time and book important plans earlier.",
       items: schoolHolidayOverlaps.map((holiday) => ({
         startDate: holiday.startDate,
         endDate: holiday.endDate,
