@@ -41,13 +41,13 @@ function PlannerApp() {
   return (
     <main className="planner-page">
       <section className="planner-hero">
-        <div className="eyebrow">Germany trip trouble planner</div>
-        <h1>Check the small Germany surprises that can make a trip harder.</h1>
+        <div className="eyebrow">Germany trip date risk planner</div>
+        <h1>Find dates to avoid or plan around in Germany.</h1>
         <p>
-          Check whether your dates or transfers run into Sundays,
-          public holidays, school holiday pressure, closure risks or everyday
-          essentials problems. Rule-based guidance, no AI guesses and no live
-          shop opening-hour claims.
+          Check whether your trip dates or transfers run into Sundays,
+          public holidays, school break pressure, closure risks or everyday
+          essentials problems. Use the signals to avoid harder dates, add buffer
+          time or plan food, water and pharmacy checks earlier.
         </p>
 
         <div className="planner-actions">
