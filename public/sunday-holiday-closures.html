@@ -58,7 +58,43 @@
       .maps-warning { margin-top: 18px; border: 1px solid rgba(20, 33, 61, 0.08); border-radius: 24px; padding: 20px; background: rgba(255, 250, 242, 0.7); }
       .maps-warning h2 { margin-top: 0; }
       .maps-warning p { color: #5d6673; }
-      @media (max-width: 720px) { .common-need-grid { grid-template-columns: 1fr; } }
+      @media (max-width: 720px) { .common-need-grid { grid-template-columns: 1fr; } }      .related-guides {
+        margin-top: 28px;
+      }
+
+      .related-guide-list {
+        display: grid;
+        gap: 12px;
+        margin-top: 16px;
+      }
+
+      .related-guide-link {
+        display: block;
+        padding: 14px 16px;
+        border: 1px solid #d9e2ef;
+        border-radius: 16px;
+        background: #f8fafc;
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .related-guide-link strong {
+        display: block;
+        margin-bottom: 4px;
+        color: #152238;
+      }
+
+      .related-guide-link span {
+        color: #5d6673;
+        font-size: 0.95rem;
+      }
+
+      .related-guide-link:hover {
+        border-color: #9db6d8;
+        background: #f2f6fb;
+      }
+
+
 
   </style>
   </head>
@@ -206,6 +242,33 @@
         your plan.
       </p>
     </section>
+    <section class="card related-guides" aria-labelledby="related-guides-title">
+      <p class="eyebrow">Next problem?</p>
+      <h2 id="related-guides-title">Related trouble guides</h2>
+      <p>
+        Travel problems often come together. Check another guide before you walk
+        across town or change your plan.
+      </p>
+      <div class="related-guide-list">
+        <a class="related-guide-link" href="/train-trouble.html">
+          <strong>Train trouble</strong>
+          <span>Cancelled trains, platform changes, replacement buses and missed connections.</span>
+        </a>
+        <a class="related-guide-link" href="/water-pfand-guide.html">
+          <strong>Water / Pfand</strong>
+          <span>Still water, sparkling water, bottle deposits, Pfand machines and paid toilets.</span>
+        </a>
+      </div>
+    </section>
+
+    <footer>
+      <span>© 2026 Joan</span>
+      <a href="/impressum.html">Impressum</a>
+      <a href="/datenschutz.html">Datenschutz</a>
+      <a href="https://www.schulferienklar.de/">Data by Schulferienklar</a>
+    </footer>
+
+
   </main>
   </body>
 </html>
