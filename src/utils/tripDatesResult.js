@@ -87,7 +87,7 @@ function getTripDatesTitle({ cityName, riskLevel } = {}) {
     return `Your ${place} dates include notes to plan around.`;
   }
 
-  return `Your ${place} dates look fairly normal.`;
+  return `Your ${place} dates have no major calendar signal.`;
 }
 
 function getTripDatesSummary({
@@ -120,7 +120,7 @@ function getTripDatesSummary({
   }
 
   if (riskLevel === "low") {
-    return `Your dates look fairly normal for ${place}. Regular shops, supermarkets, cafés and services are generally more likely to follow normal opening patterns, but exact hours still vary by business.`;
+    return `Your dates have no major calendar signal for ${place}. Regular shops, supermarkets, cafés and services are generally more likely to follow normal opening patterns, but this is not an opening-hours guarantee. Exact hours, local events and transport changes can still vary.`;
   }
 
   return `Your dates include notes to plan around for ${place}. Check local opening hours, transport plans and food or pharmacy options before relying on a specific place. Do not leave essentials, medicine or tight transfers to the last minute.`;

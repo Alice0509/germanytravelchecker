@@ -21,7 +21,7 @@ function getOverallTitle(riskLevel) {
     return "Your itinerary includes dates to plan around.";
   }
 
-  return "Your Germany itinerary looks fairly normal.";
+  return "Your Germany itinerary has no major calendar signal.";
 }
 
 function getOverallSummary({ riskLevel, segmentResults = [], transferDays = [] } = {}) {
@@ -40,7 +40,7 @@ function getOverallSummary({ riskLevel, segmentResults = [], transferDays = [] }
     return `Your itinerary across ${cityText} includes dates to plan around, such as Sundays, school holiday overlaps or transfer days. Before you lock the plan, check closure patterns, food and water options, transport updates and buffer time. Avoid making tight transfers or errands depend on one unverified place.${transferText}`;
   }
 
-  return `Your itinerary across ${cityText} looks fairly normal based on public holidays, Sundays and school holiday data. Exact opening hours and transport details should still be checked before relying on specific places.${transferText}`;
+  return `Your itinerary across ${cityText} has no major calendar signal based on public holidays, Sundays and school holiday data. This is a low calendar-risk result, not an opening-hours guarantee. Exact hours, local events and transport details should still be checked before relying on specific places.${transferText}`;
 }
 
 function getTotalDateSpan(segmentResults = []) {

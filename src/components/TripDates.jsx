@@ -241,7 +241,7 @@ export default function TripDates() {
               </div>
             ) : (
               <p className="trip-clear-note">
-                No public holiday, Sunday or school holiday overlap was found in this date range.
+                No major calendar signal was found in this date range.
               </p>
             )}
 
