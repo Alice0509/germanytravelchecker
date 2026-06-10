@@ -212,6 +212,10 @@ function App() {
         </div>
 
         <nav aria-label="Footer links">
+          <a href="/planner.html">Planner</a>
+          <a href="/train-trouble.html">Train trouble</a>
+          <a href="/sunday-holiday-closures.html">Sunday closures</a>
+          <a href="/water-pfand-guide.html">Water / Pfand</a>
           <a href="/impressum.html">Impressum</a>
           <a href="/datenschutz.html">Datenschutz</a>
           <a href="https://www.schulferienklar.de/">Schulferienklar</a>
