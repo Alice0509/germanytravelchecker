@@ -5,16 +5,16 @@ import './App.css'
 
 const PLANNER_NOTES = [
   {
-    title: 'Sundays',
-    text: 'Many regular shops and supermarkets are closed on Sundays in Germany, so essentials may need extra planning.',
+    title: 'Low risk',
+    text: 'No major calendar signal was found. Still check exact opening hours, local events and transport details before relying on one place.',
   },
   {
-    title: 'Public holidays',
-    text: 'Public holidays can vary by federal state. A normal day in Berlin may be a holiday in Bavaria.',
+    title: 'Medium risk',
+    text: 'Plan around Sundays, school holiday pressure or transfer days. Add buffer time and arrange food, water or pharmacy checks earlier.',
   },
   {
-    title: 'School holidays',
-    text: 'School holiday periods can increase pressure on trains, roads, hotels and popular attractions.',
+    title: 'High risk',
+    text: 'A public holiday or strong closure-risk date is involved. Plan essentials before the date and avoid tight errands or transfers.',
   },
 ]
 
