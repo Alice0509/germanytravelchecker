@@ -25,17 +25,42 @@ function getDateKeyFromToday(offset) {
   return formatDateKey(addDays(today, offset))
 }
 
+function getInitialCityIdFromUrl() {
+  if (typeof window === 'undefined') {
+    return null
+  }
+
+  const cityId = new URLSearchParams(window.location.search).get('from')
+
+  if (!cityId || !TRAVEL_CITIES.some((city) => city.id === cityId)) {
+    return null
+  }
+
+  return cityId
+}
+
+function getFallbackSecondCityId(firstCityId) {
+  if (firstCityId === 'berlin') {
+    return 'munich'
+  }
+
+  return 'berlin'
+}
+
 function createDefaultSegments() {
+  const firstCityId = getInitialCityIdFromUrl() || 'munich'
+  const secondCityId = getFallbackSecondCityId(firstCityId)
+
   return [
     {
       id: 'segment-1',
-      cityId: 'munich',
+      cityId: firstCityId,
       startDate: getTodayDateKey(),
       endDate: getDateKeyFromToday(3),
     },
     {
       id: 'segment-2',
-      cityId: 'berlin',
+      cityId: secondCityId,
       startDate: getDateKeyFromToday(3),
       endDate: getDateKeyFromToday(7),
     },
