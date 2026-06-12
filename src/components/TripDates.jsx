@@ -250,6 +250,8 @@ export default function TripDates() {
                 {result.seasonalEventNotes.map((note) => (
                   <article key={note.id}>
                     <strong>{note.title}</strong>
+                    {note.eventName && <h4>{note.eventName}</h4>}
+                    {note.dateLabel && <p className="seasonal-event-date">{note.dateLabel}</p>}
                     <p>{note.summary}</p>
                     <p>{note.sourceNote}</p>
                     <ul>
