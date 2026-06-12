@@ -2,6 +2,55 @@ import { parseDateKey } from '../utils/checkToday.js'
 
 export const SEASONAL_EVENT_NOTES = [
   {
+    id: 'berlin-new-year-2026-2027',
+    cityId: 'berlin',
+    title: 'Seasonal event note',
+    eventName: 'New Year period',
+    label: 'Seasonal event note',
+    dateLabel: 'Official check period: 2026-12-31 – 2027-01-01',
+    startDate: '2026-12-31',
+    endDate: '2027-01-01',
+    summary:
+      'Berlin can have special events, crowds, fireworks, road closures and transport changes around New Year. Check official city event pages and live transport updates before relying on tight plans.',
+    sourceNote:
+      'New Year events, ticket rules, security rules and transport changes can vary by year. Verify details with official city, tourism and transport sources before relying on them.',
+    links: [
+      {
+        label: 'Berlin.de New Year events',
+        href: 'https://www.berlin.de/en/events/new-years-eve/',
+      },
+      {
+        label: 'VisitBerlin New Year events',
+        href: 'https://www.visitberlin.de/en/events-new-years-eve-berlin',
+      },
+    ],
+  },
+  {
+    id: 'berlin-new-year-2027-2028',
+    cityId: 'berlin',
+    title: 'Seasonal event note',
+    eventName: 'New Year period',
+    label: 'Seasonal event note',
+    dateLabel: 'Official check period: 2027-12-31 – 2028-01-01',
+    startDate: '2027-12-31',
+    endDate: '2028-01-01',
+    summary:
+      'Berlin can have special events, crowds, fireworks, road closures and transport changes around New Year. Check official city event pages and live transport updates before relying on tight plans.',
+    sourceNote:
+      'New Year events, ticket rules, security rules and transport changes can vary by year. Verify details with official city, tourism and transport sources before relying on them.',
+    links: [
+      {
+        label: 'Berlin.de New Year events',
+        href: 'https://www.berlin.de/en/events/new-years-eve/',
+      },
+      {
+        label: 'VisitBerlin New Year events',
+        href: 'https://www.visitberlin.de/en/events-new-years-eve-berlin',
+      },
+    ],
+  },
+
+  {
     id: 'munich-oktoberfest-2027',
     cityId: 'munich',
     title: 'Seasonal event note',
