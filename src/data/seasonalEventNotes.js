@@ -4,8 +4,10 @@ export const SEASONAL_EVENT_NOTES = [
   {
     id: 'nuremberg-christkindlesmarkt-2026',
     cityId: 'nuremberg',
-    title: 'Seasonal event note: Christkindlesmarkt',
+    title: 'Seasonal event note',
+    eventName: 'Christkindlesmarkt season',
     label: 'Seasonal event note',
+    dateLabel: 'Official season: 2026-11-27 – 2026-12-24',
     startDate: '2026-11-27',
     endDate: '2026-12-24',
     summary:

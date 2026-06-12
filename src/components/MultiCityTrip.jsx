@@ -366,6 +366,8 @@ export default function MultiCityTrip() {
                       {segment.seasonalEventNotes.map((note) => (
                         <div key={`${segment.segmentId}-${note.id}`}>
                           <strong>{note.title}</strong>
+                          {note.eventName && <h4>{note.eventName}</h4>}
+                          {note.dateLabel && <p className="seasonal-event-date">{note.dateLabel}</p>}
                           <p>{note.summary}</p>
                           <p>{note.sourceNote}</p>
                           <ul>
