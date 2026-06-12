@@ -362,7 +362,7 @@ export default function MultiCityTrip() {
                   )}
 
                   {segment.seasonalEventNotes?.length > 0 && (
-                    <div className="segment-warning-list">
+                    <div className="seasonal-event-note-list seasonal-event-note-list-compact">
                       {segment.seasonalEventNotes.map((note) => (
                         <div key={`${segment.segmentId}-${note.id}`}>
                           <strong>{note.title}</strong>
