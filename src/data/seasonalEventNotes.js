@@ -2,6 +2,31 @@ import { parseDateKey } from '../utils/checkToday.js'
 
 export const SEASONAL_EVENT_NOTES = [
   {
+    id: 'munich-oktoberfest-2026',
+    cityId: 'munich',
+    title: 'Seasonal event note',
+    eventName: 'Oktoberfest season',
+    label: 'Seasonal event note',
+    dateLabel: 'Official season: 2026-09-19 – 2026-10-04',
+    startDate: '2026-09-19',
+    endDate: '2026-10-04',
+    summary:
+      'Munich can be much busier during Oktoberfest. Check accommodation, local transport, restaurant plans and arrival timing early, and avoid tight transfers around the festival period.',
+    sourceNote:
+      'Official event dates, opening hours and access rules can change. Verify details with the official Oktoberfest or Munich tourism website before relying on them.',
+    links: [
+      {
+        label: 'Official Oktoberfest site',
+        href: 'https://www.oktoberfest.de/en',
+      },
+      {
+        label: 'Official Munich tourism page',
+        href: 'https://www.munich.travel/en/pois/markets-festivals/oktoberfest',
+      },
+    ],
+  },
+
+  {
     id: 'nuremberg-christkindlesmarkt-2026',
     cityId: 'nuremberg',
     title: 'Seasonal event note',
