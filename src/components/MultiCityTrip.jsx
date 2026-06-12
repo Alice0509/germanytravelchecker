@@ -361,6 +361,27 @@ export default function MultiCityTrip() {
                     </div>
                   )}
 
+                  {segment.seasonalEventNotes?.length > 0 && (
+                    <div className="segment-warning-list">
+                      {segment.seasonalEventNotes.map((note) => (
+                        <div key={`${segment.segmentId}-${note.id}`}>
+                          <strong>{note.title}</strong>
+                          <p>{note.summary}</p>
+                          <p>{note.sourceNote}</p>
+                          <ul>
+                            {note.links.map((link) => (
+                              <li key={link.href}>
+                                <a href={link.href} target="_blank" rel="noreferrer">
+                                  {link.label}
+                                </a>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      ))}
+                    </div>
+                  )}
+
                   {segment.riskLevel !== 'low' && (
                     <div className="segment-live-links">
                       <strong>Live checks in {segment.city.name}</strong>

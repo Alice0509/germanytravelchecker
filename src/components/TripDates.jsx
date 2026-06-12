@@ -245,6 +245,27 @@ export default function TripDates() {
               </p>
             )}
 
+            {result.seasonalEventNotes?.length > 0 && (
+              <div className="trip-warning-list">
+                {result.seasonalEventNotes.map((note) => (
+                  <article key={note.id}>
+                    <strong>{note.title}</strong>
+                    <p>{note.summary}</p>
+                    <p>{note.sourceNote}</p>
+                    <ul>
+                      {note.links.map((link) => (
+                        <li key={link.href}>
+                          <a href={link.href} target="_blank" rel="noreferrer">
+                            {link.label}
+                          </a>
+                        </li>
+                      ))}
+                    </ul>
+                  </article>
+                ))}
+              </div>
+            )}
+
             {showEssentialsWarning && (
               <div className="trip-essentials-card">
                 <strong>Before shops close</strong>
