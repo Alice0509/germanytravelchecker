@@ -246,7 +246,7 @@ export default function TripDates() {
             )}
 
             {result.seasonalEventNotes?.length > 0 && (
-              <div className="trip-warning-list">
+              <div className="seasonal-event-note-list">
                 {result.seasonalEventNotes.map((note) => (
                   <article key={note.id}>
                     <strong>{note.title}</strong>
