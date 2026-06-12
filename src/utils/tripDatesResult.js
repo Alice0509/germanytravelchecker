@@ -1,4 +1,5 @@
 import { findTravelCityById } from "../data/travelCities.js";
+import { findSeasonalEventNotes } from "../data/seasonalEventNotes.js";
 import {
   addDays,
   formatDateKey,
@@ -232,6 +233,11 @@ export function buildTripDatesResult({
     sundays,
     schoolHolidayOverlaps,
   });
+  const seasonalEventNotes = findSeasonalEventNotes({
+    cityId: city.id,
+    startDateKey,
+    endDateKey,
+  });
 
   return {
     city,
@@ -252,6 +258,7 @@ export function buildTripDatesResult({
       sundays,
       schoolHolidayOverlaps,
     }),
+    seasonalEventNotes,
     disclaimer: getTripDatesDisclaimer(),
   };
 }
