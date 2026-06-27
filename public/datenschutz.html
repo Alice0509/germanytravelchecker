@@ -48,6 +48,19 @@
         .guide-menu-panel { right: 0; width: min(360px, calc(100vw - 32px)); max-height: calc(100vh - 6rem); overflow: auto; }
       }
       .back { display: inline-block; margin-bottom: 20px; }
+          /* Mobile: keep the menu button available without changing the whole topbar */
+      @media (max-width: 760px) {
+        .guide-menu {
+          position: fixed;
+          top: calc(12px + env(safe-area-inset-top));
+          right: 12px;
+          z-index: 220;
+        }
+
+        .guide-menu-panel {
+          z-index: 230;
+        }
+      }
     </style>
   </head>
   <body>
