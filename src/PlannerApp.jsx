@@ -1,6 +1,7 @@
 import { useEffect } from 'react'
 import TripDates from './components/TripDates.jsx'
 import MultiCityTrip from './components/MultiCityTrip.jsx'
+import SiteMenu from './components/SiteMenu.jsx'
 import './App.css'
 
 const PLANNER_NOTES = [
@@ -40,6 +41,16 @@ function PlannerApp() {
 
   return (
     <main className="planner-page">
+      <nav className="topbar planner-topbar" aria-label="Main navigation">
+        <a className="brand" href="/" aria-label="Germany Travel Checker home">
+          <span className="brand-mark" aria-hidden="true">
+            <img src="/icon-192.png" alt="" />
+          </span>
+          <span>Germany Travel Checker</span>
+        </a>
+        <SiteMenu ctaHref="/#check-today" ctaLabel="Check today" />
+      </nav>
+
       <section className="planner-hero">
         <div className="eyebrow">Germany trip date risk planner</div>
         <h1>Find dates to avoid or plan around in Germany.</h1>
