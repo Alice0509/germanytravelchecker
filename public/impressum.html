@@ -50,6 +50,19 @@
       .back { display: inline-block; margin-bottom: 20px; }
       .contact-details { color: #66717f; font-size: 0.92rem; line-height: 1.55; }
       .contact-details a { color: #66717f; font-weight: 700; }
+          /* Mobile: keep the menu button available without changing the whole topbar */
+      @media (max-width: 760px) {
+        .guide-menu {
+          position: fixed;
+          top: calc(12px + env(safe-area-inset-top));
+          right: 12px;
+          z-index: 220;
+        }
+
+        .guide-menu-panel {
+          z-index: 230;
+        }
+      }
     </style>
   </head>
   <body>

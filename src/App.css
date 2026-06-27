@@ -2973,3 +2973,17 @@ h1 {
     padding: 1.2rem 1rem 0;
   }
 }
+
+/* Mobile: keep the menu button available without changing the whole topbar */
+@media (max-width: 720px) {
+  .site-menu {
+    position: fixed;
+    top: calc(0.75rem + env(safe-area-inset-top));
+    right: 0.9rem;
+    z-index: 220;
+  }
+
+  .site-menu-panel {
+    z-index: 230;
+  }
+}

@@ -74,6 +74,19 @@
         .grid { grid-template-columns: 1fr; }
         .button { width: 100%; justify-content: center; }
       }
+          /* Mobile: keep the menu button available without changing the whole topbar */
+      @media (max-width: 760px) {
+        .guide-menu {
+          position: fixed;
+          top: calc(12px + env(safe-area-inset-top));
+          right: 12px;
+          z-index: 220;
+        }
+
+        .guide-menu-panel {
+          z-index: 230;
+        }
+      }
     </style>
   </head>
   <body>
