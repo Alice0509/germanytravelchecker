@@ -42,12 +42,107 @@
       .card p, li { color: #5d6673; }
       .note { margin-top: 18px; padding: 16px; border-radius: 18px; background: #fffaf2; border: 1px solid rgba(20, 33, 61, 0.08); color: #5d6673; }
       footer { margin-top: 28px; display: flex; flex-wrap: wrap; gap: 14px; color: #6b7280; font-size: 0.94rem; }
-      @media (max-width: 760px) { .hero, .card { padding: 22px; } .grid { grid-template-columns: 1fr; } .button { width: 100%; justify-content: center; } }
+      .guide-topbar { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-bottom: 22px; position: relative; z-index: 20; }
+      .guide-brand { display: inline-flex; align-items: center; gap: 12px; color: #14213d; font-weight: 950; }
+      .guide-brand img { width: 42px; height: 42px; border-radius: 14px; box-shadow: 0 10px 28px rgba(15, 23, 42, 0.12); }
+      .guide-nav-actions { display: flex; align-items: center; gap: 10px; }
+      .guide-nav-cta { display: inline-flex; align-items: center; border: 1px solid rgba(23, 138, 132, 0.22); border-radius: 999px; background: rgba(23, 138, 132, 0.09); color: #116b67; padding: 10px 15px; font-weight: 950; }
+      .guide-menu { position: relative; }
+      .guide-menu summary { list-style: none; display: inline-flex; align-items: center; gap: 10px; border: 1px solid rgba(23, 138, 132, 0.25); border-radius: 999px; background: rgba(255, 255, 255, 0.78); color: #116b67; padding: 10px 15px; font-weight: 950; cursor: pointer; box-shadow: 0 10px 28px rgba(15, 23, 42, 0.08); }
+      .guide-menu summary::-webkit-details-marker { display: none; }
+      .guide-menu-icon { display: grid; gap: 3px; width: 17px; }
+      .guide-menu-icon span { display: block; height: 2px; border-radius: 999px; background: currentColor; }
+      .guide-menu[open] summary { background: rgba(236, 253, 245, 0.95); border-color: rgba(23, 138, 132, 0.42); }
+      .guide-menu-panel { position: absolute; top: calc(100% + 12px); right: 0; width: min(380px, calc(100vw - 48px)); border: 1px solid rgba(20, 33, 61, 0.12); border-radius: 24px; background: rgba(255, 255, 255, 0.96); box-shadow: 0 28px 80px rgba(15, 23, 42, 0.2); padding: 16px; backdrop-filter: blur(18px); }
+      .guide-menu-intro { border-radius: 18px; background: linear-gradient(135deg, rgba(240, 253, 250, 0.95), rgba(255, 251, 235, 0.8)); padding: 14px; }
+      .guide-menu-intro strong { color: #14213d; }
+      .guide-menu-intro p { margin: 4px 0 0; color: #5d6673; font-size: 0.92rem; line-height: 1.45; }
+      .guide-menu-groups { display: grid; gap: 12px; margin-top: 14px; }
+      .guide-menu-group h2 { margin: 0 0 6px; color: #6b7280; font-size: 0.72rem; font-weight: 950; letter-spacing: 0.14em; text-transform: uppercase; }
+      .guide-menu-group div { display: grid; gap: 4px; }
+      .guide-menu-group a { display: flex; border-radius: 14px; color: #14213d; padding: 10px 12px; font-weight: 900; }
+      .guide-menu-group a:hover { background: rgba(23, 138, 132, 0.08); color: #116b67; }
+      @media (max-width: 760px) {
+        main { width: min(100% - 24px, 980px); padding-top: 18px; }
+        .guide-topbar { gap: 10px; margin-bottom: 16px; }
+        .guide-brand span { display: none; }
+        .guide-brand img { width: 48px; height: 48px; }
+        .guide-nav-cta { display: none; }
+        .guide-menu summary { padding: 10px 14px; }
+        .guide-menu-panel { right: 0; width: min(360px, calc(100vw - 32px)); max-height: calc(100vh - 6rem); overflow: auto; }
+        .hero, .card { padding: 22px; }
+        .grid { grid-template-columns: 1fr; }
+        .button { width: 100%; justify-content: center; }
+      }
     </style>
   </head>
   <body>
     <main>
-      <a class="back" href="/">← Back to Germany Travel Checker</a>
+      <header class="guide-topbar" aria-label="Main navigation">
+        <a class="guide-brand" href="/" aria-label="Germany Travel Checker home">
+          <img src="/icon-192.png" alt="" />
+          <span>Germany Travel Checker</span>
+        </a>
+
+        <div class="guide-nav-actions">
+          <a class="guide-nav-cta" href="/planner.html">Planner</a>
+
+          <details class="guide-menu">
+            <summary>
+              <span class="guide-menu-icon" aria-hidden="true">
+                <span></span>
+                <span></span>
+                <span></span>
+              </span>
+              <span>Menu</span>
+            </summary>
+
+            <div class="guide-menu-panel">
+              <div class="guide-menu-intro">
+                <strong>Germany Travel Checker</strong>
+                <p>Plan dates, check city risks and solve small Germany travel trouble.</p>
+              </div>
+
+              <div class="guide-menu-groups">
+                <section class="guide-menu-group">
+                  <h2>Plan</h2>
+                  <div>
+                    <a href="/#check-today">Check today</a>
+                    <a href="/planner.html">Trip date planner</a>
+                  </div>
+                </section>
+
+                <section class="guide-menu-group">
+                  <h2>City guides</h2>
+                  <div>
+                    <a href="/berlin.html">Berlin guide</a>
+                    <a href="/munich.html">Munich guide</a>
+                  </div>
+                </section>
+
+                <section class="guide-menu-group">
+                  <h2>Trouble guides</h2>
+                  <div>
+                    <a href="/train-trouble.html">Train trouble</a>
+                    <a href="/sunday-holiday-closures.html">Sunday &amp; holiday closures</a>
+                    <a href="/water-pfand-guide.html">Water, Pfand &amp; toilets</a>
+                  </div>
+                </section>
+
+                <section class="guide-menu-group">
+                  <h2>Site</h2>
+                  <div>
+                    <a href="/impressum.html">Impressum</a>
+                    <a href="/datenschutz.html">Datenschutz</a>
+                    <a href="https://www.schulferienklar.de/">Data by Schulferienklar</a>
+                  </div>
+                </section>
+              </div>
+            </div>
+          </details>
+        </div>
+      </header>
+
 
       <section class="hero">
         <p class="eyebrow">Munich trouble guide</p>
