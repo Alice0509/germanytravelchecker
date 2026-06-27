@@ -1,6 +1,7 @@
 import CheckToday from './components/CheckToday.jsx'
 import CityGuidePreview from './components/CityGuidePreview.jsx'
 import TroubleFinder from './components/TroubleFinder.jsx'
+import SiteMenu from './components/SiteMenu.jsx'
 import './App.css'
 
 const CHECK_ITEMS = [
@@ -29,9 +30,7 @@ function App() {
             </span>
             <span>Germany Travel Checker</span>
           </a>
-          <a className="topbar-link" href="#check-today">
-            Check today
-          </a>
+          <SiteMenu ctaHref="/planner.html#trip-dates" ctaLabel="Planner" />
         </nav>
 
         <div className="hero-grid">
