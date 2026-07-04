@@ -11,16 +11,6 @@ const CITY_GUIDES = [
     state: 'Bavaria',
     note: 'Bavarian public holidays, regional notes, Sunday closures and pharmacy guidance.',
   },
-  {
-    city: 'Hamburg',
-    state: 'Hamburg',
-    note: 'City-state holiday checks, Sunday patterns and travel timing notes.',
-  },
-  {
-    city: 'Cologne',
-    state: 'North Rhine-Westphalia',
-    note: 'Statewide holiday checks, essentials and trip timing for western Germany.',
-  },
 ]
 
 export default function CityGuidePreview() {

@@ -52,50 +52,6 @@ function App() {
         </div>
       </section>
 
-      <section className="section mode-section">
-        <div className="section-heading">
-          <p className="eyebrow">Start here</p>
-          <h2>What do you need right now?</h2>
-          <p>
-            Choose the path closest to your situation. Germany Travel Checker is
-            built to turn German calendar rules and small travel surprises into
-            practical next steps.
-          </p>
-        </div>
-
-        <div className="mode-grid">
-          <article className="mode-card">
-            <span className="mode-kicker">Right now</span>
-            <h3>I am in Germany today</h3>
-            <p>
-              Check Sunday closures, public holidays, groceries, pharmacies,
-              water, cafés, bakeries and practical fallback ideas for today.
-            </p>
-            <a href="#check-today">Check today</a>
-          </article>
-
-          <article className="mode-card">
-            <span className="mode-kicker">Trip dates</span>
-            <h3>I am choosing travel dates</h3>
-            <p>
-              Check public holidays, school break pressure, Sundays, transfer
-              days and seasonal event periods before you lock in your plan.
-            </p>
-            <a href="/planner.html#trip-dates">Open the planner</a>
-          </article>
-
-          <article className="mode-card">
-            <span className="mode-kicker">Problem solving</span>
-            <h3>Something is confusing or going wrong</h3>
-            <p>
-              Understand German train trouble, Sunday closures, water, Pfand,
-              toilets and other small problems before you waste time.
-            </p>
-            <a href="#trouble-finder">Find the next move</a>
-          </article>
-        </div>
-      </section>
-
       <div id="trouble-finder">
         <TroubleFinder />
       </div>
