@@ -29,7 +29,7 @@ function findTopic(query) {
   const normalized = query.trim().toLowerCase()
 
   if (!normalized) {
-    return troubleTopics[0]
+    return null
   }
 
   const scoredTopics = troubleTopics
@@ -77,8 +77,9 @@ function firstMoveText(topic) {
 }
 
 export default function TroubleFinder() {
-  const [query, setQuery] = useState('water')
+  const [query, setQuery] = useState('')
 
+  const hasQuery = query.trim().length > 0
   const result = useMemo(() => findTopic(query), [query])
 
   return (
@@ -103,7 +104,26 @@ export default function TroubleFinder() {
           />
         </label>
 
-        {result ? (
+        {!hasQuery ? (
+          <article className="trouble-result no-match-result">
+            <div className="trouble-result-header">
+              <div>
+                <span className="trouble-category">Start with a common worry</span>
+                <strong>Type a short phrase or choose one of the quick examples.</strong>
+              </div>
+            </div>
+
+            <p className="first-move-note">
+              Try words like shops closed, medicine, still water, Pfand, paid
+              toilet, SEV, platform changed or cancelled train.
+            </p>
+
+            <p className="trouble-risk">
+              The result stays rule-based and practical. If something is urgent,
+              verify with an official source first.
+            </p>
+          </article>
+        ) : result ? (
           <article className="trouble-result">
             <div className="trouble-result-header">
               <div>
