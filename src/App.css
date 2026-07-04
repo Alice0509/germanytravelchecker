@@ -1835,6 +1835,21 @@ h1 {
   box-shadow: 0 24px 80px rgba(20, 33, 61, 0.08);
 }
 
+.planner-hero::before {
+  content: "";
+  display: block;
+  width: 76px;
+  height: 6px;
+  margin-bottom: 24px;
+  border-radius: 999px;
+  background: linear-gradient(
+    90deg,
+    #1a1a1a 0 30%,
+    var(--gtc-red) 30% 66%,
+    var(--gtc-gold) 66% 100%
+  );
+}
+
 .planner-hero h1 {
   max-width: 820px;
   margin: 12px 0 18px;
@@ -2420,6 +2435,14 @@ h1 {
   max-width: 760px;
 }
 
+@media (max-width: 560px) {
+  .planner-hero::before {
+    width: 62px;
+    height: 5px;
+    margin-bottom: 18px;
+  }
+}
+
 @media (max-width: 780px) {
   .planner-hero h1 {
     font-size: clamp(2.7rem, 14vw, 4.2rem);
@@ -2987,3 +3010,10 @@ h1 {
     z-index: 230;
   }
 }
+
+/* Header to hero breathing room */
+.topbar,
+.planner-topbar {
+  margin-bottom: clamp(1.2rem, 2.2vw, 2rem);
+}
+
