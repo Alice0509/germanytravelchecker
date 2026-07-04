@@ -23,6 +23,7 @@
     <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <link rel="manifest" href="/manifest.webmanifest" />
+    <link rel="stylesheet" href="/static-menu.css" />
     <style>
       body { margin: 0; font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; color: #14213d; background: #fbf8f2; line-height: 1.6; }
       main { width: min(980px, calc(100% - 32px)); margin: 0 auto; padding: 36px 0 56px; }
@@ -46,34 +47,8 @@
       .quick-action-box li + li { margin-top: 8px; }
       .note-card { margin-top: 18px; background: #fffaf2; }
       footer { margin-top: 28px; display: flex; flex-wrap: wrap; gap: 14px; color: #6b7280; font-size: 0.94rem; }
-      .guide-topbar { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-bottom: 22px; position: relative; z-index: 20; }
-      .guide-brand { display: inline-flex; align-items: center; gap: 12px; color: #14213d; font-weight: 950; }
-      .guide-brand img { width: 42px; height: 42px; border-radius: 14px; box-shadow: 0 10px 28px rgba(15, 23, 42, 0.12); }
-      .guide-nav-actions { display: flex; align-items: center; gap: 10px; }
-      .guide-nav-cta { display: inline-flex; align-items: center; border: 1px solid rgba(23, 138, 132, 0.22); border-radius: 999px; background: rgba(23, 138, 132, 0.09); color: #116b67; padding: 10px 15px; font-weight: 950; }
-      .guide-menu { position: relative; }
-      .guide-menu summary { list-style: none; display: inline-flex; align-items: center; gap: 10px; border: 1px solid rgba(23, 138, 132, 0.25); border-radius: 999px; background: rgba(255, 255, 255, 0.78); color: #116b67; padding: 10px 15px; font-weight: 950; cursor: pointer; box-shadow: 0 10px 28px rgba(15, 23, 42, 0.08); }
-      .guide-menu summary::-webkit-details-marker { display: none; }
-      .guide-menu-icon { display: grid; gap: 3px; width: 17px; }
-      .guide-menu-icon span { display: block; height: 2px; border-radius: 999px; background: currentColor; }
-      .guide-menu[open] summary { background: rgba(236, 253, 245, 0.95); border-color: rgba(23, 138, 132, 0.42); }
-      .guide-menu-panel { position: absolute; top: calc(100% + 12px); right: 0; width: min(380px, calc(100vw - 48px)); border: 1px solid rgba(20, 33, 61, 0.12); border-radius: 24px; background: rgba(255, 255, 255, 0.96); box-shadow: 0 28px 80px rgba(15, 23, 42, 0.2); padding: 16px; backdrop-filter: blur(18px); }
-      .guide-menu-intro { border-radius: 18px; background: linear-gradient(135deg, rgba(240, 253, 250, 0.95), rgba(255, 251, 235, 0.8)); padding: 14px; }
-      .guide-menu-intro strong { color: #14213d; }
-      .guide-menu-intro p { margin: 4px 0 0; color: #5d6673; font-size: 0.92rem; line-height: 1.45; }
-      .guide-menu-groups { display: grid; gap: 12px; margin-top: 14px; }
-      .guide-menu-group h2 { margin: 0 0 6px; color: #6b7280; font-size: 0.72rem; font-weight: 950; letter-spacing: 0.14em; text-transform: uppercase; }
-      .guide-menu-group div { display: grid; gap: 4px; }
-      .guide-menu-group a { display: flex; border-radius: 14px; color: #14213d; padding: 10px 12px; font-weight: 900; }
-      .guide-menu-group a:hover { background: rgba(23, 138, 132, 0.08); color: #116b67; }
       @media (max-width: 760px) {
         main { width: min(100% - 24px, 980px); padding-top: 18px; }
-        .guide-topbar { gap: 10px; margin-bottom: 16px; }
-        .guide-brand span { display: none; }
-        .guide-brand img { width: 48px; height: 48px; }
-        .guide-nav-cta { display: none; }
-        .guide-menu summary { padding: 10px 14px; }
-        .guide-menu-panel { right: 0; width: min(360px, calc(100vw - 32px)); max-height: calc(100vh - 6rem); overflow: auto; }
         .hero, .card, .note-card { padding: 22px; }
         .grid { grid-template-columns: 1fr; }
       }
@@ -136,23 +111,7 @@
         border-color: #9db6d8;
         background: #f2f6fb;
       }
-
-
-
-        /* Mobile: keep the menu button available without changing the whole topbar */
-      @media (max-width: 760px) {
-        .guide-menu {
-          position: fixed;
-          top: calc(12px + env(safe-area-inset-top));
-          right: 12px;
-          z-index: 220;
-        }
-
-        .guide-menu-panel {
-          z-index: 230;
-        }
-      }
-    </style>
+</style>
   </head>
   <body>
   <main>
