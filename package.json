@@ -8,7 +8,8 @@
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "event-pressure:discover": "node scripts/discoverEventPressure.js"
+    "event-pressure:discover": "node scripts/discoverEventPressure.js",
+    "event-pressure:add": "node scripts/addEventPressureNote.js"
   },
   "dependencies": {
     "react": "^19.2.6",
