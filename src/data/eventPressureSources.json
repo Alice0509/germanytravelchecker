@@ -1,0 +1,50 @@
+[
+  {
+    "city": "Berlin",
+    "sourceType": "official_city",
+    "label": "Official city information",
+    "url": "https://www.berlin.de/"
+  },
+  {
+    "city": "Munich",
+    "sourceType": "official_city",
+    "label": "Official city information",
+    "url": "https://stadt.muenchen.de/"
+  },
+  {
+    "city": "Hamburg",
+    "sourceType": "official_city",
+    "label": "Official city information",
+    "url": "https://www.hamburg.de/"
+  },
+  {
+    "city": "Cologne",
+    "sourceType": "official_city",
+    "label": "Official city information",
+    "url": "https://www.stadt-koeln.de/"
+  },
+  {
+    "city": "Frankfurt",
+    "sourceType": "official_city",
+    "label": "Official city information",
+    "url": "https://frankfurt.de/"
+  },
+  {
+    "city": "Stuttgart",
+    "sourceType": "official_city",
+    "label": "Official city information",
+    "url": "https://www.stuttgart.de/"
+  },
+  {
+    "city": "Dresden",
+    "sourceType": "official_city",
+    "label": "Official city information",
+    "url": "https://www.dresden.de/"
+  },
+  {
+    "city": "Nuremberg",
+    "sourceType": "official_city",
+    "label": "Official city information",
+    "url": "https://www.nuernberg.de/"
+  }
+]
