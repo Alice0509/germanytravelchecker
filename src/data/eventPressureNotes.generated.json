@@ -9,7 +9,12 @@
     "pressureLevel": "high",
     "title": "Major stadium event",
     "venue": "Allianz Arena",
-    "affectedAreas": ["Fröttmaning", "U-Bahn", "hotels", "late-night transport"],
+    "affectedAreas": [
+      "Fröttmaning",
+      "U-Bahn",
+      "hotels",
+      "late-night transport"
+    ],
     "travelerImpact": "Large event dates may affect U-Bahn connections, hotels, stations and late-night travel.",
     "recommendedAction": "Add buffer time and verify official venue and transport sources before travelling.",
     "verifyLinks": [
@@ -33,7 +38,12 @@
     "pressureLevel": "medium",
     "title": "Christmas market season",
     "venue": "Nuremberg old town",
-    "affectedAreas": ["old town", "main station", "hotels", "weekend travel"],
+    "affectedAreas": [
+      "old town",
+      "main station",
+      "hotels",
+      "weekend travel"
+    ],
     "travelerImpact": "Christmas market dates may make the old town, hotels and weekend station arrivals busier than usual.",
     "recommendedAction": "Add buffer time around the old town and verify official tourism and transport information.",
     "verifyLinks": [
