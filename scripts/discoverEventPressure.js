@@ -23,6 +23,35 @@ async function readJson(filePath, fallback) {
   }
 }
 
+
+function validateSources(sources) {
+  const errors = []
+
+  if (!Array.isArray(sources)) {
+    return ['eventPressureSources.json must contain an array.']
+  }
+
+  sources.forEach((source, index) => {
+    const prefix = `sources[${index}]`
+
+    for (const field of ['city', 'sourceRole', 'sourceType', 'priority', 'label', 'url']) {
+      if (!(field in source)) {
+        errors.push(`${prefix}: Missing required field: ${field}`)
+      }
+    }
+
+    if (typeof source.priority !== 'number') {
+      errors.push(`${prefix}: priority must be a number.`)
+    }
+
+    if (typeof source.url !== 'string' || !source.url.startsWith('https://')) {
+      errors.push(`${prefix}: url must be an https URL.`)
+    }
+  })
+
+  return errors
+}
+
 function sortNotes(notes) {
   return [...notes].sort((a, b) => {
     const dateCompare = String(a.startDate).localeCompare(String(b.startDate))
@@ -41,8 +70,14 @@ async function main() {
   const sources = await readJson(sourcesPath, [])
   const notes = await readJson(generatedPath, [])
 
-  if (!Array.isArray(sources)) {
-    throw new Error('eventPressureSources.json must contain an array.')
+  const sourceErrors = validateSources(sources)
+
+  if (sourceErrors.length > 0) {
+    console.error('Event pressure source validation failed:')
+    for (const error of sourceErrors) {
+      console.error(`- ${error}`)
+    }
+    process.exit(1)
   }
 
   if (!Array.isArray(notes)) {
@@ -52,7 +87,7 @@ async function main() {
   const errors = validateEventPressureNotes(notes)
 
   if (errors.length > 0) {
-    console.error('Event pressure validation failed:')
+    console.error('Event pressure note validation failed:')
     for (const error of errors) {
       console.error(`- ${error}`)
     }
