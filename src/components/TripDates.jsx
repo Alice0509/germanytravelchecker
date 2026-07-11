@@ -1,7 +1,10 @@
 import { useEffect, useMemo, useState } from 'react'
 import { TRAVEL_CITIES } from '../data/travelCities.js'
+import eventPressureNotes from '../data/eventPressureNotes.generated.json'
+import EventPressureBanner from './EventPressureBanner.jsx'
 import { addDays, formatDateKey, parseDateKey } from '../utils/checkToday.js'
 import { buildTripDatesResult } from '../utils/tripDatesResult.js'
+import { findEventPressureNotes } from '../utils/eventPressureNotes.js'
 import {
   findPublicHolidayDataset,
   findSchoolHolidayDataset,
@@ -120,6 +123,18 @@ export default function TripDates() {
     })
   }, [cityId, endDate, publicHolidays, schoolHolidays, startDate])
 
+  const eventPressureMatches = useMemo(() => {
+    if (!result) {
+      return []
+    }
+
+    return findEventPressureNotes(eventPressureNotes, {
+      city: result.city.name,
+      startDate: result.startDateKey,
+      endDate: result.endDateKey,
+    })
+  }, [result])
+
   const showEssentialsWarning =
     result?.warnings.some((warning) => warning.type === 'sunday' || warning.type === 'public-holiday') || false
   const mapCityName = result ? encodeURIComponent(result.city.name) : ''
@@ -197,6 +212,8 @@ export default function TripDates() {
             </div>
 
             <p className="trip-summary">{result.summary}</p>
+
+            <EventPressureBanner notes={eventPressureMatches} />
 
             <div className="trip-meta-grid">
               <div>

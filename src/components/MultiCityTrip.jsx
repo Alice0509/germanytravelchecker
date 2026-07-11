@@ -1,7 +1,10 @@
 import { useEffect, useMemo, useState } from 'react'
 import { TRAVEL_CITIES } from '../data/travelCities.js'
+import eventPressureNotes from '../data/eventPressureNotes.generated.json'
+import EventPressureBanner from './EventPressureBanner.jsx'
 import { addDays, formatDateKey, parseDateKey } from '../utils/checkToday.js'
 import { buildMultiCityTripResult } from '../utils/multiCityTripResult.js'
+import { findEventPressureNotes } from '../utils/eventPressureNotes.js'
 import {
   findPublicHolidayDataset,
   findSchoolHolidayDataset,
@@ -343,6 +346,14 @@ export default function MultiCityTrip() {
                   </div>
 
                   <p>{segment.summary}</p>
+
+                  <EventPressureBanner
+                    notes={findEventPressureNotes(eventPressureNotes, {
+                      city: segment.city.name,
+                      startDate: segment.startDateKey,
+                      endDate: segment.endDateKey,
+                    })}
+                  />
 
                   {segment.warnings.length > 0 && (
                     <div className="segment-warning-list">
