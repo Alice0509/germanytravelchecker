@@ -2,19 +2,11 @@
   {
     "id": "munich-2026-07-11-major-stadium-event",
     "city": "Munich",
-    "state": "Bavaria",
     "startDate": "2026-07-11",
     "endDate": "2026-07-12",
     "category": "stadium_event",
     "pressureLevel": "high",
     "title": "Major stadium event",
-    "venue": "Allianz Arena",
-    "affectedAreas": [
-      "Fröttmaning",
-      "U-Bahn",
-      "hotels",
-      "late-night transport"
-    ],
     "travelerImpact": "Large event dates may affect U-Bahn connections, hotels, stations and late-night travel.",
     "recommendedAction": "Add buffer time and verify official venue and transport sources before travelling.",
     "verifyLinks": [
@@ -26,7 +18,15 @@
     "sourceType": "official_venue",
     "sourceCheckedAt": "2026-07-11",
     "confidence": "medium",
-    "displayMode": "banner"
+    "displayMode": "banner",
+    "state": "Bavaria",
+    "venue": "Allianz Arena",
+    "affectedAreas": [
+      "Fröttmaning",
+      "U-Bahn",
+      "hotels",
+      "late-night transport"
+    ]
   },
   {
     "id": "nuremberg-2026-12-01-christmas-market-season",
