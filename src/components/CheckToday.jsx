@@ -1,7 +1,10 @@
 import { useEffect, useMemo, useState } from 'react'
 import { TRAVEL_CITIES } from '../data/travelCities.js'
+import eventPressureNotes from '../data/eventPressureNotes.sample.json'
+import EventPressureBanner from './EventPressureBanner.jsx'
 import { formatDateKey, parseDateKey } from '../utils/checkToday.js'
 import { buildCheckTodayResult } from '../utils/checkTodayResult.js'
+import { findEventPressureNotes } from '../utils/eventPressureNotes.js'
 import {
   findPublicHolidayDataset,
   findSchoolHolidayDataset,
@@ -123,6 +126,18 @@ export default function CheckToday() {
     })
   }, [cityId, publicHolidays, schoolHolidays, selectedDate, selectedNeedIds])
 
+  const eventPressureMatches = useMemo(() => {
+    if (!selectedDate || !selectedCity) {
+      return []
+    }
+
+    return findEventPressureNotes(eventPressureNotes, {
+      city: selectedCity.name,
+      startDate: dateKey,
+      endDate: dateKey,
+    })
+  }, [dateKey, selectedCity, selectedDate])
+
   function toggleNeed(needId) {
     setSelectedNeedIds((current) => {
       if (current.includes(needId)) {
@@ -205,6 +220,8 @@ export default function CheckToday() {
       ) : (
         <>
           <p className="result-summary">{result.summary}</p>
+
+          <EventPressureBanner notes={eventPressureMatches} />
 
           <div className="status-grid compact-status-grid">
             <div>
