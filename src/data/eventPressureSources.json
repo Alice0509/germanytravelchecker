@@ -1,50 +1,279 @@
 [
   {
     "city": "Berlin",
+    "sourceRole": "city",
     "sourceType": "official_city",
-    "label": "Official city information",
-    "url": "https://www.berlin.de/"
+    "priority": 1,
+    "label": "Official Berlin city portal",
+    "url": "https://www.berlin.de/",
+    "notes": "City-level reference for official notices and visitor information."
+  },
+  {
+    "city": "Berlin",
+    "sourceRole": "events",
+    "sourceType": "official_tourism",
+    "priority": 2,
+    "label": "visitBerlin event calendar",
+    "url": "https://www.visitberlin.de/en/event-calendar-berlin",
+    "notes": "Tourism event calendar candidate for city-wide event pressure signals."
+  },
+  {
+    "city": "Berlin",
+    "sourceRole": "transport",
+    "sourceType": "official_transport",
+    "priority": 3,
+    "label": "BVG service information",
+    "url": "https://www.bvg.de/en/connections/traffic-news",
+    "notes": "Transport reference for major public transport changes."
+  },
+
+  {
+    "city": "Munich",
+    "sourceRole": "city",
+    "sourceType": "official_city",
+    "priority": 1,
+    "label": "Official Munich city portal",
+    "url": "https://stadt.muenchen.de/",
+    "notes": "City-level reference for official notices and visitor information."
   },
   {
     "city": "Munich",
+    "sourceRole": "events",
     "sourceType": "official_city",
-    "label": "Official city information",
-    "url": "https://stadt.muenchen.de/"
+    "priority": 2,
+    "label": "muenchen.de events",
+    "url": "https://www.muenchen.de/en/events",
+    "notes": "Official city event search candidate."
+  },
+  {
+    "city": "Munich",
+    "sourceRole": "tourism_events",
+    "sourceType": "official_tourism",
+    "priority": 3,
+    "label": "Munich Travel event calendar",
+    "url": "https://www.munich.travel/en/categories/plan/event-calendar",
+    "notes": "Tourism event calendar candidate for visitor-facing event pressure signals."
+  },
+  {
+    "city": "Munich",
+    "sourceRole": "venue",
+    "sourceType": "official_venue",
+    "priority": 4,
+    "label": "Allianz Arena events",
+    "url": "https://allianz-arena.com/en/events",
+    "notes": "Large stadium-event candidate source."
+  },
+  {
+    "city": "Munich",
+    "sourceRole": "transport",
+    "sourceType": "official_transport",
+    "priority": 5,
+    "label": "MVV service information",
+    "url": "https://www.mvv-muenchen.de/en/service/service-interruptions/index.html",
+    "notes": "Transport reference for major public transport changes."
+  },
+
+  {
+    "city": "Hamburg",
+    "sourceRole": "city",
+    "sourceType": "official_city",
+    "priority": 1,
+    "label": "Official Hamburg city portal",
+    "url": "https://www.hamburg.de/",
+    "notes": "City-level reference for official notices and visitor information."
   },
   {
     "city": "Hamburg",
+    "sourceRole": "events",
+    "sourceType": "official_tourism",
+    "priority": 2,
+    "label": "Hamburg Travel event calendar",
+    "url": "https://www.hamburg-travel.com/see-explore/events/events-calendar/",
+    "notes": "Tourism event calendar candidate for city-wide event pressure signals."
+  },
+  {
+    "city": "Hamburg",
+    "sourceRole": "visitor_events",
+    "sourceType": "official_tourism",
+    "priority": 3,
+    "label": "Hamburg.com events",
+    "url": "https://www.hamburg.com/visitors/events",
+    "notes": "Visitor-facing recurring events reference."
+  },
+  {
+    "city": "Hamburg",
+    "sourceRole": "transport",
+    "sourceType": "official_transport",
+    "priority": 4,
+    "label": "HVV service information",
+    "url": "https://www.hvv.de/en/service/disruptions",
+    "notes": "Transport reference for major public transport changes."
+  },
+
+  {
+    "city": "Cologne",
+    "sourceRole": "city",
     "sourceType": "official_city",
-    "label": "Official city information",
-    "url": "https://www.hamburg.de/"
+    "priority": 1,
+    "label": "Official Cologne city portal",
+    "url": "https://www.stadt-koeln.de/",
+    "notes": "City-level reference for official notices and visitor information."
   },
   {
     "city": "Cologne",
+    "sourceRole": "events",
+    "sourceType": "official_tourism",
+    "priority": 2,
+    "label": "Cologne Tourism event calendar",
+    "url": "https://www.cologne-tourism.com/experiences-lifestyle/events/calendar-of-events",
+    "notes": "Tourism event calendar candidate for city-wide event pressure signals."
+  },
+  {
+    "city": "Cologne",
+    "sourceRole": "messe",
+    "sourceType": "official_messe",
+    "priority": 3,
+    "label": "Koelnmesse events",
+    "url": "https://www.koelnmesse.com/trade-fairs-events/events/",
+    "notes": "Trade fair source candidate for hotel and transport pressure signals."
+  },
+  {
+    "city": "Cologne",
+    "sourceRole": "transport",
+    "sourceType": "official_transport",
+    "priority": 4,
+    "label": "KVB service information",
+    "url": "https://www.kvb.koeln/en/service/service-status/",
+    "notes": "Transport reference for major public transport changes."
+  },
+
+  {
+    "city": "Frankfurt",
+    "sourceRole": "city",
     "sourceType": "official_city",
-    "label": "Official city information",
-    "url": "https://www.stadt-koeln.de/"
+    "priority": 1,
+    "label": "Official Frankfurt city portal",
+    "url": "https://frankfurt.de/",
+    "notes": "City-level reference for official notices and visitor information."
   },
   {
     "city": "Frankfurt",
+    "sourceRole": "events",
+    "sourceType": "official_tourism",
+    "priority": 2,
+    "label": "Visit Frankfurt event calendar",
+    "url": "https://www.visitfrankfurt.travel/en/experience/calendar-of-events",
+    "notes": "Tourism event calendar candidate for city-wide event pressure signals."
+  },
+  {
+    "city": "Frankfurt",
+    "sourceRole": "messe",
+    "sourceType": "official_messe",
+    "priority": 3,
+    "label": "Messe Frankfurt events",
+    "url": "https://www.messefrankfurt.com/frankfurt/en.html",
+    "notes": "Trade fair source candidate for hotel and transport pressure signals."
+  },
+  {
+    "city": "Frankfurt",
+    "sourceRole": "transport",
+    "sourceType": "official_transport",
+    "priority": 4,
+    "label": "RMV service information",
+    "url": "https://www.rmv.de/c/en/timetable/service-disruptions",
+    "notes": "Transport reference for major public transport changes."
+  },
+
+  {
+    "city": "Stuttgart",
+    "sourceRole": "city",
     "sourceType": "official_city",
-    "label": "Official city information",
-    "url": "https://frankfurt.de/"
+    "priority": 1,
+    "label": "Official Stuttgart city portal",
+    "url": "https://www.stuttgart.de/",
+    "notes": "City-level reference for official notices and visitor information."
   },
   {
     "city": "Stuttgart",
+    "sourceRole": "events",
     "sourceType": "official_city",
-    "label": "Official city information",
-    "url": "https://www.stuttgart.de/"
+    "priority": 2,
+    "label": "Stuttgart municipal event calendar",
+    "url": "https://www.stuttgart.de/en/service/veranstaltungen",
+    "notes": "Municipal event calendar candidate for city-wide event pressure signals."
+  },
+  {
+    "city": "Stuttgart",
+    "sourceRole": "tourism_events",
+    "sourceType": "official_tourism",
+    "priority": 3,
+    "label": "Stuttgart tourism events",
+    "url": "https://www.stuttgart-tourist.de/en/culture/current-cultural-events-in-stuttgart",
+    "notes": "Tourism event candidate for visitor-facing cultural events."
+  },
+  {
+    "city": "Stuttgart",
+    "sourceRole": "transport",
+    "sourceType": "official_transport",
+    "priority": 4,
+    "label": "VVS service information",
+    "url": "https://www.vvs.de/en/service/disruptions",
+    "notes": "Transport reference for major public transport changes."
+  },
+
+  {
+    "city": "Dresden",
+    "sourceRole": "city",
+    "sourceType": "official_city",
+    "priority": 1,
+    "label": "Official Dresden city portal",
+    "url": "https://www.dresden.de/",
+    "notes": "City-level reference for official notices and visitor information."
   },
   {
     "city": "Dresden",
+    "sourceRole": "events",
+    "sourceType": "official_tourism",
+    "priority": 2,
+    "label": "Dresden tourism information",
+    "url": "https://www.dresden.de/tourist",
+    "notes": "Official tourism source candidate for visitor-facing event pressure signals."
+  },
+  {
+    "city": "Dresden",
+    "sourceRole": "transport",
+    "sourceType": "official_transport",
+    "priority": 3,
+    "label": "DVB service information",
+    "url": "https://www.dvb.de/en-gb/meta/current-changes",
+    "notes": "Transport reference for major public transport changes."
+  },
+
+  {
+    "city": "Nuremberg",
+    "sourceRole": "city",
     "sourceType": "official_city",
-    "label": "Official city information",
-    "url": "https://www.dresden.de/"
+    "priority": 1,
+    "label": "Official Nuremberg city portal",
+    "url": "https://www.nuernberg.de/",
+    "notes": "City-level reference for official notices and visitor information."
   },
   {
     "city": "Nuremberg",
-    "sourceType": "official_city",
-    "label": "Official city information",
-    "url": "https://www.nuernberg.de/"
+    "sourceRole": "events",
+    "sourceType": "official_tourism",
+    "priority": 2,
+    "label": "Nuremberg tourism event calendar",
+    "url": "https://tourismus.nuernberg.de/en/experience/events/",
+    "notes": "Tourism event calendar candidate for city-wide event pressure signals."
+  },
+  {
+    "city": "Nuremberg",
+    "sourceRole": "transport",
+    "sourceType": "official_transport",
+    "priority": 3,
+    "label": "VGN service information",
+    "url": "https://www.vgn.de/en/service/disruptions/",
+    "notes": "Transport reference for major public transport changes."
   }
 ]
