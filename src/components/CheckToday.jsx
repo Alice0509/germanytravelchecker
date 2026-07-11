@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from 'react'
 import { TRAVEL_CITIES } from '../data/travelCities.js'
-import eventPressureNotes from '../data/eventPressureNotes.sample.json'
+import eventPressureNotes from '../data/eventPressureNotes.generated.json'
 import EventPressureBanner from './EventPressureBanner.jsx'
 import { formatDateKey, parseDateKey } from '../utils/checkToday.js'
 import { buildCheckTodayResult } from '../utils/checkTodayResult.js'
