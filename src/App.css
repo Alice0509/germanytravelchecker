@@ -3017,3 +3017,49 @@ h1 {
   margin-bottom: clamp(1.2rem, 2.2vw, 2rem);
 }
 
+
+.event-pressure-banner {
+  margin: 1rem 0;
+  border: 1px solid rgba(242, 178, 51, 0.42);
+  border-radius: 22px;
+  padding: 1rem;
+  background: rgba(255, 250, 235, 0.08);
+  color: rgba(255, 255, 255, 0.88);
+}
+
+.event-pressure-banner div {
+  display: grid;
+  gap: 0.35rem;
+  margin-bottom: 0.6rem;
+}
+
+.event-pressure-banner span {
+  color: #f9d98b;
+  font-size: 0.72rem;
+  font-weight: 950;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.event-pressure-banner strong {
+  color: #fff;
+  font-size: 1.05rem;
+}
+
+.event-pressure-banner p {
+  margin: 0.35rem 0;
+  color: rgba(255, 255, 255, 0.76);
+  line-height: 1.45;
+}
+
+.event-pressure-banner small {
+  display: block;
+  margin-top: 0.7rem;
+  color: rgba(255, 255, 255, 0.62);
+  line-height: 1.45;
+}
+
+.event-pressure-banner a {
+  color: #a8f3dc;
+  font-weight: 900;
+}
