@@ -1,4 +1,7 @@
-import { spawn } from 'node:child_process'
+import { execFile, spawn } from 'node:child_process'
+import { promisify } from 'node:util'
+
+const execFileAsync = promisify(execFile)
 
 const args = process.argv.slice(2)
 
@@ -23,6 +26,32 @@ function run(command, commandArgs) {
       }
     })
   })
+}
+
+const reportOnlyOutputPaths = [
+  'src/data/eventPressureCandidates.generated.json',
+  'src/data/eventPressureNotes.generated.json',
+  'event-pressure-candidate-report.md',
+  'event-pressure-promotion-report.md',
+]
+
+async function assertReportOnlyOutputsClean() {
+  const { stdout } = await execFileAsync('git', ['status', '--short', '--', ...reportOnlyOutputPaths], {
+    maxBuffer: 1024 * 1024 * 10,
+  })
+
+  if (stdout.trim() === '') {
+    return
+  }
+
+  console.log('')
+  console.log('Report-only output changes detected')
+  console.log('===================================')
+  console.log(stdout.trim())
+
+  await run('git', ['--no-pager', 'diff', '--', ...reportOnlyOutputPaths])
+
+  throw new Error('Report-only pipeline must not change generated data or markdown report files. Use --write for output changes.')
 }
 
 async function runNode(script, scriptArgs = []) {
@@ -97,6 +126,10 @@ async function main() {
   }
 
   await runSharedGuards()
+
+  if (!shouldWrite) {
+    await assertReportOnlyOutputsClean()
+  }
 
   console.log('')
   console.log('Event pressure automation pipeline completed.')
