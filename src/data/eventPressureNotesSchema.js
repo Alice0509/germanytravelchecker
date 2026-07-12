@@ -24,6 +24,7 @@ export const EVENT_PRESSURE_CATEGORIES = [
 export const EVENT_PRESSURE_LEVELS = ['medium', 'high']
 
 export const EVENT_PRESSURE_SOURCE_TYPES = [
+  'official',
   'official_city',
   'official_tourism',
   'official_venue',

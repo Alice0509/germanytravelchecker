@@ -25,7 +25,7 @@ const testCandidates = [
     suggestedImpact: 'Expect higher demand around central Dresden and the market area.',
     suggestedAction: 'Check the official market and city pages before travelling.',
     suggestedAreas: [],
-    sourceType: 'official_tourism',
+    sourceType: 'official',
   },
   {
     id: 'test-cologne-missing-dates',
