@@ -25,6 +25,10 @@ jobs:
       - name: Report event pressure coverage
         run: npm run event-pressure:report
 
+      - name: Check expired event pressure notes
+        run: npm run event-pressure:expired:strict
+
+
       - name: Seed event pressure candidates
         run: npm run event-pressure:seed-candidates
 
