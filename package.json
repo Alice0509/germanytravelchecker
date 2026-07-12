@@ -21,7 +21,9 @@
     "event-pressure:known-dates": "node scripts/checkKnownEventDates.js",
     "event-pressure:known-dates:strict": "node scripts/checkKnownEventDates.js --strict",
     "event-pressure:scan-known-sources": "node scripts/scanKnownEventSources.js",
-    "event-pressure:scan-known-sources:write": "node scripts/scanKnownEventSources.js --write"
+    "event-pressure:scan-known-sources:write": "node scripts/scanKnownEventSources.js --write",
+    "event-pressure:candidate-report": "node scripts/reportEventPressureCandidates.js",
+    "event-pressure:candidate-report:markdown": "node scripts/reportEventPressureCandidates.js --markdown"
   },
   "dependencies": {
     "react": "^19.2.6",
