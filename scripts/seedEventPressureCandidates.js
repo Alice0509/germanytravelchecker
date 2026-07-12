@@ -97,12 +97,13 @@ function sortCandidates(candidates) {
 }
 
 function buildCandidate(seed, dateEntry) {
-  const id = `${seed.city.toLowerCase()}-${dateEntry.startDate}-${slugify(seed.title)}`
+  const title = dateEntry.title || seed.title
+  const id = `${slugify(seed.city)}-${dateEntry.startDate}-${slugify(title)}`
 
   return {
     id,
     city: seed.city,
-    title: dateEntry.title || seed.title,
+    title,
     startDate: dateEntry.startDate,
     endDate: dateEntry.endDate,
     sourceUrl: dateEntry.sourceUrl || seed.sourceUrl,

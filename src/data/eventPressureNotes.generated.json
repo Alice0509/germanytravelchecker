@@ -30,6 +30,36 @@
     ]
   },
   {
+    "id": "hamburg-2026-07-24-hamburg-summer-dom",
+    "city": "Hamburg",
+    "startDate": "2026-07-24",
+    "endDate": "2026-08-30",
+    "category": "city_festival",
+    "pressureLevel": "medium",
+    "title": "Hamburg Summer DOM",
+    "travelerImpact": "A large recurring fair may affect nearby public transport, hotels, St. Pauli area movement and evening travel in Hamburg.",
+    "recommendedAction": "Add buffer time around St. Pauli and Heiligengeistfeld, and verify official tourism and transport information before travelling.",
+    "verifyLinks": [
+      {
+        "label": "Hamburg DOM official information",
+        "url": "https://www.hamburg.com/visitors/dom/about-20244"
+      }
+    ],
+    "sourceType": "official_tourism",
+    "sourceCheckedAt": "2026-07-12",
+    "confidence": "high",
+    "displayMode": "banner",
+    "state": "Hamburg",
+    "venue": "Heiligengeistfeld",
+    "affectedAreas": [
+      "Heiligengeistfeld",
+      "St. Pauli",
+      "public transport",
+      "hotels",
+      "evening travel"
+    ]
+  },
+  {
     "id": "berlin-2026-09-27-berlin-marathon",
     "city": "Berlin",
     "startDate": "2026-09-27",
