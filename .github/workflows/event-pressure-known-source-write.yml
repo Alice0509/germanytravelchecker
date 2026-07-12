@@ -50,6 +50,9 @@ jobs:
             npm run event-pressure:auto-pipeline:candidates:write
           fi
 
+      - name: Append source trust review to candidate report
+        run: npm run event-pressure:source-trust:report:candidate -- --append-to=event-pressure-candidate-report.md
+
       - name: Check candidate automation outputs
         run: npm run event-pressure:outputs:candidate
 
