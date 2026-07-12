@@ -58,7 +58,8 @@
     "event-pressure:automation-check": "node scripts/checkEventPressureAutomation.js",
     "event-pressure:outputs:test": "node scripts/testEventPressureAutomationOutputs.js",
     "event-pressure:scan-preview:test": "node scripts/testKnownSourceScanCandidatePreview.js",
-    "event-pressure:promotion-eligibility:test": "node scripts/testEventPressurePromotionEligibility.js"
+    "event-pressure:promotion-eligibility:test": "node scripts/testEventPressurePromotionEligibility.js",
+    "event-pressure:source-scan-promotion-flow:test": "node scripts/testEventPressureSourceScanToPromotionFlow.js"
   },
   "dependencies": {
     "react": "^19.2.6",

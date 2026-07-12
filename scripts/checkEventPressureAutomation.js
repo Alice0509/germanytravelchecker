@@ -59,6 +59,7 @@ async function main() {
     'event-pressure:date-range-selection:test',
     'event-pressure:scan-preview:test',
     'event-pressure:promotion-eligibility:test',
+    'event-pressure:source-scan-promotion-flow:test',
     'event-pressure:known-profiles',
     'event-pressure:known-dates:strict',
     'event-pressure:expired:strict',
