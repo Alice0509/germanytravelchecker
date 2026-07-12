@@ -45,30 +45,15 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Promote dated candidates
+      - name: Run promotion automation pipeline
         env:
           CHECKED_AT: ${{ github.event.inputs.checked_at }}
         run: |
           if [ -n "$CHECKED_AT" ]; then
-            npm run event-pressure:promote-candidates -- --write --checked-at="$CHECKED_AT"
+            npm run event-pressure:auto-pipeline:promote:write -- --checked-at="$CHECKED_AT"
           else
-            npm run event-pressure:promote-candidates:write
+            npm run event-pressure:auto-pipeline:promote:write
           fi
-
-      - name: Validate candidates
-        run: npm run event-pressure:candidates
-
-      - name: Validate generated notes
-        run: npm run event-pressure:discover
-
-      - name: Report event pressure coverage
-        run: npm run event-pressure:report
-
-      - name: Check generated notes expiry
-        run: npm run event-pressure:expired:strict
-
-      - name: Check known event dates
-        run: npm run event-pressure:known-dates:strict
 
       - name: Build site
         run: npm run build
@@ -77,9 +62,6 @@ jobs:
         run: |
           git --no-pager diff -- src/data/eventPressureNotes.generated.json src/data/eventPressureCandidates.generated.json
           git --no-pager diff --stat
-
-      - name: Write promotion review report
-        run: npm run event-pressure:promotion-report:markdown
 
       - name: Create generated notes pull request
         if: ${{ github.event_name == 'schedule' || github.event_name == 'push' || github.event.inputs.create_pr == 'true' }}
@@ -130,4 +112,3 @@ jobs:
         with:
           name: event-pressure-promotion-review
           path: event-pressure-promotion-report.md
-
