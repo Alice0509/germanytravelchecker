@@ -74,8 +74,8 @@
     "category": "trade_fair",
     "defaultPressureLevel": "medium",
     "sourceType": "official_messe",
-    "sourceLabel": "Messe Frankfurt information",
-    "sourceUrl": "https://www.messefrankfurt.com/frankfurt/en.html",
+    "sourceLabel": "Frankfurter Buchmesse official information",
+    "sourceUrl": "https://www.buchmesse.de/en",
     "candidateReason": "Large trade fair that may affect hotels, Messe access, stations and city transport.",
     "suggestedImpact": "A large trade fair may affect hotels, Messe access, stations and city transport.",
     "suggestedAction": "Book important plans earlier, add buffer time and verify official Messe and transport information.",
@@ -85,7 +85,15 @@
       "main station",
       "public transport"
     ],
-    "knownDates": []
+    "knownDates": [
+      {
+        "startDate": "2026-10-07",
+        "endDate": "2026-10-11",
+        "confidence": "high",
+        "sourceLabel": "Frankfurter Buchmesse official information",
+        "sourceUrl": "https://www.buchmesse.de/en"
+      }
+    ]
   },
   {
     "id": "cologne-carnival",
