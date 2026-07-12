@@ -1,6 +1,7 @@
 import fs from 'node:fs/promises'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
+import { findCopySafetyErrors } from './lib/eventPressureCopySafety.js'
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
@@ -17,87 +18,6 @@ const files = [
   },
 ]
 
-const checkedFields = [
-  'title',
-  'travelerImpact',
-  'recommendedAction',
-  'note',
-  'reviewNote',
-  'sourceNote',
-]
-
-const forbiddenPatterns = [
-  {
-    pattern: /\blive\b/i,
-    reason: 'Do not imply live status.',
-  },
-  {
-    pattern: /\breal[-\s]?time\b/i,
-    reason: 'Do not imply real-time status.',
-  },
-  {
-    pattern: /\bcurrently\b/i,
-    reason: 'Avoid current-state claims.',
-  },
-  {
-    pattern: /\bright now\b/i,
-    reason: 'Avoid current-state claims.',
-  },
-  {
-    pattern: /\bcrowded\b/i,
-    reason: 'Avoid claiming crowd conditions.',
-  },
-  {
-    pattern: /\bpacked\b/i,
-    reason: 'Avoid claiming crowd conditions.',
-  },
-  {
-    pattern: /\bfully booked\b/i,
-    reason: 'Avoid hotel/availability claims.',
-  },
-  {
-    pattern: /\bsold out\b/i,
-    reason: 'Avoid availability claims.',
-  },
-  {
-    pattern: /\btrains? (are|is|will be) (delayed|cancelled|disrupted)\b/i,
-    reason: 'Avoid train status claims.',
-  },
-  {
-    pattern: /\bshops? (are|is|will be) closed\b/i,
-    reason: 'Avoid blanket shop closure claims.',
-  },
-  {
-    pattern: /\ball shops\b/i,
-    reason: 'Avoid blanket shop closure claims.',
-  },
-  {
-    pattern: /\ball trains\b/i,
-    reason: 'Avoid blanket train claims.',
-  },
-]
-
-function collectTextValues(item) {
-  const values = []
-
-  for (const field of checkedFields) {
-    const value = item[field]
-    if (typeof value === 'string') {
-      values.push({ field, value })
-    }
-  }
-
-  if (Array.isArray(item.reasons)) {
-    item.reasons.forEach((value, index) => {
-      if (typeof value === 'string') {
-        values.push({ field: `reasons[${index}]`, value })
-      }
-    })
-  }
-
-  return values
-}
-
 async function readJson(filePath) {
   try {
     return JSON.parse(await fs.readFile(filePath, 'utf8'))
@@ -112,23 +32,7 @@ async function main() {
 
   for (const file of files) {
     const items = await readJson(file.path)
-
-    if (!Array.isArray(items)) {
-      errors.push(`${file.label}: expected array`)
-      continue
-    }
-
-    for (const item of items) {
-      const id = item.id || '(missing id)'
-
-      for (const { field, value } of collectTextValues(item)) {
-        for (const forbidden of forbiddenPatterns) {
-          if (forbidden.pattern.test(value)) {
-            errors.push(`${file.label} · ${id} · ${field}: ${forbidden.reason} Matched "${forbidden.pattern}".`)
-          }
-        }
-      }
-    }
+    errors.push(...findCopySafetyErrors(items, file.label))
   }
 
   console.log('Event pressure copy safety')
