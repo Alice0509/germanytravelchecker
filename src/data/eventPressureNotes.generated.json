@@ -58,6 +58,35 @@
     ]
   },
   {
+    "id": "frankfurt-2026-10-07-frankfurt-book-fair",
+    "city": "Frankfurt",
+    "startDate": "2026-10-07",
+    "endDate": "2026-10-11",
+    "category": "trade_fair",
+    "pressureLevel": "medium",
+    "title": "Frankfurt Book Fair",
+    "travelerImpact": "A large trade fair may affect hotels, Messe access, the main station and city transport in Frankfurt.",
+    "recommendedAction": "Book important plans earlier, add buffer time and verify official Messe and transport information before travelling.",
+    "verifyLinks": [
+      {
+        "label": "Frankfurter Buchmesse official information",
+        "url": "https://www.buchmesse.de/en"
+      }
+    ],
+    "sourceType": "official_messe",
+    "sourceCheckedAt": "2026-07-12",
+    "confidence": "high",
+    "displayMode": "banner",
+    "state": "Hesse",
+    "venue": "Messe Frankfurt",
+    "affectedAreas": [
+      "Messe",
+      "hotels",
+      "main station",
+      "public transport"
+    ]
+  },
+  {
     "id": "nuremberg-2026-11-27-nuremberg-christmas-market",
     "city": "Nuremberg",
     "startDate": "2026-11-27",
