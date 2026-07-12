@@ -122,8 +122,8 @@
     "category": "city_festival",
     "defaultPressureLevel": "medium",
     "sourceType": "official_tourism",
-    "sourceLabel": "Hamburg tourism event information",
-    "sourceUrl": "https://www.hamburg-travel.com/see-explore/events/events-calendar/",
+    "sourceLabel": "Hamburg DOM official information",
+    "sourceUrl": "https://www.hamburg.com/visitors/dom/about-20244",
     "candidateReason": "Large recurring fair that may affect nearby transport, hotels and evening movement.",
     "suggestedImpact": "A large recurring fair may affect nearby transport, hotels and evening movement.",
     "suggestedAction": "Add buffer time and verify official tourism and transport information before travelling.",
@@ -133,6 +133,15 @@
       "hotels",
       "evening travel"
     ],
-    "knownDates": []
+    "knownDates": [
+      {
+        "title": "Hamburg Summer DOM",
+        "startDate": "2026-07-24",
+        "endDate": "2026-08-30",
+        "confidence": "high",
+        "sourceLabel": "Hamburg DOM official information",
+        "sourceUrl": "https://www.hamburg.com/visitors/dom/about-20244"
+      }
+    ]
   }
 ]
