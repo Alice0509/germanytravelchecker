@@ -404,6 +404,37 @@ function mergeCandidates(existingCandidates, scanCandidates) {
   return sortCandidates([...byId.values()])
 }
 
+function formatCandidateDateRange(candidate) {
+  if (candidate.startDate && candidate.endDate) {
+    return `${candidate.startDate} to ${candidate.endDate}`
+  }
+
+  if (candidate.startDate) {
+    return candidate.startDate
+  }
+
+  return 'manual date review required'
+}
+
+function printScanCandidatePreview(scanCandidates) {
+  console.log('')
+  console.log('Review candidate preview')
+  console.log('------------------------')
+
+  if (scanCandidates.length === 0) {
+    console.log('No review candidates found from source scan.')
+    return
+  }
+
+  scanCandidates.forEach((candidate, index) => {
+    console.log(`${index + 1}. ${candidate.city} · ${candidate.title}`)
+    console.log(`   dates: ${formatCandidateDateRange(candidate)}`)
+    console.log(`   confidence: ${candidate.confidence || 'low'}`)
+    console.log(`   source: ${candidate.sourceUrl}`)
+    console.log(`   reason: ${candidate.candidateReason}`)
+  })
+}
+
 async function main() {
   const { SUPPORTED_EVENT_PRESSURE_CITIES } = await import(pathToFileURL(schemaPath).href)
 
@@ -514,6 +545,8 @@ async function main() {
       console.log(`  error: ${result.error}`)
     }
   }
+
+  printScanCandidatePreview(scanCandidates)
 
   if (!shouldWrite) {
     console.log('')
