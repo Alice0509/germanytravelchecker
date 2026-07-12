@@ -47,7 +47,11 @@
     "event-pressure:source-trust:report": "node scripts/reportEventPressureSourceTrust.js --mode=all",
     "event-pressure:source-trust:report:candidate": "node scripts/reportEventPressureSourceTrust.js --mode=candidate",
     "event-pressure:source-trust:report:promotion": "node scripts/reportEventPressureSourceTrust.js --mode=promotion",
-    "event-pressure:source-trust:report:test": "node scripts/testEventPressureSourceTrustReport.js"
+    "event-pressure:source-trust:report:test": "node scripts/testEventPressureSourceTrustReport.js",
+    "event-pressure:copy-safety:report": "node scripts/reportEventPressureCopySafety.js --mode=all",
+    "event-pressure:copy-safety:report:candidate": "node scripts/reportEventPressureCopySafety.js --mode=candidate",
+    "event-pressure:copy-safety:report:promotion": "node scripts/reportEventPressureCopySafety.js --mode=promotion",
+    "event-pressure:copy-safety:report:test": "node scripts/testEventPressureCopySafetyReport.js"
   },
   "dependencies": {
     "react": "^19.2.6",
