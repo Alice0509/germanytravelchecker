@@ -29,7 +29,9 @@
     "event-pressure:promote-candidates": "node scripts/promoteEventPressureCandidates.js",
     "event-pressure:promote-candidates:write": "node scripts/promoteEventPressureCandidates.js --write",
     "event-pressure:promotion-report": "node scripts/reportEventPressurePromotion.js",
-    "event-pressure:promotion-report:markdown": "node scripts/reportEventPressurePromotion.js --markdown"
+    "event-pressure:promotion-report:markdown": "node scripts/reportEventPressurePromotion.js --markdown",
+    "event-pressure:auto-pipeline": "node scripts/runEventPressureAutomationPipeline.js",
+    "event-pressure:auto-pipeline:write": "node scripts/runEventPressureAutomationPipeline.js --write"
   },
   "dependencies": {
     "react": "^19.2.6",
