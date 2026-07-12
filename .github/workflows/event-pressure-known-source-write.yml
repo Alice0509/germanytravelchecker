@@ -96,6 +96,7 @@ jobs:
 
           if [ -n "$EXISTING_PR" ]; then
             echo "Candidate PR already open: #$EXISTING_PR"
+            gh pr edit "$EXISTING_PR" --body-file event-pressure-candidate-report.md
           else
             gh pr create \
               --base main \
