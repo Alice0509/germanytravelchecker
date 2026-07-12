@@ -29,8 +29,23 @@ function sortNotes(notes) {
   })
 }
 
+function cityToPlannerId(cityName) {
+  return String(cityName || '').toLowerCase().replace(/\s+/g, '-')
+}
+
 function formatSignal(note) {
   return [note.city, note.title, formatShortDateRange(note)].filter(Boolean).join(' · ')
+}
+
+function getPlannerHref(note) {
+  const cityId = cityToPlannerId(note.city)
+  const params = new URLSearchParams({
+    from: cityId,
+    start: note.startDate,
+    end: note.endDate,
+  })
+
+  return `/planner.html?${params.toString()}#trip-dates`
 }
 
 export default function CurrentTravelSignals() {
@@ -43,6 +58,7 @@ export default function CurrentTravelSignals() {
   const tickerItems = notes.map((note) => ({
     id: note.id,
     label: formatSignal(note),
+    href: getPlannerHref(note),
   }))
 
   const repeatedItems = [...tickerItems, ...tickerItems, ...tickerItems]
@@ -57,14 +73,16 @@ export default function CurrentTravelSignals() {
       <div className="current-signals-track">
         <div className="current-signals-marquee">
           {repeatedItems.map((item, index) => (
-            <span className="current-signal-item" key={`${item.id}-${index}`}>
+            <a className="current-signal-item" href={item.href} key={`${item.id}-${index}`}>
               {item.label}
-            </span>
+            </a>
           ))}
         </div>
       </div>
 
-      <span className="current-signals-note">Planning signal · not live crowd data</span>
+      <a className="current-signals-note" href={tickerItems[0].href}>
+        Open planner
+      </a>
     </aside>
   )
 }
