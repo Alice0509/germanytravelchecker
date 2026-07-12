@@ -22,6 +22,9 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Report event pressure coverage
+        run: npm run event-pressure:report
+
       - name: Validate event pressure data
         run: npm run event-pressure:discover
 
