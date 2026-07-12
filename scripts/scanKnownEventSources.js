@@ -67,6 +67,21 @@ function getGermanyDateKey() {
   }).format(new Date())
 }
 
+function noteUsesSourceUrl(note, sourceUrl) {
+  return (note.verifyLinks || []).some((link) => link.url === sourceUrl)
+}
+
+function getGeneratedYearsForSeed(generatedNotes, seed) {
+  return new Set(
+    generatedNotes
+      .filter((note) => note.city === seed.city)
+      .filter((note) => note.category === seed.category)
+      .filter((note) => noteUsesSourceUrl(note, seed.sourceUrl))
+      .map((note) => String(note.startDate || '').slice(0, 4))
+      .filter(Boolean),
+  )
+}
+
 function normalizeKeyword(value) {
   return String(value || '').toLowerCase().replace(/[^a-z0-9äöüß]+/gi, ' ').trim()
 }
@@ -143,10 +158,9 @@ async function fetchText(url) {
   }
 }
 
-function buildCandidate(seed, scanResult, todayDateKey) {
-  const yearLabel = scanResult.yearHits.join(', ')
-  const title = `${seed.title} source scan`
-  const id = `${slugify(seed.city)}-${todayDateKey}-${slugify(seed.id)}-source-scan`
+function buildCandidate(seed, scanResult, targetYear, todayDateKey) {
+  const title = `${seed.title} ${targetYear} source scan`
+  const id = `${slugify(seed.city)}-${targetYear}-${slugify(seed.id)}-source-scan`
 
   return {
     id,
@@ -154,9 +168,9 @@ function buildCandidate(seed, scanResult, todayDateKey) {
     title,
     sourceUrl: seed.sourceUrl,
     sourceLabel: seed.sourceLabel,
-    detectedFrom: `known-event-source-scan:${seed.id}`,
+    detectedFrom: `known-event-source-scan:${seed.id}:${targetYear}`,
     confidence: scanResult.confidence,
-    candidateReason: `Source scan found matching event keywords and future year signals: ${yearLabel || 'future year unknown'}. Manual date review required.`,
+    candidateReason: `Source scan found matching event keywords and a ${targetYear} signal. Manual date review required.`,
     suggestedCategory: seed.category,
     suggestedPressureLevel: seed.defaultPressureLevel,
     suggestedImpact: seed.suggestedImpact,
@@ -164,6 +178,7 @@ function buildCandidate(seed, scanResult, todayDateKey) {
     suggestedAreas: seed.suggestedAreas || [],
     sourceType: seed.sourceType,
     scanSignals: {
+      targetYear,
       keywordHits: scanResult.keywordHits,
       yearHits: scanResult.yearHits,
       dateLikeSnippets: scanResult.dateLikeSnippets,
@@ -222,10 +237,6 @@ async function main() {
 
   const years = getFutureYears()
   const todayDateKey = getGermanyDateKey()
-  const generatedSourceUrls = new Set(
-    generatedNotes.flatMap((note) => (note.verifyLinks || []).map((link) => link.url)),
-  )
-
   const seedsToScan = seeds
     .filter((seed) => SUPPORTED_EVENT_PRESSURE_CITIES.includes(seed.city))
     .filter((seed) => seed.sourceUrl && seed.sourceUrl.startsWith('https://'))
@@ -270,10 +281,17 @@ async function main() {
     }
   }
 
-  const scanCandidates = scanResults
-    .filter((result) => result.hasUsefulSignal)
-    .filter((result) => !generatedSourceUrls.has(result.seed.sourceUrl))
-    .map((result) => buildCandidate(result.seed, result, todayDateKey))
+  const scanCandidates = scanResults.flatMap((result) => {
+    if (!result.hasUsefulSignal) {
+      return []
+    }
+
+    const generatedYears = getGeneratedYearsForSeed(generatedNotes, result.seed)
+
+    return result.yearHits
+      .filter((year) => !generatedYears.has(String(year)))
+      .map((year) => buildCandidate(result.seed, result, year, todayDateKey))
+  })
 
   console.log('Known event source scan')
   console.log('=======================')
