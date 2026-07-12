@@ -8,6 +8,7 @@ const repoRoot = path.resolve(__dirname, '..')
 
 const seedsPath = path.join(repoRoot, 'src/data/eventPressureKnownEvents.json')
 const candidatesPath = path.join(repoRoot, 'src/data/eventPressureCandidates.generated.json')
+const generatedPath = path.join(repoRoot, 'src/data/eventPressureNotes.generated.json')
 const schemaPath = path.join(repoRoot, 'src/data/eventPressureNotesSchema.js')
 
 async function readJson(filePath, fallback) {
@@ -123,6 +124,7 @@ async function main() {
 
   const seeds = await readJson(seedsPath, [])
   const existingCandidates = await readJson(candidatesPath, [])
+  const generatedNotes = await readJson(generatedPath, [])
 
   if (!Array.isArray(seeds)) {
     throw new Error('eventPressureKnownEvents.json must contain an array.')
@@ -131,6 +133,12 @@ async function main() {
   if (!Array.isArray(existingCandidates)) {
     throw new Error('eventPressureCandidates.generated.json must contain an array.')
   }
+
+  if (!Array.isArray(generatedNotes)) {
+    throw new Error('eventPressureNotes.generated.json must contain an array.')
+  }
+
+  const generatedNoteIds = new Set(generatedNotes.map((note) => note.id))
 
   const seedErrors = seeds.flatMap((seed, index) =>
     validateSeed(seed, SUPPORTED_EVENT_PRESSURE_CITIES).map((error) => `seeds[${index}]: ${error}`),
@@ -144,9 +152,9 @@ async function main() {
     process.exit(1)
   }
 
-  const seededCandidates = seeds.flatMap((seed) =>
-    seed.knownDates.map((dateEntry) => buildCandidate(seed, dateEntry)),
-  )
+  const seededCandidates = seeds
+    .flatMap((seed) => seed.knownDates.map((dateEntry) => buildCandidate(seed, dateEntry)))
+    .filter((candidate) => !generatedNoteIds.has(candidate.id))
 
   const existingManualCandidates = existingCandidates.filter(
     (candidate) => !String(candidate.detectedFrom || '').startsWith('known-event-seed:'),

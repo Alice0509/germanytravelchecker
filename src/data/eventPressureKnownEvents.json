@@ -11,7 +11,12 @@
     "candidateReason": "Major city running event that may affect central routes, road crossings, stations and local movement.",
     "suggestedImpact": "A major city running event may affect central routes, station access, road crossings and local movement.",
     "suggestedAction": "Add buffer time, avoid tight cross-city plans and verify official city and transport information before travelling.",
-    "suggestedAreas": ["city centre", "stations", "public transport", "road crossings"],
+    "suggestedAreas": [
+      "city centre",
+      "stations",
+      "public transport",
+      "road crossings"
+    ],
     "knownDates": []
   },
   {
@@ -26,7 +31,12 @@
     "candidateReason": "Large visitor event that can affect hotels, public transport, stations and late-night movement.",
     "suggestedImpact": "A large visitor event may affect hotels, public transport, stations and late-night travel in Munich.",
     "suggestedAction": "Book important plans earlier, add buffer time and verify official city and transport information.",
-    "suggestedAreas": ["hotels", "U-Bahn", "stations", "late-night transport"],
+    "suggestedAreas": [
+      "hotels",
+      "U-Bahn",
+      "stations",
+      "late-night transport"
+    ],
     "knownDates": []
   },
   {
@@ -36,13 +46,26 @@
     "category": "christmas_market",
     "defaultPressureLevel": "medium",
     "sourceType": "official_tourism",
-    "sourceLabel": "Nuremberg tourism event information",
-    "sourceUrl": "https://tourismus.nuernberg.de/en/experience/events/",
+    "sourceLabel": "Nuremberg Christkindlesmarkt official information",
+    "sourceUrl": "https://www.christkindlesmarkt.de/en/",
     "candidateReason": "Seasonal visitor event that may affect the old town, hotels, stations and weekend movement.",
     "suggestedImpact": "Christmas market dates may make the old town, hotels and station arrivals busier than usual.",
     "suggestedAction": "Add buffer time around the old town and verify official tourism and transport information.",
-    "suggestedAreas": ["old town", "main station", "hotels", "weekend travel"],
-    "knownDates": []
+    "suggestedAreas": [
+      "old town",
+      "main station",
+      "hotels",
+      "weekend travel"
+    ],
+    "knownDates": [
+      {
+        "startDate": "2026-11-27",
+        "endDate": "2026-12-24",
+        "confidence": "high",
+        "sourceLabel": "Nuremberg Christkindlesmarkt official information",
+        "sourceUrl": "https://www.christkindlesmarkt.de/en/"
+      }
+    ]
   },
   {
     "id": "frankfurt-book-fair",
@@ -56,7 +79,12 @@
     "candidateReason": "Large trade fair that may affect hotels, Messe access, stations and city transport.",
     "suggestedImpact": "A large trade fair may affect hotels, Messe access, stations and city transport.",
     "suggestedAction": "Book important plans earlier, add buffer time and verify official Messe and transport information.",
-    "suggestedAreas": ["Messe", "hotels", "main station", "public transport"],
+    "suggestedAreas": [
+      "Messe",
+      "hotels",
+      "main station",
+      "public transport"
+    ],
     "knownDates": []
   },
   {
@@ -71,7 +99,12 @@
     "candidateReason": "Major city festival period that may affect central areas, public transport, hotels and late-night movement.",
     "suggestedImpact": "A major city festival period may affect central areas, public transport, hotels and late-night movement.",
     "suggestedAction": "Add buffer time, avoid tight cross-city plans and verify official city and transport information.",
-    "suggestedAreas": ["city centre", "public transport", "hotels", "late-night movement"],
+    "suggestedAreas": [
+      "city centre",
+      "public transport",
+      "hotels",
+      "late-night movement"
+    ],
     "knownDates": []
   },
   {
@@ -86,7 +119,12 @@
     "candidateReason": "Large recurring fair that may affect nearby transport, hotels and evening movement.",
     "suggestedImpact": "A large recurring fair may affect nearby transport, hotels and evening movement.",
     "suggestedAction": "Add buffer time and verify official tourism and transport information before travelling.",
-    "suggestedAreas": ["fair area", "public transport", "hotels", "evening travel"],
+    "suggestedAreas": [
+      "fair area",
+      "public transport",
+      "hotels",
+      "evening travel"
+    ],
     "knownDates": []
   }
 ]

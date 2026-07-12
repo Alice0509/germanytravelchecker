@@ -56,5 +56,34 @@
       "public transport",
       "road crossings"
     ]
+  },
+  {
+    "id": "nuremberg-2026-11-27-nuremberg-christmas-market",
+    "city": "Nuremberg",
+    "startDate": "2026-11-27",
+    "endDate": "2026-12-24",
+    "category": "christmas_market",
+    "pressureLevel": "medium",
+    "title": "Nuremberg Christmas Market",
+    "travelerImpact": "Christmas market dates may make the old town, hotels and station arrivals busier than usual.",
+    "recommendedAction": "Add buffer time around the old town and verify official tourism and transport information before travelling.",
+    "verifyLinks": [
+      {
+        "label": "Nuremberg Christkindlesmarkt official information",
+        "url": "https://www.christkindlesmarkt.de/en/"
+      }
+    ],
+    "sourceType": "official_tourism",
+    "sourceCheckedAt": "2026-07-12",
+    "confidence": "high",
+    "displayMode": "banner",
+    "state": "Bavaria",
+    "venue": "Nuremberg old town",
+    "affectedAreas": [
+      "old town",
+      "main station",
+      "hotels",
+      "weekend travel"
+    ]
   }
 ]
