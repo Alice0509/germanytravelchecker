@@ -25,6 +25,9 @@ jobs:
       - name: Report event pressure coverage
         run: npm run event-pressure:report
 
+      - name: Validate event pressure candidates
+        run: npm run event-pressure:candidates
+
       - name: Validate event pressure data
         run: npm run event-pressure:discover
 
