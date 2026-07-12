@@ -27,7 +27,9 @@
     "event-pressure:import-candidates": "node scripts/importEventPressureCandidates.js",
     "event-pressure:date-extraction:test": "node scripts/testEventPressureDateExtraction.js",
     "event-pressure:promote-candidates": "node scripts/promoteEventPressureCandidates.js",
-    "event-pressure:promote-candidates:write": "node scripts/promoteEventPressureCandidates.js --write"
+    "event-pressure:promote-candidates:write": "node scripts/promoteEventPressureCandidates.js --write",
+    "event-pressure:promotion-report": "node scripts/reportEventPressurePromotion.js",
+    "event-pressure:promotion-report:markdown": "node scripts/reportEventPressurePromotion.js --markdown"
   },
   "dependencies": {
     "react": "^19.2.6",
