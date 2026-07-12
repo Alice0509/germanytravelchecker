@@ -98,6 +98,7 @@ function candidateBlock(candidate, index) {
     `- keyword hits: ${formatList(scanSignals.keywordHits)}`,
     `- year hits: ${formatList(scanSignals.yearHits)}`,
     `- date-like snippets: ${formatList(scanSignals.dateLikeSnippets)}`,
+    `- possible date hints: ${formatList(scanSignals.possibleDateHints)}`,
     '',
     'Approve command draft:',
     '',

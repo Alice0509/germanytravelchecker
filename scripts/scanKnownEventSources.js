@@ -104,6 +104,97 @@ function findYearHits(text, years) {
   return years.filter((year) => text.includes(String(year)))
 }
 
+const MONTH_LOOKUP = new Map([
+  ['january', '01'],
+  ['jan', '01'],
+  ['february', '02'],
+  ['feb', '02'],
+  ['march', '03'],
+  ['mar', '03'],
+  ['april', '04'],
+  ['apr', '04'],
+  ['may', '05'],
+  ['june', '06'],
+  ['jun', '06'],
+  ['july', '07'],
+  ['jul', '07'],
+  ['august', '08'],
+  ['aug', '08'],
+  ['september', '09'],
+  ['sep', '09'],
+  ['october', '10'],
+  ['oct', '10'],
+  ['november', '11'],
+  ['nov', '11'],
+  ['december', '12'],
+  ['dec', '12'],
+  ['januar', '01'],
+  ['februar', '02'],
+  ['märz', '03'],
+  ['maerz', '03'],
+  ['april', '04'],
+  ['mai', '05'],
+  ['juni', '06'],
+  ['juli', '07'],
+  ['august', '08'],
+  ['september', '09'],
+  ['oktober', '10'],
+  ['november', '11'],
+  ['dezember', '12'],
+])
+
+function padDay(value) {
+  return String(value).padStart(2, '0')
+}
+
+function normalizeMonth(value) {
+  return MONTH_LOOKUP.get(String(value || '').toLowerCase().replace('.', '')) || ''
+}
+
+function extractDateHints(snippets, years) {
+  const hints = new Set()
+
+  for (const snippet of snippets) {
+    const text = String(snippet || '').trim()
+
+    for (const match of text.matchAll(/\b(20\d{2})-(\d{2})-(\d{2})\b/g)) {
+      hints.add(`${match[1]}-${match[2]}-${match[3]}`)
+    }
+
+    for (const match of text.matchAll(/\b(\d{1,2})\.(\d{1,2})\.(20\d{2})\b/g)) {
+      hints.add(`${match[3]}-${padDay(match[2])}-${padDay(match[1])}`)
+    }
+
+    for (const match of text.matchAll(/\b([A-Za-zÄÖÜäöüß]+)\.?\s+(\d{1,2}),?\s+(20\d{2})\b/g)) {
+      const month = normalizeMonth(match[1])
+      if (month) {
+        hints.add(`${match[3]}-${month}-${padDay(match[2])}`)
+      }
+    }
+
+    for (const match of text.matchAll(/\b(\d{1,2})\.\s*([A-Za-zÄÖÜäöüß]+)\.?\s*(20\d{2})\b/g)) {
+      const month = normalizeMonth(match[2])
+      if (month) {
+        hints.add(`${match[3]}-${month}-${padDay(match[1])}`)
+      }
+    }
+
+    for (const match of text.matchAll(/\b(\d{1,2})\.\s*([A-Za-zÄÖÜäöüß]+)\.?\s*[–-]\s*(\d{1,2})\.\s*([A-Za-zÄÖÜäöüß]+)\.?\s*(20\d{2})\b/g)) {
+      const startMonth = normalizeMonth(match[2])
+      const endMonth = normalizeMonth(match[4])
+      if (startMonth && endMonth) {
+        hints.add(`${match[5]}-${startMonth}-${padDay(match[1])}`)
+        hints.add(`${match[5]}-${endMonth}-${padDay(match[3])}`)
+      }
+    }
+  }
+
+  return [...hints]
+    .filter((hint) => years.some((year) => hint.startsWith(String(year))))
+    .sort()
+    .slice(0, 12)
+}
+
 function findDateLikeSnippets(text, years) {
   const snippets = []
   const normalized = text.replace(/\s+/g, ' ')
@@ -182,6 +273,7 @@ function buildCandidate(seed, scanResult, targetYear, todayDateKey) {
       keywordHits: scanResult.keywordHits,
       yearHits: scanResult.yearHits,
       dateLikeSnippets: scanResult.dateLikeSnippets,
+      possibleDateHints: scanResult.possibleDateHints,
       scannedAt: todayDateKey,
     },
   }
@@ -250,6 +342,7 @@ async function main() {
       const hits = keywordHits(fetched.text, seed)
       const yearHits = findYearHits(fetched.text, years)
       const dateLikeSnippets = findDateLikeSnippets(fetched.text, years)
+      const possibleDateHints = extractDateHints(dateLikeSnippets, years)
 
       const hasUsefulSignal = fetched.ok && hits.length > 0 && yearHits.length > 0
       const confidence = hasUsefulSignal && dateLikeSnippets.length > 0 ? 'medium' : 'low'
@@ -262,6 +355,7 @@ async function main() {
         keywordHits: hits,
         yearHits,
         dateLikeSnippets,
+        possibleDateHints,
         hasUsefulSignal,
         confidence,
       })
@@ -274,6 +368,7 @@ async function main() {
         keywordHits: [],
         yearHits: [],
         dateLikeSnippets: [],
+        possibleDateHints: [],
         hasUsefulSignal: false,
         confidence: 'low',
         error: error.name === 'AbortError' ? 'Timeout' : error.message,
@@ -312,6 +407,7 @@ async function main() {
     console.log(`  keyword hits: ${result.keywordHits.join(', ') || '-'}`)
     console.log(`  year hits: ${result.yearHits.join(', ') || '-'}`)
     console.log(`  date-like snippets: ${result.dateLikeSnippets.join(' | ') || '-'}`)
+    console.log(`  possible date hints: ${result.possibleDateHints.join(', ') || '-'}`)
     if (result.error) {
       console.log(`  error: ${result.error}`)
     }
