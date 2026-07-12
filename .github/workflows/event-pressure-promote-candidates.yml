@@ -78,6 +78,9 @@ jobs:
           git --no-pager diff -- src/data/eventPressureNotes.generated.json src/data/eventPressureCandidates.generated.json
           git --no-pager diff --stat
 
+      - name: Write promotion review report
+        run: npm run event-pressure:promotion-report:markdown
+
       - name: Create generated notes pull request
         if: ${{ github.event_name == 'schedule' || github.event_name == 'push' || github.event.inputs.create_pr == 'true' }}
         env:
@@ -97,29 +100,17 @@ jobs:
           git commit -m "Promote event pressure candidates"
           git push --force-with-lease origin "$BRANCH"
 
-          cat > /tmp/event-pressure-promotion-pr-body.md <<'BODY'
-          ## Summary
-          - Promote dated event pressure candidates into generated notes
-          - Remove promoted candidates after generated note creation
-          - Keep generated event pressure notes human-reviewed through this PR
-
-          ## Notes
-          - Automated candidate promotion PR
-          - No build output committed
-          - Please review source links, dates and wording before merging
-          BODY
-
           EXISTING_PR="$(gh pr list --head "$BRANCH" --state open --json number --jq '.[0].number // empty')"
 
           if [ -n "$EXISTING_PR" ]; then
             echo "Promotion PR already open: #$EXISTING_PR"
-            gh pr edit "$EXISTING_PR" --body-file /tmp/event-pressure-promotion-pr-body.md
+            gh pr edit "$EXISTING_PR" --body-file event-pressure-promotion-report.md
           else
             gh pr create \
               --base main \
               --head "$BRANCH" \
               --title "chore: promote event pressure candidates" \
-              --body-file /tmp/event-pressure-promotion-pr-body.md
+              --body-file event-pressure-promotion-report.md
           fi
 
       - name: Upload generated notes file
@@ -133,3 +124,10 @@ jobs:
         with:
           name: event-pressure-candidates-generated
           path: src/data/eventPressureCandidates.generated.json
+
+      - name: Upload promotion review report
+        uses: actions/upload-artifact@v4
+        with:
+          name: event-pressure-promotion-review
+          path: event-pressure-promotion-report.md
+
