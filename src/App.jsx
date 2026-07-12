@@ -1,4 +1,5 @@
 import CheckToday from './components/CheckToday.jsx'
+import CurrentTravelSignals from './components/CurrentTravelSignals.jsx'
 import CityGuidePreview from './components/CityGuidePreview.jsx'
 import TroubleFinder from './components/TroubleFinder.jsx'
 import SiteMenu from './components/SiteMenu.jsx'
@@ -8,6 +9,8 @@ function App() {
   return (
     <main className="page-shell">
       <section className="hero-section">
+        <CurrentTravelSignals />
+
         <nav className="topbar" aria-label="Main navigation">
           <a className="brand" href="/" aria-label="Germany Travel Checker home">
             <span className="brand-mark" aria-hidden="true">
