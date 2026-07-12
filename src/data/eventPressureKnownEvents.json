@@ -17,7 +17,16 @@
       "public transport",
       "road crossings"
     ],
-    "knownDates": []
+    "knownDates": [],
+    "dateExtraction": {
+      "preferredMonths": [
+        9
+      ],
+      "titleKeywords": [
+        "marathon",
+        "berlin marathon"
+      ]
+    }
   },
   {
     "id": "munich-oktoberfest",
@@ -37,7 +46,16 @@
       "stations",
       "late-night transport"
     ],
-    "knownDates": []
+    "knownDates": [],
+    "dateExtraction": {
+      "preferredMonths": [
+        9,
+        10
+      ],
+      "titleKeywords": [
+        "oktoberfest"
+      ]
+    }
   },
   {
     "id": "nuremberg-christmas-market",
@@ -65,7 +83,17 @@
         "sourceLabel": "Nuremberg Christkindlesmarkt official information",
         "sourceUrl": "https://www.christkindlesmarkt.de/en/"
       }
-    ]
+    ],
+    "dateExtraction": {
+      "preferredMonths": [
+        11,
+        12
+      ],
+      "titleKeywords": [
+        "christmas",
+        "christkindlesmarkt"
+      ]
+    }
   },
   {
     "id": "frankfurt-book-fair",
@@ -93,7 +121,16 @@
         "sourceLabel": "Frankfurter Buchmesse official information",
         "sourceUrl": "https://www.buchmesse.de/en"
       }
-    ]
+    ],
+    "dateExtraction": {
+      "preferredMonths": [
+        10
+      ],
+      "titleKeywords": [
+        "book fair",
+        "buchmesse"
+      ]
+    }
   },
   {
     "id": "cologne-carnival",
@@ -113,7 +150,19 @@
       "hotels",
       "late-night movement"
     ],
-    "knownDates": []
+    "knownDates": [],
+    "dateExtraction": {
+      "preferredMonths": [
+        2,
+        11
+      ],
+      "titleKeywords": [
+        "carnival",
+        "karneval",
+        "rosenmontag",
+        "weiberfastnacht"
+      ]
+    }
   },
   {
     "id": "hamburg-dom",
@@ -142,6 +191,22 @@
         "sourceLabel": "Hamburg DOM official information",
         "sourceUrl": "https://www.hamburg.com/visitors/dom/about-20244"
       }
-    ]
+    ],
+    "dateExtraction": {
+      "preferredMonths": [
+        3,
+        4,
+        7,
+        8,
+        11,
+        12
+      ],
+      "titleKeywords": [
+        "dom",
+        "spring dom",
+        "summer dom",
+        "winter dom"
+      ]
+    }
   }
 ]
