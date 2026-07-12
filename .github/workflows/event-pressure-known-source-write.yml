@@ -40,30 +40,15 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Run known source scanner in write mode
+      - name: Run candidate automation pipeline
         env:
           SCAN_LIMIT: ${{ github.event.inputs.limit }}
         run: |
           if [ -n "$SCAN_LIMIT" ]; then
-            npm run event-pressure:scan-known-sources -- --write --limit="$SCAN_LIMIT"
+            npm run event-pressure:auto-pipeline:candidates:write -- --limit="$SCAN_LIMIT"
           else
-            npm run event-pressure:scan-known-sources -- --write
+            npm run event-pressure:auto-pipeline:candidates:write
           fi
-
-      - name: Validate candidates
-        run: npm run event-pressure:candidates
-
-      - name: Report event pressure coverage
-        run: npm run event-pressure:report
-
-      - name: Write candidate review report
-        run: npm run event-pressure:candidate-report:markdown
-
-      - name: Check generated notes expiry
-        run: npm run event-pressure:expired:strict
-
-      - name: Check known event dates
-        run: npm run event-pressure:known-dates:strict
 
       - name: Build site
         run: npm run build
