@@ -10,7 +10,8 @@
     "preview": "vite preview",
     "event-pressure:discover": "node scripts/discoverEventPressure.js",
     "event-pressure:add": "node scripts/addEventPressureNote.js",
-    "event-pressure:report": "node scripts/reportEventPressure.js"
+    "event-pressure:report": "node scripts/reportEventPressure.js",
+    "event-pressure:candidates": "node scripts/discoverEventPressureCandidates.js"
   },
   "dependencies": {
     "react": "^19.2.6",

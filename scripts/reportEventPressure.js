@@ -7,6 +7,7 @@ const __dirname = path.dirname(__filename)
 const repoRoot = path.resolve(__dirname, '..')
 
 const generatedPath = path.join(repoRoot, 'src/data/eventPressureNotes.generated.json')
+const candidatesPath = path.join(repoRoot, 'src/data/eventPressureCandidates.generated.json')
 const sourcesPath = path.join(repoRoot, 'src/data/eventPressureSources.json')
 const schemaPath = path.join(repoRoot, 'src/data/eventPressureNotesSchema.js')
 const utilsPath = path.join(repoRoot, 'src/utils/eventPressureNotes.js')
@@ -43,6 +44,7 @@ async function main() {
 
   const sources = await readJson(sourcesPath, [])
   const notes = await readJson(generatedPath, [])
+  const candidates = await readJson(candidatesPath, [])
 
   const noteErrors = validateEventPressureNotes(notes)
   const sourcesByCity = groupByCity(sources)
@@ -63,6 +65,7 @@ async function main() {
   console.log(`Supported cities: ${SUPPORTED_EVENT_PRESSURE_CITIES.length}`)
   console.log(`Source entries: ${sources.length}`)
   console.log(`Generated notes: ${notes.length}`)
+  console.log(`Candidate notes: ${Array.isArray(candidates) ? candidates.length : 'invalid'}`)
   console.log(`Validation errors: ${noteErrors.length}`)
   console.log('')
 
