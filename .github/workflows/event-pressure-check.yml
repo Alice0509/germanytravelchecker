@@ -23,17 +23,21 @@ jobs:
         run: npm ci
 
       - name: Report event pressure coverage
-        run: npm run event-pressure:report
+        run: |
+          npm run event-pressure:date-extraction:test
+          npm run event-pressure:date-range-selection:test
+          npm run event-pressure:report
 
       - name: Check expired event pressure notes
         run: npm run event-pressure:expired:strict
 
       - name: Check known event dates
-        run: npm run event-pressure:known-dates:strict
+        run: |
+          npm run event-pressure:known-profiles
+          npm run event-pressure:known-dates:strict
 
       - name: Scan known event sources
         run: npm run event-pressure:scan-known-sources
-
 
       - name: Seed event pressure candidates
         run: npm run event-pressure:seed-candidates
