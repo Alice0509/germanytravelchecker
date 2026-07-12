@@ -59,6 +59,9 @@ jobs:
       - name: Check candidate automation outputs
         run: npm run event-pressure:outputs:candidate
 
+      - name: Check candidate PR review report
+        run: npm run event-pressure:review-report:candidate
+
       - name: Build site
         run: npm run build
 
