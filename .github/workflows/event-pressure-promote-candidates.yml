@@ -119,5 +119,5 @@ jobs:
       - name: Upload promotion review report
         uses: actions/upload-artifact@v4
         with:
-          name: event-pressure-promotion-review
+          name: event-pressure-promotion-pr-review
           path: event-pressure-promotion-report.md
