@@ -87,7 +87,7 @@ jobs:
           git checkout -B "$BRANCH"
           git add src/data/eventPressureCandidates.generated.json
           git commit -m "Update event pressure candidates from source scan"
-          git push --force-with-lease origin "$BRANCH"
+          git push --force origin "$BRANCH"
 
           EXISTING_PR="$(gh pr list --head "$BRANCH" --state open --json number --jq '.[0].number // empty')"
 
