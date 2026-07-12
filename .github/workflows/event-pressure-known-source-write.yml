@@ -12,7 +12,7 @@ on:
       create_pr:
         description: Create a pull request when candidate JSON changes.
         required: false
-        default: false
+        default: true
         type: boolean
 
 permissions:
