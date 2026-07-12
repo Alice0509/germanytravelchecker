@@ -108,6 +108,7 @@ async function runSharedGuards() {
   await runNode('scripts/testEventPressureSourceTrust.js')
   await runNode('scripts/checkEventPressureSourceTrust.js')
   await runNode('scripts/testEventPressureSourceTrustReport.js')
+  await runNode('scripts/testEventPressureReviewReport.js')
   await runNode('scripts/reportEventPressure.js')
 }
 
