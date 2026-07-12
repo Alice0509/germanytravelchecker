@@ -3,6 +3,11 @@ name: Event pressure promote candidates
 on:
   schedule:
     - cron: "47 6 * * 1"
+  push:
+    branches:
+      - main
+    paths:
+      - src/data/eventPressureCandidates.generated.json
   workflow_dispatch:
     inputs:
       checked_at:
@@ -74,7 +79,7 @@ jobs:
           git --no-pager diff --stat
 
       - name: Create generated notes pull request
-        if: ${{ github.event_name == 'schedule' || github.event.inputs.create_pr == 'true' }}
+        if: ${{ github.event_name == 'schedule' || github.event_name == 'push' || github.event.inputs.create_pr == 'true' }}
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
