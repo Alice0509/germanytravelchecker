@@ -1,5 +1,14 @@
 import eventPressureNotes from '../data/eventPressureNotes.generated.json'
 
+function getTodayDateKey() {
+  return new Intl.DateTimeFormat('en-CA', {
+    timeZone: 'Europe/Berlin',
+    year: 'numeric',
+    month: '2-digit',
+    day: '2-digit',
+  }).format(new Date())
+}
+
 function formatShortDateRange(note) {
   if (!note?.startDate || !note?.endDate) {
     return ''
@@ -13,6 +22,14 @@ function formatShortDateRange(note) {
   }
 
   return `${start}–${end}`
+}
+
+function isActiveToday(note, todayDateKey) {
+  if (!note?.startDate || !note?.endDate) {
+    return false
+  }
+
+  return note.startDate <= todayDateKey && todayDateKey <= note.endDate
 }
 
 function sortNotes(notes) {
@@ -29,12 +46,12 @@ function sortNotes(notes) {
   })
 }
 
-function cityToPlannerId(cityName) {
-  return String(cityName || '').toLowerCase().replace(/\s+/g, '-')
-}
-
 function formatSignal(note) {
   return [note.city, note.title, formatShortDateRange(note)].filter(Boolean).join(' · ')
+}
+
+function cityToPlannerId(cityName) {
+  return String(cityName || '').toLowerCase().replace(/\s+/g, '-')
 }
 
 function getPlannerHref(note) {
@@ -49,7 +66,10 @@ function getPlannerHref(note) {
 }
 
 export default function CurrentTravelSignals() {
-  const notes = Array.isArray(eventPressureNotes) ? sortNotes(eventPressureNotes) : []
+  const todayDateKey = getTodayDateKey()
+  const notes = Array.isArray(eventPressureNotes)
+    ? sortNotes(eventPressureNotes.filter((note) => isActiveToday(note, todayDateKey)))
+    : []
 
   if (notes.length === 0) {
     return null
