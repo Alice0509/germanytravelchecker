@@ -41,7 +41,9 @@
     "event-pressure:outputs:candidate": "node scripts/checkEventPressureAutomationOutputs.js --mode=candidate",
     "event-pressure:outputs:promotion": "node scripts/checkEventPressureAutomationOutputs.js --mode=promotion",
     "event-pressure:copy-safety": "node scripts/checkEventPressureCopySafety.js",
-    "event-pressure:copy-safety:test": "node scripts/testEventPressureCopySafety.js"
+    "event-pressure:copy-safety:test": "node scripts/testEventPressureCopySafety.js",
+    "event-pressure:source-trust": "node scripts/checkEventPressureSourceTrust.js",
+    "event-pressure:source-trust:test": "node scripts/testEventPressureSourceTrust.js"
   },
   "dependencies": {
     "react": "^19.2.6",
