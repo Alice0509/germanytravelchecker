@@ -31,6 +31,9 @@ jobs:
       - name: Check expired event pressure notes
         run: npm run event-pressure:expired:strict
 
+      - name: Check event pressure copy safety
+        run: npm run event-pressure:copy-safety
+
       - name: Check known event dates
         run: |
           npm run event-pressure:known-profiles
