@@ -31,6 +31,9 @@ jobs:
       - name: Check known event dates
         run: npm run event-pressure:known-dates:strict
 
+      - name: Scan known event sources
+        run: npm run event-pressure:scan-known-sources
+
 
       - name: Seed event pressure candidates
         run: npm run event-pressure:seed-candidates
