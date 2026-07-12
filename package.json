@@ -56,7 +56,8 @@
     "event-pressure:review-report:promotion": "node scripts/checkEventPressureReviewReport.js --mode=promotion",
     "event-pressure:review-report:test": "node scripts/testEventPressureReviewReport.js",
     "event-pressure:automation-check": "node scripts/checkEventPressureAutomation.js",
-    "event-pressure:outputs:test": "node scripts/testEventPressureAutomationOutputs.js"
+    "event-pressure:outputs:test": "node scripts/testEventPressureAutomationOutputs.js",
+    "event-pressure:scan-preview:test": "node scripts/testKnownSourceScanCandidatePreview.js"
   },
   "dependencies": {
     "react": "^19.2.6",
