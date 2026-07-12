@@ -28,5 +28,33 @@
       "late-night transport",
       "Merchandise areas"
     ]
+  },
+  {
+    "id": "berlin-2026-09-27-berlin-marathon",
+    "city": "Berlin",
+    "startDate": "2026-09-27",
+    "endDate": "2026-09-27",
+    "category": "other_major_event",
+    "pressureLevel": "medium",
+    "title": "Berlin Marathon",
+    "travelerImpact": "A major city running event may affect central routes, station access, road crossings and local movement in Berlin.",
+    "recommendedAction": "Add buffer time, avoid tight cross-city plans and verify official city and transport information before travelling.",
+    "verifyLinks": [
+      {
+        "label": "Berlin.de September events",
+        "url": "https://www.berlin.de/en/events/september/"
+      }
+    ],
+    "sourceType": "official_city",
+    "sourceCheckedAt": "2026-07-12",
+    "confidence": "high",
+    "displayMode": "banner",
+    "state": "Berlin",
+    "affectedAreas": [
+      "city centre",
+      "stations",
+      "public transport",
+      "road crossings"
+    ]
   }
 ]
