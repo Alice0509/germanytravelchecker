@@ -4,6 +4,34 @@ on:
   workflow_dispatch:
   schedule:
     - cron: '17 5 * * *'
+  pull_request:
+    paths:
+      - package.json
+      - package-lock.json
+      - scripts/**
+      - src/data/eventPressure*.json
+      - src/utils/eventPressureNotes.js
+      - src/utils/tripDatesResult.js
+      - src/utils/multiCityTripResult.js
+      - src/components/EventPressureBanner.jsx
+      - src/components/CurrentTravelSignals.jsx
+      - src/components/CheckToday.jsx
+      - .github/workflows/event-pressure-*.yml
+  push:
+    branches:
+      - main
+    paths:
+      - package.json
+      - package-lock.json
+      - scripts/**
+      - src/data/eventPressure*.json
+      - src/utils/eventPressureNotes.js
+      - src/utils/tripDatesResult.js
+      - src/utils/multiCityTripResult.js
+      - src/components/EventPressureBanner.jsx
+      - src/components/CurrentTravelSignals.jsx
+      - src/components/CheckToday.jsx
+      - .github/workflows/event-pressure-*.yml
 
 jobs:
   event-pressure-check:
