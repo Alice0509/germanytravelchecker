@@ -12,7 +12,8 @@
     "event-pressure:add": "node scripts/addEventPressureNote.js",
     "event-pressure:report": "node scripts/reportEventPressure.js",
     "event-pressure:candidates": "node scripts/discoverEventPressureCandidates.js",
-    "event-pressure:approve": "node scripts/approveEventPressureCandidate.js"
+    "event-pressure:approve": "node scripts/approveEventPressureCandidate.js",
+    "event-pressure:seed-candidates": "node scripts/seedEventPressureCandidates.js"
   },
   "dependencies": {
     "react": "^19.2.6",
