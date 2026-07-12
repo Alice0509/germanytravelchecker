@@ -31,6 +31,14 @@ function formatList(values) {
   return values.join(', ')
 }
 
+function formatRanges(values) {
+  if (!Array.isArray(values) || values.length === 0) return '-'
+
+  return values
+    .map((range) => `${range.startDate} to ${range.endDate}`)
+    .join(', ')
+}
+
 function needsDateReview(candidate) {
   return !candidate.startDate || !candidate.endDate
 }
@@ -99,6 +107,8 @@ function candidateBlock(candidate, index) {
     `- year hits: ${formatList(scanSignals.yearHits)}`,
     `- date-like snippets: ${formatList(scanSignals.dateLikeSnippets)}`,
     `- possible date hints: ${formatList(scanSignals.possibleDateHints)}`,
+    `- date range hints: ${formatRanges(scanSignals.dateRangeHints)}`,
+    `- extracted date range: ${scanSignals.extractedDateRange ? `${scanSignals.extractedDateRange.startDate} to ${scanSignals.extractedDateRange.endDate}` : '-'}`,
     '',
     'Approve command draft:',
     '',

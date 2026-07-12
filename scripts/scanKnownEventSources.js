@@ -1,6 +1,7 @@
 import fs from 'node:fs/promises'
 import path from 'node:path'
 import { fileURLToPath, pathToFileURL } from 'node:url'
+import { extractDateSignals } from './lib/eventPressureDateExtraction.js'
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
@@ -102,6 +103,19 @@ function keywordHits(text, seed) {
 
 function findYearHits(text, years) {
   return years.filter((year) => text.includes(String(year)))
+}
+
+function getSingleDateRangeForYear(scanResult, targetYear) {
+  const ranges = (scanResult.dateRangeHints || []).filter((range) =>
+    String(range.startDate || '').startsWith(String(targetYear)) ||
+    String(range.endDate || '').startsWith(String(targetYear)),
+  )
+
+  if (ranges.length !== 1) {
+    return null
+  }
+
+  return ranges[0]
 }
 
 const MONTH_LOOKUP = new Map([
@@ -252,16 +266,25 @@ async function fetchText(url) {
 function buildCandidate(seed, scanResult, targetYear, todayDateKey) {
   const title = `${seed.title} ${targetYear} source scan`
   const id = `${slugify(seed.city)}-${targetYear}-${slugify(seed.id)}-source-scan`
+  const extractedRange = getSingleDateRangeForYear(scanResult, targetYear)
 
   return {
     id,
     city: seed.city,
     title,
+    ...(extractedRange
+      ? {
+          startDate: extractedRange.startDate,
+          endDate: extractedRange.endDate,
+        }
+      : {}),
     sourceUrl: seed.sourceUrl,
     sourceLabel: seed.sourceLabel,
     detectedFrom: `known-event-source-scan:${seed.id}:${targetYear}`,
-    confidence: scanResult.confidence,
-    candidateReason: `Source scan found matching event keywords and a ${targetYear} signal. Manual date review required.`,
+    confidence: extractedRange ? 'medium' : scanResult.confidence,
+    candidateReason: extractedRange
+      ? `Source scan found matching event keywords and one extracted ${targetYear} date range. Manual review still required before approval.`
+      : `Source scan found matching event keywords and a ${targetYear} signal. Manual date review required.`,
     suggestedCategory: seed.category,
     suggestedPressureLevel: seed.defaultPressureLevel,
     suggestedImpact: seed.suggestedImpact,
@@ -274,6 +297,8 @@ function buildCandidate(seed, scanResult, targetYear, todayDateKey) {
       yearHits: scanResult.yearHits,
       dateLikeSnippets: scanResult.dateLikeSnippets,
       possibleDateHints: scanResult.possibleDateHints,
+      dateRangeHints: scanResult.dateRangeHints,
+      extractedDateRange: extractedRange,
       scannedAt: todayDateKey,
     },
   }
@@ -342,7 +367,9 @@ async function main() {
       const hits = keywordHits(fetched.text, seed)
       const yearHits = findYearHits(fetched.text, years)
       const dateLikeSnippets = findDateLikeSnippets(fetched.text, years)
-      const possibleDateHints = extractDateHints(dateLikeSnippets, years)
+      const dateSignals = extractDateSignals(fetched.text, years)
+      const possibleDateHints = dateSignals.dateHints.slice(0, 12)
+      const dateRangeHints = dateSignals.dateRangeHints.slice(0, 12)
 
       const hasUsefulSignal = fetched.ok && hits.length > 0 && yearHits.length > 0
       const confidence = hasUsefulSignal && dateLikeSnippets.length > 0 ? 'medium' : 'low'
@@ -356,6 +383,7 @@ async function main() {
         yearHits,
         dateLikeSnippets,
         possibleDateHints,
+        dateRangeHints,
         hasUsefulSignal,
         confidence,
       })
@@ -369,6 +397,7 @@ async function main() {
         yearHits: [],
         dateLikeSnippets: [],
         possibleDateHints: [],
+        dateRangeHints: [],
         hasUsefulSignal: false,
         confidence: 'low',
         error: error.name === 'AbortError' ? 'Timeout' : error.message,
@@ -408,6 +437,7 @@ async function main() {
     console.log(`  year hits: ${result.yearHits.join(', ') || '-'}`)
     console.log(`  date-like snippets: ${result.dateLikeSnippets.join(' | ') || '-'}`)
     console.log(`  possible date hints: ${result.possibleDateHints.join(', ') || '-'}`)
+    console.log(`  date range hints: ${(result.dateRangeHints || []).map((range) => `${range.startDate} to ${range.endDate}`).join(' | ') || '-'}`)
     if (result.error) {
       console.log(`  error: ${result.error}`)
     }
