@@ -60,6 +60,27 @@
     ]
   },
   {
+    "id": "stuttgart-2026-09-25-cannstatter-volksfest-2026",
+    "city": "Stuttgart",
+    "startDate": "2026-09-25",
+    "endDate": "2026-10-11",
+    "category": "festival",
+    "pressureLevel": "high",
+    "title": "Cannstatter Volksfest 2026",
+    "travelerImpact": "Expect higher demand around Bad Cannstatt and the festival area. Allow extra time for local transport and accommodation planning.",
+    "recommendedAction": "Check the official festival and local transport pages before travelling, especially for evenings and weekends.",
+    "verifyLinks": [
+      {
+        "label": "Official Cannstatter Volksfest website",
+        "url": "https://www.cannstatter-volksfest.de/en/"
+      }
+    ],
+    "sourceType": "official",
+    "sourceCheckedAt": "2026-07-12",
+    "confidence": "medium",
+    "displayMode": "banner"
+  },
+  {
     "id": "berlin-2026-09-27-berlin-marathon",
     "city": "Berlin",
     "startDate": "2026-09-27",
@@ -115,6 +136,27 @@
       "main station",
       "public transport"
     ]
+  },
+  {
+    "id": "dresden-2026-11-25-dresden-striezelmarkt-2026",
+    "city": "Dresden",
+    "startDate": "2026-11-25",
+    "endDate": "2026-12-24",
+    "category": "christmas_market",
+    "pressureLevel": "medium",
+    "title": "Dresden Striezelmarkt 2026",
+    "travelerImpact": "Expect higher demand around central Dresden and the market area. Allow extra time when planning city-centre visits.",
+    "recommendedAction": "Check the official market and city pages before travelling, especially for weekends and December evenings.",
+    "verifyLinks": [
+      {
+        "label": "Official Dresden Striezelmarkt website",
+        "url": "https://striezelmarkt.dresden.de/en/"
+      }
+    ],
+    "sourceType": "official",
+    "sourceCheckedAt": "2026-07-12",
+    "confidence": "medium",
+    "displayMode": "banner"
   },
   {
     "id": "nuremberg-2026-11-27-nuremberg-christmas-market",
