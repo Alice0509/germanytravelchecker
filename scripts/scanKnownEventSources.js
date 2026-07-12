@@ -106,6 +106,85 @@ function findYearHits(text, years) {
   return years.filter((year) => text.includes(String(year)))
 }
 
+function hasAnyHits(value) {
+  return Array.isArray(value) && value.length > 0
+}
+
+function getSeedDiagnosis(seed, scanResult, targetYears = []) {
+  const keywordHits = scanResult.keywordHits || []
+  const yearHits = scanResult.yearHits || []
+  const dateRangeHints = scanResult.dateRangeHints || []
+  const possibleDateHints = scanResult.possibleDateHints || []
+  const knownDates = seed.knownDates || []
+
+  const sourceReachable = scanResult.ok === true
+  const hasKeywordHits = hasAnyHits(keywordHits)
+  const hasYearHits = hasAnyHits(yearHits)
+  const hasDateRangeHints = hasAnyHits(dateRangeHints)
+  const hasPossibleDateHints = hasAnyHits(possibleDateHints)
+  const hasFutureKnownDates = knownDates.some((knownDate) => {
+    const startDate = typeof knownDate === 'string' ? knownDate : knownDate.startDate
+    return targetYears.some((year) => String(startDate || '').startsWith(String(year)))
+  })
+
+  const reasons = []
+
+  if (!sourceReachable) {
+    reasons.push(`source status ${scanResult.status || 'unknown'}`)
+  }
+
+  if (!hasKeywordHits) {
+    reasons.push('no keyword hits')
+  }
+
+  if (!hasYearHits) {
+    reasons.push('no target-year hits')
+  }
+
+  if (!hasDateRangeHints) {
+    reasons.push('no extracted date range')
+  }
+
+  if (!hasFutureKnownDates && !hasDateRangeHints) {
+    reasons.push('no future knownDates and no extracted date range')
+  }
+
+  if (!hasPossibleDateHints && !hasDateRangeHints) {
+    reasons.push('no date hints')
+  }
+
+  if (reasons.length === 0) {
+    reasons.push('source has signals but no candidate was generated')
+  }
+
+  return {
+    sourceReachable,
+    hasKeywordHits,
+    hasYearHits,
+    hasPossibleDateHints,
+    hasDateRangeHints,
+    hasFutureKnownDates,
+    reasons,
+  }
+}
+
+function formatYesNo(value) {
+  return value ? 'yes' : 'no'
+}
+
+function printSeedDiagnosis(seed, scanResult, targetYears) {
+  const diagnosis = getSeedDiagnosis(seed, scanResult, targetYears)
+
+  console.log('  diagnosis:')
+  console.log(`    source reachable: ${formatYesNo(diagnosis.sourceReachable)}`)
+  console.log(`    keyword hits: ${formatYesNo(diagnosis.hasKeywordHits)}`)
+  console.log(`    target-year hits: ${formatYesNo(diagnosis.hasYearHits)}`)
+  console.log(`    possible date hints: ${formatYesNo(diagnosis.hasPossibleDateHints)}`)
+  console.log(`    date range extracted: ${formatYesNo(diagnosis.hasDateRangeHints)}`)
+  console.log(`    future knownDates: ${formatYesNo(diagnosis.hasFutureKnownDates)}`)
+  console.log(`    skipped because: ${diagnosis.reasons.join('; ')}`)
+}
+
 function getSingleDateRangeForYear(scanResult, seed, targetYear) {
   return pickDateRangeForYear(scanResult, seed, targetYear)
 }
@@ -430,6 +509,7 @@ async function main() {
     console.log(`  date-like snippets: ${result.dateLikeSnippets.join(' | ') || '-'}`)
     console.log(`  possible date hints: ${result.possibleDateHints.join(', ') || '-'}`)
     console.log(`  date range hints: ${(result.dateRangeHints || []).map((range) => `${range.startDate} to ${range.endDate}`).join(' | ') || '-'}`)
+    printSeedDiagnosis(result.seed, result, years)
     if (result.error) {
       console.log(`  error: ${result.error}`)
     }
