@@ -29,6 +29,151 @@
     }
   },
   {
+    "id": "cologne-carnival",
+    "city": "Cologne",
+    "title": "Cologne Carnival",
+    "category": "city_festival",
+    "defaultPressureLevel": "high",
+    "sourceType": "official_tourism",
+    "sourceLabel": "Cologne tourism event information",
+    "sourceUrl": "https://www.cologne-tourism.com/experiences-lifestyle/events/calendar-of-events",
+    "candidateReason": "Major city festival period that may affect central areas, public transport, hotels and late-night movement.",
+    "suggestedImpact": "A major city festival period may affect central areas, public transport, hotels and late-night movement.",
+    "suggestedAction": "Add buffer time, avoid tight cross-city plans and verify official city and transport information.",
+    "suggestedAreas": [
+      "city centre",
+      "public transport",
+      "hotels",
+      "late-night movement"
+    ],
+    "knownDates": [],
+    "dateExtraction": {
+      "preferredMonths": [
+        2,
+        11
+      ],
+      "titleKeywords": [
+        "carnival",
+        "karneval",
+        "rosenmontag",
+        "weiberfastnacht"
+      ]
+    }
+  },
+  {
+    "id": "dresden-striezelmarkt",
+    "city": "Dresden",
+    "state": "Saxony",
+    "title": "Dresden Striezelmarkt",
+    "category": "christmas_market",
+    "sourceUrl": "https://striezelmarkt.dresden.de/en/",
+    "sourceLabel": "Official Dresden Striezelmarkt website",
+    "keywords": [
+      "dresden",
+      "striezelmarkt",
+      "christmas market"
+    ],
+    "dateExtraction": {
+      "preferredMonths": [
+        11,
+        12
+      ],
+      "titleKeywords": [
+        "striezelmarkt",
+        "christmas market",
+        "dresden"
+      ]
+    },
+    "defaultPressureLevel": "medium",
+    "sourceType": "official",
+    "candidateReason": "Major Christmas market in central Dresden with likely higher visitor demand.",
+    "suggestedImpact": "Expect higher demand around central Dresden and the market area. Allow extra time when planning city-centre visits.",
+    "suggestedAction": "Check the official market and city pages before travelling, especially for weekends and December evenings.",
+    "knownDates": []
+  },
+  {
+    "id": "frankfurt-book-fair",
+    "city": "Frankfurt",
+    "title": "Frankfurt Book Fair",
+    "category": "trade_fair",
+    "defaultPressureLevel": "medium",
+    "sourceType": "official_messe",
+    "sourceLabel": "Frankfurter Buchmesse official information",
+    "sourceUrl": "https://www.buchmesse.de/en",
+    "candidateReason": "Large trade fair that may affect hotels, Messe access, stations and city transport.",
+    "suggestedImpact": "A large trade fair may affect hotels, Messe access, stations and city transport.",
+    "suggestedAction": "Book important plans earlier, add buffer time and verify official Messe and transport information.",
+    "suggestedAreas": [
+      "Messe",
+      "hotels",
+      "main station",
+      "public transport"
+    ],
+    "knownDates": [
+      {
+        "startDate": "2026-10-07",
+        "endDate": "2026-10-11",
+        "confidence": "high",
+        "sourceLabel": "Frankfurter Buchmesse official information",
+        "sourceUrl": "https://www.buchmesse.de/en"
+      }
+    ],
+    "dateExtraction": {
+      "preferredMonths": [
+        10
+      ],
+      "titleKeywords": [
+        "book fair",
+        "buchmesse"
+      ]
+    }
+  },
+  {
+    "id": "hamburg-dom",
+    "city": "Hamburg",
+    "title": "Hamburg DOM",
+    "category": "city_festival",
+    "defaultPressureLevel": "medium",
+    "sourceType": "official_tourism",
+    "sourceLabel": "Hamburg DOM official information",
+    "sourceUrl": "https://www.hamburg.com/visitors/dom/about-20244",
+    "candidateReason": "Large recurring fair that may affect nearby transport, hotels and evening movement.",
+    "suggestedImpact": "A large recurring fair may affect nearby transport, hotels and evening movement.",
+    "suggestedAction": "Add buffer time and verify official tourism and transport information before travelling.",
+    "suggestedAreas": [
+      "fair area",
+      "public transport",
+      "hotels",
+      "evening travel"
+    ],
+    "knownDates": [
+      {
+        "title": "Hamburg Summer DOM",
+        "startDate": "2026-07-24",
+        "endDate": "2026-08-30",
+        "confidence": "high",
+        "sourceLabel": "Hamburg DOM official information",
+        "sourceUrl": "https://www.hamburg.com/visitors/dom/about-20244"
+      }
+    ],
+    "dateExtraction": {
+      "preferredMonths": [
+        3,
+        4,
+        7,
+        8,
+        11,
+        12
+      ],
+      "titleKeywords": [
+        "dom",
+        "spring dom",
+        "summer dom",
+        "winter dom"
+      ]
+    }
+  },
+  {
     "id": "munich-oktoberfest",
     "city": "Munich",
     "title": "Oktoberfest",
@@ -96,117 +241,34 @@
     }
   },
   {
-    "id": "frankfurt-book-fair",
-    "city": "Frankfurt",
-    "title": "Frankfurt Book Fair",
-    "category": "trade_fair",
-    "defaultPressureLevel": "medium",
-    "sourceType": "official_messe",
-    "sourceLabel": "Frankfurter Buchmesse official information",
-    "sourceUrl": "https://www.buchmesse.de/en",
-    "candidateReason": "Large trade fair that may affect hotels, Messe access, stations and city transport.",
-    "suggestedImpact": "A large trade fair may affect hotels, Messe access, stations and city transport.",
-    "suggestedAction": "Book important plans earlier, add buffer time and verify official Messe and transport information.",
-    "suggestedAreas": [
-      "Messe",
-      "hotels",
-      "main station",
-      "public transport"
-    ],
-    "knownDates": [
-      {
-        "startDate": "2026-10-07",
-        "endDate": "2026-10-11",
-        "confidence": "high",
-        "sourceLabel": "Frankfurter Buchmesse official information",
-        "sourceUrl": "https://www.buchmesse.de/en"
-      }
+    "id": "stuttgart-cannstatter-volksfest",
+    "city": "Stuttgart",
+    "state": "Baden-Württemberg",
+    "title": "Cannstatter Volksfest",
+    "category": "festival",
+    "sourceUrl": "https://www.cannstatter-volksfest.de/en/",
+    "sourceLabel": "Official Cannstatter Volksfest website",
+    "keywords": [
+      "stuttgart",
+      "cannstatter volksfest",
+      "volksfest"
     ],
     "dateExtraction": {
       "preferredMonths": [
+        9,
         10
       ],
       "titleKeywords": [
-        "book fair",
-        "buchmesse"
+        "cannstatter volksfest",
+        "volksfest",
+        "stuttgart"
       ]
-    }
-  },
-  {
-    "id": "cologne-carnival",
-    "city": "Cologne",
-    "title": "Cologne Carnival",
-    "category": "city_festival",
+    },
     "defaultPressureLevel": "high",
-    "sourceType": "official_tourism",
-    "sourceLabel": "Cologne tourism event information",
-    "sourceUrl": "https://www.cologne-tourism.com/experiences-lifestyle/events/calendar-of-events",
-    "candidateReason": "Major city festival period that may affect central areas, public transport, hotels and late-night movement.",
-    "suggestedImpact": "A major city festival period may affect central areas, public transport, hotels and late-night movement.",
-    "suggestedAction": "Add buffer time, avoid tight cross-city plans and verify official city and transport information.",
-    "suggestedAreas": [
-      "city centre",
-      "public transport",
-      "hotels",
-      "late-night movement"
-    ],
-    "knownDates": [],
-    "dateExtraction": {
-      "preferredMonths": [
-        2,
-        11
-      ],
-      "titleKeywords": [
-        "carnival",
-        "karneval",
-        "rosenmontag",
-        "weiberfastnacht"
-      ]
-    }
-  },
-  {
-    "id": "hamburg-dom",
-    "city": "Hamburg",
-    "title": "Hamburg DOM",
-    "category": "city_festival",
-    "defaultPressureLevel": "medium",
-    "sourceType": "official_tourism",
-    "sourceLabel": "Hamburg DOM official information",
-    "sourceUrl": "https://www.hamburg.com/visitors/dom/about-20244",
-    "candidateReason": "Large recurring fair that may affect nearby transport, hotels and evening movement.",
-    "suggestedImpact": "A large recurring fair may affect nearby transport, hotels and evening movement.",
-    "suggestedAction": "Add buffer time and verify official tourism and transport information before travelling.",
-    "suggestedAreas": [
-      "fair area",
-      "public transport",
-      "hotels",
-      "evening travel"
-    ],
-    "knownDates": [
-      {
-        "title": "Hamburg Summer DOM",
-        "startDate": "2026-07-24",
-        "endDate": "2026-08-30",
-        "confidence": "high",
-        "sourceLabel": "Hamburg DOM official information",
-        "sourceUrl": "https://www.hamburg.com/visitors/dom/about-20244"
-      }
-    ],
-    "dateExtraction": {
-      "preferredMonths": [
-        3,
-        4,
-        7,
-        8,
-        11,
-        12
-      ],
-      "titleKeywords": [
-        "dom",
-        "spring dom",
-        "summer dom",
-        "winter dom"
-      ]
-    }
+    "sourceType": "official",
+    "candidateReason": "Large festival in Stuttgart with likely higher demand around the event area.",
+    "suggestedImpact": "Expect higher demand around Bad Cannstatt and the festival area. Allow extra time for local transport and accommodation planning.",
+    "suggestedAction": "Check the official festival and local transport pages before travelling, especially for evenings and weekends.",
+    "knownDates": []
   }
 ]
