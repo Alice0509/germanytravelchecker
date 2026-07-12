@@ -35,62 +35,6 @@
     }
   },
   {
-    "id": "dresden-2026-dresden-striezelmarkt-source-scan",
-    "city": "Dresden",
-    "title": "Dresden Striezelmarkt 2026 source scan",
-    "startDate": "2026-11-25",
-    "endDate": "2026-12-24",
-    "sourceUrl": "https://striezelmarkt.dresden.de/en/",
-    "sourceLabel": "Official Dresden Striezelmarkt website",
-    "detectedFrom": "known-event-source-scan:dresden-striezelmarkt:2026",
-    "confidence": "medium",
-    "candidateReason": "Source scan found matching event keywords and one extracted 2026 date range. Manual review still required before approval.",
-    "suggestedCategory": "christmas_market",
-    "suggestedPressureLevel": "medium",
-    "suggestedImpact": "Expect higher demand around central Dresden and the market area. Allow extra time when planning city-centre visits.",
-    "suggestedAction": "Check the official market and city pages before travelling, especially for weekends and December evenings.",
-    "suggestedAreas": [],
-    "sourceType": "official",
-    "scanSignals": {
-      "targetYear": 2026,
-      "keywordHits": [
-        "dresden",
-        "dresden striezelmarkt",
-        "dresden",
-        "striezelmarkt",
-        "christmas market"
-      ],
-      "yearHits": [
-        2026
-      ],
-      "dateLikeSnippets": [
-        "24. December 2026",
-        "03.03.2026",
-        "12.07.2026",
-        "09.04.2026"
-      ],
-      "possibleDateHints": [
-        "2026-03-03",
-        "2026-04-09",
-        "2026-07-12",
-        "2026-12-24"
-      ],
-      "dateRangeHints": [
-        {
-          "startDate": "2026-11-25",
-          "endDate": "2026-12-24",
-          "sourceText": "25. November to 24. December 2026"
-        }
-      ],
-      "extractedDateRange": {
-        "startDate": "2026-11-25",
-        "endDate": "2026-12-24",
-        "sourceText": "25. November to 24. December 2026"
-      },
-      "scannedAt": "2026-07-12"
-    }
-  },
-  {
     "id": "nuremberg-2027-nuremberg-christmas-market-source-scan",
     "city": "Nuremberg",
     "title": "Nuremberg Christmas Market 2027 source scan",
@@ -128,56 +72,6 @@
       ],
       "dateRangeHints": [],
       "extractedDateRange": null,
-      "scannedAt": "2026-07-12"
-    }
-  },
-  {
-    "id": "stuttgart-2026-stuttgart-cannstatter-volksfest-source-scan",
-    "city": "Stuttgart",
-    "title": "Cannstatter Volksfest 2026 source scan",
-    "startDate": "2026-09-25",
-    "endDate": "2026-10-11",
-    "sourceUrl": "https://www.cannstatter-volksfest.de/en/",
-    "sourceLabel": "Official Cannstatter Volksfest website",
-    "detectedFrom": "known-event-source-scan:stuttgart-cannstatter-volksfest:2026",
-    "confidence": "medium",
-    "candidateReason": "Source scan found matching event keywords and one extracted 2026 date range. Manual review still required before approval.",
-    "suggestedCategory": "festival",
-    "suggestedPressureLevel": "high",
-    "suggestedImpact": "Expect higher demand around Bad Cannstatt and the festival area. Allow extra time for local transport and accommodation planning.",
-    "suggestedAction": "Check the official festival and local transport pages before travelling, especially for evenings and weekends.",
-    "suggestedAreas": [],
-    "sourceType": "official",
-    "scanSignals": {
-      "targetYear": 2026,
-      "keywordHits": [
-        "stuttgart",
-        "cannstatter volksfest",
-        "stuttgart",
-        "cannstatter volksfest",
-        "volksfest"
-      ],
-      "yearHits": [
-        2026
-      ],
-      "dateLikeSnippets": [
-        "October 11, 2026"
-      ],
-      "possibleDateHints": [
-        "2026-10-11"
-      ],
-      "dateRangeHints": [
-        {
-          "startDate": "2026-09-25",
-          "endDate": "2026-10-11",
-          "sourceText": "September 25 to October 11, 2026"
-        }
-      ],
-      "extractedDateRange": {
-        "startDate": "2026-09-25",
-        "endDate": "2026-10-11",
-        "sourceText": "September 25 to October 11, 2026"
-      },
       "scannedAt": "2026-07-12"
     }
   }
