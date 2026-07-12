@@ -26,6 +26,39 @@ function getDefaultEndDateKey() {
   return formatDateKey(addDays(today, 3))
 }
 
+function getUrlParam(name) {
+  if (typeof window === 'undefined') {
+    return ''
+  }
+
+  return new URLSearchParams(window.location.search).get(name) || ''
+}
+
+function isDateKey(value) {
+  return /^\d{4}-\d{2}-\d{2}$/.test(value)
+}
+
+function getInitialTripCityId() {
+  const cityId = getUrlParam('from')
+
+  if (!cityId || !TRAVEL_CITIES.some((city) => city.id === cityId)) {
+    return 'berlin'
+  }
+
+  return cityId
+}
+
+function getInitialTripStartDateKey() {
+  const startDate = getUrlParam('start')
+  return isDateKey(startDate) ? startDate : getTodayDateKey()
+}
+
+function getInitialTripEndDateKey() {
+  const endDate = getUrlParam('end')
+  return isDateKey(endDate) ? endDate : getDefaultEndDateKey()
+}
+
+
 function formatRangeItem(item) {
   if (item.date) {
     return `${item.date} · ${item.name}`
@@ -39,9 +72,9 @@ function formatRangeItem(item) {
 }
 
 export default function TripDates() {
-  const [cityId, setCityId] = useState('berlin')
-  const [startDateKey, setStartDateKey] = useState(getTodayDateKey)
-  const [endDateKey, setEndDateKey] = useState(getDefaultEndDateKey)
+  const [cityId, setCityId] = useState(getInitialTripCityId)
+  const [startDateKey, setStartDateKey] = useState(getInitialTripStartDateKey)
+  const [endDateKey, setEndDateKey] = useState(getInitialTripEndDateKey)
   const [schoolHolidays, setSchoolHolidays] = useState([])
   const [publicHolidays, setPublicHolidays] = useState([])
   const [isLoading, setIsLoading] = useState(false)

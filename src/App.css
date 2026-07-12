@@ -1797,6 +1797,11 @@ h1 {
 
 .footer-copy {
   white-space: nowrap;
+  text-decoration: none;
+}
+
+.current-signals-note:hover {
+  color: #0d746e;
 }
 
 @media (max-width: 760px) {
@@ -3142,6 +3147,12 @@ h1 {
 .current-signal-item {
   position: relative;
   flex: 0 0 auto;
+  color: inherit;
+  text-decoration: none;
+}
+
+.current-signal-item:hover {
+  color: #0d746e;
 }
 
 .current-signal-item + .current-signal-item::before {
@@ -3198,4 +3209,57 @@ h1 {
   .current-signals-track {
     padding-right: 5.4rem;
   }
+}
+
+/* Event pressure banner: light planner cards by default, dark Check Today card override */
+.event-pressure-banner {
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.94), rgba(255, 250, 235, 0.86)),
+    rgba(255, 255, 255, 0.9);
+  color: #102348;
+}
+
+.event-pressure-banner span {
+  color: #b8871e;
+}
+
+.event-pressure-banner strong {
+  color: #102348;
+}
+
+.event-pressure-banner p {
+  color: #4f5b70;
+}
+
+.event-pressure-banner small {
+  color: #647086;
+}
+
+.event-pressure-banner a {
+  color: #0d746e;
+}
+
+.check-today .event-pressure-banner {
+  background: rgba(255, 250, 235, 0.08);
+  color: rgba(255, 255, 255, 0.88);
+}
+
+.check-today .event-pressure-banner span {
+  color: #f9d98b;
+}
+
+.check-today .event-pressure-banner strong {
+  color: #fff;
+}
+
+.check-today .event-pressure-banner p {
+  color: rgba(255, 255, 255, 0.76);
+}
+
+.check-today .event-pressure-banner small {
+  color: rgba(255, 255, 255, 0.62);
+}
+
+.check-today .event-pressure-banner a {
+  color: #a8f3dc;
 }
