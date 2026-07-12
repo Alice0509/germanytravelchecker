@@ -14,6 +14,7 @@ export const EVENT_PRESSURE_CATEGORIES = [
   'football_match',
   'trade_fair',
   'city_festival',
+  'festival',
   'christmas_market',
   'oktoberfest',
   'new_year',
