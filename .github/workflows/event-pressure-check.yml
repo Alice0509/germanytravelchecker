@@ -48,5 +48,8 @@ jobs:
       - name: Validate event pressure data
         run: npm run event-pressure:discover
 
+      - name: Run event pressure automation pipeline dry run
+        run: npm run event-pressure:auto-pipeline
+
       - name: Build site
         run: npm run build
