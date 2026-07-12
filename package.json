@@ -15,7 +15,9 @@
     "event-pressure:approve": "node scripts/approveEventPressureCandidate.js",
     "event-pressure:seed-candidates": "node scripts/seedEventPressureCandidates.js",
     "event-pressure:source-health": "node scripts/checkEventPressureSourceHealth.js",
-    "event-pressure:source-health:strict": "node scripts/checkEventPressureSourceHealth.js --strict"
+    "event-pressure:source-health:strict": "node scripts/checkEventPressureSourceHealth.js --strict",
+    "event-pressure:expired": "node scripts/checkExpiredEventPressureNotes.js",
+    "event-pressure:expired:strict": "node scripts/checkExpiredEventPressureNotes.js --strict"
   },
   "dependencies": {
     "react": "^19.2.6",
