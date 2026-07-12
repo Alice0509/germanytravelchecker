@@ -1,0 +1,60 @@
+name: Event pressure known source write scan
+
+on:
+  workflow_dispatch:
+    inputs:
+      limit:
+        description: Optional scan limit for testing. Leave empty to scan all known event seeds.
+        required: false
+        default: ""
+
+jobs:
+  scan-known-sources-write:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v5
+
+      - name: Set up Node
+        uses: actions/setup-node@v5
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run known source scanner in write mode
+        run: |
+          if [ -n "${{ github.event.inputs.limit }}" ]; then
+            npm run event-pressure:scan-known-sources -- --write --limit=${{ github.event.inputs.limit }}
+          else
+            npm run event-pressure:scan-known-sources -- --write
+          fi
+
+      - name: Validate candidates
+        run: npm run event-pressure:candidates
+
+      - name: Report event pressure coverage
+        run: npm run event-pressure:report
+
+      - name: Check generated notes expiry
+        run: npm run event-pressure:expired:strict
+
+      - name: Check known event dates
+        run: npm run event-pressure:known-dates:strict
+
+      - name: Build site
+        run: npm run build
+
+      - name: Show candidate diff
+        run: |
+          git --no-pager diff -- src/data/eventPressureCandidates.generated.json
+          git --no-pager diff --stat
+
+      - name: Upload candidate file
+        uses: actions/upload-artifact@v4
+        with:
+          name: event-pressure-candidates-generated
+          path: src/data/eventPressureCandidates.generated.json
