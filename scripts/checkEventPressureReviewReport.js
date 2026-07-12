@@ -1,6 +1,10 @@
 import fs from 'node:fs/promises'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
+import {
+  findReviewReportErrors,
+  getReviewReportConfig,
+} from './lib/eventPressureReviewReport.js'
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
@@ -9,32 +13,14 @@ const repoRoot = path.resolve(__dirname, '..')
 const modeArg = process.argv.find((arg) => arg.startsWith('--mode='))
 const mode = modeArg ? modeArg.replace('--mode=', '') : ''
 
-const configs = {
-  candidate: {
-    file: 'event-pressure-candidate-report.md',
-    requiredSections: [
-      '# Event pressure candidate review',
-      '## Copy safety review',
-      '## Source trust review',
-    ],
-  },
-  promotion: {
-    file: 'event-pressure-promotion-report.md',
-    requiredSections: [
-      '# Event pressure promotion review',
-      '## Copy safety review',
-      '## Source trust review',
-    ],
-  },
-}
+const config = getReviewReportConfig(mode)
 
-if (!configs[mode]) {
+if (!config) {
   console.error('Usage: node scripts/checkEventPressureReviewReport.js --mode=candidate|promotion')
   process.exit(1)
 }
 
 async function main() {
-  const config = configs[mode]
   const reportPath = path.join(repoRoot, config.file)
 
   let body = ''
@@ -48,17 +34,7 @@ async function main() {
     throw error
   }
 
-  const errors = []
-
-  if (body.trim() === '') {
-    errors.push(`${config.file} is empty.`)
-  }
-
-  for (const section of config.requiredSections) {
-    if (!body.includes(section)) {
-      errors.push(`${config.file} is missing required section: ${section}`)
-    }
-  }
+  const errors = findReviewReportErrors(body, config)
 
   console.log('Event pressure review report guard')
   console.log('==================================')

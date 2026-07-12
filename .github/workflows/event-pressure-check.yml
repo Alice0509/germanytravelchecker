@@ -42,6 +42,7 @@ jobs:
           npm run event-pressure:source-trust:test
           npm run event-pressure:source-trust
           npm run event-pressure:source-trust:report:test
+          npm run event-pressure:review-report:test
 
       - name: Check known event dates
         run: |
