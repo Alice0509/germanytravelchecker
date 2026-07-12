@@ -23,7 +23,8 @@
     "event-pressure:scan-known-sources": "node scripts/scanKnownEventSources.js",
     "event-pressure:scan-known-sources:write": "node scripts/scanKnownEventSources.js --write",
     "event-pressure:candidate-report": "node scripts/reportEventPressureCandidates.js",
-    "event-pressure:candidate-report:markdown": "node scripts/reportEventPressureCandidates.js --markdown"
+    "event-pressure:candidate-report:markdown": "node scripts/reportEventPressureCandidates.js --markdown",
+    "event-pressure:import-candidates": "node scripts/importEventPressureCandidates.js"
   },
   "dependencies": {
     "react": "^19.2.6",
