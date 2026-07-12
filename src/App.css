@@ -3063,3 +3063,139 @@ h1 {
   color: #a8f3dc;
   font-weight: 900;
 }
+
+.current-travel-signals {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  width: 100%;
+  margin: 0 0 0.85rem;
+  border: 1px solid rgba(22, 132, 122, 0.16);
+  border-radius: 999px;
+  padding: 0.42rem 0.7rem;
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.88), rgba(232, 252, 244, 0.76)),
+    rgba(255, 255, 255, 0.78);
+  box-shadow: 0 10px 26px rgba(20, 38, 70, 0.06);
+  overflow: hidden;
+}
+
+.current-signals-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.38rem;
+  flex: 0 0 auto;
+  color: #0d746e;
+  font-size: 0.64rem;
+  font-weight: 950;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.signal-dot {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 999px;
+  background: #f2b233;
+  box-shadow: 0 0 0 5px rgba(242, 178, 51, 0.16);
+  animation: signalPulse 1.8s ease-in-out infinite;
+}
+
+@keyframes signalPulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(242, 178, 51, 0.34);
+  }
+
+  70% {
+    box-shadow: 0 0 0 8px rgba(242, 178, 51, 0);
+  }
+
+  100% {
+    box-shadow: 0 0 0 0 rgba(242, 178, 51, 0);
+  }
+}
+
+.current-signals-track {
+  min-width: 0;
+  flex: 1 1 auto;
+  overflow: hidden;
+  color: #102348;
+  font-size: 0.82rem;
+  font-weight: 850;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+.current-signals-static,
+.current-signals-marquee {
+  display: inline-flex;
+  align-items: center;
+  gap: 1.4rem;
+  min-width: 0;
+}
+
+.current-signals-marquee {
+  animation: signalTicker 22s linear infinite;
+}
+
+.current-signal-item {
+  position: relative;
+  flex: 0 0 auto;
+}
+
+.current-signal-item + .current-signal-item::before {
+  content: "•";
+  position: absolute;
+  left: -0.85rem;
+  color: #22a094;
+}
+
+.current-signals-note {
+  flex: 0 0 auto;
+  color: #647086;
+  font-size: 0.68rem;
+  white-space: nowrap;
+}
+
+@keyframes signalTicker {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .signal-dot,
+  .current-signals-marquee {
+    animation: none;
+  }
+}
+
+@media (max-width: 760px) {
+  .current-travel-signals {
+    gap: 0.55rem;
+      margin-bottom: 0.7rem;
+    border-radius: 18px;
+    padding: 0.5rem 0.62rem;
+  }
+
+  .current-signals-kicker {
+    font-size: 0.6rem;
+  }
+
+  .current-signals-track {
+    font-size: 0.78rem;
+  }
+
+  .current-signals-note {
+    display: none;
+  }
+
+  .current-signals-track {
+    padding-right: 5.4rem;
+  }
+}

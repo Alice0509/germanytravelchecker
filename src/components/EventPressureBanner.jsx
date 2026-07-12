@@ -8,7 +8,7 @@ export default function EventPressureBanner({ notes }) {
   return (
     <aside className={`event-pressure-banner event-pressure-${primaryNote.pressureLevel}`}>
       <div>
-        <span>{primaryNote.pressureLevel === 'high' ? 'High event pressure' : 'Major event signal'}</span>
+        <span>'Major event signal'</span>
         <strong>{primaryNote.title}</strong>
       </div>
 
