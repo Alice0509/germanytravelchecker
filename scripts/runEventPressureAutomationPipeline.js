@@ -69,6 +69,7 @@ async function runSharedGuards() {
   console.log('Shared guards')
   console.log('=============')
 
+  await runNode('scripts/checkKnownEventProfiles.js')
   await runNode('scripts/checkKnownEventDates.js', ['--strict'])
   await runNode('scripts/checkExpiredEventPressureNotes.js', ['--strict'])
   await runNode('scripts/reportEventPressure.js')
