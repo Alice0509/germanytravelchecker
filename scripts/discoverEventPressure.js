@@ -9,6 +9,7 @@ const repoRoot = path.resolve(__dirname, '..')
 const generatedPath = path.join(repoRoot, 'src/data/eventPressureNotes.generated.json')
 const sourcesPath = path.join(repoRoot, 'src/data/eventPressureSources.json')
 const utilsPath = path.join(repoRoot, 'src/utils/eventPressureNotes.js')
+const schemaPath = path.join(repoRoot, 'src/data/eventPressureNotesSchema.js')
 
 async function readJson(filePath, fallback) {
   try {
@@ -52,6 +53,37 @@ function validateSources(sources) {
   return errors
 }
 
+
+function validateSourceCoverage(sources, supportedCities) {
+  const errors = []
+
+  for (const city of supportedCities) {
+    const citySources = sources.filter((source) => source.city === city)
+
+    if (citySources.length === 0) {
+      errors.push(`Missing event pressure sources for city: ${city}`)
+      continue
+    }
+
+    if (!citySources.some((source) => source.sourceType === 'official_city')) {
+      errors.push(`Missing official_city source for city: ${city}`)
+    }
+
+    if (!citySources.some((source) => ['official_tourism', 'official_city'].includes(source.sourceType))) {
+      errors.push(`Missing event/tourism source for city: ${city}`)
+    }
+  }
+
+  const unsupportedCities = [...new Set(sources.map((source) => source.city))]
+    .filter((city) => !supportedCities.includes(city))
+
+  for (const city of unsupportedCities) {
+    errors.push(`Unsupported city in event pressure sources: ${city}`)
+  }
+
+  return errors
+}
+
 function sortNotes(notes) {
   return [...notes].sort((a, b) => {
     const dateCompare = String(a.startDate).localeCompare(String(b.startDate))
@@ -66,11 +98,15 @@ function sortNotes(notes) {
 
 async function main() {
   const { validateEventPressureNotes } = await import(pathToFileURL(utilsPath).href)
+  const { SUPPORTED_EVENT_PRESSURE_CITIES } = await import(pathToFileURL(schemaPath).href)
 
   const sources = await readJson(sourcesPath, [])
   const notes = await readJson(generatedPath, [])
 
-  const sourceErrors = validateSources(sources)
+  const sourceErrors = [
+    ...validateSources(sources),
+    ...validateSourceCoverage(sources, SUPPORTED_EVENT_PRESSURE_CITIES),
+  ]
 
   if (sourceErrors.length > 0) {
     console.error('Event pressure source validation failed:')
@@ -97,7 +133,7 @@ async function main() {
   const sortedNotes = sortNotes(notes)
   await fs.writeFile(generatedPath, `${JSON.stringify(sortedNotes, null, 2)}\n`)
 
-  console.log(`Checked ${sources.length} event pressure source entries.`)
+  console.log(`Checked ${sources.length} event pressure source entries across ${SUPPORTED_EVENT_PRESSURE_CITIES.length} supported cities.`)
   console.log(`Validated ${sortedNotes.length} generated event pressure notes.`)
   console.log('Wrote sorted generated event pressure JSON.')
   console.log('External discovery is intentionally not enabled yet.')
