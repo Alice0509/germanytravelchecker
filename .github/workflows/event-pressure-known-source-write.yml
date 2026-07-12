@@ -7,6 +7,15 @@ on:
         description: Optional scan limit for testing. Leave empty to scan all known event seeds.
         required: false
         default: ""
+      create_pr:
+        description: Create a pull request when candidate JSON changes.
+        required: false
+        default: false
+        type: boolean
+
+permissions:
+  contents: write
+  pull-requests: write
 
 jobs:
   scan-known-sources-write:
@@ -55,6 +64,31 @@ jobs:
         run: |
           git --no-pager diff -- src/data/eventPressureCandidates.generated.json
           git --no-pager diff --stat
+
+      - name: Create candidate pull request
+        if: ${{ github.event.inputs.create_pr == 'true' }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if git diff --quiet -- src/data/eventPressureCandidates.generated.json; then
+            echo "No candidate changes to open as a pull request."
+            exit 0
+          fi
+
+          BRANCH="automation/event-pressure-candidates-${{ github.run_id }}"
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout -b "$BRANCH"
+          git add src/data/eventPressureCandidates.generated.json
+          git commit -m "Update event pressure candidates from source scan"
+          git push origin "$BRANCH"
+
+          gh pr create \
+            --base main \
+            --head "$BRANCH" \
+            --title "chore: update event pressure candidates from source scan" \
+            --body-file event-pressure-candidate-report.md
 
       - name: Upload candidate file
         uses: actions/upload-artifact@v4
