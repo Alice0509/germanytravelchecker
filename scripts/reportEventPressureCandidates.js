@@ -31,12 +31,21 @@ function formatList(values) {
   return values.join(', ')
 }
 
+function needsDateReview(candidate) {
+  return !candidate.startDate || !candidate.endDate
+}
+
 function buildApproveCommand(candidate) {
   const lines = [
     'npm run event-pressure:approve -- \\',
     `  --id ${candidate.id} \\`,
     '  --checked-at YYYY-MM-DD \\',
   ]
+
+  if (needsDateReview(candidate)) {
+    lines.push('  --start-date YYYY-MM-DD \\')
+    lines.push('  --end-date YYYY-MM-DD \\')
+  }
 
   if (candidate.state) {
     lines.push(`  --state ${shellQuote(candidate.state)} \\`)
@@ -70,6 +79,7 @@ function candidateBlock(candidate, index) {
     `- detectedFrom: \`${candidate.detectedFrom || '-'}\``,
     `- source: ${candidate.sourceLabel || '-'} · ${candidate.sourceUrl || '-'}`,
     `- dates: ${candidate.startDate || 'manual review needed'} to ${candidate.endDate || 'manual review needed'}`,
+    `- date review: ${needsDateReview(candidate) ? 'required before approve' : 'ready'}`,
     `- confidence: ${candidate.confidence || '-'}`,
     `- suggested category: ${candidate.suggestedCategory || '-'}`,
     `- suggested pressure: ${candidate.suggestedPressureLevel || '-'}`,
