@@ -55,6 +55,9 @@ jobs:
             npm run event-pressure:auto-pipeline:promote:write
           fi
 
+      - name: Append copy safety review to promotion report
+        run: npm run event-pressure:copy-safety:report:promotion -- --append-to=event-pressure-promotion-report.md
+
       - name: Append source trust review to promotion report
         run: npm run event-pressure:source-trust:report:promotion -- --append-to=event-pressure-promotion-report.md
 

@@ -35,6 +35,7 @@ jobs:
         run: |
           npm run event-pressure:copy-safety:test
           npm run event-pressure:copy-safety
+          npm run event-pressure:copy-safety:report:test
 
       - name: Check event pressure source trust
         run: |
