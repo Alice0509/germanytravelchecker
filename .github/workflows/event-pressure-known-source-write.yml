@@ -50,6 +50,9 @@ jobs:
             npm run event-pressure:auto-pipeline:candidates:write
           fi
 
+      - name: Check candidate automation outputs
+        run: npm run event-pressure:outputs:candidate
+
       - name: Build site
         run: npm run build
 

@@ -55,6 +55,9 @@ jobs:
             npm run event-pressure:auto-pipeline:promote:write
           fi
 
+      - name: Check promotion automation outputs
+        run: npm run event-pressure:outputs:promotion
+
       - name: Build site
         run: npm run build
 

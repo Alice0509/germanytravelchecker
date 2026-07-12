@@ -37,7 +37,9 @@
     "event-pressure:auto-pipeline:promote": "node scripts/runEventPressureAutomationPipeline.js --promote-only",
     "event-pressure:auto-pipeline:promote:write": "node scripts/runEventPressureAutomationPipeline.js --promote-only --write",
     "event-pressure:known-profiles": "node scripts/checkKnownEventProfiles.js",
-    "event-pressure:date-range-selection:test": "node scripts/testEventPressureDateRangeSelection.js"
+    "event-pressure:date-range-selection:test": "node scripts/testEventPressureDateRangeSelection.js",
+    "event-pressure:outputs:candidate": "node scripts/checkEventPressureAutomationOutputs.js --mode=candidate",
+    "event-pressure:outputs:promotion": "node scripts/checkEventPressureAutomationOutputs.js --mode=promotion"
   },
   "dependencies": {
     "react": "^19.2.6",
