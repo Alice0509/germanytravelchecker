@@ -67,10 +67,9 @@ async function main() {
     'event-pressure:source-trust:report:test',
     'event-pressure:source-trust',
     'event-pressure:review-report:test',
+    'event-pressure:outputs:test',
     'event-pressure:auto-pipeline',
     'event-pressure:seed-candidates',
-    'event-pressure:outputs:candidate',
-    'event-pressure:outputs:promotion',
     'event-pressure:report',
   ]
 

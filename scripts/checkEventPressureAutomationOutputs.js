@@ -1,30 +1,20 @@
 import { execFile } from 'node:child_process'
 import { promisify } from 'node:util'
+import {
+  findUnexpectedAutomationOutputs,
+  getAllowedAutomationOutputs,
+  parseGitStatusPaths,
+} from './lib/eventPressureAutomationOutputs.js'
 
 const execFileAsync = promisify(execFile)
 
 const modeArg = process.argv.find((arg) => arg.startsWith('--mode='))
 const mode = modeArg ? modeArg.replace('--mode=', '') : ''
+const allowed = getAllowedAutomationOutputs(mode)
 
-const allowedByMode = {
-  candidate: new Set([
-    'src/data/eventPressureCandidates.generated.json',
-    'event-pressure-candidate-report.md',
-  ]),
-  promotion: new Set([
-    'src/data/eventPressureNotes.generated.json',
-    'src/data/eventPressureCandidates.generated.json',
-    'event-pressure-promotion-report.md',
-  ]),
-}
-
-if (!allowedByMode[mode]) {
+if (!allowed) {
   console.error('Usage: node scripts/checkEventPressureAutomationOutputs.js --mode=candidate|promotion')
   process.exit(1)
-}
-
-function parseStatusLine(line) {
-  return line.slice(3).trim()
 }
 
 async function main() {
@@ -32,14 +22,8 @@ async function main() {
     maxBuffer: 1024 * 1024 * 10,
   })
 
-  const changedPaths = stdout
-    .split('\n')
-    .map((line) => line.trimEnd())
-    .filter(Boolean)
-    .map(parseStatusLine)
-
-  const allowed = allowedByMode[mode]
-  const unexpected = changedPaths.filter((changedPath) => !allowed.has(changedPath))
+  const changedPaths = parseGitStatusPaths(stdout)
+  const unexpected = findUnexpectedAutomationOutputs(changedPaths, mode)
 
   console.log('Event pressure automation output guard')
   console.log('======================================')
