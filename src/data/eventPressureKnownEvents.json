@@ -83,7 +83,13 @@
         "christmas market",
         "dresden"
       ]
-    }
+    },
+    "defaultPressureLevel": "medium",
+    "sourceType": "official",
+    "candidateReason": "Major Christmas market in central Dresden with likely higher visitor demand.",
+    "suggestedImpact": "Expect higher demand around central Dresden and the market area. Allow extra time when planning city-centre visits.",
+    "suggestedAction": "Check the official market and city pages before travelling, especially for weekends and December evenings.",
+    "knownDates": []
   },
   {
     "id": "frankfurt-book-fair",
@@ -257,6 +263,12 @@
         "volksfest",
         "stuttgart"
       ]
-    }
+    },
+    "defaultPressureLevel": "high",
+    "sourceType": "official",
+    "candidateReason": "Large festival in Stuttgart with likely higher demand around the event area.",
+    "suggestedImpact": "Expect higher demand around Bad Cannstatt and the festival area. Allow extra time for local transport and accommodation planning.",
+    "suggestedAction": "Check the official festival and local transport pages before travelling, especially for evenings and weekends.",
+    "knownDates": []
   }
 ]
