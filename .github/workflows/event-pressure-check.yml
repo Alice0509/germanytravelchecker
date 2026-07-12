@@ -22,47 +22,8 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Report event pressure coverage
-        run: |
-          npm run event-pressure:date-extraction:test
-          npm run event-pressure:date-range-selection:test
-          npm run event-pressure:report
-
-      - name: Check expired event pressure notes
-        run: npm run event-pressure:expired:strict
-
-      - name: Check event pressure copy safety
-        run: |
-          npm run event-pressure:copy-safety:test
-          npm run event-pressure:copy-safety
-          npm run event-pressure:copy-safety:report:test
-
-      - name: Check event pressure source trust
-        run: |
-          npm run event-pressure:source-trust:test
-          npm run event-pressure:source-trust
-          npm run event-pressure:source-trust:report:test
-          npm run event-pressure:review-report:test
-
-      - name: Check known event dates
-        run: |
-          npm run event-pressure:known-profiles
-          npm run event-pressure:known-dates:strict
-
-      - name: Scan known event sources
-        run: npm run event-pressure:scan-known-sources
-
-      - name: Seed event pressure candidates
-        run: npm run event-pressure:seed-candidates
-
-      - name: Validate event pressure candidates
-        run: npm run event-pressure:candidates
-
-      - name: Validate event pressure data
-        run: npm run event-pressure:discover
-
-      - name: Run event pressure automation pipeline dry run
-        run: npm run event-pressure:auto-pipeline
+      - name: Run event pressure automation check
+        run: npm run event-pressure:automation-check
 
       - name: Build site
         run: npm run build
