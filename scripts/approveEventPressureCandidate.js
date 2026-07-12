@@ -34,21 +34,31 @@ function printHelp() {
 Usage:
   npm run event-pressure:approve -- \\
     --id candidate-id \\
-    --category stadium_event \\
-    --level high \\
-    --impact "Major event dates may affect public transport, hotels and late-night travel." \\
-    --action "Add buffer time and verify official sources before travelling." \\
-    --source-type official_venue
+    --checked-at 2026-07-12
 
-Optional:
-  --generated-id custom-generated-note-id
+Required:
+  --id candidate-id
+
+Recommended:
+  --checked-at 2026-07-12
   --state Bavaria
   --venue "Allianz Arena"
   --areas "stations,hotels,late-night transport"
+
+Optional overrides:
+  --generated-id custom-generated-note-id
+  --title "Reviewed title"
+  --category stadium_event
+  --level high
+  --impact "Major event dates may affect public transport, hotels and late-night travel."
+  --action "Add buffer time and verify official sources before travelling."
+  --source-type official_venue
   --confidence high
   --display-mode banner
-  --checked-at 2026-07-12
   --replace
+
+Candidate defaults:
+  category, level, impact, action, source-type, confidence and areas are read from the candidate when available.
 `)
 }
 
@@ -115,11 +125,6 @@ async function main() {
   const { validateEventPressureNotes } = await import(pathToFileURL(utilsPath).href)
 
   const candidateId = requireValue(args, 'id')
-  const category = requireValue(args, 'category')
-  const pressureLevel = requireValue(args, 'level')
-  const travelerImpact = requireValue(args, 'impact')
-  const recommendedAction = requireValue(args, 'action')
-  const sourceType = requireValue(args, 'source-type')
 
   const candidates = await readJson(candidatesPath, [])
   const generatedNotes = await readJson(generatedPath, [])
@@ -138,6 +143,25 @@ async function main() {
     throw new Error(`Candidate not found: ${candidateId}`)
   }
 
+  const category = getArgValue(args, 'category') || candidate.suggestedCategory
+  const pressureLevel = getArgValue(args, 'level') || candidate.suggestedPressureLevel
+  const travelerImpact = getArgValue(args, 'impact') || candidate.suggestedImpact
+  const recommendedAction = getArgValue(args, 'action') || candidate.suggestedAction
+  const sourceType = getArgValue(args, 'source-type') || candidate.sourceType || candidate.suggestedSourceType
+  const confidence = getArgValue(args, 'confidence') || candidate.confidence || 'medium'
+
+  for (const [name, value] of [
+    ['category', category],
+    ['level', pressureLevel],
+    ['impact', travelerImpact],
+    ['action', recommendedAction],
+    ['source-type', sourceType],
+  ]) {
+    if (!value) {
+      throw new Error(`Missing required value: --${name} or candidate default`)
+    }
+  }
+
   const generatedId =
     getArgValue(args, 'generated-id') ||
     `${slugify(candidate.city)}-${candidate.startDate || 'undated'}-${slugify(candidate.title)}`
@@ -149,7 +173,7 @@ async function main() {
     endDate: candidate.endDate || candidate.startDate,
     category,
     pressureLevel,
-    title: candidate.title,
+    title: getArgValue(args, 'title') || candidate.title,
     travelerImpact,
     recommendedAction,
     verifyLinks: [
@@ -160,17 +184,19 @@ async function main() {
     ],
     sourceType,
     sourceCheckedAt: getArgValue(args, 'checked-at') || new Date().toISOString().slice(0, 10),
-    confidence: getArgValue(args, 'confidence') || candidate.confidence || 'medium',
+    confidence,
     displayMode: getArgValue(args, 'display-mode') || 'banner',
   }
 
   const state = getArgValue(args, 'state') || candidate.state || ''
   const venue = getArgValue(args, 'venue') || candidate.venue || ''
   const affectedAreas = splitList(getArgValue(args, 'areas'))
+  const candidateAreas = Array.isArray(candidate.suggestedAreas) ? candidate.suggestedAreas : []
+  const finalAffectedAreas = affectedAreas.length > 0 ? affectedAreas : candidateAreas
 
   if (state) note.state = state
   if (venue) note.venue = venue
-  if (affectedAreas.length > 0) note.affectedAreas = affectedAreas
+  if (finalAffectedAreas.length > 0) note.affectedAreas = finalAffectedAreas
 
   const noteErrors = validateEventPressureNote(note)
 
