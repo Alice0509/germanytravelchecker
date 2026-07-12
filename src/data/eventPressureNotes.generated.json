@@ -28,34 +28,5 @@
       "late-night transport",
       "Merchandise areas"
     ]
-  },
-  {
-    "id": "nuremberg-2026-12-01-christmas-market-season",
-    "city": "Nuremberg",
-    "state": "Bavaria",
-    "startDate": "2026-11-27",
-    "endDate": "2026-12-24",
-    "category": "christmas_market",
-    "pressureLevel": "medium",
-    "title": "Christmas market season",
-    "venue": "Nuremberg old town",
-    "affectedAreas": [
-      "old town",
-      "main station",
-      "hotels",
-      "weekend travel"
-    ],
-    "travelerImpact": "Christmas market dates may make the old town, hotels and weekend station arrivals busier than usual.",
-    "recommendedAction": "Add buffer time around the old town and verify official tourism and transport information.",
-    "verifyLinks": [
-      {
-        "label": "Official tourism information",
-        "url": "https://example.com/official-tourism"
-      }
-    ],
-    "sourceType": "official_tourism",
-    "sourceCheckedAt": "2026-07-11",
-    "confidence": "medium",
-    "displayMode": "planner_note"
   }
 ]
