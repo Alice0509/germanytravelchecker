@@ -39,6 +39,9 @@ jobs:
       - name: Report event pressure coverage
         run: npm run event-pressure:report
 
+      - name: Write candidate review report
+        run: npm run event-pressure:candidate-report:markdown
+
       - name: Check generated notes expiry
         run: npm run event-pressure:expired:strict
 
@@ -58,3 +61,10 @@ jobs:
         with:
           name: event-pressure-candidates-generated
           path: src/data/eventPressureCandidates.generated.json
+
+      - name: Upload candidate review report
+        uses: actions/upload-artifact@v4
+        with:
+          name: event-pressure-candidate-review
+          path: event-pressure-candidate-report.md
+
