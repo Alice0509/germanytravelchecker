@@ -1,4 +1,7 @@
-import { spawn } from 'node:child_process'
+import { execFile, spawn } from 'node:child_process'
+import { promisify } from 'node:util'
+
+const execFileAsync = promisify(execFile)
 
 function run(command, args) {
   return new Promise((resolve, reject) => {
@@ -15,6 +18,32 @@ function run(command, args) {
       }
     })
   })
+}
+
+const readOnlyOutputPaths = [
+  'src/data/eventPressureCandidates.generated.json',
+  'src/data/eventPressureNotes.generated.json',
+  'event-pressure-candidate-report.md',
+  'event-pressure-promotion-report.md',
+]
+
+async function assertAutomationCheckReadOnly() {
+  const { stdout } = await execFileAsync('git', ['status', '--short', '--', ...readOnlyOutputPaths], {
+    maxBuffer: 1024 * 1024 * 10,
+  })
+
+  if (stdout.trim() === '') {
+    return
+  }
+
+  console.log('')
+  console.log('Automation check output changes detected')
+  console.log('=======================================')
+  console.log(stdout.trim())
+
+  await run('git', ['--no-pager', 'diff', '--', ...readOnlyOutputPaths])
+
+  throw new Error('event-pressure:automation-check must be read-only. Generated data/report files should not change.')
 }
 
 async function runNpmScript(scriptName) {
@@ -51,6 +80,8 @@ async function main() {
     console.log('-'.repeat(`Running ${scriptName}`.length))
     await runNpmScript(scriptName)
   }
+
+  await assertAutomationCheckReadOnly()
 
   console.log('')
   console.log('Event pressure automation check passed.')
