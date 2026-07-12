@@ -1,0 +1,61 @@
+import { spawn } from 'node:child_process'
+
+function run(command, args) {
+  return new Promise((resolve, reject) => {
+    const child = spawn(command, args, {
+      stdio: 'inherit',
+      shell: false,
+    })
+
+    child.on('close', (code) => {
+      if (code === 0) {
+        resolve()
+      } else {
+        reject(new Error(`${command} ${args.join(' ')} failed with exit code ${code}`))
+      }
+    })
+  })
+}
+
+async function runNpmScript(scriptName) {
+  await run('npm', ['run', scriptName])
+}
+
+async function main() {
+  console.log('Event pressure automation check')
+  console.log('===============================')
+
+  const scripts = [
+    'event-pressure:date-extraction:test',
+    'event-pressure:date-range-selection:test',
+    'event-pressure:known-profiles',
+    'event-pressure:known-dates:strict',
+    'event-pressure:expired:strict',
+    'event-pressure:copy-safety:test',
+    'event-pressure:copy-safety:report:test',
+    'event-pressure:copy-safety',
+    'event-pressure:source-trust:test',
+    'event-pressure:source-trust:report:test',
+    'event-pressure:source-trust',
+    'event-pressure:review-report:test',
+    'event-pressure:auto-pipeline',
+    'event-pressure:outputs:candidate',
+    'event-pressure:outputs:promotion',
+    'event-pressure:report',
+  ]
+
+  for (const scriptName of scripts) {
+    console.log('')
+    console.log(`Running ${scriptName}`)
+    console.log('-'.repeat(`Running ${scriptName}`.length))
+    await runNpmScript(scriptName)
+  }
+
+  console.log('')
+  console.log('Event pressure automation check passed.')
+}
+
+main().catch((error) => {
+  console.error(error.message || error)
+  process.exit(1)
+})

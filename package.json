@@ -54,7 +54,8 @@
     "event-pressure:copy-safety:report:test": "node scripts/testEventPressureCopySafetyReport.js",
     "event-pressure:review-report:candidate": "node scripts/checkEventPressureReviewReport.js --mode=candidate",
     "event-pressure:review-report:promotion": "node scripts/checkEventPressureReviewReport.js --mode=promotion",
-    "event-pressure:review-report:test": "node scripts/testEventPressureReviewReport.js"
+    "event-pressure:review-report:test": "node scripts/testEventPressureReviewReport.js",
+    "event-pressure:automation-check": "node scripts/checkEventPressureAutomation.js"
   },
   "dependencies": {
     "react": "^19.2.6",
