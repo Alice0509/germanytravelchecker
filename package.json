@@ -18,8 +18,8 @@
     "event-pressure:source-health:strict": "node scripts/checkEventPressureSourceHealth.js --strict",
     "event-pressure:expired": "node scripts/checkExpiredEventPressureNotes.js",
     "event-pressure:expired:strict": "node scripts/checkExpiredEventPressureNotes.js --strict",
-    "event-pressure:known-dates": "node scripts/checkKnownEventDates.js",
-    "event-pressure:known-dates:strict": "node scripts/checkKnownEventDates.js --strict",
+    "event-pressure:known-dates": "node scripts/checkKnownEventProfiles.js && node scripts/checkKnownEventDates.js",
+    "event-pressure:known-dates:strict": "node scripts/checkKnownEventProfiles.js && node scripts/checkKnownEventDates.js --strict",
     "event-pressure:scan-known-sources": "node scripts/scanKnownEventSources.js",
     "event-pressure:scan-known-sources:write": "node scripts/scanKnownEventSources.js --write",
     "event-pressure:candidate-report": "node scripts/reportEventPressureCandidates.js",
@@ -35,7 +35,8 @@
     "event-pressure:auto-pipeline:candidates": "node scripts/runEventPressureAutomationPipeline.js --candidate-only",
     "event-pressure:auto-pipeline:candidates:write": "node scripts/runEventPressureAutomationPipeline.js --candidate-only --write",
     "event-pressure:auto-pipeline:promote": "node scripts/runEventPressureAutomationPipeline.js --promote-only",
-    "event-pressure:auto-pipeline:promote:write": "node scripts/runEventPressureAutomationPipeline.js --promote-only --write"
+    "event-pressure:auto-pipeline:promote:write": "node scripts/runEventPressureAutomationPipeline.js --promote-only --write",
+    "event-pressure:known-profiles": "node scripts/checkKnownEventProfiles.js"
   },
   "dependencies": {
     "react": "^19.2.6",
