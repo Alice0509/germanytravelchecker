@@ -51,7 +51,9 @@
     "event-pressure:copy-safety:report": "node scripts/reportEventPressureCopySafety.js --mode=all",
     "event-pressure:copy-safety:report:candidate": "node scripts/reportEventPressureCopySafety.js --mode=candidate",
     "event-pressure:copy-safety:report:promotion": "node scripts/reportEventPressureCopySafety.js --mode=promotion",
-    "event-pressure:copy-safety:report:test": "node scripts/testEventPressureCopySafetyReport.js"
+    "event-pressure:copy-safety:report:test": "node scripts/testEventPressureCopySafetyReport.js",
+    "event-pressure:review-report:candidate": "node scripts/checkEventPressureReviewReport.js --mode=candidate",
+    "event-pressure:review-report:promotion": "node scripts/checkEventPressureReviewReport.js --mode=promotion"
   },
   "dependencies": {
     "react": "^19.2.6",

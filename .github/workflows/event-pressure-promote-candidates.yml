@@ -64,6 +64,9 @@ jobs:
       - name: Check promotion automation outputs
         run: npm run event-pressure:outputs:promotion
 
+      - name: Check promotion PR review report
+        run: npm run event-pressure:review-report:promotion
+
       - name: Build site
         run: npm run build
 
