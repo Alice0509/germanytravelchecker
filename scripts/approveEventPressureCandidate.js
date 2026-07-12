@@ -29,6 +29,10 @@ function splitList(value) {
     .filter(Boolean)
 }
 
+function isIsoDate(value) {
+  return typeof value === 'string' && /^\d{4}-\d{2}-\d{2}$/.test(value)
+}
+
 function printHelp() {
   console.log(`
 Usage:
@@ -47,6 +51,8 @@ Recommended:
 
 Optional overrides:
   --generated-id custom-generated-note-id
+  --start-date 2026-09-25
+  --end-date 2026-09-26
   --title "Reviewed title"
   --category stadium_event
   --level high
@@ -162,15 +168,30 @@ async function main() {
     }
   }
 
+  const startDate = getArgValue(args, 'start-date') || candidate.startDate
+  const endDate = getArgValue(args, 'end-date') || candidate.endDate || startDate
+
+  if (!isIsoDate(startDate)) {
+    throw new Error('Missing valid start date. Add --start-date YYYY-MM-DD or use a candidate with startDate.')
+  }
+
+  if (!isIsoDate(endDate)) {
+    throw new Error('Missing valid end date. Add --end-date YYYY-MM-DD or use a candidate with endDate.')
+  }
+
+  if (startDate > endDate) {
+    throw new Error('startDate must be before or equal to endDate.')
+  }
+
   const generatedId =
     getArgValue(args, 'generated-id') ||
-    `${slugify(candidate.city)}-${candidate.startDate || 'undated'}-${slugify(candidate.title)}`
+    `${slugify(candidate.city)}-${startDate}-${slugify(candidate.title)}`
 
   const note = {
     id: generatedId,
     city: candidate.city,
-    startDate: candidate.startDate,
-    endDate: candidate.endDate || candidate.startDate,
+    startDate,
+    endDate,
     category,
     pressureLevel,
     title: getArgValue(args, 'title') || candidate.title,
