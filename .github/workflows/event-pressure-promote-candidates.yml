@@ -1,0 +1,130 @@
+name: Event pressure promote candidates
+
+on:
+  schedule:
+    - cron: "47 6 * * 1"
+  workflow_dispatch:
+    inputs:
+      checked_at:
+        description: Optional source checked date. Leave empty to use Germany current date.
+        required: false
+        default: ""
+      create_pr:
+        description: Create a pull request when generated notes change.
+        required: false
+        default: true
+        type: boolean
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: event-pressure-promote-candidates
+  cancel-in-progress: false
+
+jobs:
+  promote-candidates:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v5
+
+      - name: Set up Node
+        uses: actions/setup-node@v5
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Promote dated candidates
+        env:
+          CHECKED_AT: ${{ github.event.inputs.checked_at }}
+        run: |
+          if [ -n "$CHECKED_AT" ]; then
+            npm run event-pressure:promote-candidates -- --write --checked-at="$CHECKED_AT"
+          else
+            npm run event-pressure:promote-candidates:write
+          fi
+
+      - name: Validate candidates
+        run: npm run event-pressure:candidates
+
+      - name: Validate generated notes
+        run: npm run event-pressure:discover
+
+      - name: Report event pressure coverage
+        run: npm run event-pressure:report
+
+      - name: Check generated notes expiry
+        run: npm run event-pressure:expired:strict
+
+      - name: Check known event dates
+        run: npm run event-pressure:known-dates:strict
+
+      - name: Build site
+        run: npm run build
+
+      - name: Show promotion diff
+        run: |
+          git --no-pager diff -- src/data/eventPressureNotes.generated.json src/data/eventPressureCandidates.generated.json
+          git --no-pager diff --stat
+
+      - name: Create generated notes pull request
+        if: ${{ github.event_name == 'schedule' || github.event.inputs.create_pr == 'true' }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if git diff --quiet -- src/data/eventPressureNotes.generated.json src/data/eventPressureCandidates.generated.json; then
+            echo "No promoted candidate changes to open as a pull request."
+            exit 0
+          fi
+
+          BRANCH="automation/event-pressure-promoted-notes"
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout -B "$BRANCH"
+          git add src/data/eventPressureNotes.generated.json src/data/eventPressureCandidates.generated.json
+          git commit -m "Promote event pressure candidates"
+          git push --force-with-lease origin "$BRANCH"
+
+          cat > /tmp/event-pressure-promotion-pr-body.md <<'BODY'
+          ## Summary
+          - Promote dated event pressure candidates into generated notes
+          - Remove promoted candidates after generated note creation
+          - Keep generated event pressure notes human-reviewed through this PR
+
+          ## Notes
+          - Automated candidate promotion PR
+          - No build output committed
+          - Please review source links, dates and wording before merging
+          BODY
+
+          EXISTING_PR="$(gh pr list --head "$BRANCH" --state open --json number --jq '.[0].number // empty')"
+
+          if [ -n "$EXISTING_PR" ]; then
+            echo "Promotion PR already open: #$EXISTING_PR"
+            gh pr edit "$EXISTING_PR" --body-file /tmp/event-pressure-promotion-pr-body.md
+          else
+            gh pr create \
+              --base main \
+              --head "$BRANCH" \
+              --title "chore: promote event pressure candidates" \
+              --body-file /tmp/event-pressure-promotion-pr-body.md
+          fi
+
+      - name: Upload generated notes file
+        uses: actions/upload-artifact@v4
+        with:
+          name: event-pressure-notes-generated
+          path: src/data/eventPressureNotes.generated.json
+
+      - name: Upload remaining candidates file
+        uses: actions/upload-artifact@v4
+        with:
+          name: event-pressure-candidates-generated
+          path: src/data/eventPressureCandidates.generated.json
