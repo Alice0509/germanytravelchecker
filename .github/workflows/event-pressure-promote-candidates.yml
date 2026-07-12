@@ -67,6 +67,19 @@ jobs:
       - name: Check promotion PR review report
         run: npm run event-pressure:review-report:promotion
 
+      - name: Write promotion workflow summary
+        if: always()
+        run: |
+          {
+            echo "## Event pressure candidate promotion"
+            echo
+            if [ -f event-pressure-promotion-report.md ]; then
+              cat event-pressure-promotion-report.md
+            else
+              echo "Promotion report was not generated."
+            fi
+          } >> "$GITHUB_STEP_SUMMARY"
+
       - name: Build site
         run: npm run build
 

@@ -62,6 +62,19 @@ jobs:
       - name: Check candidate PR review report
         run: npm run event-pressure:review-report:candidate
 
+      - name: Write candidate workflow summary
+        if: always()
+        run: |
+          {
+            echo "## Event pressure candidate scan"
+            echo
+            if [ -f event-pressure-candidate-report.md ]; then
+              cat event-pressure-candidate-report.md
+            else
+              echo "Candidate report was not generated."
+            fi
+          } >> "$GITHUB_STEP_SUMMARY"
+
       - name: Build site
         run: npm run build
 
