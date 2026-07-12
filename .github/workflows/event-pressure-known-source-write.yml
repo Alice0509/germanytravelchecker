@@ -1,6 +1,8 @@
 name: Event pressure known source write scan
 
 on:
+  schedule:
+    - cron: "17 5 * * 1"
   workflow_dispatch:
     inputs:
       limit:
@@ -16,6 +18,10 @@ on:
 permissions:
   contents: write
   pull-requests: write
+
+concurrency:
+  group: event-pressure-known-source-write
+  cancel-in-progress: false
 
 jobs:
   scan-known-sources-write:
@@ -35,9 +41,11 @@ jobs:
         run: npm ci
 
       - name: Run known source scanner in write mode
+        env:
+          SCAN_LIMIT: ${{ github.event.inputs.limit }}
         run: |
-          if [ -n "${{ github.event.inputs.limit }}" ]; then
-            npm run event-pressure:scan-known-sources -- --write --limit=${{ github.event.inputs.limit }}
+          if [ -n "$SCAN_LIMIT" ]; then
+            npm run event-pressure:scan-known-sources -- --write --limit="$SCAN_LIMIT"
           else
             npm run event-pressure:scan-known-sources -- --write
           fi
@@ -66,7 +74,7 @@ jobs:
           git --no-pager diff --stat
 
       - name: Create candidate pull request
-        if: ${{ github.event.inputs.create_pr == 'true' }}
+        if: ${{ github.event_name == 'schedule' || github.event.inputs.create_pr == 'true' }}
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
@@ -75,20 +83,26 @@ jobs:
             exit 0
           fi
 
-          BRANCH="automation/event-pressure-candidates-${{ github.run_id }}"
+          BRANCH="automation/event-pressure-candidates"
 
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git checkout -b "$BRANCH"
+          git checkout -B "$BRANCH"
           git add src/data/eventPressureCandidates.generated.json
           git commit -m "Update event pressure candidates from source scan"
-          git push origin "$BRANCH"
+          git push --force-with-lease origin "$BRANCH"
 
-          gh pr create \
-            --base main \
-            --head "$BRANCH" \
-            --title "chore: update event pressure candidates from source scan" \
-            --body-file event-pressure-candidate-report.md
+          EXISTING_PR="$(gh pr list --head "$BRANCH" --state open --json number --jq '.[0].number // empty')"
+
+          if [ -n "$EXISTING_PR" ]; then
+            echo "Candidate PR already open: #$EXISTING_PR"
+          else
+            gh pr create \
+              --base main \
+              --head "$BRANCH" \
+              --title "chore: update event pressure candidates from source scan" \
+              --body-file event-pressure-candidate-report.md
+          fi
 
       - name: Upload candidate file
         uses: actions/upload-artifact@v4
@@ -101,4 +115,3 @@ jobs:
         with:
           name: event-pressure-candidate-review
           path: event-pressure-candidate-report.md
-
