@@ -3,7 +3,7 @@ name: Event pressure check
 on:
   workflow_dispatch:
   schedule:
-    - cron: '17 5 * * *'
+    - cron: '37 5 * * *'
   pull_request:
     paths:
       - package.json
