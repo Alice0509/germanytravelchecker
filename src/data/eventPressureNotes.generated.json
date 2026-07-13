@@ -1,35 +1,5 @@
 [
   {
-    "id": "munich-2026-07-11-bts-allianz-arena",
-    "city": "Munich",
-    "startDate": "2026-07-11",
-    "endDate": "2026-07-12",
-    "category": "stadium_event",
-    "pressureLevel": "high",
-    "title": "BTS concerts at Allianz Arena",
-    "travelerImpact": "Two major stadium concert dates may affect U-Bahn connections, hotels, stations, parking areas and late-night travel around Munich.",
-    "recommendedAction": "Add buffer time, avoid tight late-night plans and verify official venue and transport information before travelling.",
-    "verifyLinks": [
-      {
-        "label": "Allianz Arena visitor information",
-        "url": "https://allianz-arena.com/en/news/2026/06/visitor-information-for-the-bts-concerts-at-the-allianz-arena"
-      }
-    ],
-    "sourceType": "official_venue",
-    "sourceCheckedAt": "2026-07-12",
-    "confidence": "high",
-    "displayMode": "banner",
-    "state": "Bavaria",
-    "venue": "Allianz Arena",
-    "affectedAreas": [
-      "Fröttmaning",
-      "U-Bahn",
-      "hotels",
-      "late-night transport",
-      "Merchandise areas"
-    ]
-  },
-  {
     "id": "hamburg-2026-07-24-hamburg-summer-dom",
     "city": "Hamburg",
     "startDate": "2026-07-24",
