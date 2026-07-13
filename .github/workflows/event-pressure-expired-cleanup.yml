@@ -1,0 +1,91 @@
+name: Event pressure expired cleanup
+
+on:
+  schedule:
+    - cron: '12 4 * * *'
+  workflow_dispatch:
+    inputs:
+      create_pr:
+        description: 'Create or update a cleanup PR when expired notes are removed'
+        required: false
+        default: true
+        type: boolean
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  cleanup-expired-notes:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v6
+
+      - name: Set up Node
+        uses: actions/setup-node@v6
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Remove expired generated notes
+        run: npm run event-pressure:expired-cleanup:write
+
+      - name: Write cleanup workflow summary
+        if: always()
+        run: |
+          {
+            echo "## Event pressure expired cleanup"
+            echo
+            if [ -f event-pressure-expired-cleanup-report.md ]; then
+              cat event-pressure-expired-cleanup-report.md
+            else
+              echo "Expired cleanup report was not generated."
+            fi
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Check cleanup diff
+        run: |
+          git --no-pager diff -- src/data/eventPressureNotes.generated.json
+          git --no-pager diff --stat
+
+      - name: Validate after cleanup
+        run: |
+          npm run event-pressure:automation-check
+          npm run build
+
+      - name: Create expired cleanup pull request
+        if: ${{ github.event_name == 'schedule' || github.event.inputs.create_pr == 'true' }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if git diff --quiet -- src/data/eventPressureNotes.generated.json; then
+            echo "No expired generated notes to clean up."
+            exit 0
+          fi
+
+          BRANCH="automation/event-pressure-expired-cleanup"
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout -B "$BRANCH"
+          git add src/data/eventPressureNotes.generated.json
+          git commit -m "Remove expired event pressure notes"
+          git push --force origin "$BRANCH"
+
+          EXISTING_PR="$(gh pr list --head "$BRANCH" --state open --json number --jq '.[0].number // empty')"
+
+          if [ -n "$EXISTING_PR" ]; then
+            echo "Expired cleanup PR already open: #$EXISTING_PR"
+            gh pr edit "$EXISTING_PR" --body-file event-pressure-expired-cleanup-report.md
+          else
+            gh pr create \
+              --base main \
+              --head "$BRANCH" \
+              --title "chore: remove expired event pressure notes" \
+              --body-file event-pressure-expired-cleanup-report.md
+          fi
