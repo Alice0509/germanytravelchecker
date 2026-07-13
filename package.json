@@ -59,7 +59,9 @@
     "event-pressure:outputs:test": "node scripts/testEventPressureAutomationOutputs.js",
     "event-pressure:scan-preview:test": "node scripts/testKnownSourceScanCandidatePreview.js",
     "event-pressure:promotion-eligibility:test": "node scripts/testEventPressurePromotionEligibility.js",
-    "event-pressure:source-scan-promotion-flow:test": "node scripts/testEventPressureSourceScanToPromotionFlow.js"
+    "event-pressure:source-scan-promotion-flow:test": "node scripts/testEventPressureSourceScanToPromotionFlow.js",
+    "event-pressure:expired-cleanup": "node scripts/removeExpiredEventPressureNotes.js",
+    "event-pressure:expired-cleanup:write": "node scripts/removeExpiredEventPressureNotes.js --write"
   },
   "dependencies": {
     "react": "^19.2.6",
