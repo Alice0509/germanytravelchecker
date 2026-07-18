@@ -83,127 +83,93 @@ export default function TroubleFinder() {
   const result = useMemo(() => findTopic(query), [query])
 
   return (
-    <section className="section trouble-finder-section">
-      <div className="section-heading">
-        <p className="eyebrow">Find a quick trouble tip</p>
-        <h2>What are you worried about?</h2>
-        <p>
-          Type a small Germany travel worry, such as shops closed, medicine,
-          still water, Pfand, paid toilets, SEV, platform changes or a cancelled train.
-        </p>
-      </div>
+    <section className="section trouble-finder-section portal-trouble-finder">
+      <div className="trouble-finder-heading">
+        <div>
+          <p className="eyebrow">Need help now?</p>
+          <h2>What happened?</h2>
+          <p>Type a short phrase or choose a common problem.</p>
+        </div>
 
-      <div className="trouble-finder-card">
-        <label>
-          <span>Your worry</span>
+        <label className="portal-trouble-search">
+          <span>Travel problem</span>
           <input
             type="search"
             value={query}
             onChange={(event) => setQuery(event.target.value)}
-            placeholder="Try: shops closed, medicine, SEV, platform changed"
+            placeholder="Shops closed, medicine, SEV…"
           />
         </label>
-
-        {!hasQuery ? (
-          <article className="trouble-result no-match-result">
-            <div className="trouble-result-header">
-              <div>
-                <span className="trouble-category">Start with a common worry</span>
-                <strong>Type a short phrase or choose one of the quick examples.</strong>
-              </div>
-            </div>
-
-            <p className="first-move-note">
-              Try words like shops closed, medicine, still water, Pfand, paid
-              toilet, SEV, platform changed or cancelled train.
-            </p>
-
-            <p className="trouble-risk">
-              The result stays rule-based and practical. If something is urgent,
-              verify with an official source first.
-            </p>
-          </article>
-        ) : result ? (
-          <article className="trouble-result">
-            <div className="trouble-result-header">
-              <div>
-                <span className="trouble-category">{result.category}</span>
-                <strong>{result.title}</strong>
-              </div>
-              <span className={`urgency-pill urgency-${result.urgency}`}>
-                {result.urgency} urgency
-              </span>
-            </div>
-
-            <p className="first-move-note">{firstMoveText(result)}</p>
-
-            <div className="trouble-result-grid">
-              <section>
-                <h3>Problem</h3>
-                <p>{result.problem}</p>
-              </section>
-
-              <section>
-                <h3>Meaning</h3>
-                <p>{result.meaning}</p>
-              </section>
-
-              <section>
-                <h3>What to do</h3>
-                <ul>
-                  {result.whatToDo.slice(0, 3).map((step) => (
-                    <li key={step}>{step}</li>
-                  ))}
-                </ul>
-              </section>
-
-              <section>
-                <h3>Verify</h3>
-                <ul>
-                  {result.verify.slice(0, 3).map((source) => (
-                    <li key={source}>{source}</li>
-                  ))}
-                </ul>
-              </section>
-            </div>
-
-            <p className="trouble-risk">{result.risk}</p>
-
-            {result.relatedGuideUrl ? (
-              <a className="button secondary trouble-guide-link" href={result.relatedGuideUrl}>
-                {guideLabel(result)}
-              </a>
-            ) : null}
-          </article>
-        ) : (
-          <article className="trouble-result no-match-result">
-            <div className="trouble-result-header">
-              <div>
-                <span className="trouble-category">No exact match yet</span>
-                <strong>Try one of the common Germany travel problems below.</strong>
-              </div>
-            </div>
-
-            <p className="first-move-note">
-              This Trouble Finder is still rule-based. Try a shorter phrase like
-              shops closed, medicine, SEV, platform changed, paid toilet or still water.
-            </p>
-
-            <p className="trouble-risk">
-              If this is urgent, verify with an official source first: station staff,
-              DB Navigator, an official pharmacy emergency listing, your hotel or local emergency services.
-            </p>
-          </article>
-        )}
-
-        <div className="trouble-chip-row" aria-label="Example worries">
-          {EXAMPLE_WORRIES.map((item) => (
-            <button key={item} type="button" onClick={() => setQuery(item)}>
-              {item}
-            </button>
-          ))}
-        </div>
       </div>
+
+      <div className="trouble-chip-row" aria-label="Common travel problems">
+        {EXAMPLE_WORRIES.map((item) => (
+          <button key={item} type="button" onClick={() => setQuery(item)}>
+            {item}
+          </button>
+        ))}
+      </div>
+
+      {hasQuery && result ? (
+        <article className="trouble-result">
+          <div className="trouble-result-header">
+            <div>
+              <span className="trouble-category">{result.category}</span>
+              <strong>{result.title}</strong>
+            </div>
+            <span className={`urgency-pill urgency-${result.urgency}`}>
+              {result.urgency} urgency
+            </span>
+          </div>
+
+          <p className="first-move-note">{firstMoveText(result)}</p>
+
+          <div className="trouble-result-grid">
+            <section>
+              <h3>Problem</h3>
+              <p>{result.problem}</p>
+            </section>
+
+            <section>
+              <h3>Meaning</h3>
+              <p>{result.meaning}</p>
+            </section>
+
+            <section>
+              <h3>What to do</h3>
+              <ul>
+                {result.whatToDo.slice(0, 3).map((step) => (
+                  <li key={step}>{step}</li>
+                ))}
+              </ul>
+            </section>
+
+            <section>
+              <h3>Verify</h3>
+              <ul>
+                {result.verify.slice(0, 3).map((source) => (
+                  <li key={source}>{source}</li>
+                ))}
+              </ul>
+            </section>
+          </div>
+
+          <p className="trouble-risk">{result.risk}</p>
+
+          {result.relatedGuideUrl ? (
+            <a className="button secondary trouble-guide-link" href={result.relatedGuideUrl}>
+              {guideLabel(result)}
+            </a>
+          ) : null}
+        </article>
+      ) : null}
+
+      {hasQuery && !result ? (
+        <p className="portal-no-result">
+          No exact match yet. Try a shorter phrase such as shops closed,
+          medicine, SEV, paid toilet or still water.
+        </p>
+      ) : null}
     </section>
   )
 }

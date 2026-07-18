@@ -32,8 +32,10 @@ export function buildCheckTodayResult({
 
   const title = getCheckTodayTitle({
     cityName: city.name,
+    dateKey: status.dateKey,
     isSunday: status.isSunday,
     publicHoliday: status.publicHoliday,
+    schoolHoliday: status.schoolHoliday,
   });
 
   const summary = getCheckTodaySummary({
@@ -50,6 +52,7 @@ export function buildCheckTodayResult({
     title,
     summary,
     riskLevel: status.riskLevel,
+    travelImpact: status.travelImpact || status.riskLevel,
     selectedNeeds: selectedNeedIds,
     guidance,
     availableNeeds: NEED_OPTIONS,

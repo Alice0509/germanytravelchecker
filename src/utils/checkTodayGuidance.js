@@ -8,22 +8,19 @@ export const NEED_OPTIONS = [
     label: "Groceries & basics",
   },
   {
-    id: "cigarettes",
-    label: "Tobacco",
-  },
-  {
     id: "cafes-bakeries",
     label: "Cafés / bakeries",
   },
   {
     id: "pharmacy",
-    label: "Pharmacy help",
+    label: "Medicine / pharmacy",
   },
 ];
 
 export const NEED_GUIDANCE = {
   water: {
     title: "Water planning",
+    summary: "Buy water earlier before a Sunday, public holiday or late arrival.",
     fallbackPlaces: [
       "major train stations",
       "airports",
@@ -40,6 +37,7 @@ export const NEED_GUIDANCE = {
   },
   groceries: {
     title: "Groceries and daily basics",
+    summary: "Buy food and daily basics before regular supermarkets close.",
     fallbackPlaces: [
       "major train stations",
       "airports",
@@ -64,6 +62,7 @@ export const NEED_GUIDANCE = {
   },
   "cafes-bakeries": {
     title: "Cafés and bakeries fallback",
+    summary: "Cafés, bakeries and restaurants may still help when regular shops are closed.",
     fallbackPlaces: [
       "city centers",
       "tourist areas",
@@ -77,6 +76,7 @@ export const NEED_GUIDANCE = {
   },
   pharmacy: {
     title: "Pharmacies and emergency help",
+    summary: "Plan regular medication early and verify the current emergency pharmacy when needed.",
     fallbackPlaces: [
       "112 for medical emergencies",
       "110 for police emergencies",
@@ -105,21 +105,52 @@ export function getFallbackPlaceText(needId) {
   return guidance.fallbackPlaces.join(", ");
 }
 
-export function getCheckTodayTitle({ cityName, isSunday, publicHoliday } = {}) {
+function formatTravelDate(dateKey) {
+  if (!dateKey) {
+    return "";
+  }
+
+  const [year, month, day] = dateKey.split("-").map(Number);
+
+  if (!year || !month || !day) {
+    return "";
+  }
+
+  return new Intl.DateTimeFormat("en-GB", {
+    day: "numeric",
+    month: "short",
+    year: "numeric",
+    timeZone: "UTC",
+  }).format(new Date(Date.UTC(year, month - 1, day)));
+}
+
+export function getCheckTodayTitle({
+  cityName,
+  dateKey,
+  isSunday,
+  publicHoliday,
+  schoolHoliday,
+} = {}) {
   const place = cityName || "Germany";
+  const dateLabel = formatTravelDate(dateKey);
+  const prefix = dateLabel ? `${place} · ${dateLabel}` : place;
 
   if (publicHoliday) {
     const holidayName =
-      publicHoliday.name?.en || publicHoliday.name?.de || publicHoliday.name || "a public holiday";
+      publicHoliday.name?.en || publicHoliday.name?.de || publicHoliday.name || "Public holiday";
 
-    return `Today is ${holidayName} in ${place}.`;
+    return `${prefix}: ${holidayName}`;
   }
 
   if (isSunday) {
-    return `Today is Sunday in ${place}.`;
+    return `${prefix}: Sunday closures`;
   }
 
-  return `Today in ${place} looks normal.`;
+  if (schoolHoliday) {
+    return `${prefix}: School holiday travel pressure`;
+  }
+
+  return `${prefix}: No Sunday or public holiday closure`;
 }
 
 export function getCheckTodaySummary({
@@ -144,7 +175,7 @@ export function getCheckTodaySummary({
     return `This date falls during a school holiday period in ${stateName}. Shops are not usually closed because of school holidays, but trains, hotels, attractions and roads may be busier.`;
   }
 
-  return `This looks like a regular weekday in ${place}. Regular shops, supermarkets, cafés and services are generally more likely to be open, but exact hours still vary by business.`;
+  return `No Sunday or statewide public holiday closure was found for this date in ${place}. Many regular businesses may be open, but exact hours still vary.`;
 }
 
 export function getCheckTodayDisclaimer() {

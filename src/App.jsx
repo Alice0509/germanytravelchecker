@@ -5,12 +5,34 @@ import TroubleFinder from './components/TroubleFinder.jsx'
 import SiteMenu from './components/SiteMenu.jsx'
 import './App.css'
 
+const QUICK_GUIDES = [
+  {
+    label: 'Train trouble',
+    title: 'Platform changed, train cancelled or SEV?',
+    text: 'Understand the German message and decide what to check next.',
+    href: '/train-trouble.html',
+    link: 'Open train help',
+  },
+  {
+    label: 'Closed shops',
+    title: 'Why is everything closed today?',
+    text: 'Check Sunday and public-holiday rules and realistic alternatives.',
+    href: '/sunday-holiday-closures.html',
+    link: 'Open closure help',
+  },
+  {
+    label: 'Everyday Germany',
+    title: 'Still water, Pfand or paid toilets?',
+    text: 'Solve small problems before they waste your time.',
+    href: '/water-pfand-guide.html',
+    link: 'Open practical help',
+  },
+]
+
 function App() {
   return (
-    <main className="page-shell">
-      <section className="hero-section">
-        <CurrentTravelSignals />
-
+    <main className="page-shell home-portal">
+      <header className="portal-header">
         <nav className="topbar" aria-label="Main navigation">
           <a className="brand" href="/" aria-label="Germany Travel Checker home">
             <span className="brand-mark" aria-hidden="true">
@@ -21,113 +43,105 @@ function App() {
           <SiteMenu ctaHref="/planner.html#trip-dates" ctaLabel="Planner" />
         </nav>
 
-        <div className="hero-grid">
-          <div className="hero-copy">
-            <p className="eyebrow">Germany travel trouble checker for English-speaking visitors</p>
-            <h1>Plan around German holidays, school breaks and travel trouble.</h1>
-            <p className="hero-text">
-              Check whether today, your trip dates or a common Germany travel
-              problem could change your next move. Germany Travel Checker helps
-              you spot German calendar risks before travel and understand what
-              to do when Germany feels closed, delayed or confusing.
-            </p>
+        <CurrentTravelSignals />
 
-            <div className="hero-actions">
-              <a className="button primary" href="#check-today">
-                Check today
-              </a>
-              <a className="button secondary" href="/planner.html#trip-dates">
-                Plan trip dates
-              </a>
-              <a className="button secondary" href="#trouble-finder">
-                Solve a travel problem
-              </a>
+        <div className="portal-intro">
+          <div>
+            <div className="germany-chip">
+              <span className="germany-flag" aria-hidden="true">
+                <i />
+                <i />
+                <i />
+              </span>
+              <span>Independent Germany travel tool</span>
             </div>
-
-            <p className="trust-note">
-              Google Translate can tell you what a sign says. Germany Travel Checker
-              helps you decide what to do next. Rule-based guidance, no AI guesses
-              and no fixed shop opening-hour database.
+            <h1>Your Germany trip, checked.</h1>
+            <p>
+              Dates, closures and practical travel trouble — before you book
+              or while you are already here.
             </p>
           </div>
 
-          <CheckToday />
+          <nav className="portal-primary-links" aria-label="Start here">
+            <a className="button primary" href="/planner.html#trip-dates">
+              Plan trip dates
+            </a>
+            <a className="button secondary" href="#trouble-finder">
+              Solve a problem now
+            </a>
+          </nav>
         </div>
+      </header>
+
+      <section className="portal-dashboard" aria-label="Germany travel checks">
+        <CheckToday />
+
+        <aside className="portal-shortcuts">
+          <div className="portal-shortcuts-heading">
+            <p className="eyebrow">Start with your situation</p>
+            <h2>What do you need?</h2>
+          </div>
+
+          <a className="portal-shortcut" href="/planner.html#trip-dates">
+            <span>Before your trip</span>
+            <strong>Check dates and cities</strong>
+            <p>Holidays, Sundays, school breaks, events and transfers.</p>
+            <b>Open planner →</b>
+          </a>
+
+          <a className="portal-shortcut" href="#trouble-finder">
+            <span>During your trip</span>
+            <strong>Something went wrong</strong>
+            <p>Closed shops, medicine, trains, water, Pfand or toilets.</p>
+            <b>Find help →</b>
+          </a>
+
+          <p className="portal-trust">
+            Rule-based guidance. Verify live transport, opening hours and
+            urgent information with official sources.
+          </p>
+        </aside>
       </section>
 
       <div id="trouble-finder">
         <TroubleFinder />
       </div>
 
-
-      <section className="section trouble-guide-section">
-        <div className="section-heading">
-          <p className="eyebrow">When the sign or situation changes</p>
-          <h2>Trouble guides for the moment you get stuck.</h2>
-          <p>
-            Translation is only the first step. These guides explain what the
-            situation probably means, what to do next and where to verify before
-            you walk away, board another train or cross town.
-          </p>
+      <section className="portal-directory" aria-labelledby="quick-guides-title">
+        <div className="portal-directory-heading">
+          <p className="eyebrow">Quick guides</p>
+          <h2 id="quick-guides-title">Common Germany travel problems</h2>
+          <p>Choose the situation. Get the next useful move.</p>
         </div>
 
-        <article className="trouble-guide-card">
-          <div>
-            <span>Transit trouble</span>
-            <h3>German train disruption words</h3>
-            <p>
-              Understand common words such as <strong>Gleisänderung</strong>,
-              <strong> fällt aus</strong>, <strong>SEV</strong>,
-              <strong> Schienenersatzverkehr</strong> and <strong>Bauarbeiten</strong>
-              before you miss a platform, bus or connection.
-            </p>
-          </div>
-          <a href="/train-trouble.html">Open Train Trouble Guide</a>
-        </article>
-        <article className="trouble-guide-card">
-          <div>
-            <span>Sunday / holiday closures</span>
-            <h3>Why are shops closed today?</h3>
-            <p>
-              Quickly understand Sunday and public holiday closures in Germany,
-              what to do next and where to verify before you walk across town.
-            </p>
-          </div>
-          <a href="/sunday-holiday-closures.html">Open Sunday Closure Guide</a>
-        </article>
-        <article className="trouble-guide-card">
-          <div>
-            <span>Daily logistics</span>
-            <h3>Water, Pfand and paid toilets</h3>
-            <p>
-              Not every travel problem is dramatic. Sometimes you just need still
-              water, a bathroom, or to understand why your bottle cost more than
-              the shelf price.
-            </p>
-          </div>
-          <a href="/water-pfand-guide.html">Open Water / Pfand Guide</a>
-        </article>
+        <div className="portal-guide-grid">
+          {QUICK_GUIDES.map((guide) => (
+            <a className="portal-guide-link" href={guide.href} key={guide.href}>
+              <span>{guide.label}</span>
+              <strong>{guide.title}</strong>
+              <p>{guide.text}</p>
+              <b>{guide.link} →</b>
+            </a>
+          ))}
+        </div>
       </section>
 
       <CityGuidePreview />
 
-      <section className="section safety-section">
-        <p className="eyebrow">Safety-first guidance</p>
-        <h2>Helpful, but careful.</h2>
+      <aside className="portal-safety">
+        <strong>Helpful, but careful.</strong>
         <p>
-          Germany Travel Checker does not diagnose medical issues, promise shop
-          opening hours or maintain live emergency listings. It points travelers
-          to stable rules, official sources and practical fallback categories.
+          Germany Travel Checker explains stable rules and practical next
+          steps. It does not provide live train status, guaranteed opening
+          hours or medical diagnosis.
         </p>
-      </section>
+      </aside>
 
-      <footer className="footer">
+      <footer className="footer portal-footer">
         <div>
           <strong>Germany Travel Checker</strong>
           <p>
-            Rule-based Germany travel guidance for public holidays, Sunday
-            closures, trip dates and multi-city itineraries. Data by
-            Schulferienklar.
+            Practical Germany travel guidance. Data by Schulferienklar.
           </p>
         </div>
 

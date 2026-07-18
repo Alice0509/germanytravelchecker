@@ -3263,3 +3263,882 @@ h1 {
 .check-today .event-pressure-banner a {
   color: #a8f3dc;
 }
+
+/* Homepage travel portal */
+.home-portal {
+  --portal-width: 1240px;
+  color: #14213d;
+}
+
+.home-portal .portal-header,
+.home-portal .portal-dashboard,
+.home-portal .section,
+.home-portal .portal-directory,
+.home-portal .portal-cities,
+.home-portal .portal-safety,
+.home-portal .footer {
+  width: min(var(--portal-width), calc(100% - 36px));
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.home-portal .portal-header {
+  padding-top: 18px;
+}
+
+.home-portal .topbar {
+  margin-bottom: 14px;
+}
+
+.home-portal .current-travel-signals {
+  margin-bottom: 14px;
+}
+
+.portal-intro {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 28px;
+  border-bottom: 1px solid rgba(20, 33, 61, 0.1);
+  padding: 24px 2px 22px;
+}
+
+.portal-intro .eyebrow {
+  margin-bottom: 7px;
+}
+
+.portal-intro h1 {
+  max-width: none;
+  margin: 0;
+  font-size: clamp(2.3rem, 4.2vw, 4.4rem);
+  line-height: 0.95;
+  letter-spacing: -0.06em;
+}
+
+.portal-intro p:not(.eyebrow) {
+  max-width: 680px;
+  margin: 10px 0 0;
+  color: #5d6673;
+  font-size: 1.05rem;
+}
+
+.portal-primary-links {
+  display: flex;
+  flex: 0 0 auto;
+  gap: 9px;
+}
+
+.portal-dashboard {
+  display: grid;
+  grid-template-columns: minmax(0, 1.65fr) minmax(280px, 0.75fr);
+  gap: 14px;
+  margin-top: 14px;
+}
+
+.home-portal .check-today {
+  min-width: 0;
+  border-radius: 20px;
+  padding: 24px;
+  box-shadow: 0 12px 34px rgba(20, 33, 61, 0.1);
+}
+
+.home-portal .check-today h2 {
+  margin-bottom: 2px;
+  font-size: clamp(1.8rem, 3vw, 2.8rem);
+  line-height: 1;
+}
+
+.home-portal .check-intro {
+  margin-bottom: 0;
+  font-size: 0.92rem;
+}
+
+.home-portal .checker-controls {
+  margin: 16px 0 13px;
+}
+
+.home-portal .status-grid {
+  margin: 13px 0;
+}
+
+.portal-shortcuts {
+  display: grid;
+  align-content: start;
+  gap: 10px;
+  border: 1px solid rgba(20, 33, 61, 0.09);
+  border-radius: 20px;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.88);
+}
+
+.portal-shortcuts-heading h2 {
+  margin: 0;
+  font-size: 1.55rem;
+  letter-spacing: -0.04em;
+}
+
+.portal-shortcut {
+  display: grid;
+  gap: 4px;
+  border: 1px solid rgba(20, 33, 61, 0.08);
+  border-radius: 15px;
+  padding: 15px;
+  color: inherit;
+  background: #fffaf2;
+  text-decoration: none;
+}
+
+.portal-shortcut:hover {
+  border-color: rgba(23, 138, 132, 0.32);
+  transform: translateY(-1px);
+}
+
+.portal-shortcut span,
+.portal-guide-link span {
+  color: #178a84;
+  font-size: 0.72rem;
+  font-weight: 950;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.portal-shortcut strong {
+  font-size: 1.04rem;
+}
+
+.portal-shortcut p {
+  margin: 0;
+  color: #5d6673;
+  font-size: 0.88rem;
+  line-height: 1.4;
+}
+
+.portal-shortcut b,
+.portal-guide-link b,
+.compact-city-card b {
+  color: #147c75;
+  font-size: 0.88rem;
+}
+
+.portal-trust {
+  margin: 4px 2px 0;
+  color: #6b7280;
+  font-size: 0.78rem;
+  line-height: 1.45;
+}
+
+.home-portal .portal-trouble-finder {
+  margin-top: 14px;
+  border-radius: 20px;
+  padding: 22px;
+  background: rgba(255, 255, 255, 0.94);
+  box-shadow: 0 10px 30px rgba(20, 33, 61, 0.06);
+}
+
+.trouble-finder-heading {
+  display: grid;
+  grid-template-columns: minmax(260px, 0.7fr) minmax(360px, 1.3fr);
+  gap: 24px;
+  align-items: end;
+}
+
+.trouble-finder-heading h2 {
+  margin: 0;
+  font-size: clamp(1.7rem, 2.8vw, 2.5rem);
+}
+
+.trouble-finder-heading p:not(.eyebrow) {
+  margin: 7px 0 0;
+  color: #5d6673;
+}
+
+.portal-trouble-search {
+  display: grid;
+  gap: 6px;
+}
+
+.portal-trouble-search span {
+  font-size: 0.82rem;
+  font-weight: 900;
+}
+
+.portal-trouble-search input {
+  width: 100%;
+  min-height: 46px;
+  box-sizing: border-box;
+  border: 1px solid rgba(20, 33, 61, 0.14);
+  border-radius: 13px;
+  padding: 10px 14px;
+  color: #14213d;
+  background: white;
+  font: inherit;
+}
+
+.home-portal .trouble-chip-row {
+  margin-top: 13px;
+  gap: 7px;
+}
+
+.home-portal .trouble-chip-row button {
+  padding: 7px 10px;
+  font-size: 0.86rem;
+}
+
+.home-portal .trouble-result {
+  margin-top: 16px;
+  border-top: 1px solid rgba(20, 33, 61, 0.09);
+  padding-top: 18px;
+}
+
+.portal-no-result {
+  margin: 14px 0 0;
+  color: #5d6673;
+}
+
+.portal-directory,
+.portal-cities {
+  display: grid;
+  grid-template-columns: minmax(220px, 0.55fr) minmax(0, 1.45fr);
+  gap: 24px;
+  margin-top: 14px;
+  border: 1px solid rgba(20, 33, 61, 0.08);
+  border-radius: 20px;
+  padding: 22px;
+  background: rgba(255, 255, 255, 0.92);
+}
+
+.portal-directory-heading h2,
+.portal-cities-heading h2 {
+  margin: 0;
+  font-size: clamp(1.55rem, 2.6vw, 2.25rem);
+}
+
+.portal-directory-heading p:not(.eyebrow),
+.portal-cities-heading p:not(.eyebrow) {
+  margin: 8px 0 0;
+  color: #5d6673;
+  font-size: 0.92rem;
+}
+
+.portal-guide-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 9px;
+}
+
+.portal-guide-link {
+  display: grid;
+  align-content: start;
+  gap: 7px;
+  min-width: 0;
+  border-left: 3px solid rgba(23, 138, 132, 0.4);
+  padding: 8px 13px;
+  color: inherit;
+  text-decoration: none;
+}
+
+.portal-guide-link:hover {
+  background: rgba(230, 247, 242, 0.5);
+}
+
+.portal-guide-link strong {
+  font-size: 1rem;
+  line-height: 1.25;
+}
+
+.portal-guide-link p {
+  margin: 0;
+  color: #5d6673;
+  font-size: 0.84rem;
+  line-height: 1.4;
+}
+
+.portal-cities .compact-city-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 9px;
+  margin: 0;
+}
+
+.portal-cities .compact-city-card {
+  display: grid;
+  align-content: start;
+  border-radius: 14px;
+  padding: 15px;
+  color: inherit;
+  background: #fffaf2;
+  text-decoration: none;
+}
+
+.portal-cities .compact-city-card span {
+  margin-bottom: 7px;
+}
+
+.portal-cities .compact-city-card h3 {
+  font-size: 1.1rem;
+}
+
+.portal-cities .compact-city-card p {
+  margin-bottom: 8px;
+  font-size: 0.86rem;
+}
+
+.portal-safety {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  margin-top: 14px;
+  border: 1px solid rgba(20, 33, 61, 0.08);
+  border-radius: 14px;
+  padding: 13px 17px;
+  background: linear-gradient(90deg, #fffaf2, #eefaf6);
+}
+
+.portal-safety strong {
+  flex: 0 0 auto;
+}
+
+.portal-safety p {
+  margin: 0;
+  color: #5d6673;
+  font-size: 0.84rem;
+}
+
+.home-portal .portal-footer {
+  justify-content: space-between;
+  padding-top: 24px;
+}
+
+@media (max-width: 900px) {
+  .portal-intro {
+    display: grid;
+  }
+
+  .portal-primary-links {
+    justify-self: start;
+  }
+
+  .portal-dashboard,
+  .portal-directory,
+  .portal-cities {
+    grid-template-columns: 1fr;
+  }
+
+  .trouble-finder-heading {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+}
+
+@media (max-width: 720px) {
+  .home-portal .portal-header,
+  .home-portal .portal-dashboard,
+  .home-portal .section,
+  .home-portal .portal-directory,
+  .home-portal .portal-cities,
+  .home-portal .portal-safety,
+  .home-portal .footer {
+    width: min(100% - 20px, var(--portal-width));
+  }
+
+  .home-portal .site-menu {
+    position: relative;
+    inset: auto;
+  }
+
+  .home-portal .topbar {
+    align-items: center;
+    margin-bottom: 8px;
+  }
+
+  .home-portal .brand {
+    max-width: 210px;
+    font-size: 0.96rem;
+  }
+
+  .home-portal .brand-mark {
+    width: 36px;
+    height: 36px;
+  }
+
+  .home-portal .site-menu-button {
+    padding: 0.58rem 0.72rem;
+    box-shadow: none;
+  }
+
+  .portal-intro {
+    gap: 16px;
+    padding: 18px 2px;
+  }
+
+  .portal-intro h1 {
+    font-size: clamp(2.15rem, 10vw, 3rem);
+  }
+
+  .portal-intro p:not(.eyebrow) {
+    font-size: 0.95rem;
+  }
+
+  .portal-primary-links {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+  }
+
+  .portal-primary-links .button {
+    width: auto;
+    min-height: 42px;
+    padding: 0 12px;
+    font-size: 0.86rem;
+  }
+
+  .portal-dashboard {
+    gap: 10px;
+    margin-top: 10px;
+  }
+
+  .home-portal .check-today,
+  .portal-shortcuts,
+  .home-portal .portal-trouble-finder,
+  .portal-directory,
+  .portal-cities {
+    border-radius: 16px;
+    padding: 17px;
+  }
+
+  .home-portal .check-today h2 {
+    font-size: 1.75rem;
+  }
+
+  .home-portal .checker-controls {
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+
+  .home-portal .checker-controls select,
+  .home-portal .checker-controls input {
+    min-height: 40px;
+    font-size: 0.88rem;
+  }
+
+  .home-portal .need-picker {
+    gap: 6px;
+  }
+
+  .home-portal .need-picker button {
+    padding: 7px 9px;
+    font-size: 0.82rem;
+  }
+
+  .home-portal .status-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .portal-shortcuts {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .portal-shortcuts-heading,
+  .portal-trust {
+    grid-column: 1 / -1;
+  }
+
+  .portal-shortcut {
+    padding: 13px;
+  }
+
+  .portal-shortcut p {
+    display: none;
+  }
+
+  .portal-guide-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .portal-guide-link {
+    padding-block: 10px;
+  }
+
+  .portal-guide-link p {
+    display: none;
+  }
+
+  .portal-cities .compact-city-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .portal-cities .compact-city-card p {
+    display: none;
+  }
+
+  .portal-safety {
+    display: grid;
+    gap: 4px;
+  }
+
+  .home-portal .footer-link-groups {
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+  }
+}
+
+@media (max-width: 430px) {
+  .portal-intro h1 {
+    font-size: 2.1rem;
+  }
+
+  .home-portal .checker-controls,
+  .home-portal .status-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .portal-shortcuts,
+  .portal-cities .compact-city-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Clean white portal palette */
+.home-portal {
+  background: #ffffff;
+}
+
+.germany-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  width: fit-content;
+  margin-bottom: 10px;
+  border: 1px solid rgba(20, 33, 61, 0.1);
+  border-radius: 999px;
+  padding: 6px 11px 6px 7px;
+  color: #223047;
+  background: #ffffff;
+  font-size: 0.76rem;
+  font-weight: 950;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.germany-flag {
+  display: grid;
+  width: 25px;
+  height: 18px;
+  overflow: hidden;
+  border-radius: 4px;
+  box-shadow: 0 0 0 1px rgba(20, 33, 61, 0.1);
+}
+
+.germany-flag i:nth-child(1) {
+  background: #181818;
+}
+
+.germany-flag i:nth-child(2) {
+  background: #dd3d43;
+}
+
+.germany-flag i:nth-child(3) {
+  background: #f5bd32;
+}
+
+.portal-intro {
+  border: 0;
+  border-bottom: 1px solid rgba(20, 33, 61, 0.12);
+  border-radius: 0;
+  padding: 24px 2px 22px;
+  background: #ffffff;
+  box-shadow: none;
+}
+
+.home-portal .button.primary {
+  background: #168b84;
+  box-shadow: none;
+}
+
+.home-portal .button.secondary {
+  color: #176d68;
+  background: #eef8f6;
+  border-color: rgba(22, 139, 132, 0.18);
+}
+
+/* Light Check Today panel */
+.home-portal .check-today {
+  color: #14213d;
+  border: 1px solid rgba(22, 139, 132, 0.18);
+  background: #f1f9f7;
+  box-shadow: none;
+}
+
+.home-portal .check-today h2,
+.home-portal .check-today .status-grid strong,
+.home-portal .check-today .guidance-list strong {
+  color: #14213d;
+}
+
+.home-portal .check-today .card-label {
+  color: #16766f;
+}
+
+.home-portal .check-today .check-intro,
+.home-portal .check-today .result-summary,
+.home-portal .check-today .disclaimer,
+.home-portal .check-today .loading-note,
+.home-portal .check-today .status-grid span,
+.home-portal .check-today .guidance-list p {
+  color: #5d6673;
+}
+
+.home-portal .check-today .checker-controls label {
+  color: #3e4a5c;
+}
+
+.home-portal .check-today .checker-controls select,
+.home-portal .check-today .checker-controls input {
+  border-color: rgba(20, 33, 61, 0.12);
+  background: #ffffff;
+}
+
+.home-portal .check-today .need-picker button {
+  color: #176d68;
+  border-color: rgba(22, 139, 132, 0.2);
+  background: #ffffff;
+}
+
+.home-portal .check-today .need-picker button.selected {
+  color: #103f3c;
+  background: #bce9df;
+}
+
+.home-portal .check-today .status-grid div,
+.home-portal .check-today .guidance-list article {
+  border-color: rgba(20, 33, 61, 0.08);
+  background: #ffffff;
+}
+
+.home-portal .check-today .details-toggle {
+  color: #176d68;
+  border-color: rgba(22, 139, 132, 0.22);
+  background: #ffffff;
+}
+
+.home-portal .check-today .risk-low {
+  color: #176d68;
+  background: #def4ee;
+  border-color: rgba(22, 139, 132, 0.2);
+}
+
+.home-portal .check-today .risk-medium {
+  color: #785600;
+  background: #fff3cb;
+  border-color: rgba(190, 139, 21, 0.25);
+}
+
+.home-portal .check-today .risk-high {
+  color: #9b332d;
+  background: #ffebe8;
+  border-color: rgba(185, 65, 54, 0.22);
+}
+
+.home-portal .check-today .event-pressure-banner {
+  color: #5d6673;
+  border-color: rgba(190, 139, 21, 0.24);
+  background: #fff9e8;
+}
+
+.home-portal .check-today .event-pressure-banner strong {
+  color: #14213d;
+}
+
+.home-portal .check-today .event-pressure-banner span {
+  color: #856100;
+}
+
+.home-portal .check-today .event-pressure-banner a {
+  color: #176d68;
+}
+
+/* White modules with restrained accents */
+.portal-shortcuts,
+.home-portal .portal-trouble-finder,
+.portal-directory,
+.portal-cities {
+  border-color: rgba(20, 33, 61, 0.1);
+  background: #ffffff;
+  box-shadow: none;
+}
+
+.portal-shortcut {
+  border-color: rgba(20, 33, 61, 0.09);
+  background: #f8faf9;
+}
+
+.portal-shortcut:first-of-type,
+.portal-shortcut:nth-of-type(2) {
+  border-color: rgba(20, 33, 61, 0.09);
+  background: #f8faf9;
+}
+
+.home-portal .trouble-chip-row button {
+  color: #176d68;
+  border-color: rgba(22, 139, 132, 0.18);
+  background: #eef8f6;
+}
+
+.portal-guide-link {
+  border-left: 3px solid #9fcfc8;
+  border-radius: 0;
+  background: transparent;
+}
+
+.portal-guide-link:nth-child(1),
+.portal-guide-link:nth-child(2),
+.portal-guide-link:nth-child(3) {
+  border-left-color: #9fcfc8;
+  background: transparent;
+}
+
+.portal-guide-link:hover {
+  background: #f5faf8;
+}
+
+.portal-cities .compact-city-card,
+.portal-cities .compact-city-card:first-child,
+.portal-cities .compact-city-card:nth-child(2) {
+  border-color: rgba(20, 33, 61, 0.09);
+  background: #f8faf9;
+}
+
+.portal-safety {
+  border-color: rgba(20, 33, 61, 0.09);
+  background: #f5f8f7;
+}
+
+.home-portal .portal-footer {
+  border-top: 1px solid rgba(20, 33, 61, 0.09);
+}
+
+@media (max-width: 720px) {
+  .portal-intro {
+    padding: 18px 2px;
+  }
+
+  .germany-chip {
+    margin-bottom: 9px;
+    font-size: 0.68rem;
+  }
+
+  .home-portal .check-today {
+    background: #f1f9f7;
+  }
+}
+
+
+/* English-market content polish */
+.home-portal .need-picker-label {
+  flex: 0 0 100%;
+  margin: 0 0 2px;
+  color: #3e4a5c;
+  font-size: 0.78rem;
+  font-weight: 850;
+}
+
+.home-portal .risk-pill {
+  letter-spacing: 0.04em;
+}
+
+@media (max-width: 430px) {
+  .portal-intro h1 {
+    font-size: 1.9rem;
+    line-height: 1;
+  }
+
+  .portal-intro p:not(.eyebrow) {
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
+}
+
+
+/* Compact homepage checker details */
+.home-portal .check-details {
+  display: grid;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.home-portal .check-details .status-grid {
+  margin: 0;
+}
+
+.home-portal .compact-guidance-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.home-portal .compact-guidance-list article {
+  min-width: 0;
+  border: 1px solid rgba(20, 33, 61, 0.08);
+  border-radius: 13px;
+  padding: 12px;
+  background: #ffffff;
+}
+
+.home-portal .compact-guidance-list strong {
+  margin-bottom: 4px;
+  font-size: 0.88rem;
+}
+
+.home-portal .compact-guidance-list p {
+  margin: 0;
+  color: #5d6673;
+  font-size: 0.82rem;
+  line-height: 1.4;
+}
+
+.home-portal .check-detail-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+
+.home-portal .check-detail-actions a {
+  border: 1px solid rgba(22, 139, 132, 0.18);
+  border-radius: 999px;
+  padding: 7px 10px;
+  color: #176d68;
+  background: #ffffff;
+  font-size: 0.82rem;
+  font-weight: 850;
+  text-decoration: none;
+}
+
+.home-portal .check-details .disclaimer {
+  margin: 0;
+  color: #687180;
+  font-size: 0.76rem;
+  line-height: 1.4;
+}
+
+@media (max-width: 720px) {
+  .home-portal .compact-guidance-list {
+    grid-template-columns: 1fr;
+  }
+
+  .home-portal .check-detail-actions {
+    display: grid;
+  }
+
+  .home-portal .check-detail-actions a {
+    text-align: center;
+  }
+}
+
+
+/* Dashboard independent column heights */
+.portal-dashboard {
+  align-items: start;
+}
+
+.portal-shortcuts {
+  align-self: start;
+}

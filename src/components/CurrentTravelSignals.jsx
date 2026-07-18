@@ -87,7 +87,7 @@ export default function CurrentTravelSignals() {
     <aside className="current-travel-signals" aria-label="Current travel signals">
       <div className="current-signals-kicker">
         <span className="signal-dot" aria-hidden="true" />
-        <span>On air</span>
+        <span>Travel pressure now</span>
       </div>
 
       <div className="current-signals-track">
@@ -101,7 +101,7 @@ export default function CurrentTravelSignals() {
       </div>
 
       <a className="current-signals-note" href={tickerItems[0].href}>
-        Open planner
+        Check these dates
       </a>
     </aside>
   )
