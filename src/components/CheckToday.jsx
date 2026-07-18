@@ -152,36 +152,19 @@ export default function CheckToday() {
     return null
   }
 
-  const mapCityName = encodeURIComponent(result.city.name)
-  const liveCheckLinks = [
-    {
-      label: `Check supermarkets in ${result.city.name} on Google Maps`,
-      href: `https://www.google.com/maps/search/supermarket+${mapCityName}`,
-    },
-    {
-      label: `Check cafés & bakeries in ${result.city.name} on Google Maps`,
-      href: `https://www.google.com/maps/search/cafe+bakery+${mapCityName}`,
-    },
-    {
-      label: `Check pharmacies in ${result.city.name} on Google Maps`,
-      href: `https://www.google.com/maps/search/pharmacy+${mapCityName}`,
-    },
-  ]
-  const showWaterHelp = selectedNeedIds.includes('water')
-  const showEssentialsChecklist = result.status.isSunday || result.status.publicHoliday
 
   return (
     <section className="check-today" id="check-today">
       <div className="check-today-header">
-        <p className="card-label">For today or right now</p>
+        <p className="card-label">Check a city and date</p>
         <h2>{result.title}</h2>
-        <span className={`risk-pill risk-${result.riskLevel}`}>{result.riskLevel} risk</span>
+        <span className={`risk-pill risk-${result.travelImpact}`}>
+          Travel impact: {result.travelImpact}
+        </span>
       </div>
 
       <p className="check-intro">
-        Use this when you are already in Germany or need a quick same-day
-        check. Choose a city, date and what you need to see closure patterns
-        and practical fallback options.
+        See Sunday, holiday and school-break context, then choose what you need.
       </p>
 
       <div className="checker-controls">
@@ -203,6 +186,7 @@ export default function CheckToday() {
       </div>
 
       <div className="need-picker" aria-label="What do you need?">
+        <p className="need-picker-label">What do you need? Select all that apply.</p>
         {result.availableNeeds.map((need) => (
           <button
             className={selectedNeedIds.includes(need.id) ? 'selected' : ''}
@@ -258,116 +242,38 @@ export default function CheckToday() {
               </div>
 
               {result.guidance.length > 0 && (
-                <div className="guidance-list">
+                <div className="guidance-list compact-guidance-list">
                   {result.guidance.map((item) => (
                     <article key={item.title}>
                       <strong>{item.title}</strong>
-                      <p>{item.note}</p>
+                      <p>{item.summary || item.note}</p>
                     </article>
                   ))}
                 </div>
               )}
 
-              {showEssentialsChecklist && (
-                <div className="essentials-checklist">
-                  <div>
-                    <strong>Before shops close</strong>
-                    <p>
-                      If your date is a Sunday or public holiday, prepare small
-                      essentials before regular supermarkets close.
-                    </p>
-                  </div>
+              <nav className="check-detail-actions" aria-label="Related travel help">
+                {(result.status.isSunday || result.status.publicHoliday) && (
+                  <a href="/sunday-holiday-closures.html">
+                    Sunday &amp; holiday guide →
+                  </a>
+                )}
 
-                  <div className="essentials-grid">
-                    <article>
-                      <span>Water</span>
-                      <p>Buy water earlier if you can, especially before a late arrival.</p>
-                    </article>
-                    <article>
-                      <span>Simple food</span>
-                      <p>Pack snacks, breakfast items or train food before relying on cafés.</p>
-                    </article>
-                    <article>
-                      <span>Daily basics</span>
-                      <p>Think about toiletries, baby supplies if needed and chargers.</p>
-                    </article>
-                    <article>
-                      <span>Medication you already use</span>
-                      <p>Plan regular medication before pharmacies close. Use official emergency options for urgent help.</p>
-                    </article>
-                    <article>
-                      <span>Cash or coins</span>
-                      <p>Some toilets, kiosks or small places may still need cash or coins.</p>
-                    </article>
-                  </div>
-                </div>
-              )}
+                {selectedNeedIds.includes('water') && (
+                  <a href="/water-pfand-guide.html">
+                    Water &amp; Pfand guide →
+                  </a>
+                )}
 
-              {showWaterHelp && (
-                <div className="water-help-card">
-                  <div>
-                    <strong>Water quick help</strong>
-                    <p>
-                      If your date is a Sunday or public holiday, buy water before
-                      regular supermarkets close if you can.
-                    </p>
-                  </div>
+                <a href="/planner.html#trip-dates">
+                  Open trip planner →
+                </a>
+              </nav>
 
-                  <div className="water-help-grid">
-                    <article>
-                      <span>Fallback places</span>
-                      <p>
-                        Larger stations, airports, gas stations, kiosks, cafés,
-                        bakeries, hotel reception or vending machines may help.
-                        Availability varies.
-                      </p>
-                    </article>
-
-                    <article>
-                      <span>Still water</span>
-                      <p>
-                        Look for <em>stilles Wasser</em>, <em>ohne Kohlensäure</em>
-                        or <em>naturell</em>.
-                      </p>
-                    </article>
-
-                    <article>
-                      <span>Sparkling water</span>
-                      <p>
-                        <em>Sprudel</em>, <em>Classic</em> or <em>mit Kohlensäure</em>
-                        usually means sparkling.
-                      </p>
-                    </article>
-
-                    <article>
-                      <span>Small Germany note</span>
-                      <p>
-                        <em>Medium</em> usually means lightly sparkling. <em>Pfand</em>
-                        means a bottle deposit.
-                      </p>
-                    </article>
-                  </div>
-                </div>
-              )}
-
-              <div className="live-check-links">
-                <div>
-                  <strong>Live opening-hour checks</strong>
-                  <p>
-                    Opening hours can change quickly. Use Google Maps and official
-                    business websites before relying on a place being open.
-                  </p>
-                </div>
-                <div className="live-check-link-list">
-                  {liveCheckLinks.map((link) => (
-                    <a key={link.href} href={link.href} target="_blank" rel="noreferrer">
-                      {link.label}
-                    </a>
-                  ))}
-                </div>
-              </div>
-
-              <p className="disclaimer">{result.disclaimer}</p>
+              <p className="disclaimer">
+                Verify live opening hours, transport details and urgent information
+                with official sources before changing your plans.
+              </p>
             </div>
           )}
         </>

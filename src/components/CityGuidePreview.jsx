@@ -3,37 +3,33 @@ const CITY_GUIDES = [
     city: 'Berlin',
     href: '/berlin.html',
     state: 'Berlin',
-    note: 'Public holidays, Sunday closures and practical fallback ideas for Germany’s capital.',
+    note: 'Closures, holidays and practical fallbacks',
   },
   {
     city: 'Munich',
     href: '/munich.html',
     state: 'Bavaria',
-    note: 'Bavarian public holidays, regional notes, Sunday closures and pharmacy guidance.',
+    note: 'Bavarian holidays and local travel checks',
   },
 ]
 
 export default function CityGuidePreview() {
   return (
-    <section className="section city-guide-section" id="city-guides">
-      <div className="section-heading">
-        <p className="eyebrow">City guides</p>
-        <h2>Practical city checks for Germany travelers.</h2>
-        <p>
-          City guides will stay focused on Germany-specific travel risks:
-          federal states, public holidays, Sunday closures, essentials,
-          pharmacies and trip timing.
-        </p>
+    <section className="portal-cities" id="city-guides">
+      <div className="portal-cities-heading">
+        <p className="eyebrow">City checks</p>
+        <h2>Start with a city</h2>
+        <p>Local holiday rules and practical travel context.</p>
       </div>
 
       <div className="compact-city-grid">
         {CITY_GUIDES.map((guide) => (
-          <article className="compact-city-card" key={guide.city}>
+          <a className="compact-city-card" href={guide.href} key={guide.city}>
             <span>{guide.state}</span>
             <h3>{guide.city}</h3>
             <p>{guide.note}</p>
-            {guide.href && <a href={guide.href}>Open {guide.city} guide</a>}
-          </article>
+            <b>Check {guide.city} →</b>
+          </a>
         ))}
       </div>
     </section>

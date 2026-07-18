@@ -135,5 +135,6 @@ export function getCheckTodayStatus({
     publicHoliday,
     schoolHoliday,
     riskLevel,
+    travelImpact: riskLevel,
   };
 }
