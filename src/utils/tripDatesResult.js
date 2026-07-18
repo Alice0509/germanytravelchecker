@@ -150,7 +150,7 @@ function getTripDatesWarnings({
   if (sundays.length > 0) {
     warnings.push({
       type: "sunday",
-      title: "Daily logistics risk: Sunday",
+      title: "Sunday closures and essentials",
       note:
         "Many regular shops and supermarkets are usually closed on Sundays in Germany. Train stations, airports, gas stations, cafés, bakeries, restaurants and hotels may be useful fallback options. Buy essentials before leaving reliable areas.",
       items: sundays.map((dateKey) => ({
@@ -163,7 +163,7 @@ function getTripDatesWarnings({
   if (schoolHolidayOverlaps.length > 0) {
     warnings.push({
       type: "school-holiday",
-      title: "Crowd risk: school break",
+      title: "School-break travel pressure",
       note:
         "School holidays do not usually close shops, but trains, hotels, roads and attractions may be busier during these periods. Add buffer time and book important plans earlier.",
       items: schoolHolidayOverlaps.map((holiday) => ({

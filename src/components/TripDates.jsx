@@ -191,12 +191,11 @@ export default function TripDates() {
   return (
     <section className="section trip-dates-section" id="trip-dates">
       <div className="section-heading">
-        <p className="eyebrow">For planning before you book</p>
-        <h2>Check whether your travel dates need extra planning.</h2>
+        <p className="eyebrow">One city · date range</p>
+        <h2>Check one city</h2>
         <p>
-          Use this before booking hotels, trains or activities. Choose one city
-          and a date range to see whether your trip overlaps Sundays, public
-          holidays or school holiday periods.
+          Choose a city and date range to check Sunday closures, public
+          holidays and school-break travel pressure.
         </p>
       </div>
 
@@ -238,10 +237,10 @@ export default function TripDates() {
           <div className="trip-result">
             <div className="trip-result-header">
               <div>
-                <p className="card-label">Trip risk</p>
+                <p className="card-label">Trip date check</p>
                 <h3>{result.title}</h3>
               </div>
-              <span className={`risk-pill risk-${result.riskLevel}`}>{result.riskLevel} risk</span>
+              <span className={`risk-pill risk-${result.riskLevel}`}>Travel impact: {result.riskLevel}</span>
             </div>
 
             <p className="trip-summary">{result.summary}</p>
@@ -271,7 +270,10 @@ export default function TripDates() {
               </div>
             </div>
 
-            {result.warnings.length > 0 ? (
+            <details className="planner-result-details">
+              <summary>Show trip details and next steps</summary>
+              <div className="planner-result-details-body">
+                {result.warnings.length > 0 ? (
               <div className="trip-warning-list">
                 {result.warnings.map((warning) => (
                   <article key={warning.type}>
@@ -291,7 +293,7 @@ export default function TripDates() {
               </div>
             ) : (
               <p className="trip-clear-note">
-                No major calendar signal was found in this date range.
+                No Sunday, public holiday or school-break signal was found in this date range.
               </p>
             )}
 
@@ -335,7 +337,7 @@ export default function TripDates() {
 
             <div className="trip-live-links">
               <div>
-                <strong>Live checks in {result.city.name}</strong>
+                <strong>Verify exact places in {result.city.name}</strong>
                 <p>
                   Use live sources before relying on exact opening hours during
                   your trip dates.
@@ -350,7 +352,9 @@ export default function TripDates() {
               </div>
             </div>
 
-            <p className="trip-disclaimer">{result.disclaimer}</p>
+                <p className="trip-disclaimer">{result.disclaimer}</p>
+              </div>
+            </details>
           </div>
         ) : (
           <p className="trip-loading">Choose valid start and end dates.</p>
