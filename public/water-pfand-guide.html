@@ -24,96 +24,9 @@
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <link rel="manifest" href="/manifest.webmanifest" />
     <link rel="stylesheet" href="/static-menu.css" />
-    <style>
-      body { margin: 0; font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; color: #14213d; background: #fbf8f2; line-height: 1.6; }
-      main { width: min(980px, calc(100% - 32px)); margin: 0 auto; padding: 36px 0 56px; }
-      a { color: #178a84; font-weight: 800; text-decoration: none; }
-      .back { display: inline-block; margin-bottom: 20px; }
-      .hero, .card, .note-card { border-radius: 28px; background: rgba(255, 255, 255, 0.9); border: 1px solid rgba(20, 33, 61, 0.08); box-shadow: 0 20px 60px rgba(40, 55, 85, 0.08); }
-      .hero { padding: 34px; margin-bottom: 18px; background: radial-gradient(circle at 90% 0%, rgba(23, 138, 132, 0.14), transparent 18rem), rgba(255, 255, 255, 0.92); }
-      .eyebrow { color: #178a84; font-weight: 950; text-transform: uppercase; letter-spacing: 0.08em; font-size: 0.78rem; }
-      h1 { margin: 10px 0 14px; font-size: clamp(2.8rem, 8vw, 5.6rem); line-height: 0.92; letter-spacing: -0.075em; }
-      h2 { margin-top: 0; line-height: 1.08; letter-spacing: -0.04em; }
-      .lead { max-width: 740px; color: #5d6673; font-size: 1.12rem; }
-      .grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
-      .card, .note-card { padding: 24px; }
-      .card p, li { color: #5d6673; }
-      .word { display: inline-flex; margin-bottom: 10px; border-radius: 999px; padding: 6px 10px; background: #e6faf5; color: #0f6f69; font-weight: 900; }
-      .quick-list { margin: 0; padding-left: 20px; }
-      .quick-action-box { margin: 18px 0; border: 1px solid rgba(20, 33, 61, 0.08); border-radius: 24px; padding: 22px; background: #fffaf2; }
-      .quick-action-box h2 { margin-top: 0; }
-      .quick-action-box p { color: #5d6673; }
-      .quick-action-box ul { margin-bottom: 0; padding-left: 20px; color: #5d6673; }
-      .quick-action-box li + li { margin-top: 8px; }
-      .note-card { margin-top: 18px; background: #fffaf2; }
-      footer { margin-top: 28px; display: flex; flex-wrap: wrap; gap: 14px; color: #6b7280; font-size: 0.94rem; }
-      @media (max-width: 760px) {
-        main { width: min(100% - 24px, 980px); padding-top: 18px; }
-        .hero, .card, .note-card { padding: 22px; }
-        .grid { grid-template-columns: 1fr; }
-      }
-    
-      .closure-note { margin-top: 16px; color: #5d6673; }
-      .verify-list { margin-bottom: 0; padding-left: 20px; color: #5d6673; }
-      .verify-list li + li { margin-top: 8px; }
-      .common-need-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; margin-top: 16px; }
-      .need-card { border: 1px solid rgba(20, 33, 61, 0.08); border-radius: 20px; padding: 16px; background: #fffaf2; }
-      .need-card h3 { margin: 0 0 8px; }
-      .need-card p { margin: 0; color: #5d6673; }
-      .maps-warning { margin-top: 18px; border: 1px solid rgba(20, 33, 61, 0.08); border-radius: 24px; padding: 20px; background: rgba(255, 250, 242, 0.7); }
-      .maps-warning h2 { margin-top: 0; }
-      .maps-warning p { color: #5d6673; }
-      @media (max-width: 720px) { .common-need-grid { grid-template-columns: 1fr; } }
-
-  
-      .daily-case-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; margin-top: 16px; }
-      .daily-case-card { border: 1px solid rgba(20, 33, 61, 0.08); border-radius: 20px; padding: 16px; background: #fffaf2; }
-      .daily-case-card h3 { margin: 0 0 8px; }
-      .daily-case-card p { margin: 0; color: #5d6673; }
-      .label-note { margin-top: 18px; border: 1px solid rgba(20, 33, 61, 0.08); border-radius: 24px; padding: 20px; background: rgba(255, 250, 242, 0.7); }
-      .label-note h2 { margin-top: 0; }
-      .label-note p { color: #5d6673; }
-      .pfand-machine-steps { margin-top: 18px; padding-left: 22px; color: #5d6673; }
-      .pfand-machine-steps li + li { margin-top: 10px; }
-      .pfand-machine-note { margin-top: 14px; color: #5d6673; }
-      @media (max-width: 720px) { .daily-case-grid { grid-template-columns: 1fr; } }      .related-guides {
-        margin-top: 28px;
-      }
-
-      .related-guide-list {
-        display: grid;
-        gap: 12px;
-        margin-top: 16px;
-      }
-
-      .related-guide-link {
-        display: block;
-        padding: 14px 16px;
-        border: 1px solid #d9e2ef;
-        border-radius: 16px;
-        background: #f8fafc;
-        color: inherit;
-        text-decoration: none;
-      }
-
-      .related-guide-link strong {
-        display: block;
-        margin-bottom: 4px;
-        color: #152238;
-      }
-
-      .related-guide-link span {
-        color: #5d6673;
-        font-size: 0.95rem;
-      }
-
-      .related-guide-link:hover {
-        border-color: #9db6d8;
-        background: #f2f6fb;
-      }
-</style>
+    <link rel="stylesheet" href="/guide-pages.css" />
   </head>
-  <body>
+  <body class="guide-page guide-page-daily">
   <main>
     <header class="guide-topbar" aria-label="Main navigation">
       <a class="guide-brand" href="/" aria-label="Germany Travel Checker home">
@@ -162,7 +75,7 @@
                 <div>
                   <a href="/train-trouble.html">Train trouble</a>
                   <a href="/sunday-holiday-closures.html">Sunday &amp; holiday closures</a>
-                  <a href="/water-pfand-guide.html">Water, Pfand &amp; toilets</a>
+                  <a href="/water-pfand-guide.html" aria-current="page">Water, Pfand &amp; toilets</a>
                 </div>
               </section>
 
@@ -180,6 +93,13 @@
       </div>
     </header>
 
+      <div class="guide-context-chip" aria-label="Independent Germany travel tool">
+        <span class="guide-flag" aria-hidden="true"></span>
+        <span>Independent Germany travel tool</span>
+      </div>
+
+      <div class="guide-action-layout">
+
     <section class="hero">
       <p class="eyebrow">Daily logistics trouble guide</p>
       <h1>Water, Pfand and paid toilets in Germany</h1>
@@ -195,7 +115,7 @@
       </p>
     </section>
 
-    <section class="quick-action-box" aria-labelledby="daily-now-title">
+        <section class="quick-action-box" aria-labelledby="daily-now-title">
       <p class="eyebrow">If you are dealing with this right now</p>
       <h2 id="daily-now-title">Check the label, symbol or payment machine first.</h2>
       <p>
@@ -210,8 +130,9 @@
         <li><strong>For toilets,</strong> check whether the machine accepts card, coins or both before leaving the station area.</li>
       </ul>
     </section>
+      </div>
 
-    <section class="card" aria-labelledby="daily-cases-title">
+    <section class="card guide-situations" aria-labelledby="daily-cases-title">
       <p class="eyebrow">Common situations</p>
       <h2 id="daily-cases-title">Tiny Germany travel problems that can waste time fast</h2>
       <p>
@@ -219,7 +140,8 @@
         a bathroom, or are trying to understand a receipt in a busy station.
       </p>
 
-      <div class="daily-case-grid">
+      <p class="guide-swipe-hint">Swipe to compare situations →</p>
+      <div class="daily-case-grid guide-situation-track">
         <article class="daily-case-card">
           <h3>You bought fizzy water by accident</h3>
           <p>
@@ -254,7 +176,16 @@
       </div>
     </section>
 
-    <section class="grid">
+    <details class="guide-reference">
+        <summary>
+          <span>Water, Pfand and toilet reference</span>
+          <small>
+            <span class="guide-reference-open-label">Open the full reference guide</span>
+            <span class="guide-reference-close-label">Hide the full reference guide</span>
+          </small>
+        </summary>
+        <div class="guide-reference-body">
+          <section class="grid">
       <article class="card">
         <p class="eyebrow">Problem</p>
         <h2>The word is translated, but the decision is still unclear</h2>
@@ -326,7 +257,10 @@
         find the return machine, or check toilet payment before leaving the area.
       </p>
     </section>
-    <section class="card related-guides" aria-labelledby="related-guides-title">
+            </div>
+      </details>
+
+      <section class="card related-guides" aria-labelledby="related-guides-title">
       <p class="eyebrow">Next problem?</p>
       <h2 id="related-guides-title">Related trouble guides</h2>
       <p>
