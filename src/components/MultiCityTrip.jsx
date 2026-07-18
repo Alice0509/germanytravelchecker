@@ -217,8 +217,8 @@ export default function MultiCityTrip() {
   return (
     <section className="section multi-city-section" id="multi-city-trip">
       <div className="section-heading">
-        <p className="eyebrow">For multi-city itineraries</p>
-        <h2>Check a Germany trip across more than one city.</h2>
+        <p className="eyebrow">Multiple cities · one itinerary</p>
+        <h2>Plan multiple cities</h2>
         <p>
           Add city segments such as Munich to Berlin to see the overall trip
           risk, transfer day notes and per-city holiday warnings.
@@ -226,11 +226,15 @@ export default function MultiCityTrip() {
       </div>
 
       <div className="multi-city-card">
+        <p className="segment-swipe-hint">
+          Swipe sideways to edit each city <span aria-hidden="true">→</span>
+        </p>
+
         <div className="segment-list">
           {segments.map((segment, index) => (
             <article className="segment-editor" key={segment.id}>
               <div className="segment-editor-header">
-                <strong>Segment {index + 1}</strong>
+                <strong>City {index + 1} of {segments.length}</strong>
                 {segments.length > 2 && (
                   <button type="button" onClick={() => removeSegment(segment.id)}>
                     Remove
@@ -290,10 +294,10 @@ export default function MultiCityTrip() {
           <div className="multi-city-result">
             <div className="trip-result-header">
               <div>
-                <p className="card-label">Itinerary risk</p>
+                <p className="card-label">Itinerary check</p>
                 <h3>{result.title}</h3>
               </div>
-              <span className={`risk-pill risk-${result.riskLevel}`}>{result.riskLevel} risk</span>
+              <span className={`risk-pill risk-${result.riskLevel}`}>Travel impact: {result.riskLevel}</span>
             </div>
 
             <p className="trip-summary">{result.summary}</p>
@@ -319,7 +323,10 @@ export default function MultiCityTrip() {
               </div>
             </div>
 
-            {result.transferDays.length > 0 && (
+            <details className="planner-result-details">
+              <summary>Show city-by-city details</summary>
+              <div className="planner-result-details-body">
+                {result.transferDays.length > 0 && (
               <div className="transfer-list">
                 {result.transferDays.map((transfer) => (
                   <article key={`${transfer.fromCity}-${transfer.toCity}-${transfer.date}`}>
@@ -342,7 +349,7 @@ export default function MultiCityTrip() {
                         {segment.startDateKey} – {segment.endDateKey}
                       </span>
                     </div>
-                    <span className={`risk-pill risk-${segment.riskLevel}`}>{segment.riskLevel}</span>
+                    <span className={`risk-pill risk-${segment.riskLevel}`}>{segment.riskLevel} impact</span>
                   </div>
 
                   <p>{segment.summary}</p>
@@ -397,7 +404,7 @@ export default function MultiCityTrip() {
 
                   {segment.riskLevel !== 'low' && (
                     <div className="segment-live-links">
-                      <strong>Live checks in {segment.city.name}</strong>
+                      <strong>Verify exact places in {segment.city.name}</strong>
                       <div>
                         <a
                           href={`https://www.google.com/maps/search/supermarket+${encodeURIComponent(segment.city.name)}`}
@@ -435,7 +442,9 @@ export default function MultiCityTrip() {
               </div>
             )}
 
-            <p className="trip-disclaimer">{result.disclaimer}</p>
+                <p className="trip-disclaimer">{result.disclaimer}</p>
+              </div>
+            </details>
           </div>
         ) : (
           <p className="trip-loading">Add at least two valid city segments.</p>
