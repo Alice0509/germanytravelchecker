@@ -21,6 +21,7 @@ const MENU_GROUPS = [
       { label: 'Train trouble', href: '/train-trouble.html' },
       { label: 'Sunday & holiday closures', href: '/sunday-holiday-closures.html' },
       { label: 'Water, Pfand & toilets', href: '/water-pfand-guide.html' },
+      { label: 'Money & payment trouble', href: '/money-payment-trouble.html' },
     ],
   },
   {

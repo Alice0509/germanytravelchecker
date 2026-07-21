@@ -561,3 +561,46 @@ body.guide-page {
     font-size: 0.76rem;
   }
 }
+
+/* Mobile fixed navigation and swipeable situation cards */
+@media (max-width: 760px) {
+  .guide-page .guide-menu {
+    position: fixed;
+    top: calc(12px + env(safe-area-inset-top));
+    right: 12px;
+    z-index: 220;
+  }
+
+  .guide-page .guide-menu-panel {
+    position: absolute;
+    top: calc(100% + 10px);
+    right: 0;
+    max-height: calc(100vh - 6rem);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    z-index: 230;
+  }
+
+  .guide-page .guide-situation-track {
+    display: flex;
+    gap: 12px;
+    margin-top: 0;
+    padding: 4px 14vw 14px 0;
+    overflow-x: auto;
+    overscroll-behavior-inline: contain;
+    scroll-snap-type: inline mandatory;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .guide-page .guide-situation-track::-webkit-scrollbar {
+    display: none;
+  }
+
+  .guide-page .guide-situation-track > * {
+    flex: 0 0 min(82vw, 340px);
+    min-width: 0;
+    scroll-snap-align: start;
+  }
+}
+

@@ -4774,3 +4774,51 @@ h1 {
     line-height: 1.5;
   }
 }
+
+/* Mobile fixed navigation and swipeable quick guides */
+@media (max-width: 760px) {
+  .home-portal .site-menu {
+    position: fixed;
+    top: calc(12px + env(safe-area-inset-top));
+    right: 12px;
+    z-index: 220;
+  }
+
+  .home-portal .site-menu-panel {
+    position: absolute;
+    top: calc(100% + 10px);
+    right: 0;
+    max-height: calc(100vh - 6rem);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    z-index: 230;
+  }
+
+  .home-portal .portal-directory {
+    overflow: hidden;
+  }
+
+  .home-portal .portal-guide-grid {
+    display: flex;
+    gap: 12px;
+    margin-right: -22px;
+    padding: 4px 22px 14px 0;
+    overflow-x: auto;
+    overscroll-behavior-inline: contain;
+    scroll-snap-type: inline mandatory;
+    scroll-padding-inline: 0 22px;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .home-portal .portal-guide-grid::-webkit-scrollbar {
+    display: none;
+  }
+
+  .home-portal .portal-guide-link {
+    flex: 0 0 min(82vw, 340px);
+    min-width: 0;
+    scroll-snap-align: start;
+  }
+}
+
