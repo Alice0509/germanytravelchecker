@@ -242,7 +242,7 @@ body.guide-page {
   display: none;
 }
 
-.guide-reference > summary span {
+.guide-reference > summary > span {
   font-size: 1.08rem;
   font-weight: 950;
 }
@@ -383,16 +383,19 @@ body.guide-page {
   }
 
   .guide-menu {
-    position: relative;
-    top: auto;
-    right: auto;
-    z-index: 20;
+    position: fixed;
+    top: calc(12px + env(safe-area-inset-top));
+    right: 12px;
+    z-index: 220;
   }
 
   .guide-menu-panel {
     position: absolute;
     top: calc(100% + 10px);
     right: 0;
+    max-height: calc(100vh - 6rem);
+    overflow: auto;
+    z-index: 230;
   }
 
   .guide-context-chip {
