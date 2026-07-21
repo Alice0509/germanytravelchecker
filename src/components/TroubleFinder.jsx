@@ -10,6 +10,8 @@ const EXAMPLE_WORRIES = [
   'SEV replacement bus',
   'platform changed',
   'cancelled train',
+  'card declined',
+  'cash only',
 ]
 
 function keywordMatches(normalized, keyword) {
@@ -97,7 +99,7 @@ export default function TroubleFinder() {
             type="search"
             value={query}
             onChange={(event) => setQuery(event.target.value)}
-            placeholder="Shops closed, medicine, SEV…"
+            placeholder="Card declined, cash only, SEV…"
           />
         </label>
       </div>
@@ -166,8 +168,8 @@ export default function TroubleFinder() {
 
       {hasQuery && !result ? (
         <p className="portal-no-result">
-          No exact match yet. Try a shorter phrase such as shops closed,
-          medicine, SEV, paid toilet or still water.
+          No exact match yet. Try a shorter phrase such as card declined,
+          cash only, shops closed, SEV, paid toilet or still water.
         </p>
       ) : null}
     </section>

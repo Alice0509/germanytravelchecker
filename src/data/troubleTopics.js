@@ -247,6 +247,106 @@ export const troubleTopics = [
     relatedGuideUrl: "/train-trouble.html",
     actionLabel: "Understand construction disruption words",
     keywords: ["bauarbeiten", "construction", "works", "delay", "route change", "replacement bus", "db"]
+  },
+  {
+    id: "cash-only-or-girocard",
+    title: "Cash only or Girocard only",
+    category: "Money and payments",
+    urgency: "medium",
+    problem: "You are ready to pay, but the business says cash only, Girocard only or does not accept your foreign card.",
+    meaning: "Payment acceptance can depend on the business, terminal and card network. Nur Barzahlung means cash only. Girocard is the German debit-card system.",
+    firstMove: "First, check the payment sign before trying the same card again. Ask which method is accepted and keep a backup option.",
+    whatToDo: [
+      "Look for Nur Barzahlung, Nur Kartenzahlung, Girocard or card-network symbols.",
+      "Ask which cards are accepted instead of assuming every foreign card will work.",
+      "Check whether there is a minimum card-payment amount.",
+      "Use cash or a second card if the business supports it."
+    ],
+    verify: [
+      "Entrance or checkout payment sign",
+      "Card-network symbols on the terminal",
+      "Staff at the business",
+      "Your card issuer if the card fails elsewhere too"
+    ],
+    risk: "Trying the same unsupported payment method repeatedly wastes time and may create confusing pending transactions.",
+    relatedGuideUrl: "/money-payment-trouble.html",
+    actionLabel: "Open Money & Payment Guide",
+    keywords: ["cash only", "nur barzahlung", "girocard", "ec karte", "ec-karte", "card only", "minimum card"]
+  },
+  {
+    id: "foreign-card-declined",
+    title: "Foreign card declined",
+    category: "Money and payments",
+    urgency: "medium",
+    problem: "Your debit or credit card was declined at a shop, restaurant, ticket machine or other payment terminal.",
+    meaning: "A decline may come from the terminal, card type, issuer security check, limit, available balance or connection. The decline message alone may not identify the cause.",
+    firstMove: "First, read the terminal and try one reasonable alternative. Then check your banking app before repeating the same transaction.",
+    whatToDo: [
+      "Try inserting the card if contactless payment failed.",
+      "Use a second card or cash if available.",
+      "Check your banking app for a security alert, limit or pending charge.",
+      "Contact the issuer if the card fails at several unrelated places."
+    ],
+    verify: [
+      "Payment terminal message",
+      "Receipt or error slip",
+      "Banking app",
+      "Card issuer"
+    ],
+    risk: "A failed terminal does not prove that the card is blocked, and repeated attempts can make the situation harder to understand.",
+    relatedGuideUrl: "/money-payment-trouble.html",
+    actionLabel: "Open card-decline guidance",
+    keywords: ["card declined", "declined card", "payment failed", "foreign card", "credit card declined", "debit card declined", "karte abgelehnt"]
+  },
+  {
+    id: "atm-currency-conversion",
+    title: "ATM currency conversion",
+    category: "Money and payments",
+    urgency: "medium",
+    problem: "A German ATM or payment terminal asks whether you want to use euros or your home currency.",
+    meaning: "The home-currency option may use dynamic currency conversion. The screen should show conversion information, but your own card provider may also charge separate fees.",
+    firstMove: "First, read the displayed currency, markup and operator fee. Do not confirm until you know whether the amount is in euros or your home currency.",
+    whatToDo: [
+      "Compare the displayed conversion and total before continuing.",
+      "Selecting euros avoids the ATM or merchant home-currency conversion.",
+      "Check your issuer's ATM and foreign-transaction fees separately.",
+      "Cancel if the fee or amount is unclear and use another option."
+    ],
+    verify: [
+      "ATM fee screen",
+      "Displayed currency and conversion markup",
+      "Your card issuer's fee terms",
+      "Final receipt and banking transaction"
+    ],
+    risk: "The ATM operator's conversion and your own card-provider fees are separate questions.",
+    relatedGuideUrl: "/money-payment-trouble.html",
+    actionLabel: "Check ATM conversion guidance",
+    keywords: ["atm", "currency conversion", "home currency", "dynamic currency conversion", "dcc", "cash withdrawal", "atm fee", "withdraw euros"]
+  },
+  {
+    id: "hotel-card-deposit",
+    title: "Hotel card deposit or pre-authorisation",
+    category: "Money and payments",
+    urgency: "medium",
+    problem: "Your hotel reserved an extra amount on your card, or your available balance is lower after check-in.",
+    meaning: "A hotel may place a temporary deposit or pre-authorisation for extras or possible damage. It may appear separately from the final room charge.",
+    firstMove: "First, ask the hotel how much was reserved, what it covers and when they expect to release it.",
+    whatToDo: [
+      "Ask whether the amount is a deposit, pre-authorisation or completed charge.",
+      "Keep the check-in document and final invoice.",
+      "Check whether both the hold and final charge appear in your banking app.",
+      "Contact the hotel before disputing an amount you do not understand."
+    ],
+    verify: [
+      "Hotel check-in document",
+      "Final hotel invoice",
+      "Banking app pending and completed transactions",
+      "Hotel and card issuer"
+    ],
+    risk: "A debit-card hold can temporarily reduce the money available during the rest of your trip.",
+    relatedGuideUrl: "/money-payment-trouble.html",
+    actionLabel: "Understand hotel card holds",
+    keywords: ["hotel deposit", "preauthorisation", "pre-authorization", "card hold", "deposit", "kaution", "reserved amount", "hotel charge"]
   }
 ];
 

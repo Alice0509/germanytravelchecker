@@ -27,6 +27,13 @@ const QUICK_GUIDES = [
     href: '/water-pfand-guide.html',
     link: 'Open practical help',
   },
+  {
+    label: 'Money & payment',
+    title: 'Cash only, card declined or ATM fee?',
+    text: 'Check the next practical move before trying the same payment again.',
+    href: '/money-payment-trouble.html',
+    link: 'Open payment help',
+  },
 ]
 
 function App() {
@@ -92,7 +99,7 @@ function App() {
           <a className="portal-shortcut" href="#trouble-finder">
             <span>During your trip</span>
             <strong>Something went wrong</strong>
-            <p>Closed shops, medicine, trains, water, Pfand or toilets.</p>
+            <p>Closed shops, payments, trains, medicine, water or Pfand.</p>
             <b>Find help →</b>
           </a>
 
@@ -152,6 +159,7 @@ function App() {
             <a href="/train-trouble.html">Train trouble</a>
             <a href="/sunday-holiday-closures.html">Sunday closures</a>
             <a href="/water-pfand-guide.html">Water / Pfand</a>
+            <a href="/money-payment-trouble.html">Money / payments</a>
           </nav>
 
           <nav aria-label="Site links">
