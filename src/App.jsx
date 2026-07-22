@@ -80,45 +80,25 @@ function App() {
         </div>
       </header>
 
-      <section className="portal-dashboard" aria-label="Germany travel checks">
-        <CheckToday />
-
-        <aside className="portal-shortcuts">
-          <div className="portal-shortcuts-heading">
-            <p className="eyebrow">Start with your situation</p>
-            <h2>What do you need?</h2>
-          </div>
-
-          <a className="portal-shortcut" href="/planner.html#trip-dates">
-            <span>Before your trip</span>
-            <strong>Check dates and cities</strong>
-            <p>Holidays, Sundays, school breaks, events and transfers.</p>
-            <b>Open planner →</b>
-          </a>
-
-          <a className="portal-shortcut" href="#trouble-finder">
-            <span>During your trip</span>
-            <strong>Something went wrong</strong>
-            <p>Closed shops, payments, trains, medicine, water or Pfand.</p>
-            <b>Find help →</b>
-          </a>
-
-          <p className="portal-trust">
-            Rule-based guidance. Verify live transport, opening hours and
-            urgent information with official sources.
-          </p>
-        </aside>
-      </section>
-
-      <div id="trouble-finder">
+      <div id="trouble-finder" className="portal-trouble-anchor">
         <TroubleFinder />
       </div>
 
+      <section
+        className="portal-dashboard portal-check-dashboard"
+        aria-label="Germany city and date check"
+      >
+        <CheckToday />
+      </section>
+
       <section className="portal-directory" aria-labelledby="quick-guides-title">
         <div className="portal-directory-heading">
-          <p className="eyebrow">Quick guides</p>
-          <h2 id="quick-guides-title">Common Germany travel problems</h2>
-          <p>Choose the situation. Get the next useful move.</p>
+          <p className="eyebrow">Reference library</p>
+          <h2 id="quick-guides-title">Need the full explanation?</h2>
+          <p>
+            Read the stable rules, examples and verification sources behind
+            each travel problem.
+          </p>
         </div>
 
         <div className="portal-guide-grid">
