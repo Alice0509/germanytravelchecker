@@ -8,6 +8,7 @@ export default defineConfig({
       input: {
         main: 'index.html',
         planner: 'planner.html',
+        money: 'money-payment-trouble.html',
       },
     },
   },

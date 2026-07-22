@@ -138,106 +138,41 @@
         <span>Independent Germany travel tool</span>
       </div>
 
-      <div class="guide-action-layout">
-        <section class="hero">
-          <p class="eyebrow">Money and payment trouble guide</p>
-          <h1>Cash, cards and payment trouble in Germany</h1>
-          <p>
-            A declined card, cash-only sign or unfamiliar ATM screen can become
-            stressful when you are tired, carrying luggage or trying to catch a
-            train. Start with the next practical move.
+      <section class="money-intro" aria-labelledby="money-page-title">
+        <div>
+          <p class="eyebrow">Interactive money and payment help</p>
+          <h1 id="money-page-title">Fix payment trouble in Germany.</h1>
+          <p class="money-intro-lede">
+            Choose what happened. Get the next useful move, a German phrase and
+            the exact details you should verify.
           </p>
-          <p class="closure-note">
-            Germany Travel Checker does not compare bank fees, guarantee card
-            acceptance or provide live ATM and terminal status. Check the
-            payment screen, your card provider and the business before
-            confirming a transaction.
-          </p>
-        </section>
-
-        <section
-          class="quick-action-box"
-          aria-labelledby="payment-now-title"
-        >
-          <p class="eyebrow">If payment is failing right now</p>
-          <h2 id="payment-now-title">
-            Stop, read the screen and keep a backup option.
-          </h2>
-          <ul>
-            <li>
-              <strong>Check the accepted methods.</strong>
-              Look for cash, Girocard, debit, credit or contactless symbols.
-            </li>
-            <li>
-              <strong>If a card is declined,</strong>
-              try another payment method before repeating the same transaction
-              many times.
-            </li>
-            <li>
-              <strong>At an ATM,</strong>
-              review the operator fee, amount and currency before confirming.
-            </li>
-            <li>
-              <strong>Keep the receipt or screenshot</strong>
-              if money appears reserved but the purchase did not complete.
-            </li>
-          </ul>
-        </section>
-      </div>
-
-      <section
-        class="card guide-situations"
-        aria-labelledby="payment-cases-title"
-      >
-        <p class="eyebrow">Common situations</p>
-        <h2 id="payment-cases-title">
-          Payment problems travelers meet in Germany
-        </h2>
-        <p>
-          The same declined message can have several causes. Use the visible
-          sign, terminal or banking notification before deciding what happened.
-        </p>
-
-        <p class="guide-swipe-hint">Swipe to compare situations →</p>
-
-        <div class="daily-case-grid guide-situation-track">
-          <article class="daily-case-card">
-            <h3>The sign says cash only</h3>
-            <p>
-              Nur Barzahlung means cash payment only. Do not assume a card will
-              be accepted just because a terminal is visible nearby.
-            </p>
-          </article>
-
-          <article class="daily-case-card">
-            <h3>Your foreign card was declined</h3>
-            <p>
-              The cause may be the terminal, card type, issuer security check,
-              limit or connection. A decline does not identify the cause by
-              itself.
-            </p>
-          </article>
-
-          <article class="daily-case-card">
-            <h3>The ATM offers your home currency</h3>
-            <p>
-              Read the displayed conversion and markup before choosing. Your
-              own card issuer may also charge fees even when you select euros.
-            </p>
-          </article>
-
-          <article class="daily-case-card">
-            <h3>Your hotel placed a card hold</h3>
-            <p>
-              A deposit or pre-authorisation can reduce the available balance
-              without being the final room charge. Ask the hotel what amount
-              was reserved.
-            </p>
-          </article>
         </div>
+
+        <p class="money-intro-note">
+          <strong>Private by design.</strong>
+          No bank details or personal information are required. This tool does
+          not guarantee card acceptance or provide live ATM and terminal status.
+        </p>
       </section>
 
-      <details class="guide-reference">
+      <section
+        id="money-tool"
+        class="money-tool-mount"
+        aria-label="Interactive money and payment trouble tool"
+      >
+        <div id="money-tool-root"></div>
+        <noscript>
+          <section class="quick-action-box">
+            <h2>JavaScript is needed for the interactive payment tool.</h2>
+            <p>
+              The full static money and payment reference remains available
+              below.
+            </p>
+          </section>
+        </noscript>
+      </section>
+
+      <details id="money-reference" class="guide-reference">
         <summary>
           <span>Money and payment reference</span>
           <small>
@@ -503,5 +438,6 @@
         </a>
       </footer>
     </main>
+    <script type="module" src="/src/money.jsx"></script>
   </body>
 </html>
