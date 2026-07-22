@@ -269,7 +269,7 @@ export const troubleTopics = [
       "Your card issuer if the card fails elsewhere too"
     ],
     risk: "Trying the same unsupported payment method repeatedly wastes time and may create confusing pending transactions.",
-    relatedGuideUrl: "/money-payment-trouble.html",
+    relatedGuideUrl: "/money-payment-trouble.html?issue=cash-only",
     actionLabel: "Open Money & Payment Guide",
     keywords: ["cash only", "nur barzahlung", "girocard", "ec karte", "ec-karte", "card only", "minimum card"]
   },
@@ -294,7 +294,7 @@ export const troubleTopics = [
       "Card issuer"
     ],
     risk: "A failed terminal does not prove that the card is blocked, and repeated attempts can make the situation harder to understand.",
-    relatedGuideUrl: "/money-payment-trouble.html",
+    relatedGuideUrl: "/money-payment-trouble.html?issue=card-declined",
     actionLabel: "Open card-decline guidance",
     keywords: ["card declined", "declined card", "payment failed", "foreign card", "credit card declined", "debit card declined", "karte abgelehnt"]
   },
@@ -319,7 +319,7 @@ export const troubleTopics = [
       "Final receipt and banking transaction"
     ],
     risk: "The ATM operator's conversion and your own card-provider fees are separate questions.",
-    relatedGuideUrl: "/money-payment-trouble.html",
+    relatedGuideUrl: "/money-payment-trouble.html?issue=atm-conversion",
     actionLabel: "Check ATM conversion guidance",
     keywords: ["atm", "currency conversion", "home currency", "dynamic currency conversion", "dcc", "cash withdrawal", "atm fee", "withdraw euros"]
   },
@@ -344,7 +344,7 @@ export const troubleTopics = [
       "Hotel and card issuer"
     ],
     risk: "A debit-card hold can temporarily reduce the money available during the rest of your trip.",
-    relatedGuideUrl: "/money-payment-trouble.html",
+    relatedGuideUrl: "/money-payment-trouble.html?issue=hotel-hold",
     actionLabel: "Understand hotel card holds",
     keywords: ["hotel deposit", "preauthorisation", "pre-authorization", "card hold", "deposit", "kaution", "reserved amount", "hotel charge"]
   }

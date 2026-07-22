@@ -35,6 +35,12 @@ const PLANNER_LINKS = [
     text: 'Still water, bottle deposits and paid toilets.',
     href: '/water-pfand-guide.html',
   },
+  {
+    kicker: 'Interactive help',
+    title: 'Money & payments',
+    text: 'Cash-only signs, card declines, ATM fees and hotel holds.',
+    href: '/money-payment-trouble.html',
+  },
 ]
 
 function getInitialPlannerMode() {
