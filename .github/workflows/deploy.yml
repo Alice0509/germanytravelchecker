@@ -35,6 +35,12 @@ jobs:
       - name: Build
         run: npm run build
 
+      - name: Verify built pages
+        run: |
+          test -f dist/index.html
+          test -f dist/planner.html
+          test -f dist/money-payment-trouble.html
+
       - name: Setup Pages
         uses: actions/configure-pages@v6
 
