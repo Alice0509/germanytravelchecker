@@ -50,6 +50,12 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      - name: Enforce current event dates on code changes
+        if: github.event_name == 'pull_request' || github.event_name == 'push'
+        run: |
+          npm run event-pressure:known-dates:strict
+          npm run event-pressure:expired:strict
+
       - name: Run event pressure automation check
         run: npm run event-pressure:automation-check
 
