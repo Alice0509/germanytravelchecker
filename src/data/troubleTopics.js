@@ -169,7 +169,7 @@ export const troubleTopics = [
       "Station staff"
     ],
     risk: "Following only the destination name can put you on the wrong train or wrong platform.",
-    relatedGuideUrl: "/train-trouble.html",
+    relatedGuideUrl: "/train-trouble.html?issue=platform-change",
     actionLabel: "Understand train disruption words",
     keywords: ["platform", "gleis", "platform change", "train number", "db navigator", "departure board"]
   },
@@ -194,7 +194,7 @@ export const troubleTopics = [
       "Ticket conditions"
     ],
     risk: "The key question is not just translation. It is whether your ticket flexibility changed.",
-    relatedGuideUrl: "/train-trouble.html",
+    relatedGuideUrl: "/train-trouble.html?issue=cancelled",
     actionLabel: "Understand cancellation next steps",
     keywords: ["cancelled", "canceled", "zug fällt aus", "train cancellation", "db", "ticket", "zugbindung"]
   },
@@ -219,7 +219,7 @@ export const troubleTopics = [
       "Posted construction or replacement bus notices"
     ],
     risk: "Travelers often miss the replacement bus because they stay near the normal platform too long.",
-    relatedGuideUrl: "/train-trouble.html",
+    relatedGuideUrl: "/train-trouble.html?issue=sev",
     actionLabel: "Find the replacement bus guide",
     keywords: ["sev", "ersatzverkehr", "schienenersatzverkehr", "replacement bus", "bus stop", "train disruption"]
   },
@@ -244,7 +244,7 @@ export const troubleTopics = [
       "Staff at the station"
     ],
     risk: "A construction notice can look like general information, but it may change your actual route.",
-    relatedGuideUrl: "/train-trouble.html",
+    relatedGuideUrl: "/train-trouble.html?issue=delay&detail=construction",
     actionLabel: "Understand construction disruption words",
     keywords: ["bauarbeiten", "construction", "works", "delay", "route change", "replacement bus", "db"]
   },

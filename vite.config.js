@@ -9,6 +9,7 @@ export default defineConfig({
         main: 'index.html',
         planner: 'planner.html',
         money: 'money-payment-trouble.html',
+        train: 'train-trouble.html',
       },
     },
   },
