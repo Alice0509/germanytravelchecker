@@ -99,83 +99,43 @@
         <span>Independent Germany travel tool</span>
       </div>
 
-      <div class="guide-action-layout">
-
-
-      <section class="hero">
-        <p class="eyebrow">Train trouble guide</p>
-        <h1>German train words that can save your connection.</h1>
-        <p class="lead">
-          If you are carrying luggage, holding a child’s hand or trying to catch
-          a connection, German station words can feel stressful. This guide
-          explains common train disruption words in plain English and tells you
-          what to check next.
-        </p>
-      </section>
-
-        <section class="quick-action-box" aria-labelledby="station-now-title">
-        <p class="eyebrow">At the station right now</p>
-        <h2 id="station-now-title">Check the sign before you move.</h2>
-        <p>
-          Use this page to quickly understand what the German sign, app message
-          or station announcement probably means before you leave the platform
-          area.
-        </p>
-        <ul>
-          <li><strong>Check the train number first.</strong> Do not rely only on the destination name.</li>
-          <li><strong>Look at the latest platform board.</strong> Platforms can change shortly before departure.</li>
-          <li><strong>If you see SEV,</strong> look for replacement bus signs before leaving the station area.</li>
-          <li><strong>If your connection looks impossible,</strong> check DB Navigator, station displays or staff before changing plans.</li>
-        </ul>
-      </section>
-      </div>
-
-      <section class="card guide-situations" aria-labelledby="train-now-title">
-        <p class="eyebrow">Train problem happening now</p>
-        <h2 id="train-now-title">If your train problem is happening now, identify the situation first.</h2>
-        <p>
-          A translation can tell you what a German word says. The important part
-          is what it means for your next move: stay on the platform, change
-          platforms, look for a bus, or verify your ticket options.
-        </p>
-
-        <p class="guide-swipe-hint">Swipe to compare situations →</p>
-        <div class="train-case-grid guide-situation-track">
-          <article class="train-case-card">
-            <h3>Platform changed</h3>
-            <p>
-              Check the train number first, then the latest station board. Do not
-              move based only on the destination name.
-            </p>
-          </article>
-
-          <article class="train-case-card">
-            <h3>Train cancelled</h3>
-            <p>
-              Check DB Navigator and station displays before boarding another
-              train. Your ticket options may depend on the disruption and ticket type.
-            </p>
-          </article>
-
-          <article class="train-case-card">
-            <h3>SEV / replacement bus</h3>
-            <p>
-              Do not wait only on the platform. Look for yellow SEV or
-              Ersatzverkehr signs and check whether the bus leaves outside the station.
-            </p>
-          </article>
-
-          <article class="train-case-card">
-            <h3>Connection looks impossible</h3>
-            <p>
-              Verify the delay, missed connection and next route before changing
-              plans. Keep screenshots if your onward trip is affected.
-            </p>
-          </article>
+      <section class="train-intro" aria-labelledby="train-page-title">
+        <div>
+          <p class="eyebrow">Interactive train trouble help</p>
+          <h1 id="train-page-title">
+            Fix train trouble before you leave the platform.
+          </h1>
+          <p class="train-intro-lede">
+            Choose what changed. Get the next useful move, a German phrase and
+            the exact details you should verify.
+          </p>
         </div>
+
+        <p class="train-intro-note">
+          <strong>Not live train status.</strong>
+          This tool does not know your current train or platform. Verify the
+          exact journey in DB Navigator, on station displays or with rail staff.
+        </p>
       </section>
 
-      <details class="guide-reference">
+      <section
+        id="train-tool"
+        class="train-tool-mount"
+        aria-label="Interactive train trouble tool"
+      >
+        <div id="train-tool-root"></div>
+
+        <noscript>
+          <section class="quick-action-box">
+            <h2>JavaScript is needed for the interactive train tool.</h2>
+            <p>
+              The full static train reference remains available below.
+            </p>
+          </section>
+        </noscript>
+      </section>
+
+      <details id="train-reference" class="guide-reference">
         <summary>
           <span>Train words and verification</span>
           <small>
@@ -315,5 +275,6 @@
         <a href="https://www.schulferienklar.de/">Data by Schulferienklar</a>
       </footer>
     </main>
+    <script type="module" src="/src/train.jsx"></script>
   </body>
 </html>
