@@ -50,11 +50,13 @@ jobs:
 
       - name: Check cleanup diff
         run: |
-          git --no-pager diff -- src/data/eventPressureNotes.generated.json
+          git --no-pager diff -- src/data/eventPressureNotes.generated.json src/data/eventPressureKnownEvents.json
           git --no-pager diff --stat
 
       - name: Validate after cleanup
         run: |
+          npm run event-pressure:known-dates:strict
+          npm run event-pressure:expired:strict
           npm run event-pressure:automation-check
           npm run build
 
@@ -63,7 +65,7 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          if git diff --quiet -- src/data/eventPressureNotes.generated.json; then
+          if git diff --quiet -- src/data/eventPressureNotes.generated.json src/data/eventPressureKnownEvents.json; then
             echo "No expired generated notes to clean up."
             exit 0
           fi
@@ -73,8 +75,8 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git checkout -B "$BRANCH"
-          git add src/data/eventPressureNotes.generated.json
-          git commit -m "Remove expired event pressure notes"
+          git add src/data/eventPressureNotes.generated.json src/data/eventPressureKnownEvents.json
+          git commit -m "Remove expired event pressure data"
           git push --force origin "$BRANCH"
 
           EXISTING_PR="$(gh pr list --head "$BRANCH" --state open --json number --jq '.[0].number // empty')"

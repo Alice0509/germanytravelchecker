@@ -146,16 +146,7 @@
       "hotels",
       "evening travel"
     ],
-    "knownDates": [
-      {
-        "title": "Hamburg Summer DOM",
-        "startDate": "2026-07-24",
-        "endDate": "2026-08-30",
-        "confidence": "high",
-        "sourceLabel": "Hamburg DOM official information",
-        "sourceUrl": "https://www.hamburg.com/visitors/dom/about-20244"
-      }
-    ],
+    "knownDates": [],
     "dateExtraction": {
       "preferredMonths": [
         3,
