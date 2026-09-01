@@ -31,7 +31,43 @@
       "possibleDateHints": [],
       "dateRangeHints": [],
       "extractedDateRange": null,
-      "scannedAt": "2026-07-12"
+      "scannedAt": "2026-08-31"
+    }
+  },
+  {
+    "id": "hamburg-2026-hamburg-dom-source-scan",
+    "city": "Hamburg",
+    "title": "Hamburg DOM 2026 source scan",
+    "sourceUrl": "https://www.hamburg.com/visitors/dom/about-20244",
+    "sourceLabel": "Hamburg DOM official information",
+    "detectedFrom": "known-event-source-scan:hamburg-dom:2026",
+    "confidence": "low",
+    "candidateReason": "Source scan found matching event keywords and a 2026 signal. Manual date review required.",
+    "suggestedCategory": "city_festival",
+    "suggestedPressureLevel": "medium",
+    "suggestedImpact": "A large recurring fair may affect nearby transport, hotels and evening movement.",
+    "suggestedAction": "Add buffer time and verify official tourism and transport information before travelling.",
+    "suggestedAreas": [
+      "fair area",
+      "public transport",
+      "hotels",
+      "evening travel"
+    ],
+    "sourceType": "official_tourism",
+    "scanSignals": {
+      "targetYear": 2026,
+      "keywordHits": [
+        "hamburg",
+        "hamburg dom"
+      ],
+      "yearHits": [
+        2026
+      ],
+      "dateLikeSnippets": [],
+      "possibleDateHints": [],
+      "dateRangeHints": [],
+      "extractedDateRange": null,
+      "scannedAt": "2026-08-31"
     }
   },
   {
@@ -72,7 +108,7 @@
       ],
       "dateRangeHints": [],
       "extractedDateRange": null,
-      "scannedAt": "2026-07-12"
+      "scannedAt": "2026-08-31"
     }
   }
 ]
