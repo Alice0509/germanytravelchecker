@@ -170,9 +170,9 @@
     "title": "Oktoberfest",
     "category": "oktoberfest",
     "defaultPressureLevel": "high",
-    "sourceType": "official_tourism",
-    "sourceLabel": "Munich official tourism information",
-    "sourceUrl": "https://www.munich.travel/",
+    "sourceType": "official",
+    "sourceLabel": "Official Oktoberfest website",
+    "sourceUrl": "https://www.oktoberfest.de/en/",
     "candidateReason": "Large visitor event that can affect hotels, public transport, stations and late-night movement.",
     "suggestedImpact": "A large visitor event may affect hotels, public transport, stations and late-night travel in Munich.",
     "suggestedAction": "Book important plans earlier, add buffer time and verify official city and transport information.",
@@ -182,7 +182,16 @@
       "stations",
       "late-night transport"
     ],
-    "knownDates": [],
+    "knownDates": [
+      {
+        "title": "Oktoberfest 2026",
+        "startDate": "2026-09-19",
+        "endDate": "2026-10-04",
+        "confidence": "high",
+        "sourceLabel": "Official Oktoberfest website",
+        "sourceUrl": "https://www.oktoberfest.de/en/"
+      }
+    ],
     "dateExtraction": {
       "preferredMonths": [
         9,
@@ -191,7 +200,8 @@
       "titleKeywords": [
         "oktoberfest"
       ]
-    }
+    },
+    "state": "Bavaria"
   },
   {
     "id": "nuremberg-christmas-market",

@@ -1,5 +1,32 @@
 [
   {
+    "id": "munich-2026-09-19-oktoberfest-2026",
+    "city": "Munich",
+    "startDate": "2026-09-19",
+    "endDate": "2026-10-04",
+    "category": "oktoberfest",
+    "pressureLevel": "high",
+    "title": "Oktoberfest 2026",
+    "travelerImpact": "A large visitor event may affect hotels, public transport, stations and late-night travel in Munich.",
+    "recommendedAction": "Book important plans earlier, add buffer time and verify official city and transport information.",
+    "verifyLinks": [
+      {
+        "label": "Official Oktoberfest website",
+        "url": "https://www.oktoberfest.de/en/"
+      }
+    ],
+    "sourceType": "official",
+    "sourceCheckedAt": "2026-09-19",
+    "confidence": "high",
+    "displayMode": "banner",
+    "affectedAreas": [
+      "hotels",
+      "U-Bahn",
+      "stations",
+      "late-night transport"
+    ]
+  },
+  {
     "id": "stuttgart-2026-09-25-cannstatter-volksfest-2026",
     "city": "Stuttgart",
     "startDate": "2026-09-25",
