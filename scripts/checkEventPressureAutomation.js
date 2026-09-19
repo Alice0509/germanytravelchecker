@@ -62,6 +62,8 @@ async function main() {
     'event-pressure:source-scan-promotion-flow:test',
     'event-pressure:known-profiles',
     'event-pressure:known-dates',
+    'event-pressure:priority-coverage:test',
+    'event-pressure:priority-coverage:strict',
     'event-pressure:expired',
     'event-pressure:copy-safety:test',
     'event-pressure:copy-safety:report:test',
