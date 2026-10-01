@@ -1,40 +1,5 @@
 [
   {
-    "id": "cologne-2026-cologne-carnival-source-scan",
-    "city": "Cologne",
-    "title": "Cologne Carnival 2026 source scan",
-    "sourceUrl": "https://www.cologne-tourism.com/experiences-lifestyle/events/calendar-of-events",
-    "sourceLabel": "Cologne tourism event information",
-    "detectedFrom": "known-event-source-scan:cologne-carnival:2026",
-    "confidence": "low",
-    "candidateReason": "Source scan found matching event keywords and a 2026 signal. Manual date review required.",
-    "suggestedCategory": "city_festival",
-    "suggestedPressureLevel": "high",
-    "suggestedImpact": "A major city festival period may affect central areas, public transport, hotels and late-night movement.",
-    "suggestedAction": "Add buffer time, avoid tight cross-city plans and verify official city and transport information.",
-    "suggestedAreas": [
-      "city centre",
-      "public transport",
-      "hotels",
-      "late-night movement"
-    ],
-    "sourceType": "official_tourism",
-    "scanSignals": {
-      "targetYear": 2026,
-      "keywordHits": [
-        "cologne"
-      ],
-      "yearHits": [
-        2026
-      ],
-      "dateLikeSnippets": [],
-      "possibleDateHints": [],
-      "dateRangeHints": [],
-      "extractedDateRange": null,
-      "scannedAt": "2026-07-12"
-    }
-  },
-  {
     "id": "nuremberg-2027-nuremberg-christmas-market-source-scan",
     "city": "Nuremberg",
     "title": "Nuremberg Christmas Market 2027 source scan",

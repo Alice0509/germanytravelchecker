@@ -57,7 +57,9 @@ jobs:
         run: |
           npm run event-pressure:known-dates:strict
           npm run event-pressure:expired:strict
-          npm run event-pressure:automation-check
+          npm run event-pressure:priority-coverage:strict
+          npm run event-pressure:copy-safety
+          npm run event-pressure:source-trust
           npm run build
 
       - name: Create expired cleanup pull request
