@@ -1,5 +1,261 @@
 [
   {
+    "id": "berlin-2026-berlin-marathon-source-scan",
+    "city": "Berlin",
+    "title": "Berlin Marathon 2026 source scan",
+    "sourceUrl": "https://www.berlin.de/en/events/september/",
+    "sourceLabel": "Berlin.de event information",
+    "detectedFrom": "known-event-source-scan:berlin-marathon:2026",
+    "confidence": "medium",
+    "candidateReason": "Source scan found matching event keywords and a 2026 signal. Manual date review required.",
+    "suggestedCategory": "other_major_event",
+    "suggestedPressureLevel": "medium",
+    "suggestedImpact": "A major city running event may affect central routes, station access, road crossings and local movement.",
+    "suggestedAction": "Add buffer time, avoid tight cross-city plans and verify official city and transport information before travelling.",
+    "suggestedAreas": [
+      "city centre",
+      "stations",
+      "public transport",
+      "road crossings"
+    ],
+    "sourceType": "official_city",
+    "scanSignals": {
+      "targetYear": 2026,
+      "keywordHits": [
+        "berlin",
+        "berlin marathon"
+      ],
+      "yearHits": [
+        2026,
+        2027,
+        2028
+      ],
+      "dateLikeSnippets": [
+        "September 26, 2027",
+        "October 4, 2026",
+        "and 6, 2026",
+        "September 22, 2027",
+        "September 12, 2026",
+        "September 13, 2026",
+        "October 25, 2026",
+        "and 27, 2026"
+      ],
+      "possibleDateHints": [
+        "2026-09-05",
+        "2026-09-12",
+        "2026-09-13",
+        "2026-10-04",
+        "2026-10-25",
+        "2027-09-22",
+        "2027-09-26"
+      ],
+      "dateRangeHints": [
+        {
+          "startDate": "2026-09-12",
+          "endDate": "2026-10-04",
+          "sourceText": "September 12 - October 4, 2026"
+        },
+        {
+          "startDate": "2026-09-25",
+          "endDate": "2026-10-25",
+          "sourceText": "September 25 - October 25, 2026"
+        },
+        {
+          "startDate": "2027-08-28",
+          "endDate": "2027-09-22",
+          "sourceText": "August 28 - September 22, 2027"
+        }
+      ],
+      "extractedDateRange": null,
+      "scannedAt": "2026-10-05"
+    }
+  },
+  {
+    "id": "berlin-2028-berlin-marathon-source-scan",
+    "city": "Berlin",
+    "title": "Berlin Marathon 2028 source scan",
+    "sourceUrl": "https://www.berlin.de/en/events/september/",
+    "sourceLabel": "Berlin.de event information",
+    "detectedFrom": "known-event-source-scan:berlin-marathon:2028",
+    "confidence": "medium",
+    "candidateReason": "Source scan found matching event keywords and a 2028 signal. Manual date review required.",
+    "suggestedCategory": "other_major_event",
+    "suggestedPressureLevel": "medium",
+    "suggestedImpact": "A major city running event may affect central routes, station access, road crossings and local movement.",
+    "suggestedAction": "Add buffer time, avoid tight cross-city plans and verify official city and transport information before travelling.",
+    "suggestedAreas": [
+      "city centre",
+      "stations",
+      "public transport",
+      "road crossings"
+    ],
+    "sourceType": "official_city",
+    "scanSignals": {
+      "targetYear": 2028,
+      "keywordHits": [
+        "berlin",
+        "berlin marathon"
+      ],
+      "yearHits": [
+        2026,
+        2027,
+        2028
+      ],
+      "dateLikeSnippets": [
+        "September 26, 2027",
+        "October 4, 2026",
+        "and 6, 2026",
+        "September 22, 2027",
+        "September 12, 2026",
+        "September 13, 2026",
+        "October 25, 2026",
+        "and 27, 2026"
+      ],
+      "possibleDateHints": [
+        "2026-09-05",
+        "2026-09-12",
+        "2026-09-13",
+        "2026-10-04",
+        "2026-10-25",
+        "2027-09-22",
+        "2027-09-26"
+      ],
+      "dateRangeHints": [
+        {
+          "startDate": "2026-09-12",
+          "endDate": "2026-10-04",
+          "sourceText": "September 12 - October 4, 2026"
+        },
+        {
+          "startDate": "2026-09-25",
+          "endDate": "2026-10-25",
+          "sourceText": "September 25 - October 25, 2026"
+        },
+        {
+          "startDate": "2027-08-28",
+          "endDate": "2027-09-22",
+          "sourceText": "August 28 - September 22, 2027"
+        }
+      ],
+      "extractedDateRange": null,
+      "scannedAt": "2026-10-05"
+    }
+  },
+  {
+    "id": "berlin-2027-berlin-marathon-source-scan",
+    "city": "Berlin",
+    "title": "Berlin Marathon 2027 source scan",
+    "startDate": "2027-08-28",
+    "endDate": "2027-09-22",
+    "sourceUrl": "https://www.berlin.de/en/events/september/",
+    "sourceLabel": "Berlin.de event information",
+    "detectedFrom": "known-event-source-scan:berlin-marathon:2027",
+    "confidence": "medium",
+    "candidateReason": "Source scan found matching event keywords and one extracted 2027 date range. Manual review still required before approval.",
+    "suggestedCategory": "other_major_event",
+    "suggestedPressureLevel": "medium",
+    "suggestedImpact": "A major city running event may affect central routes, station access, road crossings and local movement.",
+    "suggestedAction": "Add buffer time, avoid tight cross-city plans and verify official city and transport information before travelling.",
+    "suggestedAreas": [
+      "city centre",
+      "stations",
+      "public transport",
+      "road crossings"
+    ],
+    "sourceType": "official_city",
+    "scanSignals": {
+      "targetYear": 2027,
+      "keywordHits": [
+        "berlin",
+        "berlin marathon"
+      ],
+      "yearHits": [
+        2026,
+        2027,
+        2028
+      ],
+      "dateLikeSnippets": [
+        "September 26, 2027",
+        "October 4, 2026",
+        "and 6, 2026",
+        "September 22, 2027",
+        "September 12, 2026",
+        "September 13, 2026",
+        "October 25, 2026",
+        "and 27, 2026"
+      ],
+      "possibleDateHints": [
+        "2026-09-05",
+        "2026-09-12",
+        "2026-09-13",
+        "2026-10-04",
+        "2026-10-25",
+        "2027-09-22",
+        "2027-09-26"
+      ],
+      "dateRangeHints": [
+        {
+          "startDate": "2026-09-12",
+          "endDate": "2026-10-04",
+          "sourceText": "September 12 - October 4, 2026"
+        },
+        {
+          "startDate": "2026-09-25",
+          "endDate": "2026-10-25",
+          "sourceText": "September 25 - October 25, 2026"
+        },
+        {
+          "startDate": "2027-08-28",
+          "endDate": "2027-09-22",
+          "sourceText": "August 28 - September 22, 2027"
+        }
+      ],
+      "extractedDateRange": {
+        "startDate": "2027-08-28",
+        "endDate": "2027-09-22",
+        "sourceText": "August 28 - September 22, 2027"
+      },
+      "scannedAt": "2026-10-05"
+    }
+  },
+  {
+    "id": "munich-2027-munich-oktoberfest-source-scan",
+    "city": "Munich",
+    "title": "Oktoberfest 2027 source scan",
+    "sourceUrl": "https://www.oktoberfest.de/en/",
+    "sourceLabel": "Official Oktoberfest website",
+    "detectedFrom": "known-event-source-scan:munich-oktoberfest:2027",
+    "confidence": "low",
+    "candidateReason": "Source scan found matching event keywords and a 2027 signal. Manual date review required.",
+    "suggestedCategory": "oktoberfest",
+    "suggestedPressureLevel": "high",
+    "suggestedImpact": "A large visitor event may affect hotels, public transport, stations and late-night travel in Munich.",
+    "suggestedAction": "Book important plans earlier, add buffer time and verify official city and transport information.",
+    "suggestedAreas": [
+      "hotels",
+      "U-Bahn",
+      "stations",
+      "late-night transport"
+    ],
+    "sourceType": "official",
+    "scanSignals": {
+      "targetYear": 2027,
+      "keywordHits": [
+        "munich",
+        "oktoberfest"
+      ],
+      "yearHits": [
+        2026,
+        2027
+      ],
+      "dateLikeSnippets": [],
+      "possibleDateHints": [],
+      "dateRangeHints": [],
+      "extractedDateRange": null,
+      "scannedAt": "2026-10-05"
+    }
+  },
+  {
     "id": "nuremberg-2027-nuremberg-christmas-market-source-scan",
     "city": "Nuremberg",
     "title": "Nuremberg Christmas Market 2027 source scan",
@@ -37,7 +293,7 @@
       ],
       "dateRangeHints": [],
       "extractedDateRange": null,
-      "scannedAt": "2026-07-12"
+      "scannedAt": "2026-10-05"
     }
   }
 ]
