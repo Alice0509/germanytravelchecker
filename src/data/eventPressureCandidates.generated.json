@@ -1,5 +1,386 @@
 [
   {
+    "id": "berlin-2026-berlin-marathon-source-scan",
+    "city": "Berlin",
+    "title": "Berlin Marathon 2026 source scan",
+    "sourceUrl": "https://www.berlin.de/en/events/september/",
+    "sourceLabel": "Berlin.de event information",
+    "detectedFrom": "known-event-source-scan:berlin-marathon:2026",
+    "confidence": "medium",
+    "candidateReason": "Source scan found matching event keywords and a 2026 signal. Manual date review required.",
+    "suggestedCategory": "other_major_event",
+    "suggestedPressureLevel": "medium",
+    "suggestedImpact": "A major city running event may affect central routes, station access, road crossings and local movement.",
+    "suggestedAction": "Add buffer time, avoid tight cross-city plans and verify official city and transport information before travelling.",
+    "suggestedAreas": [
+      "city centre",
+      "stations",
+      "public transport",
+      "road crossings"
+    ],
+    "sourceType": "official_city",
+    "scanSignals": {
+      "targetYear": 2026,
+      "keywordHits": [
+        "berlin",
+        "berlin marathon"
+      ],
+      "yearHits": [
+        2026,
+        2027,
+        2028
+      ],
+      "dateLikeSnippets": [
+        "September 26, 2027",
+        "October 4, 2026",
+        "and 4, 2027",
+        "September 22, 2027",
+        "September 12, 2026",
+        "October 25, 2026",
+        "and 27, 2026",
+        "and 6, 2026"
+      ],
+      "possibleDateHints": [
+        "2026-09-05",
+        "2026-09-12",
+        "2026-10-04",
+        "2026-10-25",
+        "2026-11-01",
+        "2027-09-22",
+        "2027-09-26"
+      ],
+      "dateRangeHints": [
+        {
+          "startDate": "2026-09-12",
+          "endDate": "2026-10-04",
+          "sourceText": "September 12 - October 4, 2026"
+        },
+        {
+          "startDate": "2026-09-25",
+          "endDate": "2026-10-25",
+          "sourceText": "September 25 - October 25, 2026"
+        },
+        {
+          "startDate": "2026-10-30",
+          "endDate": "2026-11-01",
+          "sourceText": "October 30 to November 1, 2026"
+        },
+        {
+          "startDate": "2027-08-28",
+          "endDate": "2027-09-22",
+          "sourceText": "August 28 - September 22, 2027"
+        }
+      ],
+      "extractedDateRange": null,
+      "scannedAt": "2026-10-26"
+    }
+  },
+  {
+    "id": "berlin-2028-berlin-marathon-source-scan",
+    "city": "Berlin",
+    "title": "Berlin Marathon 2028 source scan",
+    "sourceUrl": "https://www.berlin.de/en/events/september/",
+    "sourceLabel": "Berlin.de event information",
+    "detectedFrom": "known-event-source-scan:berlin-marathon:2028",
+    "confidence": "medium",
+    "candidateReason": "Source scan found matching event keywords and a 2028 signal. Manual date review required.",
+    "suggestedCategory": "other_major_event",
+    "suggestedPressureLevel": "medium",
+    "suggestedImpact": "A major city running event may affect central routes, station access, road crossings and local movement.",
+    "suggestedAction": "Add buffer time, avoid tight cross-city plans and verify official city and transport information before travelling.",
+    "suggestedAreas": [
+      "city centre",
+      "stations",
+      "public transport",
+      "road crossings"
+    ],
+    "sourceType": "official_city",
+    "scanSignals": {
+      "targetYear": 2028,
+      "keywordHits": [
+        "berlin",
+        "berlin marathon"
+      ],
+      "yearHits": [
+        2026,
+        2027,
+        2028
+      ],
+      "dateLikeSnippets": [
+        "September 26, 2027",
+        "October 4, 2026",
+        "and 4, 2027",
+        "September 22, 2027",
+        "September 12, 2026",
+        "October 25, 2026",
+        "and 27, 2026",
+        "and 6, 2026"
+      ],
+      "possibleDateHints": [
+        "2026-09-05",
+        "2026-09-12",
+        "2026-10-04",
+        "2026-10-25",
+        "2026-11-01",
+        "2027-09-22",
+        "2027-09-26"
+      ],
+      "dateRangeHints": [
+        {
+          "startDate": "2026-09-12",
+          "endDate": "2026-10-04",
+          "sourceText": "September 12 - October 4, 2026"
+        },
+        {
+          "startDate": "2026-09-25",
+          "endDate": "2026-10-25",
+          "sourceText": "September 25 - October 25, 2026"
+        },
+        {
+          "startDate": "2026-10-30",
+          "endDate": "2026-11-01",
+          "sourceText": "October 30 to November 1, 2026"
+        },
+        {
+          "startDate": "2027-08-28",
+          "endDate": "2027-09-22",
+          "sourceText": "August 28 - September 22, 2027"
+        }
+      ],
+      "extractedDateRange": null,
+      "scannedAt": "2026-10-26"
+    }
+  },
+  {
+    "id": "berlin-2027-berlin-marathon-source-scan",
+    "city": "Berlin",
+    "title": "Berlin Marathon 2027 source scan",
+    "startDate": "2027-08-28",
+    "endDate": "2027-09-22",
+    "sourceUrl": "https://www.berlin.de/en/events/september/",
+    "sourceLabel": "Berlin.de event information",
+    "detectedFrom": "known-event-source-scan:berlin-marathon:2027",
+    "confidence": "medium",
+    "candidateReason": "Source scan found matching event keywords and one extracted 2027 date range. Manual review still required before approval.",
+    "suggestedCategory": "other_major_event",
+    "suggestedPressureLevel": "medium",
+    "suggestedImpact": "A major city running event may affect central routes, station access, road crossings and local movement.",
+    "suggestedAction": "Add buffer time, avoid tight cross-city plans and verify official city and transport information before travelling.",
+    "suggestedAreas": [
+      "city centre",
+      "stations",
+      "public transport",
+      "road crossings"
+    ],
+    "sourceType": "official_city",
+    "scanSignals": {
+      "targetYear": 2027,
+      "keywordHits": [
+        "berlin",
+        "berlin marathon"
+      ],
+      "yearHits": [
+        2026,
+        2027,
+        2028
+      ],
+      "dateLikeSnippets": [
+        "September 26, 2027",
+        "October 4, 2026",
+        "and 4, 2027",
+        "September 22, 2027",
+        "September 12, 2026",
+        "October 25, 2026",
+        "and 27, 2026",
+        "and 6, 2026"
+      ],
+      "possibleDateHints": [
+        "2026-09-05",
+        "2026-09-12",
+        "2026-10-04",
+        "2026-10-25",
+        "2026-11-01",
+        "2027-09-22",
+        "2027-09-26"
+      ],
+      "dateRangeHints": [
+        {
+          "startDate": "2026-09-12",
+          "endDate": "2026-10-04",
+          "sourceText": "September 12 - October 4, 2026"
+        },
+        {
+          "startDate": "2026-09-25",
+          "endDate": "2026-10-25",
+          "sourceText": "September 25 - October 25, 2026"
+        },
+        {
+          "startDate": "2026-10-30",
+          "endDate": "2026-11-01",
+          "sourceText": "October 30 to November 1, 2026"
+        },
+        {
+          "startDate": "2027-08-28",
+          "endDate": "2027-09-22",
+          "sourceText": "August 28 - September 22, 2027"
+        }
+      ],
+      "extractedDateRange": {
+        "startDate": "2027-08-28",
+        "endDate": "2027-09-22",
+        "sourceText": "August 28 - September 22, 2027"
+      },
+      "scannedAt": "2026-10-26"
+    }
+  },
+  {
+    "id": "frankfurt-2027-frankfurt-book-fair-source-scan",
+    "city": "Frankfurt",
+    "title": "Frankfurt Book Fair 2027 source scan",
+    "sourceUrl": "https://www.buchmesse.de/en",
+    "sourceLabel": "Frankfurter Buchmesse official information",
+    "detectedFrom": "known-event-source-scan:frankfurt-book-fair:2027",
+    "confidence": "low",
+    "candidateReason": "Source scan found matching event keywords and a 2027 signal. Manual date review required.",
+    "suggestedCategory": "trade_fair",
+    "suggestedPressureLevel": "medium",
+    "suggestedImpact": "A large trade fair may affect hotels, Messe access, stations and city transport.",
+    "suggestedAction": "Book important plans earlier, add buffer time and verify official Messe and transport information.",
+    "suggestedAreas": [
+      "Messe",
+      "hotels",
+      "main station",
+      "public transport"
+    ],
+    "sourceType": "official_messe",
+    "scanSignals": {
+      "targetYear": 2027,
+      "keywordHits": [
+        "frankfurt"
+      ],
+      "yearHits": [
+        2026,
+        2027,
+        2028
+      ],
+      "dateLikeSnippets": [],
+      "possibleDateHints": [],
+      "dateRangeHints": [],
+      "extractedDateRange": null,
+      "scannedAt": "2026-10-26"
+    }
+  },
+  {
+    "id": "frankfurt-2028-frankfurt-book-fair-source-scan",
+    "city": "Frankfurt",
+    "title": "Frankfurt Book Fair 2028 source scan",
+    "sourceUrl": "https://www.buchmesse.de/en",
+    "sourceLabel": "Frankfurter Buchmesse official information",
+    "detectedFrom": "known-event-source-scan:frankfurt-book-fair:2028",
+    "confidence": "low",
+    "candidateReason": "Source scan found matching event keywords and a 2028 signal. Manual date review required.",
+    "suggestedCategory": "trade_fair",
+    "suggestedPressureLevel": "medium",
+    "suggestedImpact": "A large trade fair may affect hotels, Messe access, stations and city transport.",
+    "suggestedAction": "Book important plans earlier, add buffer time and verify official Messe and transport information.",
+    "suggestedAreas": [
+      "Messe",
+      "hotels",
+      "main station",
+      "public transport"
+    ],
+    "sourceType": "official_messe",
+    "scanSignals": {
+      "targetYear": 2028,
+      "keywordHits": [
+        "frankfurt"
+      ],
+      "yearHits": [
+        2026,
+        2027,
+        2028
+      ],
+      "dateLikeSnippets": [],
+      "possibleDateHints": [],
+      "dateRangeHints": [],
+      "extractedDateRange": null,
+      "scannedAt": "2026-10-26"
+    }
+  },
+  {
+    "id": "hamburg-2026-hamburg-dom-source-scan",
+    "city": "Hamburg",
+    "title": "Hamburg DOM 2026 source scan",
+    "sourceUrl": "https://www.hamburg.com/visitors/dom/about-20244",
+    "sourceLabel": "Hamburg DOM official information",
+    "detectedFrom": "known-event-source-scan:hamburg-dom:2026",
+    "confidence": "low",
+    "candidateReason": "Source scan found matching event keywords and a 2026 signal. Manual date review required.",
+    "suggestedCategory": "city_festival",
+    "suggestedPressureLevel": "medium",
+    "suggestedImpact": "A large recurring fair may affect nearby transport, hotels and evening movement.",
+    "suggestedAction": "Add buffer time and verify official tourism and transport information before travelling.",
+    "suggestedAreas": [
+      "fair area",
+      "public transport",
+      "hotels",
+      "evening travel"
+    ],
+    "sourceType": "official_tourism",
+    "scanSignals": {
+      "targetYear": 2026,
+      "keywordHits": [
+        "hamburg",
+        "hamburg dom"
+      ],
+      "yearHits": [
+        2026
+      ],
+      "dateLikeSnippets": [],
+      "possibleDateHints": [],
+      "dateRangeHints": [],
+      "extractedDateRange": null,
+      "scannedAt": "2026-10-26"
+    }
+  },
+  {
+    "id": "munich-2027-munich-oktoberfest-source-scan",
+    "city": "Munich",
+    "title": "Oktoberfest 2027 source scan",
+    "sourceUrl": "https://www.oktoberfest.de/en/",
+    "sourceLabel": "Official Oktoberfest website",
+    "detectedFrom": "known-event-source-scan:munich-oktoberfest:2027",
+    "confidence": "low",
+    "candidateReason": "Source scan found matching event keywords and a 2027 signal. Manual date review required.",
+    "suggestedCategory": "oktoberfest",
+    "suggestedPressureLevel": "high",
+    "suggestedImpact": "A large visitor event may affect hotels, public transport, stations and late-night travel in Munich.",
+    "suggestedAction": "Book important plans earlier, add buffer time and verify official city and transport information.",
+    "suggestedAreas": [
+      "hotels",
+      "U-Bahn",
+      "stations",
+      "late-night transport"
+    ],
+    "sourceType": "official",
+    "scanSignals": {
+      "targetYear": 2027,
+      "keywordHits": [
+        "munich",
+        "oktoberfest"
+      ],
+      "yearHits": [
+        2026,
+        2027
+      ],
+      "dateLikeSnippets": [],
+      "possibleDateHints": [],
+      "dateRangeHints": [],
+      "extractedDateRange": null,
+      "scannedAt": "2026-10-26"
+    }
+  },
+  {
     "id": "nuremberg-2027-nuremberg-christmas-market-source-scan",
     "city": "Nuremberg",
     "title": "Nuremberg Christmas Market 2027 source scan",
@@ -37,7 +418,58 @@
       ],
       "dateRangeHints": [],
       "extractedDateRange": null,
-      "scannedAt": "2026-07-12"
+      "scannedAt": "2026-10-26"
+    }
+  },
+  {
+    "id": "stuttgart-2027-stuttgart-cannstatter-volksfest-source-scan",
+    "city": "Stuttgart",
+    "title": "Cannstatter Volksfest 2027 source scan",
+    "startDate": "2027-09-24",
+    "endDate": "2027-10-10",
+    "sourceUrl": "https://www.cannstatter-volksfest.de/en/",
+    "sourceLabel": "Official Cannstatter Volksfest website",
+    "detectedFrom": "known-event-source-scan:stuttgart-cannstatter-volksfest:2027",
+    "confidence": "medium",
+    "candidateReason": "Source scan found matching event keywords and one extracted 2027 date range. Manual review still required before approval.",
+    "suggestedCategory": "festival",
+    "suggestedPressureLevel": "high",
+    "suggestedImpact": "Expect higher demand around Bad Cannstatt and the festival area. Allow extra time for local transport and accommodation planning.",
+    "suggestedAction": "Check the official festival and local transport pages before travelling, especially for evenings and weekends.",
+    "suggestedAreas": [],
+    "sourceType": "official",
+    "scanSignals": {
+      "targetYear": 2027,
+      "keywordHits": [
+        "stuttgart",
+        "cannstatter volksfest",
+        "stuttgart",
+        "cannstatter volksfest",
+        "volksfest"
+      ],
+      "yearHits": [
+        2026,
+        2027
+      ],
+      "dateLikeSnippets": [
+        "October 10, 2027"
+      ],
+      "possibleDateHints": [
+        "2027-10-10"
+      ],
+      "dateRangeHints": [
+        {
+          "startDate": "2027-09-24",
+          "endDate": "2027-10-10",
+          "sourceText": "September 24 to October 10, 2027"
+        }
+      ],
+      "extractedDateRange": {
+        "startDate": "2027-09-24",
+        "endDate": "2027-10-10",
+        "sourceText": "September 24 to October 10, 2027"
+      },
+      "scannedAt": "2026-10-26"
     }
   }
 ]
