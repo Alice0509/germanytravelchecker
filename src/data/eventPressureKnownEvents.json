@@ -48,14 +48,6 @@
     ],
     "knownDates": [
       {
-        "title": "Cologne Carnival Session Opening 2026",
-        "startDate": "2026-11-11",
-        "endDate": "2026-11-11",
-        "confidence": "high",
-        "sourceLabel": "Cologne Tourist Board carnival information",
-        "sourceUrl": "https://www.cologne-tourism.com/experiences-lifestyle/carnival"
-      },
-      {
         "title": "Cologne Carnival 2027",
         "startDate": "2027-02-04",
         "endDate": "2027-02-09",
@@ -126,15 +118,7 @@
       "main station",
       "public transport"
     ],
-    "knownDates": [
-      {
-        "startDate": "2026-10-07",
-        "endDate": "2026-10-11",
-        "confidence": "high",
-        "sourceLabel": "Frankfurter Buchmesse official information",
-        "sourceUrl": "https://www.buchmesse.de/en"
-      }
-    ],
+    "knownDates": [],
     "dateExtraction": {
       "preferredMonths": [
         10
@@ -199,16 +183,7 @@
       "stations",
       "late-night transport"
     ],
-    "knownDates": [
-      {
-        "title": "Oktoberfest 2026",
-        "startDate": "2026-09-19",
-        "endDate": "2026-10-04",
-        "confidence": "high",
-        "sourceLabel": "Official Oktoberfest website",
-        "sourceUrl": "https://www.oktoberfest.de/en/"
-      }
-    ],
+    "knownDates": [],
     "dateExtraction": {
       "preferredMonths": [
         9,
